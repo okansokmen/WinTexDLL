@@ -15,3 +15,8 @@ Desktop.ini
 *.bak
 *.tmp
 *.lock
+packages/
+*.dll
+*.exe
+*.pdb
+*.nupkg
