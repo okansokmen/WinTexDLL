@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c7a95817-8638-4633-ac70-34c622500785" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://connect-test.crssoft.com/Services/DespatchIntegration" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="DespatchIntegration.wsdl" MetadataType="Wsdl" ID="fbaee4f5-70d2-45bd-a160-1531437be40c" SourceId="1" SourceUrl="https://connect-test.crssoft.com/Services/DespatchIntegration?wsdl" />
+    <MetadataFile FileName="DespatchIntegration.xsd" MetadataType="Schema" ID="c3a746a5-f2fe-4764-abbb-fa0ec8900c97" SourceId="1" SourceUrl="https://connect-test.crssoft.com/Services/DespatchIntegration?xsd=xsd7" />
+    <MetadataFile FileName="DespatchIntegration1.xsd" MetadataType="Schema" ID="34fe361c-ad1d-4a02-a417-4e90f5a8dec9" SourceId="1" SourceUrl="https://connect-test.crssoft.com/Services/DespatchIntegration?xsd=xsd3" />
+    <MetadataFile FileName="DespatchIntegration2.xsd" MetadataType="Schema" ID="4b5b7ff3-1b99-46b0-8caf-b01342487467" SourceId="1" SourceUrl="https://connect-test.crssoft.com/Services/DespatchIntegration?xsd=xsd4" />
+    <MetadataFile FileName="DespatchIntegration3.xsd" MetadataType="Schema" ID="82955a13-e80c-4c98-986d-f9333ae491f4" SourceId="1" SourceUrl="https://connect-test.crssoft.com/Services/DespatchIntegration?xsd=xsd0" />
+    <MetadataFile FileName="DespatchIntegration4.xsd" MetadataType="Schema" ID="2a16d7a0-214e-48b1-9c18-3419129c0bd2" SourceId="1" SourceUrl="https://connect-test.crssoft.com/Services/DespatchIntegration?xsd=xsd8" />
+    <MetadataFile FileName="DespatchIntegration5.xsd" MetadataType="Schema" ID="a65e9427-172a-4f1e-a430-47a50ac9035b" SourceId="1" SourceUrl="https://connect-test.crssoft.com/Services/DespatchIntegration?xsd=xsd5" />
+    <MetadataFile FileName="DespatchIntegration6.xsd" MetadataType="Schema" ID="1a360df0-36de-4fb2-9d85-25cc9a374c5c" SourceId="1" SourceUrl="https://connect-test.crssoft.com/Services/DespatchIntegration?xsd=xsd1" />
+    <MetadataFile FileName="DespatchIntegration7.xsd" MetadataType="Schema" ID="832c7d41-c40a-4cf1-9b00-9aaa7e1fcaaa" SourceId="1" SourceUrl="https://connect-test.crssoft.com/Services/DespatchIntegration?xsd=xsd9" />
+    <MetadataFile FileName="DespatchIntegration.disco" MetadataType="Disco" ID="afd4785f-706d-49f0-af27-73d4da7d2fd1" SourceId="1" SourceUrl="https://connect-test.crssoft.com/Services/DespatchIntegration?disco" />
+    <MetadataFile FileName="DespatchIntegration8.xsd" MetadataType="Schema" ID="46742bda-156c-4ea8-8f14-47fb0aa2fadf" SourceId="1" SourceUrl="https://connect-test.crssoft.com/Services/DespatchIntegration?xsd=xsd6" />
+    <MetadataFile FileName="DespatchIntegration9.xsd" MetadataType="Schema" ID="e4f351dd-b914-4b7d-850e-425a65a77474" SourceId="1" SourceUrl="https://connect-test.crssoft.com/Services/DespatchIntegration?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

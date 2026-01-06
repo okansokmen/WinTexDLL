@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ASPxSchedulerStringId.CaptionViewNavigator_Today" xml:space="preserve">
+    <value>Bugün</value>
+  </data>
+  <data name="ASPxSchedulerStringId.Caption_Day" xml:space="preserve">
+    <value>Gün</value>
+  </data>
+  <data name="ASPxSchedulerStringId.Caption_Days" xml:space="preserve">
+    <value>gün(ler)</value>
+  </data>
+  <data name="ASPxSchedulerStringId.Caption_DeleteRecurrentApt" xml:space="preserve">
+    <value>Silme isşemini onaylayın!</value>
+  </data>
+  <data name="ASPxSchedulerStringId.Caption_DetailInfo" xml:space="preserve">
+    <value>Detaylı bilgi göster</value>
+  </data>
+  <data name="ASPxSchedulerStringId.Caption_Error" xml:space="preserve">
+    <value>Hata</value>
+  </data>
+  <data name="ASPxSchedulerStringId.Caption_Every" xml:space="preserve">
+    <value>Her Zaman</value>
+  </data>
+  <data name="ASPxSchedulerStringId.Caption_EveryWeekday" xml:space="preserve">
+    <value>Hafta içi her gün</value>
+  </data>
+  <data name="ASPxSchedulerStringId.Caption_GotoDate" xml:space="preserve">
+    <value>Güne Git</value>
+  </data>
+  <data name="ASPxSchedulerStringId.Caption_Info" xml:space="preserve">
+    <value>Bilgi</value>
+  </data>
+  <data name="ASPxSchedulerStringId.Caption_LoadError" xml:space="preserve">
+    <value>{0} yüklenemedi</value>
+  </data>
+  <data name="ASPxSchedulerStringId.Caption_Months" xml:space="preserve">
+    <value>ay(lar)</value>
+  </data>
+  <data name="ASPxSchedulerStringId.Caption_Occurrences" xml:space="preserve">
+    <value>olaylar</value>
+  </data>
+  <data name="ASPxSchedulerStringId.Caption_Of" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="ASPxSchedulerStringId.Caption_OfEvery" xml:space="preserve">
+    <value>her zaman</value>
+  </data>
+  <data name="ASPxSchedulerStringId.Caption_OpenRecurrentApt" xml:space="preserve">
+    <value>Yinelenen Ögeyi Aç</value>
+  </data>
+  <data name="ASPxSchedulerStringId.Caption_OperationToolTip" xml:space="preserve">
+    <value>İşlemi iptal etmek için ESC tuşuna basın</value>
+  </data>
+  <data name="ASPxSchedulerStringId.Caption_RecurEvery" xml:space="preserve">
+    <value>Tekrarlar</value>
+  </data>
+  <data name="ASPxSchedulerStringId.Caption_RecurenceRange_EndBy" xml:space="preserve">
+    <value>Bitiş:</value>
+  </data>
+  <data name="ASPxSchedulerStringId.Caption_RecurenceRange_NoEndDate" xml:space="preserve">
+    <value>Bitiş tarihi yok</value>
+  </data>
+  <data name="ASPxSchedulerStringId.Caption_RecurenceRange_OccurrenceCount" xml:space="preserve">
+    <value>Bitiş sonrası:</value>
+  </data>
+  <data name="ASPxSchedulerStringId.Caption_Recurrence" xml:space="preserve">
+    <value>Tekrar</value>
+  </data>
+  <data name="ASPxSchedulerStringId.Caption_RecurrenceType_Daily" xml:space="preserve">
+    <value>Günlük</value>
+  </data>
+  <data name="ASPxSchedulerStringId.Caption_RecurrenceType_Monthly" xml:space="preserve">
+    <value>Aylık</value>
+  </data>
+  <data name="ASPxSchedulerStringId.Caption_RecurrenceType_Weekly" xml:space="preserve">
+    <value>Haftalık</value>
+  </data>
+  <data name="ASPxSchedulerStringId.Caption_RecurrenceType_Yearly" xml:space="preserve">
+    <value>Yıllık</value>
+  </data>
+  <data name="ASPxSchedulerStringId.Caption_ShowMore" xml:space="preserve">
+    <value>Daha fazlası</value>
+  </data>
+  <data name="ASPxSchedulerStringId.Caption_The" xml:space="preserve">
+    <value/>
+  </data>
+  <data name="ASPxSchedulerStringId.Caption_ViewVisibleInterval_Format" xml:space="preserve">
+    <value>{0:D} &amp;ndash; {1:D}</value>
+  </data>
+  <data name="ASPxSchedulerStringId.Caption_Warning" xml:space="preserve">
+    <value>Uyarı</value>
+  </data>
+  <data name="ASPxSchedulerStringId.Caption_WeeksOn" xml:space="preserve">
+    <value>Hafta(lar):</value>
+  </data>
+  <data name="ASPxSchedulerStringId.Form_AllDayEvent" xml:space="preserve">
+    <value>All day event</value>
+  </data>
+  <data name="ASPxSchedulerStringId.Form_ButtonCancel" xml:space="preserve">
+    <value>İptal</value>
+  </data>
+  <data name="ASPxSchedulerStringId.Form_ButtonDelete" xml:space="preserve">
+    <value>Sil</value>
+  </data>
+  <data name="ASPxSchedulerStringId.Form_ButtonDismiss" xml:space="preserve">
+    <value>Kaldır</value>
+  </data>
+  <data name="ASPxSchedulerStringId.Form_ButtonDismissAll" xml:space="preserve">
+    <value>Tümünü Kaldır</value>
+  </data>
+  <data name="ASPxSchedulerStringId.Form_ButtonOk" xml:space="preserve">
+    <value>Tamam</value>
+  </data>
+  <data name="ASPxSchedulerStringId.Form_ButtonSnooze" xml:space="preserve">
+    <value>Ertele</value>
+  </data>
+  <data name="ASPxSchedulerStringId.Form_ConfirmDelete" xml:space="preserve">
+    <value>Yinelenen varsa "{0}" randevusunun tüm tekrarlarını veya sadece bunu silmek istiyor musunuz?</value>
+  </data>
+  <data name="ASPxSchedulerStringId.Form_ConfirmEdit" xml:space="preserve">
+    <value>"{0}" yinelenen bir randevudur. Sadece bunu veya tümünü açmak istiyor musunuz?</value>
+  </data>
+  <data name="ASPxSchedulerStringId.Form_Date" xml:space="preserve">
+    <value>Gün:</value>
+  </data>
+  <data name="ASPxSchedulerStringId.Form_EndTime" xml:space="preserve">
+    <value>Son Tarih:</value>
+  </data>
+  <data name="ASPxSchedulerStringId.Form_Label" xml:space="preserve">
+    <value>Etiket:</value>
+  </data>
+  <data name="ASPxSchedulerStringId.Form_Location" xml:space="preserve">
+    <value>Yer:</value>
+  </data>
+  <data name="ASPxSchedulerStringId.Form_Occurrence" xml:space="preserve">
+    <value>Bu olay</value>
+  </data>
+  <data name="ASPxSchedulerStringId.Form_OpenEditForm" xml:space="preserve">
+    <value>Düzenleme Formunu Aç...</value>
+  </data>
+  <data name="ASPxSchedulerStringId.Form_Recurrence" xml:space="preserve">
+    <value>Tekrar</value>
+  </data>
+  <data name="ASPxSchedulerStringId.Form_Reminder" xml:space="preserve">
+    <value>Hatırlatıcı</value>
+  </data>
+  <data name="ASPxSchedulerStringId.Form_Resource" xml:space="preserve">
+    <value>Kaynak:</value>
+  </data>
+  <data name="ASPxSchedulerStringId.Form_Save" xml:space="preserve">
+    <value>Kaydet</value>
+  </data>
+  <data name="ASPxSchedulerStringId.Form_Series" xml:space="preserve">
+    <value>Seri</value>
+  </data>
+  <data name="ASPxSchedulerStringId.Form_ShowIn" xml:space="preserve">
+    <value>Göster:</value>
+  </data>
+  <data name="ASPxSchedulerStringId.Form_SnoozeInfo" xml:space="preserve">
+    <value>Tekrar hatırlatılması için Ertele'yi tıklayın</value>
+  </data>
+  <data name="ASPxSchedulerStringId.Form_StartTime" xml:space="preserve">
+    <value>Başlangıç Zamanı:</value>
+  </data>
+  <data name="ASPxSchedulerStringId.Form_Status" xml:space="preserve">
+    <value>Zamanı Göster:</value>
+  </data>
+  <data name="ASPxSchedulerStringId.Form_Subject" xml:space="preserve">
+    <value>Konu:</value>
+  </data>
+  <data name="ASPxSchedulerStringId.TooltipViewNavigator_Backward" xml:space="preserve">
+    <value>Geri</value>
+  </data>
+  <data name="ASPxSchedulerStringId.TooltipViewNavigator_Forward" xml:space="preserve">
+    <value>İleri</value>
+  </data>
+  <data name="ASPxSchedulerStringId.TooltipViewNavigator_GotoDate" xml:space="preserve">
+    <value>Go to Date</value>
+  </data>
+</root>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://ee.econt.com/services/Profile/R/schema.xsd" filename="schema.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://ee.econt.com/services/Profile/ProfileService.soap?wsdl" filename="ProfileService.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://ee.econt.com/services/schema.xsd" filename="schema0.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://ee.econt.com/services/Profile/schema.xsd" filename="schema1.xsd" />
+  </Results>
+</DiscoveryClientResultsFile>

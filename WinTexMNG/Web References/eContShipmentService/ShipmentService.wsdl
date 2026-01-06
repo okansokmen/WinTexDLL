@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:ns2="http://ee.econt.com/services" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://ee.econt.com/services/Shipments" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://ee.econt.com/services/Shipments/R" targetNamespace="http://ee.econt.com/services/Shipments" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://ee.econt.com/services/Shipments">
+      <xsd:include schemaLocation="schema.xsd" />
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import schemaLocation="R/schema.xsd" namespace="http://ee.econt.com/services/Shipments/R" />
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import schemaLocation="../schema.xsd" namespace="http://ee.econt.com/services" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="requestCourier">
+    <wsdl:part name="request" element="ns1:RequestCourierRequest" />
+  </wsdl:message>
+  <wsdl:message name="requestCourierResponse">
+    <wsdl:part name="RequestCourierResponse" element="ns1:RequestCourierResponse" />
+  </wsdl:message>
+  <wsdl:message name="RequestCourierError">
+    <wsdl:part name="Error" element="ns2:Error" />
+  </wsdl:message>
+  <wsdl:message name="getShipmentStatuses">
+    <wsdl:part name="request" element="ns1:GetShipmentStatusesRequest" />
+  </wsdl:message>
+  <wsdl:message name="getShipmentStatusesResponse">
+    <wsdl:part name="GetShipmentStatusesResponse" element="ns1:GetShipmentStatusesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetShipmentStatusesError">
+    <wsdl:part name="Error" element="ns2:Error" />
+  </wsdl:message>
+  <wsdl:message name="getRequestCourierStatus">
+    <wsdl:part name="request" element="ns1:GetRequestCourierStatusRequest" />
+  </wsdl:message>
+  <wsdl:message name="getRequestCourierStatusResponse">
+    <wsdl:part name="GetRequestCourierStatusResponse" element="ns1:GetRequestCourierStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRequestCourierStatusError">
+    <wsdl:part name="Error" element="ns2:Error" />
+  </wsdl:message>
+  <wsdl:portType name="ShipmentService">
+    <wsdl:operation name="requestCourier">
+      <wsdl:documentation>Method for requesting courier</wsdl:documentation>
+      <wsdl:input message="tns:requestCourier" />
+      <wsdl:output message="tns:requestCourierResponse" />
+      <wsdl:fault name="RequestCourierError" message="tns:RequestCourierError" />
+    </wsdl:operation>
+    <wsdl:operation name="getShipmentStatuses">
+      <wsdl:documentation>Method for requesting information about the statuses of a shipment</wsdl:documentation>
+      <wsdl:input message="tns:getShipmentStatuses" />
+      <wsdl:output message="tns:getShipmentStatusesResponse" />
+      <wsdl:fault name="GetShipmentStatusesError" message="tns:GetShipmentStatusesError" />
+    </wsdl:operation>
+    <wsdl:operation name="getRequestCourierStatus">
+      <wsdl:input message="tns:getRequestCourierStatus" />
+      <wsdl:output message="tns:getRequestCourierStatusResponse" />
+      <wsdl:fault name="GetRequestCourierStatusError" message="tns:GetRequestCourierStatusError" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ShipmentServiceBinding" type="tns:ShipmentService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="requestCourier">
+      <soap:operation soapAction="requestCourier" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RequestCourierError">
+        <soap:fault use="literal" name="RequestCourierError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getShipmentStatuses">
+      <soap:operation soapAction="getShipmentStatuses" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GetShipmentStatusesError">
+        <soap:fault use="literal" name="GetShipmentStatusesError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getRequestCourierStatus">
+      <soap:operation soapAction="getRequestCourierStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GetRequestCourierStatusError">
+        <soap:fault use="literal" name="GetRequestCourierStatusError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ShipmentService">
+    <wsdl:port name="ShipmentService" binding="tns:ShipmentServiceBinding">
+      <soap:address location="http://ee.econt.com/services/Shipments/ShipmentService.soap" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

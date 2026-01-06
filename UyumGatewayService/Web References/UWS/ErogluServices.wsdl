@@ -1,0 +1,1766 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="LeaveInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="tns:Token" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Token">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BranchCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="BranchId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CoId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="BranchDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DeviceId" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="LeaveInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LeaveInfoResult" type="tns:ServiceResultOfArrayOfLeaveResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ServiceResultOfArrayOfLeaveResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Result" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Value" type="tns:ArrayOfLeaveResult" />
+          <s:element minOccurs="1" maxOccurs="1" name="PageIndex" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalPage" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfLeaveResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="LeaveResult" nillable="true" type="tns:LeaveResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="LeaveResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="EmployeeId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="LeaveCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LeaveTypeId" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="StartDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="EndDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StartTime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EndTime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LeaveType" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Timeorday" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Flag" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="OrgOverTimeInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="tns:Token" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OrgOverTimeInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OrgOverTimeInfoResult" type="tns:ServiceResultOfArrayOfOrgOverTimeResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ServiceResultOfArrayOfOrgOverTimeResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Result" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Value" type="tns:ArrayOfOrgOverTimeResult" />
+          <s:element minOccurs="1" maxOccurs="1" name="PageIndex" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalPage" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfOrgOverTimeResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="OrgOverTimeResult" nillable="true" type="tns:OrgOverTimeResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OrgOverTimeResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="EmployeeId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MasterId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DetailId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="FmDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="StartTime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EndTime" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Service" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="Meal" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Flag" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SavePayroll">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Context" type="tns:UyumServiceRequestOfPayrollInParam" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UyumServiceRequestOfPayrollInParam">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Token" type="tns:UyumToken" />
+          <s:element minOccurs="0" maxOccurs="1" name="Value" type="tns:PayrollInParam" />
+          <s:element minOccurs="1" maxOccurs="1" name="Top" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PageIndex" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PageSize" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="UyumToken">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PayrollInParam">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="RegisterCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="EmpDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="WorkDay" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="WeekEnd" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="GeneralHoliday" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="AbsentDay" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="OverTimeWeekDay" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="OverTimeWeekEnd" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="WorkHour" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="WorkHourReasonCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="WpCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PayrollYear" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PayrollMonth" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PayrollTypeId" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SavePayrollResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SavePayrollResult" type="tns:ServiceResultOfBoolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ServiceResultOfBoolean">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Result" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="Value" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="PageIndex" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalPage" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SaveInvoice">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Context" type="tns:UyumServiceRequestOfInvoiceDef" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UyumServiceRequestOfInvoiceDef">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Token" type="tns:UyumToken" />
+          <s:element minOccurs="0" maxOccurs="1" name="Value" type="tns:InvoiceDef" />
+          <s:element minOccurs="1" maxOccurs="1" name="Top" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PageIndex" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PageSize" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="InvoiceDef">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:TransactionalMasterFields">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="TaxNo" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="EntityId" nillable="true" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="CardType" type="tns:CardType" />
+              <s:element minOccurs="1" maxOccurs="1" name="MCardId" nillable="true" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="CardCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="VoucherNo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="VoucherSerial" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsChangeVat" nillable="true" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="EntityInfo" type="tns:EntityDef" />
+              <s:element minOccurs="1" maxOccurs="1" name="Latitude" nillable="true" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="Longitude" nillable="true" type="s:decimal" />
+              <s:element minOccurs="0" maxOccurs="1" name="SourceGuid" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="AmtDiscTotal" nillable="true" type="s:decimal" />
+              <s:element minOccurs="0" maxOccurs="1" name="Details" type="tns:ArrayOfInvoiceDetailDef" />
+              <s:element minOccurs="1" maxOccurs="1" name="EInvoiceProfile" nillable="true" type="tns:InvoiceProfile" />
+              <s:element minOccurs="0" maxOccurs="1" name="CashDocTraCode" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="CashDocTraId" nillable="true" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsCashInvoice" nillable="true" type="tns:CashInvoiceType" />
+              <s:element minOccurs="1" maxOccurs="1" name="CashCardType" nillable="true" type="tns:CardType" />
+              <s:element minOccurs="0" maxOccurs="1" name="CashCardCode" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="CashCardId" nillable="true" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="CashCardIntgId" nillable="true" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="CashCardIntgCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="GuID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="EDocNo" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsLocalCurAction" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="ForceAmtReceipt" nillable="true" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="DontControlnegative" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="CardIntgId" nillable="true" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="CardIntgCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SipID" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="TransactionalMasterFields">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:MasterFields">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="DocTraId" nillable="true" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="DocTraCode" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="AmtVatTra" nillable="true" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="AmtVat" nillable="true" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="AmtTra" nillable="true" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="Amt" nillable="true" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="AmtReceiptTra" nillable="true" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="AmtReceipt" nillable="true" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="AmtRoundTra" nillable="true" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="AmtRound" nillable="true" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="CurTra" type="s:decimal" />
+              <s:element minOccurs="0" maxOccurs="1" name="CurCode" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="CurId" nillable="true" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="CurRateTypeId" nillable="true" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="DueDate" nillable="true" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="DueDay" nillable="true" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="ShippingDate" nillable="true" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="DeliveryDate" nillable="true" type="s:dateTime" />
+              <s:element minOccurs="0" maxOccurs="1" name="SalesPersonCode" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="SalesPersonId" nillable="true" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="PaymentPlanMId" nillable="true" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="PaymentPlanCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TransportTypeCode" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="TransportTypeId" nillable="true" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="TransporterCode" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="TransporterId" nillable="true" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="IncotermsId" nillable="true" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="IncotermsName" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="PaymentMethodId" nillable="true" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="PaymentMethodCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="GnlNote1" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="GnlNote2" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="GnlNote3" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="GnlNote4" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="GnlNote5" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="GnlNote6" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="GnlNote7" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="GnlNote8" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="GnlNote9" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="GnlNote10" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Address1" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Address2" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Address3" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="CityId" nillable="true" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="TownId" nillable="true" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="CountyId" nillable="true" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="ShippingAddress1" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ShippingAddress2" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ShippingAddress3" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="ShippingCityId" nillable="true" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="ShippingTownId" nillable="true" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="ShippingCountyId" nillable="true" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="ShippingEntityCode" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="ShippingEntityId" nillable="true" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="CoEntityAddressId" nillable="true" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="WebAddress" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FamilyName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsDocDifferentCur" nillable="true" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="ZipCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ShippingZipCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="VehicleCode" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="VehicleId" nillable="true" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="DriverIdentifyNo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DriverGsmNo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ShippingDesc1" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TransportEquipment" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DriverFamilyName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="LicencePlate" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="Disc0Id" nillable="true" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="DiscCode0" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="Disc0Rate" nillable="true" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="AmtDisc0Tra" nillable="true" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="DiscCalcType0" nillable="true" type="tns:DiscTypes" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="MasterFields">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CoId" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CoCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="BranchId" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="BranchCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DocDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="DocNo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DocNumberDId" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CatCode1Id" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CatCode1" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CatCode2Id" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CatCode2" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SourceApp" type="tns:SourceApplication" />
+          <s:element minOccurs="1" maxOccurs="1" name="SourceApp2" nillable="true" type="tns:SourceApplication" />
+          <s:element minOccurs="1" maxOccurs="1" name="SourceApp3" nillable="true" type="tns:SourceApplication" />
+          <s:element minOccurs="1" maxOccurs="1" name="SourceMId" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SourceDId" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Controller" type="tns:DocController" />
+          <s:element minOccurs="0" maxOccurs="1" name="Note1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Note2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Note3" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreateUserId" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CurrencyOption" nillable="true" type="tns:CurrencyOption" />
+          <s:element minOccurs="0" maxOccurs="1" name="EntityOrderNo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="EntityOrderDate" nillable="true" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="SourceApplication">
+        <s:restriction base="s:string">
+          <s:enumeration value="Muhasebe" />
+          <s:enumeration value="Fatura" />
+          <s:enumeration value="GrupİçiFatura" />
+          <s:enumeration value="KapalıFatura" />
+          <s:enumeration value="eFatura" />
+          <s:enumeration value="eFaturaSözleşme" />
+          <s:enumeration value="BağımsızSeri" />
+          <s:enumeration value="Stok" />
+          <s:enumeration value="GrupİçiStokGiriş" />
+          <s:enumeration value="HizliStokSarfiyat" />
+          <s:enumeration value="TalepFormu" />
+          <s:enumeration value="ElTerminali" />
+          <s:enumeration value="Raf" />
+          <s:enumeration value="Ambalaj" />
+          <s:enumeration value="AmbalajCozme" />
+          <s:enumeration value="AmbalajSayim" />
+          <s:enumeration value="Finans" />
+          <s:enumeration value="GrupİçiFinans" />
+          <s:enumeration value="GrupİçiGönder" />
+          <s:enumeration value="GrupİçiKabul" />
+          <s:enumeration value="KDVMahsupOlustur" />
+          <s:enumeration value="FinansKurDeğerleme" />
+          <s:enumeration value="MuhasebeKurDeğerleme" />
+          <s:enumeration value="MuhasebeYansıtma" />
+          <s:enumeration value="BankaTalimat" />
+          <s:enumeration value="SabitKiymet" />
+          <s:enumeration value="SabitKıymetSevk" />
+          <s:enumeration value="SabitKıymetKabul" />
+          <s:enumeration value="MuhasebeFarkYansıtma" />
+          <s:enumeration value="MuhasebeKonsolide" />
+          <s:enumeration value="MuhasebeOtomatikKonsolide" />
+          <s:enumeration value="BankaTalimatT" />
+          <s:enumeration value="BankaTalimatFby" />
+          <s:enumeration value="ÇekSenet" />
+          <s:enumeration value="ÇekSenetGiriş" />
+          <s:enumeration value="ÇekSenetÇıkış" />
+          <s:enumeration value="ÇekSenetTahsil" />
+          <s:enumeration value="ÇekSenetİade" />
+          <s:enumeration value="ÇekSenetDegerleme" />
+          <s:enumeration value="SenetGiris" />
+          <s:enumeration value="SenetCikis" />
+          <s:enumeration value="SenetTahsil" />
+          <s:enumeration value="SenetIade" />
+          <s:enumeration value="CekSenetVirman" />
+          <s:enumeration value="Teminat" />
+          <s:enumeration value="Tmekiade" />
+          <s:enumeration value="TmekKOdeme" />
+          <s:enumeration value="Kredi" />
+          <s:enumeration value="KrediÖdeme" />
+          <s:enumeration value="KrediFaizÖdeme" />
+          <s:enumeration value="RotatifKredi" />
+          <s:enumeration value="RotatifKrediÖdeme" />
+          <s:enumeration value="KrediKurFarkı" />
+          <s:enumeration value="Leasing" />
+          <s:enumeration value="LeasingÖdeme" />
+          <s:enumeration value="KrediKist" />
+          <s:enumeration value="KrediÖdemeT" />
+          <s:enumeration value="Mevduat" />
+          <s:enumeration value="MevduatÖdeme" />
+          <s:enumeration value="MaliyetFarkMahsubu" />
+          <s:enumeration value="LeasingKurDegerleme" />
+          <s:enumeration value="KrediVirman" />
+          <s:enumeration value="SatınalmaTalebi" />
+          <s:enumeration value="SatınalmaTeklifi" />
+          <s:enumeration value="SatınalmaSiparişi" />
+          <s:enumeration value="GrupİçiSatınalmaSiparişi" />
+          <s:enumeration value="GrupİçiSatışSiparişi" />
+          <s:enumeration value="Grupİçiİrsaliye" />
+          <s:enumeration value="SatınalmaSiparişiSGML" />
+          <s:enumeration value="OzonSiparişAnalizi" />
+          <s:enumeration value="OzonReklamasyonSiparis" />
+          <s:enumeration value="OzonMamulUretimKontrol" />
+          <s:enumeration value="OzonInspection" />
+          <s:enumeration value="SatınalmaTalebSGML" />
+          <s:enumeration value="VadeFarkı" />
+          <s:enumeration value="SatışTeklifi" />
+          <s:enumeration value="SatışSiparişi" />
+          <s:enumeration value="SatışTahmini" />
+          <s:enumeration value="TeklifDegerlendirme" />
+          <s:enumeration value="StokMaliyeti" />
+          <s:enumeration value="SmmMahsubu" />
+          <s:enumeration value="SevkEmri" />
+          <s:enumeration value="UretimMaliyeti" />
+          <s:enumeration value="MalTalep" />
+          <s:enumeration value="MalTalepSevk" />
+          <s:enumeration value="MalTalepKabul" />
+          <s:enumeration value="MalTalepPlanlama" />
+          <s:enumeration value="SeriliMalTalep" />
+          <s:enumeration value="KaliteYönetimi" />
+          <s:enumeration value="KaliteDökümanları" />
+          <s:enumeration value="Ppap" />
+          <s:enumeration value="Döf" />
+          <s:enumeration value="Uygunsuzluk" />
+          <s:enumeration value="GirişKalite" />
+          <s:enumeration value="SüreçKalite" />
+          <s:enumeration value="SonKalite" />
+          <s:enumeration value="KontrolFormu" />
+          <s:enumeration value="TedarikciDegerlendirme" />
+          <s:enumeration value="Spc" />
+          <s:enumeration value="Üretim" />
+          <s:enumeration value="İşemri" />
+          <s:enumeration value="MPS" />
+          <s:enumeration value="MRP" />
+          <s:enumeration value="MRPOneri" />
+          <s:enumeration value="UretimGirisi" />
+          <s:enumeration value="OnMaliyet" />
+          <s:enumeration value="Konfigüratör" />
+          <s:enumeration value="UrunGiris" />
+          <s:enumeration value="UrunHurdaGiris" />
+          <s:enumeration value="UrunYenidenIslemGiris" />
+          <s:enumeration value="UrunYenidenIslemCikis" />
+          <s:enumeration value="YenidenIslemGiris" />
+          <s:enumeration value="YenidenIslemTransfer" />
+          <s:enumeration value="MalzemeCikis" />
+          <s:enumeration value="MalzemeHurdaGiris" />
+          <s:enumeration value="MalzemeYenidenIslemGiris" />
+          <s:enumeration value="MRPScenario" />
+          <s:enumeration value="YanUrunGiris" />
+          <s:enumeration value="YanUrunHurdaGiris" />
+          <s:enumeration value="YanUrunYenidenIslemGiris" />
+          <s:enumeration value="AlternatifStok" />
+          <s:enumeration value="UrunHurdaTransfer" />
+          <s:enumeration value="FarkliKodlaHurdaGiris" />
+          <s:enumeration value="FarkliKodlaYenidenIslemGiris" />
+          <s:enumeration value="MalzemeTransferi" />
+          <s:enumeration value="FasonaMalzemeGonderimi" />
+          <s:enumeration value="MalzemeTuketimi" />
+          <s:enumeration value="DemonteUrunGiris" />
+          <s:enumeration value="DemonteUrunHurdaGiris" />
+          <s:enumeration value="DemonteUrunYenidenIslemGiris" />
+          <s:enumeration value="InverseUrunGiris" />
+          <s:enumeration value="InverseUrunHurdaGiris" />
+          <s:enumeration value="UretimMiktarDuzeltme" />
+          <s:enumeration value="BagimsizHurdaVeSarfiyat" />
+          <s:enumeration value="TopluBagimsizHurdaVeSarfiyat" />
+          <s:enumeration value="OcakUretim" />
+          <s:enumeration value="MermerUretim" />
+          <s:enumeration value="Konfigurator" />
+          <s:enumeration value="DemetKalite" />
+          <s:enumeration value="OrtakÜretim" />
+          <s:enumeration value="YenidenUretim" />
+          <s:enumeration value="YenidenUretimCikis" />
+          <s:enumeration value="Bütçe" />
+          <s:enumeration value="SatışBütçesi" />
+          <s:enumeration value="SatınalmaBütçesi" />
+          <s:enumeration value="MasrafBütçesi" />
+          <s:enumeration value="YatırımBütçesi" />
+          <s:enumeration value="AnalitikBütçe" />
+          <s:enumeration value="AmortismanBütçesi" />
+          <s:enumeration value="SatınalmaMaliyetleriBütçesi" />
+          <s:enumeration value="ÜretimMaliyetleriBütçesi" />
+          <s:enumeration value="SatışTahsilatBütçesi" />
+          <s:enumeration value="SatınalmaÖdemeBütçesi" />
+          <s:enumeration value="MasrafÖdemeBütçesi" />
+          <s:enumeration value="YatırımÖdemeBütçesi" />
+          <s:enumeration value="TalepTahminleri" />
+          <s:enumeration value="CRMSatisTeklif" />
+          <s:enumeration value="CRMKontak" />
+          <s:enumeration value="CRMMüşteri" />
+          <s:enumeration value="CRMFırsat" />
+          <s:enumeration value="CRMIs" />
+          <s:enumeration value="CRMServisAktivitesi" />
+          <s:enumeration value="CRMTalep" />
+          <s:enumeration value="CRMWeb" />
+          <s:enumeration value="CRMMusteriAday" />
+          <s:enumeration value="CRMHaberdaret" />
+          <s:enumeration value="CRMSatisFaaliyet" />
+          <s:enumeration value="CRMSatisFaaliyetPlan" />
+          <s:enumeration value="CRMAktivite" />
+          <s:enumeration value="CRMKampanyaYonetimi" />
+          <s:enumeration value="CRMKampanya2" />
+          <s:enumeration value="SosyalMedya" />
+          <s:enumeration value="Duyuru" />
+          <s:enumeration value="CRMDuyuru2" />
+          <s:enumeration value="CRMIsFaaliyet" />
+          <s:enumeration value="CRMIsFaaliyetPlan" />
+          <s:enumeration value="CRMMail" />
+          <s:enumeration value="CRMDiger" />
+          <s:enumeration value="CRMPeriyodikSozlesme" />
+          <s:enumeration value="AnlaşmaYonetimi" />
+          <s:enumeration value="SözleşmeTakibi" />
+          <s:enumeration value="MiktarsalSozlesme" />
+          <s:enumeration value="Quotation" />
+          <s:enumeration value="TartimFisi" />
+          <s:enumeration value="KantarFisi" />
+          <s:enumeration value="MalzemeEkspertiz" />
+          <s:enumeration value="KantarOdemeFisi" />
+          <s:enumeration value="KantarTerminal" />
+          <s:enumeration value="OnayliStok" />
+          <s:enumeration value="B2CDiscCoupon" />
+          <s:enumeration value="B2CSiparis" />
+          <s:enumeration value="BakimYonetimi" />
+          <s:enumeration value="TeknikServis" />
+          <s:enumeration value="ÜrünKabulSSH" />
+          <s:enumeration value="ÇağrıSSH" />
+          <s:enumeration value="MalzemeTalep" />
+          <s:enumeration value="GeciciUrun" />
+          <s:enumeration value="TeslimSSH" />
+          <s:enumeration value="IsEmriSSH" />
+          <s:enumeration value="ServisFormu" />
+          <s:enumeration value="UrunDegisimSSH" />
+          <s:enumeration value="IsEmriMalzemeCikis" />
+          <s:enumeration value="OtoServis" />
+          <s:enumeration value="BakimSozlesmeSSH" />
+          <s:enumeration value="PeriyodikSozlesme" />
+          <s:enumeration value="TeknikServisMasraf" />
+          <s:enumeration value="TopluEmriGiris" />
+          <s:enumeration value="TeslimDetaySSH" />
+          <s:enumeration value="UrunParcalama" />
+          <s:enumeration value="UrunToplama" />
+          <s:enumeration value="Mağaza" />
+          <s:enumeration value="ParekendeSatisFisi" />
+          <s:enumeration value="MagazacilikKasalarArasiTransfer" />
+          <s:enumeration value="MagazacilikParaPuanTransfer" />
+          <s:enumeration value="MagazacilikPosTransfer" />
+          <s:enumeration value="MagazacilikSaticiPirimTransfer" />
+          <s:enumeration value="MagazacilikAcikHesapTaksitliIslem" />
+          <s:enumeration value="OnOdeme" />
+          <s:enumeration value="MagazacilikMobil" />
+          <s:enumeration value="PosTransfer" />
+          <s:enumeration value="İhaleYönetimi" />
+          <s:enumeration value="Yoy" />
+          <s:enumeration value="CCNBPayment" />
+          <s:enumeration value="CCNBFinD" />
+          <s:enumeration value="CCNBLegal" />
+          <s:enumeration value="CCNBDebt" />
+          <s:enumeration value="CCNBDeposit" />
+          <s:enumeration value="CCNBCounterM" />
+          <s:enumeration value="CCNBCounterMService" />
+          <s:enumeration value="NTNUretim" />
+          <s:enumeration value="NTNSayimFarki" />
+          <s:enumeration value="TrackingCard" />
+          <s:enumeration value="CCNBCounterMQrService" />
+          <s:enumeration value="ToplantiTutanagi" />
+          <s:enumeration value="Mustahsil" />
+          <s:enumeration value="GiderPusulası" />
+          <s:enumeration value="SMMustahsil" />
+          <s:enumeration value="DepoSayim" />
+          <s:enumeration value="Transfer" />
+          <s:enumeration value="İrsaliye" />
+          <s:enumeration value="KitHazirlama" />
+          <s:enumeration value="KitBozma" />
+          <s:enumeration value="Eğitim" />
+          <s:enumeration value="HBYS" />
+          <s:enumeration value="HBYS_GunSonuFatura" />
+          <s:enumeration value="HBYS_AySonuFatura" />
+          <s:enumeration value="HBYS_AySonuTahakkuk" />
+          <s:enumeration value="HemaSoft" />
+          <s:enumeration value="Bağış" />
+          <s:enumeration value="DTS" />
+          <s:enumeration value="NakitBağış" />
+          <s:enumeration value="KurbanBağışı" />
+          <s:enumeration value="BağışçıKartı" />
+          <s:enumeration value="ÜrünBağışı" />
+          <s:enumeration value="AdakBagisi" />
+          <s:enumeration value="UrunSatisi" />
+          <s:enumeration value="AyniBagisTaahhut" />
+          <s:enumeration value="AyniBagisKabul" />
+          <s:enumeration value="AyniBagisTasnif" />
+          <s:enumeration value="AyniBagisDagitim" />
+          <s:enumeration value="NakitBağışDağıtım" />
+          <s:enumeration value="İhtiyaçSahibiKartı" />
+          <s:enumeration value="Nakdi" />
+          <s:enumeration value="Ayni" />
+          <s:enumeration value="MenkulKıymet" />
+          <s:enumeration value="SabitKiymetBagis" />
+          <s:enumeration value="NakitTaahhut" />
+          <s:enumeration value="SabitKiymetTaahhut" />
+          <s:enumeration value="MenkulKıymetHisse" />
+          <s:enumeration value="MenkulKıymetTahvil" />
+          <s:enumeration value="MenkulKıymetBono" />
+          <s:enumeration value="MenkulKıymetAltın" />
+          <s:enumeration value="MalHazırlama" />
+          <s:enumeration value="MalHazırlamaSevk" />
+          <s:enumeration value="İthalat" />
+          <s:enumeration value="İthalatMasraf" />
+          <s:enumeration value="DövizTransferİşlem" />
+          <s:enumeration value="İthalatMaliyet" />
+          <s:enumeration value="İhracat" />
+          <s:enumeration value="İhracatMasraf" />
+          <s:enumeration value="İhracatMaliyet" />
+          <s:enumeration value="DövizAlımİşlem" />
+          <s:enumeration value="İhracatKurDegerleme" />
+          <s:enumeration value="Arbitraj" />
+          <s:enumeration value="KrediTahakkuk" />
+          <s:enumeration value="Aktivasyon" />
+          <s:enumeration value="IndustryVirman" />
+          <s:enumeration value="Amortisman" />
+          <s:enumeration value="SKiymet" />
+          <s:enumeration value="Deger_Dusuklugu" />
+          <s:enumeration value="SabitKiymetCikis" />
+          <s:enumeration value="İnsanKaynakları" />
+          <s:enumeration value="İnsanKaynaklarıExcel" />
+          <s:enumeration value="İnsanKaynaklarıGorev" />
+          <s:enumeration value="İnsanKaynaklarıDeneme" />
+          <s:enumeration value="Hakedis" />
+          <s:enumeration value="OnayliPersonelGirisi" />
+          <s:enumeration value="Personel" />
+          <s:enumeration value="OrganizasyonKarMerkezi" />
+          <s:enumeration value="Sicil" />
+          <s:enumeration value="FazlaMesai" />
+          <s:enumeration value="PdksGirisOzel" />
+          <s:enumeration value="TopluÜcretArtışı" />
+          <s:enumeration value="ÖdülCeza" />
+          <s:enumeration value="İK_Geçişler" />
+          <s:enumeration value="İK_Toplu_Geçiş" />
+          <s:enumeration value="PuantajDevri" />
+          <s:enumeration value="PdksAktarımı" />
+          <s:enumeration value="ÇıkışMülakat" />
+          <s:enumeration value="Mülakat" />
+          <s:enumeration value="EğitimDeğerlendirme" />
+          <s:enumeration value="KurFarkı" />
+          <s:enumeration value="Sicil_Aktarımı" />
+          <s:enumeration value="Avans" />
+          <s:enumeration value="TaksitliBorç" />
+          <s:enumeration value="İzin" />
+          <s:enumeration value="Ücret_Skalası" />
+          <s:enumeration value="Kazanç_Kesinti" />
+          <s:enumeration value="Vizite" />
+          <s:enumeration value="Puantaj" />
+          <s:enumeration value="İsyeriHekimliği" />
+          <s:enumeration value="ReferansArastirma" />
+          <s:enumeration value="SIMSipariş" />
+          <s:enumeration value="İsemriFason" />
+          <s:enumeration value="FasonFisi" />
+          <s:enumeration value="İsemriFasonHammadde" />
+          <s:enumeration value="FasonGonderimAlimHareketi" />
+          <s:enumeration value="FGA_OperasyonelGonderim" />
+          <s:enumeration value="FGA_FasondanFasonaOperasyonelGonderim" />
+          <s:enumeration value="FGA_SatinalmaSipMalzGonderim" />
+          <s:enumeration value="FGA_IsEmriMalzGonderim" />
+          <s:enumeration value="FGA_BagimsizMalzGonderim" />
+          <s:enumeration value="FGA_KabulIrsaliyesi" />
+          <s:enumeration value="FGA_KabulVeIadeIrsaliyesi" />
+          <s:enumeration value="FGA_IadeIrsaliyesi" />
+          <s:enumeration value="FGA_OperasyonelIrsaliyesizGonderim" />
+          <s:enumeration value="IsEmriMalzemeTalep" />
+          <s:enumeration value="DegisiklikTalebi" />
+          <s:enumeration value="GayrimenkulTahakkuk" />
+          <s:enumeration value="GayrimenkulTahsilat" />
+          <s:enumeration value="GayrimenkulSozlesme" />
+          <s:enumeration value="GayrimenkulHareket" />
+          <s:enumeration value="GayrimenkulExpertiz" />
+          <s:enumeration value="Akademi" />
+          <s:enumeration value="PesinOdenenGiderler" />
+          <s:enumeration value="DevremulkYildat" />
+          <s:enumeration value="DevremulkKiraKaydi" />
+          <s:enumeration value="DevremulkKomisyon" />
+          <s:enumeration value="SigortaPolicesi" />
+          <s:enumeration value="GayrimenkulCiroPrimi" />
+          <s:enumeration value="OSBElektrik" />
+          <s:enumeration value="OSBSu" />
+          <s:enumeration value="OSBGaz" />
+          <s:enumeration value="OSBInternet" />
+          <s:enumeration value="OSBAidat" />
+          <s:enumeration value="OSBVukuat" />
+          <s:enumeration value="OSBAmbulans" />
+          <s:enumeration value="OSBToplantiOdasi" />
+          <s:enumeration value="OSBSikayetTalep" />
+          <s:enumeration value="OSBDenetimIslemleri" />
+          <s:enumeration value="OSBKaziIzni" />
+          <s:enumeration value="OSBRuhsatYapi" />
+          <s:enumeration value="OSBArsaAidat" />
+          <s:enumeration value="OSBGecikmeFaizi" />
+          <s:enumeration value="OSBCevreYonetim" />
+          <s:enumeration value="OSBIsyeriAcma" />
+          <s:enumeration value="OSBYapiRuhsati" />
+          <s:enumeration value="OSBYikimRuhsati" />
+          <s:enumeration value="OSBCapVeYolKotu" />
+          <s:enumeration value="OSBAsansorIzni" />
+          <s:enumeration value="OSBTemizlikTamirTakibi" />
+          <s:enumeration value="OSBEvrakKayit" />
+          <s:enumeration value="OSBLabTalepKayit" />
+          <s:enumeration value="OSBIskan" />
+          <s:enumeration value="OSBRutinIslemler" />
+          <s:enumeration value="OSBAtikTakibi" />
+          <s:enumeration value="OSBCopKonteynerTakip" />
+          <s:enumeration value="OSBIsTakibi" />
+          <s:enumeration value="OSBTahsilat" />
+          <s:enumeration value="OSBAnket" />
+          <s:enumeration value="OSBAidat2" />
+          <s:enumeration value="OSBHizmet" />
+          <s:enumeration value="OSBElektrikBaglanti" />
+          <s:enumeration value="OSBArsaTahsis" />
+          <s:enumeration value="OSBArsaTahsisTahsilat" />
+          <s:enumeration value="KartEntegre" />
+          <s:enumeration value="B2B" />
+          <s:enumeration value="StokDönüştürme" />
+          <s:enumeration value="StokDönüştürmeÇıkış" />
+          <s:enumeration value="StokDönüştürmeGiriş" />
+          <s:enumeration value="MasrafYonetimi" />
+          <s:enumeration value="MasrafYonetimiPersonel" />
+          <s:enumeration value="MasrafYonetimiYansitma" />
+          <s:enumeration value="FLMTeslimatPlani" />
+          <s:enumeration value="FLMKiraSozlesmesi" />
+          <s:enumeration value="FLMKiraTeklifi" />
+          <s:enumeration value="FLMSatinAlmaTeklifi" />
+          <s:enumeration value="FLMTrafikCezalari" />
+          <s:enumeration value="FLMServisIslemleri" />
+          <s:enumeration value="FLMOGSIslemleri" />
+          <s:enumeration value="FLMDigerIslemler" />
+          <s:enumeration value="FLMRezervasyon" />
+          <s:enumeration value="İpotekGiris" />
+          <s:enumeration value="İpotekIade" />
+          <s:enumeration value="Sepet" />
+          <s:enumeration value="MasrafGiris" />
+          <s:enumeration value="MalzemeListesi" />
+          <s:enumeration value="FaturaMaliyet" />
+          <s:enumeration value="OgrenciYonetimi" />
+          <s:enumeration value="OgrenciFatura" />
+          <s:enumeration value="OgrenciBankaVirman" />
+          <s:enumeration value="Ogrenciİade" />
+          <s:enumeration value="OgrenciCariVirman" />
+          <s:enumeration value="HesapPlan" />
+          <s:enumeration value="CariKart" />
+          <s:enumeration value="BankaKart" />
+          <s:enumeration value="KasaKart" />
+          <s:enumeration value="StokKart" />
+          <s:enumeration value="LMSLandAgreement" />
+          <s:enumeration value="LMSLandGoods" />
+          <s:enumeration value="LMSLandTransport" />
+          <s:enumeration value="LMSCustPayOff" />
+          <s:enumeration value="LMSMaterialTransaction" />
+          <s:enumeration value="LMSInvoice" />
+          <s:enumeration value="LMSWaybill" />
+          <s:enumeration value="LMSFin" />
+          <s:enumeration value="LMSMalzemeFisi" />
+          <s:enumeration value="LMSOlayFisi" />
+          <s:enumeration value="HamaddeRezervasyon" />
+          <s:enumeration value="SipariseGerekenMalzemeler" />
+          <s:enumeration value="projeCezaSebep" />
+          <s:enumeration value="Proje_Yönetimi" />
+          <s:enumeration value="Proje_Aktivite" />
+          <s:enumeration value="İşAvans" />
+          <s:enumeration value="İşAvansOdeme" />
+          <s:enumeration value="İşAvansFin" />
+          <s:enumeration value="Proje_İlerleme" />
+          <s:enumeration value="Proje_Taşeron_Hakediş" />
+          <s:enumeration value="Proje_Satış" />
+          <s:enumeration value="Proje_Alış" />
+          <s:enumeration value="Proje_Müşteri_Hakediş" />
+          <s:enumeration value="Proje_Teklif" />
+          <s:enumeration value="Proje_Taşeron_Sözleşme" />
+          <s:enumeration value="Proje_Müşteri_Sözleşme" />
+          <s:enumeration value="YuklemeTalimati" />
+          <s:enumeration value="SicakSatis" />
+          <s:enumeration value="SicakSatisYukleme" />
+          <s:enumeration value="INZAriza" />
+          <s:enumeration value="KEGMEntegration" />
+          <s:enumeration value="StokRezerveTransfer" />
+          <s:enumeration value="TINAEntegration" />
+          <s:enumeration value="KgmKiyiBasvuru" />
+          <s:enumeration value="KgmKiyiHizmet" />
+          <s:enumeration value="KgmKiyiHizmetDetay" />
+          <s:enumeration value="KgmKiyiVukuat" />
+          <s:enumeration value="KgmKiyiİstihkak" />
+          <s:enumeration value="KgmKiyiDagitim" />
+          <s:enumeration value="KgmYagYakitTransfer" />
+          <s:enumeration value="KgmKiyiJurnal" />
+          <s:enumeration value="KgmRuhsatDeniz" />
+          <s:enumeration value="KgmKilavuzKaptan" />
+          <s:enumeration value="KgmRuhsatHava" />
+          <s:enumeration value="KgmAbone" />
+          <s:enumeration value="KgmRuhsatKaraDeniz" />
+          <s:enumeration value="KgmRuhsatKaraHava" />
+          <s:enumeration value="KgmGemiTiket" />
+          <s:enumeration value="KgmRuhsatCihaz" />
+          <s:enumeration value="KgmDenizHaberleşme" />
+          <s:enumeration value="KgmDepozito" />
+          <s:enumeration value="KgmBill" />
+          <s:enumeration value="KgmHizmet" />
+          <s:enumeration value="Melbusat" />
+          <s:enumeration value="KgmPlan" />
+          <s:enumeration value="KgmRuhsatYazdirma" />
+          <s:enumeration value="KgmFenerFaturasi" />
+          <s:enumeration value="KgmFenerFaizFaturasi" />
+          <s:enumeration value="KgmLritFaturasi" />
+          <s:enumeration value="KgmFenerDekontGirisi" />
+          <s:enumeration value="KgmRuhsatDenizBasvuru" />
+          <s:enumeration value="KgmRuhsatHavaBasvuru" />
+          <s:enumeration value="KgmRuhsatKaraBasvuru" />
+          <s:enumeration value="KgmRuhsatDenizGuncelleme" />
+          <s:enumeration value="KgmRuhsatHavaGuncelleme" />
+          <s:enumeration value="KgmRuhsatKaraGuncelleme" />
+          <s:enumeration value="KgmInmarsat" />
+          <s:enumeration value="KgmAmator" />
+          <s:enumeration value="KgmAmatorBasvuru" />
+          <s:enumeration value="KgmAmatorBelgeUcret" />
+          <s:enumeration value="KgmKlavuzFaturasi" />
+          <s:enumeration value="KgmFenerModulu" />
+          <s:enumeration value="KgmKlavuzlukModulu" />
+          <s:enumeration value="KgmCihazEkleKaldir" />
+          <s:enumeration value="KgmAmatorBelgeYenilemeUcret" />
+          <s:enumeration value="KgmAmatorSinavİtiraz" />
+          <s:enumeration value="KgmRuhsatNakil" />
+          <s:enumeration value="KgmCihazDevri" />
+          <s:enumeration value="KgmRuhsatSureUzatma" />
+          <s:enumeration value="KgmKlavuzFaizFaturasi" />
+          <s:enumeration value="KgmFenerIadeFaturasi" />
+          <s:enumeration value="KgmRuhsatDenizFaturasi" />
+          <s:enumeration value="KgmRuhsatHavaFaturasi" />
+          <s:enumeration value="KgmRuhsatKaraDenizFaturasi" />
+          <s:enumeration value="KgmRuhsatDenizFaizFaturasi" />
+          <s:enumeration value="KgmRuhsatHavaFaizFaturasi" />
+          <s:enumeration value="KgmRuhsatKaraDenizFaizFaturasi" />
+          <s:enumeration value="KgmHukukGönderimi" />
+          <s:enumeration value="KgmHukukDekontGirisi" />
+          <s:enumeration value="KgmHukukOdemeEslestirme" />
+          <s:enumeration value="KgmIcraTakip" />
+          <s:enumeration value="KgmIcraMuhasebeOnay" />
+          <s:enumeration value="KgmRuhsatKaraHavaFaturasi" />
+          <s:enumeration value="KgmRuhsatKaraHavaFaizFaturasi" />
+          <s:enumeration value="KgmSozlesmeTakibi" />
+          <s:enumeration value="KgmKurumEsasNo" />
+          <s:enumeration value="KgmDenizHaberleşmeFaizFaturası" />
+          <s:enumeration value="KgmFenerManuelTahsilat" />
+          <s:enumeration value="KgmKlvDepozitoDekontGirisi" />
+          <s:enumeration value="KgmYagYakitIrsaliye" />
+          <s:enumeration value="KgmITU" />
+          <s:enumeration value="KgmDenizHaberlesmeDekontGirisi" />
+          <s:enumeration value="KgmTahakkuktanYazdirma" />
+          <s:enumeration value="KgmYagYakitDolum" />
+          <s:enumeration value="KgmSicilArsivNo" />
+          <s:enumeration value="KgmDenizHaberleşmeManuelTahsilat" />
+          <s:enumeration value="KgmKlvTahsilatDekontGirisi" />
+          <s:enumeration value="KgmKlvDepozitoIptal" />
+          <s:enumeration value="KgmOzelEtkinlikBelgesi" />
+          <s:enumeration value="KgmKlavuzIadeFaturasi" />
+          <s:enumeration value="KgmHizmetDuzeltme" />
+          <s:enumeration value="KgmGorevTalepFinans" />
+          <s:enumeration value="KgmGorevTalep" />
+          <s:enumeration value="KgmOnTalepFormu" />
+          <s:enumeration value="KgmHarcırahGirisi" />
+          <s:enumeration value="KgmMutalaGirisi" />
+          <s:enumeration value="KgmYakitYagOnTalepFormu" />
+          <s:enumeration value="KgmHarcırahTransfer" />
+          <s:enumeration value="KgmHarcırahTransferFin" />
+          <s:enumeration value="KgmGemiAtikTalep" />
+          <s:enumeration value="KgmDepozitoIade" />
+          <s:enumeration value="KgmPttGonderilen" />
+          <s:enumeration value="KgmKılavuzKaptanBillGirisi" />
+          <s:enumeration value="KgmRömorkörBillGirisi" />
+          <s:enumeration value="KgmDenizHaberlesmeManuelTahsilat" />
+          <s:enumeration value="KgmAmatörBelge" />
+          <s:enumeration value="KgmHarcırahGirisiFinans" />
+          <s:enumeration value="KgmYagYakitStok" />
+          <s:enumeration value="KgmKaraSicil" />
+          <s:enumeration value="KgmYagYakitIrsaliyeMail" />
+          <s:enumeration value="KgmHarcırahGirisiTransfer" />
+          <s:enumeration value="KgmOdemeEslestirme" />
+          <s:enumeration value="KgmERecete" />
+          <s:enumeration value="KgmHarcırah" />
+          <s:enumeration value="KgmOrdino" />
+          <s:enumeration value="KgmAmatorMebBelgeUcret" />
+          <s:enumeration value="KgmAmatorMebBasvuru" />
+          <s:enumeration value="KgmManuelTahsilat" />
+          <s:enumeration value="KgmAmatorTelsizTahsilat" />
+          <s:enumeration value="BBMDemirbasIslemleri" />
+          <s:enumeration value="FaizGelirTahakkuk" />
+          <s:enumeration value="SrvAktivite" />
+          <s:enumeration value="CekSenetTahsilMasraf" />
+          <s:enumeration value="CekSenetIadeMasraf" />
+          <s:enumeration value="OnFinans" />
+          <s:enumeration value="KullaniciGiris" />
+          <s:enumeration value="OnFinansMobil" />
+          <s:enumeration value="RiskLimitTalep" />
+          <s:enumeration value="OkulYonetimiKitapSatis" />
+          <s:enumeration value="OkulYonetimi" />
+          <s:enumeration value="OkulYonOdemePlani" />
+          <s:enumeration value="OkulYonSözleşme" />
+          <s:enumeration value="OkulYonTesvikFaturasi" />
+          <s:enumeration value="OkulCekEsleme" />
+          <s:enumeration value="SabitKiymetCikisFatura" />
+          <s:enumeration value="DemetBarkod" />
+          <s:enumeration value="BoyutStokBarkod" />
+          <s:enumeration value="TetElektrikAlis" />
+          <s:enumeration value="TetOTVAlis" />
+          <s:enumeration value="TetOTVAlisIade" />
+          <s:enumeration value="MuhasebeTransfer" />
+          <s:enumeration value="TetElektrikSatis" />
+          <s:enumeration value="TetCKPAlis" />
+          <s:enumeration value="MuhasebeTers" />
+          <s:enumeration value="FinansTers" />
+          <s:enumeration value="FaturaTers" />
+          <s:enumeration value="Statistic" />
+          <s:enumeration value="TetHeatFactorAlis" />
+          <s:enumeration value="TetIletim" />
+          <s:enumeration value="TetEntegrasyon" />
+          <s:enumeration value="Konsinye" />
+          <s:enumeration value="KonsinyeIade" />
+          <s:enumeration value="BankaTalimatEmir" />
+          <s:enumeration value="TetGeneralInvoice" />
+          <s:enumeration value="TetCayirhan1" />
+          <s:enumeration value="TetCayirhan2Iade" />
+          <s:enumeration value="TetCayirhan3Iade" />
+          <s:enumeration value="TetDagitim" />
+          <s:enumeration value="TetElektrikAlisIade" />
+          <s:enumeration value="TetIletimIade" />
+          <s:enumeration value="TetDagitimIade" />
+          <s:enumeration value="TetGeneralInvoiceIade" />
+          <s:enumeration value="TetCKPAlisIade" />
+          <s:enumeration value="TetPriceBalance" />
+          <s:enumeration value="TetHeatFactorAlisIade" />
+          <s:enumeration value="TetBalancePurchaseInvoice" />
+          <s:enumeration value="TetBalancePurchaseInvoiceIade" />
+          <s:enumeration value="TetBalanceSalesInvoice" />
+          <s:enumeration value="TetEInvoiceIntg" />
+          <s:enumeration value="FaizFaturası" />
+          <s:enumeration value="TetPurchaseRefundInvoice" />
+          <s:enumeration value="TetSalesGeneralInvoice" />
+          <s:enumeration value="TetSalesGeneralInvoiceIade" />
+          <s:enumeration value="TetCayirhan2" />
+          <s:enumeration value="TetCayirhan3" />
+          <s:enumeration value="TetTeftisPlanlama" />
+          <s:enumeration value="TetTeftisInceleme" />
+          <s:enumeration value="TetTeftisDentTalebi" />
+          <s:enumeration value="TetTeftisKarar" />
+          <s:enumeration value="TetTeftisIfade" />
+          <s:enumeration value="TetTeftisSonMutaala" />
+          <s:enumeration value="TetTeftisTeftis" />
+          <s:enumeration value="TetTeftisMufettis" />
+          <s:enumeration value="TetTeftisSorusturma" />
+          <s:enumeration value="TetTeftisIsTanımı" />
+          <s:enumeration value="TetTeftisIhbar" />
+          <s:enumeration value="TetTeftisMuzekkere" />
+          <s:enumeration value="TetAracMasraf" />
+          <s:enumeration value="TetAracTalep" />
+          <s:enumeration value="TetKiraHesaplama" />
+          <s:enumeration value="TetHakedisOdemeHesaplama" />
+          <s:enumeration value="TetLojman" />
+          <s:enumeration value="TetFinansMali" />
+          <s:enumeration value="PlastmetKalip" />
+          <s:enumeration value="PlastmetHata" />
+          <s:enumeration value="PlastmetIsEmri" />
+          <s:enumeration value="RaporTanimlama" />
+          <s:enumeration value="KonutSatis" />
+          <s:enumeration value="KonutOdeme" />
+          <s:enumeration value="Essn" />
+          <s:enumeration value="Parcalama" />
+          <s:enumeration value="SoybasSatinAlmaGiris" />
+          <s:enumeration value="SoybasSatinAlmaCikis" />
+          <s:enumeration value="IsEmriMalzemeTransfer" />
+          <s:enumeration value="BSKStantYonetimi" />
+          <s:enumeration value="SoybasUretimPlanlama" />
+          <s:enumeration value="IsEmriMalzemeTransferIptal" />
+          <s:enumeration value="UrunDagitim" />
+          <s:enumeration value="KrediTaksitKapama" />
+          <s:enumeration value="MaliMusavir" />
+          <s:enumeration value="CekVadesindekiIslemler" />
+          <s:enumeration value="AltekOSBFatura" />
+          <s:enumeration value="MazlumBoruPlan" />
+          <s:enumeration value="MazlumBoruVardiya" />
+          <s:enumeration value="MazlumBoruRezerve" />
+          <s:enumeration value="ElektraTransfer" />
+          <s:enumeration value="Muhtasar" />
+          <s:enumeration value="MuhasebeYansıtmaOkunacak" />
+          <s:enumeration value="MaliMusavirStoklu" />
+          <s:enumeration value="MaliMusavirMaliyet" />
+          <s:enumeration value="EKOTicari" />
+          <s:enumeration value="SmmmGelirGider" />
+          <s:enumeration value="TermoDepoGiris" />
+          <s:enumeration value="TermoUretim" />
+          <s:enumeration value="SozlesmeRevizyon" />
+          <s:enumeration value="SozlesmeIade" />
+          <s:enumeration value="SozlesmeIndirim" />
+          <s:enumeration value="DFStoreEntg" />
+          <s:enumeration value="HızlıBordro" />
+          <s:enumeration value="HızlıStokHareket" />
+          <s:enumeration value="İstatistik" />
+          <s:enumeration value="EtimagAmbalajTransfer" />
+          <s:enumeration value="EtimagAmbalajHammaddeRezervasyon" />
+          <s:enumeration value="EtimagAmbalajTransferRezervasyon" />
+          <s:enumeration value="EtimagMobilAmbalajUretimGiris" />
+          <s:enumeration value="EtimagMobilAmbalajUretimKalanAmbalaj" />
+          <s:enumeration value="EtimagBobinDilme" />
+          <s:enumeration value="EtimagBobinDilmeKalanAmbalaj" />
+          <s:enumeration value="ErogluWebServis" />
+          <s:enumeration value="AudioAxaptaFatura" />
+          <s:enumeration value="AudioSeriliÜretim" />
+          <s:enumeration value="AudioPaletOlustur" />
+          <s:enumeration value="AudioPaletManuel" />
+          <s:enumeration value="AudioSeriManuel" />
+          <s:enumeration value="AudioSevkEmriSevk" />
+          <s:enumeration value="AudioAmbalajTransfer" />
+          <s:enumeration value="TopluAmbalajTransfer" />
+          <s:enumeration value="AmbalajPaletYapma" />
+          <s:enumeration value="IndustryTaslakUrunAgaci" />
+          <s:enumeration value="BoyutPlastikRenk" />
+          <s:enumeration value="BoyutPlastikIsemri" />
+          <s:enumeration value="NilsonBox" />
+          <s:enumeration value="UyumsoftSozlesmeFatura" />
+          <s:enumeration value="ÜrünTakipSistemi" />
+          <s:enumeration value="TipmedTransfer" />
+          <s:enumeration value="BakimIsEmri" />
+          <s:enumeration value="BakimFaaliyet" />
+          <s:enumeration value="BakimFaaliyetTak" />
+          <s:enumeration value="BakimFaaliyetSök" />
+          <s:enumeration value="PeriyodikBakim" />
+          <s:enumeration value="OlcumGirisi" />
+          <s:enumeration value="BildirimTalep" />
+          <s:enumeration value="KanbanTransfer" />
+          <s:enumeration value="KanbanTuketim" />
+          <s:enumeration value="KlonFaturaKomisyon" />
+          <s:enumeration value="AkdataTransfer" />
+          <s:enumeration value="AcmeMobile" />
+          <s:enumeration value="ElTerminaliReadBarcode" />
+          <s:enumeration value="ElTerminaliSaveBarcode" />
+          <s:enumeration value="DokumanGirisi" />
+          <s:enumeration value="ElTerminaliIsEmriMalTalepTransfer" />
+          <s:enumeration value="ElTerminaliBoyutSiparisMalHazırlama" />
+          <s:enumeration value="OzonInspection2" />
+          <s:enumeration value="OzonInspectionWaybill" />
+          <s:enumeration value="OzonKabulOnay" />
+          <s:enumeration value="Kuyumculuk" />
+          <s:enumeration value="IfsFatura" />
+          <s:enumeration value="SaglamBalikcilik" />
+          <s:enumeration value="TopluUrunParcalamaToplama" />
+          <s:enumeration value="BSKStantYonetimi2" />
+          <s:enumeration value="TedarikciStok" />
+          <s:enumeration value="ManuelPaletOlustur" />
+          <s:enumeration value="TurtelSevkEmriSevk" />
+          <s:enumeration value="PrdEntegrasyonUretim" />
+          <s:enumeration value="InternettenAktivasyon" />
+          <s:enumeration value="PratikFis" />
+          <s:enumeration value="YesilayEBAAktarim" />
+          <s:enumeration value="CRMAnketYayinlama" />
+          <s:enumeration value="CRMAnket2" />
+          <s:enumeration value="YildizMekatronikTeklif" />
+          <s:enumeration value="EkNotŞablonTanım" />
+          <s:enumeration value="Tarim" />
+          <s:enumeration value="AVM" />
+          <s:enumeration value="AVM_Kira_Fix" />
+          <s:enumeration value="AVM_Kira_Ciro" />
+          <s:enumeration value="AVM_SabitGider" />
+          <s:enumeration value="AVM_Counter" />
+          <s:enumeration value="SatınalmaSiparişiReserve" />
+          <s:enumeration value="PurchaseOrder" />
+          <s:enumeration value="SalesOrder" />
+          <s:enumeration value="InTransit" />
+          <s:enumeration value="SupplierInvoice" />
+          <s:enumeration value="ItemTransfer" />
+          <s:enumeration value="Transhipment" />
+          <s:enumeration value="IthalatIsyeriDepoGirisi" />
+          <s:enumeration value="BankStatement" />
+          <s:enumeration value="ShortShipment" />
+          <s:enumeration value="SglmBlkcPulTemizleme" />
+          <s:enumeration value="AbeilleSiparis" />
+          <s:enumeration value="AbeilleYakitSarfStokHareket" />
+          <s:enumeration value="AbeilleHammaddeTransferStokHareket" />
+          <s:enumeration value="AbeilleBuluntuStokHareket" />
+          <s:enumeration value="AbeilleKayipStokHareket" />
+          <s:enumeration value="AbeilleHammaddeSatisIrsaliyesi" />
+          <s:enumeration value="AbeilleHammaddeAlimIrsaliyesi" />
+          <s:enumeration value="AbeilleBetonSatisIrsaliyesi" />
+          <s:enumeration value="AbeilleBetonSatisSarfStokHareket" />
+          <s:enumeration value="ArkenSeriManuel" />
+          <s:enumeration value="TopluFaturaOnay" />
+          <s:enumeration value="EksaIslemKapatma" />
+          <s:enumeration value="GeoplasKantardanUretimGirisi" />
+          <s:enumeration value="SglmBlkcIslemeBasla" />
+          <s:enumeration value="SglmBlkcIslemeBitir" />
+          <s:enumeration value="SglmBlkcKaliteMalzemeGirisi" />
+          <s:enumeration value="SglmBlkcKaliteMamulGirisi" />
+          <s:enumeration value="SglmBlkcDondurmaMalzemeGirisi" />
+          <s:enumeration value="SglmBlkcDondurmaMamulGirisi" />
+          <s:enumeration value="SglmBlkcPaketlemeMalzemeGirisi" />
+          <s:enumeration value="SglmBlkcPaketlemeMamulGirisi" />
+          <s:enumeration value="PusulaOlusturmaAlisFaturasi" />
+          <s:enumeration value="PusulaOlusturmaSatisFaturasi" />
+          <s:enumeration value="DışServisSevk" />
+          <s:enumeration value="DışServisKabul" />
+          <s:enumeration value="UymPersonelTakip" />
+          <s:enumeration value="KmkMalzemeTransferi" />
+          <s:enumeration value="KmkTorbaSatışSiparişi" />
+          <s:enumeration value="PusulaOlusturmaAlisMasrafFaturasi" />
+          <s:enumeration value="KmkMalzemeTransferHareketi" />
+          <s:enumeration value="KmkHizliUretimGiris" />
+          <s:enumeration value="GentasPrim" />
+          <s:enumeration value="KmkUretimKapama" />
+          <s:enumeration value="IsEmriMalzemeTuketimi" />
+          <s:enumeration value="IsistasyonMaliyetOran" />
+          <s:enumeration value="TeparIsistasyonMaliyetOran" />
+          <s:enumeration value="TeparIsistasyonMaliyetOranServis" />
+          <s:enumeration value="BestelastTartımEkranı" />
+          <s:enumeration value="EmriEtiket" />
+          <s:enumeration value="SanicaIsEmriEtiket" />
+          <s:enumeration value="ElTerminaliHavuz" />
+          <s:enumeration value="Mobil" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="DocController">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Register1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Register2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Register3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Register4" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GeneralNote1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GeneralNote2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GeneralNote3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GeneralNote4" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GeneralNote5" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GeneralNote6" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GeneralNote7" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GeneralNote8" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GeneralNote9" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GeneralNote10" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NoteLarge" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="CurrencyOption">
+        <s:restriction base="s:string">
+          <s:enumeration value="Sevk_Tarihindeki_Kur" />
+          <s:enumeration value="Belge_Kuru" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="DiscTypes">
+        <s:restriction base="s:string">
+          <s:enumeration value="Oran" />
+          <s:enumeration value="Tutar" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="CardType">
+        <s:restriction base="s:string">
+          <s:enumeration value="Muhasebe" />
+          <s:enumeration value="Cari" />
+          <s:enumeration value="Banka" />
+          <s:enumeration value="Kasa" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="EntityDef">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="EntityCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EntityName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="EntityId" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SearchByEntityId" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="PutByEntityId" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="SearchByEntityCode" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="PutByEntityCode" nillable="true" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="EntityNameShort" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TaxOfficeId" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="TaxOfficeCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TaxOfficeName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TaxNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tel" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tel2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Fax" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="WebSite" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address3" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountryId" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CountryName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CountryCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IsoCountryCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CityId" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CityName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TownId" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="TownName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CoId" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CoCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="EntityType" nillable="true" type="tns:EntityType" />
+          <s:element minOccurs="1" maxOccurs="1" name="DomesticForeign" nillable="true" type="tns:Domestic_Foreign" />
+          <s:element minOccurs="1" maxOccurs="1" name="OtomaticCreateEntityCode" nillable="true" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="CardIntgGroupCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AccCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EntityGrpCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EntityGrpCode2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EntityGrpCode3" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Categories1Id" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Categories2Id" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Categories20Id" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Categories1Code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Categories2Code" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AddDec01" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="AddDec02" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="AddDec03" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="AddDec04" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="AddDec05" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="AddDec06" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="AddDec07" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="AddDec08" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="AddDec09" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="AddDec10" nillable="true" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContactFirstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContactLastName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ContactId" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContactTel" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContactFax" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContactMail" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="EInvoiceProfile" nillable="true" type="tns:InvoiceProfile" />
+          <s:element minOccurs="1" maxOccurs="1" name="IseInvoiceEntity" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="DueDay" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FamilyName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContactCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ContactGrpId" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContactGrpCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DueDateBase" nillable="true" type="tns:DueDateBase" />
+          <s:element minOccurs="1" maxOccurs="1" name="PaymentMethodId2" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PaymentMethodCode2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SalesPersonId" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="SalesPersonCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ParentEntityId" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ParentEntityCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="RiskGrpId" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="RiskGrpCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AddString10" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AddString09" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AddString08" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="OtomaticCreateAccCode" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="InvDeliveryType" nillable="true" type="tns:eInvDeliveryType" />
+          <s:element minOccurs="1" maxOccurs="1" name="MailAttachmentInf" nillable="true" type="tns:MailAttachmentInfo" />
+          <s:element minOccurs="1" maxOccurs="1" name="Ispassive" nillable="true" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="IbanNo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SectorId" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="IdentifyNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EntityB2BCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PurchasePersonId" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PurchasePersonCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="EntityPriceGrpPId" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="EntityPriceGrpSId" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="EntityBankList" type="tns:ArrayOfEntityBanks" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsUseGnlEnt" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsUseGnlEntity" nillable="true" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="GnlEntityCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EntityPrefix" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CashFlowInclusion" nillable="true" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="EntityContactList" type="tns:ArrayOfEntityContact" />
+          <s:element minOccurs="0" maxOccurs="1" name="CoEntityIntegrationList" type="tns:ArrayOfCoEntityIntegration" />
+          <s:element minOccurs="0" maxOccurs="1" name="ZipCode" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="EntityType">
+        <s:restriction base="s:string">
+          <s:enumeration value="Müşteri" />
+          <s:enumeration value="Tedarikçi" />
+          <s:enumeration value="Müşteri_Tedarikçi" />
+          <s:enumeration value="Tedarikçi_Fason" />
+          <s:enumeration value="Müşteri_Tedarikçi_Fason" />
+          <s:enumeration value="Bayi" />
+          <s:enumeration value="Servis" />
+          <s:enumeration value="Potansiyel_Müşteri" />
+          <s:enumeration value="Potansiyel_Tedarikçi" />
+          <s:enumeration value="Çoklu_Para_Birimi_İle_Çalış" />
+          <s:enumeration value="Carip_Grup_Kodu1" />
+          <s:enumeration value="Satış_Temsilcisi" />
+          <s:enumeration value="Satın_Alma_Temsilcisi" />
+          <s:enumeration value="Mail_Gönder_Not" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="Domestic_Foreign">
+        <s:restriction base="s:string">
+          <s:enumeration value="Yurtiçi" />
+          <s:enumeration value="Yurtdışı" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="InvoiceProfile">
+        <s:restriction base="s:string">
+          <s:enumeration value="TEMELFATURA" />
+          <s:enumeration value="TICARIFATURA" />
+          <s:enumeration value="IHRACAT" />
+          <s:enumeration value="YOLCUBERABERFATURA" />
+          <s:enumeration value="KAMU" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="DueDateBase">
+        <s:restriction base="s:string">
+          <s:enumeration value="Fatura" />
+          <s:enumeration value="İrsaliye" />
+          <s:enumeration value="GümrükGeliş" />
+          <s:enumeration value="Beyanname" />
+          <s:enumeration value="Akreditif" />
+          <s:enumeration value="Konşimento" />
+          <s:enumeration value="Varış" />
+          <s:enumeration value="Muhasebe" />
+          <s:enumeration value="MuhasebeAySonu" />
+          <s:enumeration value="FaturaAySonu" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="eInvDeliveryType">
+        <s:restriction base="s:string">
+          <s:enumeration value="Paper" />
+          <s:enumeration value="Electronic" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="MailAttachmentInfo">
+        <s:restriction base="s:string">
+          <s:enumeration value="Xml" />
+          <s:enumeration value="Pdf" />
+          <s:enumeration value="Xml_Pdf" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="ArrayOfEntityBanks">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="EntityBanks" nillable="true" type="tns:EntityBanks" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="EntityBanks">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="IbanNo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="BankId" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="BankCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="BankBranchId" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="BankBranchCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BankAccNo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CurTraId" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CurTraCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfEntityContact">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="EntityContact" nillable="true" type="tns:EntityContact" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="EntityContact">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ContactFirstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContactLastName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ContactId" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContactTel" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContactFax" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContactMail" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContactCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Salutation" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsAuthorized" nillable="true" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfCoEntityIntegration">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CoEntityIntegration" nillable="true" type="tns:CoEntityIntegration" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CoEntityIntegration">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CardIntgCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AccCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Note1" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfInvoiceDetailDef">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="InvoiceDetailDef" nillable="true" type="tns:InvoiceDetailDef" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="InvoiceDetailDef">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:TransactionalDetailFields">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="UseExpBudget" nillable="true" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="ItemNameManuel" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="ReasonId" nillable="true" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="OtherInvoiceDeclaration" nillable="true" type="tns:DeclarationTempType" />
+              <s:element minOccurs="1" maxOccurs="1" name="PogStartDate" nillable="true" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="PogEndDate" nillable="true" type="s:dateTime" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="TransactionalDetailFields">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:DetailFields">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="ColorId" nillable="true" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="ColorCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PackageTypeCode" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="PackageTypeId" nillable="true" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="LineType" type="tns:LineType" />
+              <s:element minOccurs="1" maxOccurs="1" name="DcardId" nillable="true" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="DcardCode" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="UnitId" nillable="true" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="UnitCode" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="Qty" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="QtyPrm" nillable="true" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="QtyFreePrm" nillable="true" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="QtyFreeSec" nillable="true" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="DueDay" nillable="true" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="CampaignId" nillable="true" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="UnitPriceTra" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="UnitPrice" nillable="true" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="VatStatus" nillable="true" type="tns:VatStatus" />
+              <s:element minOccurs="1" maxOccurs="1" name="VatId" nillable="true" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="VatCode" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="VatRate" nillable="true" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="AmtVat" nillable="true" type="s:decimal" />
+              <s:element minOccurs="0" maxOccurs="1" name="AbtActCode" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="AbtActId" nillable="true" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="AbtBudgetId" nillable="true" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="AbtBudgetCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="OTVCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="OIVCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="VatDiscCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PriceListCode" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="PriceListId" nillable="true" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="PriceListDId" nillable="true" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="WhouseId" nillable="true" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="WhouseCode" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="AbtBudgetD2Id" nillable="true" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="Disc1Id" nillable="true" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="Disc1Code" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="Disc1Rate" nillable="true" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="AmtDisc1" nillable="true" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="AmtDisc1Tra" nillable="true" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="Disc2Id" nillable="true" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="Disc2Code" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="Disc2Rate" nillable="true" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="AmtDisc2" nillable="true" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="AmtDisc2Tra" nillable="true" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="Disc3Id" nillable="true" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="Disc3Code" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="Disc3Rate" nillable="true" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="AmtDisc3" nillable="true" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="AmtDisc3Tra" nillable="true" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="AmtDisc" nillable="true" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="AmtWithDisc" nillable="true" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="Amt" nillable="true" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="AmtTra" nillable="true" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="FormContractMId" nillable="true" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="FormContractCode" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="ItemAttribute1Id" nillable="true" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="ItemAttributeCode1" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="ItemAttribute2Id" nillable="true" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="ItemAttributeCode2" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="ItemAttribute3Id" nillable="true" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="ItemAttributeCode3" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="ItemGnlAttribute1Id" nillable="true" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="ItemGnlAttributeCode1" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="ItemGnlAttribute2Id" nillable="true" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="ItemGnlAttributeCode2" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="ItemGnlAttribute3Id" nillable="true" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="ItemGnlAttributeCode3" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="DiscCalcType1" nillable="true" type="tns:DiscTypes" />
+              <s:element minOccurs="1" maxOccurs="1" name="DiscCalcType2" nillable="true" type="tns:DiscTypes" />
+              <s:element minOccurs="1" maxOccurs="1" name="DiscCalcType3" nillable="true" type="tns:DiscTypes" />
+              <s:element minOccurs="0" maxOccurs="1" name="ReferanceDocNo" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="LotId" nillable="true" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="LotCode" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="QualityId" nillable="true" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="QualityCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Barcode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ItemNameManual" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="SalesPersonId" nillable="true" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsItemAttribute" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsLotGenerate" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="RegisterId" nillable="true" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="RegisterFullName" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="DetailFields">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="LineNo" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CurTraId" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CurCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CurRateTypeId" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CurRateTra" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="Note1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Note2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Note3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NoteLarge" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CatCode1Id" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CatCode1" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CatCode2Id" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CatCode2" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SourceMId" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SourceDId" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SourceD3Id" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SourceOrderMId" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SourceOrderDId" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CostCenterId" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CostCenterCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ProjectMId" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProjectCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="GainLossTypeId" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="GainLossTypeCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AnalysisCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AnalysisId" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="TaxTemplateName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TaxTemplateMId" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlusMinus" nillable="true" type="tns:PlusMinus" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContactName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ContactId" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SourceApp" type="tns:SourceApplication" />
+          <s:element minOccurs="1" maxOccurs="1" name="SourceApp2" nillable="true" type="tns:SourceApplication" />
+          <s:element minOccurs="1" maxOccurs="1" name="SourceApp3" nillable="true" type="tns:SourceApplication" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="PlusMinus">
+        <s:restriction base="s:string">
+          <s:enumeration value="Borç" />
+          <s:enumeration value="Alacak" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="LineType">
+        <s:restriction base="s:string">
+          <s:enumeration value="S" />
+          <s:enumeration value="M" />
+          <s:enumeration value="H" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="VatStatus">
+        <s:restriction base="s:string">
+          <s:enumeration value="Dahil" />
+          <s:enumeration value="Hariç" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="DeclarationTempType">
+        <s:restriction base="s:string">
+          <s:enumeration value="Muhtasar_EkranBilgileri" />
+          <s:enumeration value="Muhtasar_MatrahveVergiBildirim" />
+          <s:enumeration value="Muhtasar_TevfifataTabiOdemeler" />
+          <s:enumeration value="Muhtasar_IsyeriBilgileri" />
+          <s:enumeration value="Muhtasar_CalisanBilgileri" />
+          <s:enumeration value="Muhtasar_IstihdamEdilenHizmetErbabininUcreti" />
+          <s:enumeration value="Muhtasar_TerkinEdilebilecekTutaraIliskinBildirim" />
+          <s:enumeration value="Muhtasar_SgkBildirimleri" />
+          <s:enumeration value="Muhtasar_ArgeIsyeriBilgileri" />
+          <s:enumeration value="Muhtasar_ArgeTerkinTutarBilgileri" />
+          <s:enumeration value="Muhtasar_4691_6550_IsyeriBilgileri" />
+          <s:enumeration value="Muhtasar_4691_6550_CalisanBilgileri" />
+          <s:enumeration value="KDV_EkranBilgileri" />
+          <s:enumeration value="KDV_KismiİstisnaKapsami" />
+          <s:enumeration value="KDV_TamIstisnaKapsami" />
+          <s:enumeration value="KDV_DigerIadeHakki" />
+          <s:enumeration value="KDV_TevkifatUygulanmayanIslemler" />
+          <s:enumeration value="KDV_KismiTevkifatUygulananIslemler" />
+          <s:enumeration value="KDV_DigerIslemler" />
+          <s:enumeration value="KDV_Indirimler" />
+          <s:enumeration value="KDV_IhracKaydiIleTeslimler" />
+          <s:enumeration value="KDV_KismiTevkifatIslemleriBildirim" />
+          <s:enumeration value="KDV_SonucHesaplarıOzelMatrah" />
+          <s:enumeration value="KDV_7326SayiliKanunMadKapsamindakiİslemler" />
+          <s:enumeration value="KDV2_KesintiYapilanlar" />
+          <s:enumeration value="KDV2_KismiTevkifatUygulananIslemler" />
+          <s:enumeration value="KDV2_TamTevkifatUygulananIslemler" />
+          <s:enumeration value="KDV2_EkranBilgileri" />
+          <s:enumeration value="Kurum_Gecici_EkranBilgileri" />
+          <s:enumeration value="Kurum_Gecici_Kazanc_Indirimler" />
+          <s:enumeration value="Kurum_Gecici_Zarar_Indirimler" />
+          <s:enumeration value="Kurum_Gecici_Brut_Kazanc_Dagilimi" />
+          <s:enumeration value="Kurum_Gecici_Ekler_Gelir_Tablosu_TekDuzenHesap" />
+          <s:enumeration value="Kurum_Gecici_Ekler_Fatura_Bilgileri" />
+          <s:enumeration value="Kurum_Gecici_Ekler_KanunenKabulEdilmeyenGiderler" />
+          <s:enumeration value="Kurum_Gecici_Ekler_KanunenKabulEdilmeyenGiderDiger" />
+          <s:enumeration value="Kurum_Gecici_Ekler_Gelir_Tablosu_TekDuzenHesap_Dipnot" />
+          <s:enumeration value="Kurumlar_EkranBilgileri" />
+          <s:enumeration value="Kurumlar_GecmisYiZararlari" />
+          <s:enumeration value="Kurumlar_Ilaveler" />
+          <s:enumeration value="Kurumlar_ZararOlsaDahiIndirilecekIstisnaveIndirimler" />
+          <s:enumeration value="Kurumlar_KazancinBulunmasiHalindeIndirilecekIstisnaveIndirimler" />
+          <s:enumeration value="Kurumlar_MahsupEdilecekVergiler" />
+          <s:enumeration value="Kurumlar_TekDuzenHesapPlanıGelirTablosu" />
+          <s:enumeration value="Kurumlar_KurumaBagliİsyerleri" />
+          <s:enumeration value="Kurumlar_TekDuzenHesapPlanıAktif" />
+          <s:enumeration value="Kurumlar_TekDuzenHesapPlanıPasif" />
+          <s:enumeration value="Kurumlar_KanunenKabulEdilmeyenGiderler" />
+          <s:enumeration value="Kurumlar_KanunenKabulEdilmeyenGiderDiger" />
+          <s:enumeration value="Kurumlar_YabanciParaPozisyonunaİliskinBilgiFormu" />
+          <s:enumeration value="OIV_EkranBilgileri" />
+          <s:enumeration value="OIV_DigerIslemler" />
+          <s:enumeration value="OIV_Indirmler" />
+          <s:enumeration value="DamgaVergisi" />
+          <s:enumeration value="Mizan" />
+          <s:enumeration value="FORMBA" />
+          <s:enumeration value="FORMBS" />
+          <s:enumeration value="GGecici_EkranBilgileri" />
+          <s:enumeration value="GGecici_Indirimler" />
+          <s:enumeration value="GGecici_Ortak_Olan_Firmalar" />
+          <s:enumeration value="GGecici_Brut_Kazanc_Dagilimi" />
+          <s:enumeration value="GGecici_Ekler_Gelir_Tablusu" />
+          <s:enumeration value="GGecici_Ekler_Fatura_Bilgileri" />
+          <s:enumeration value="GGecici_Ekler_IsletmeHesabiOzeti" />
+          <s:enumeration value="GGecici_Ekler_SerbestMeslekKazanclari" />
+          <s:enumeration value="GGecici_Ekler_Istisnalar" />
+          <s:enumeration value="GMSI" />
+          <s:enumeration value="BASIT" />
+          <s:enumeration value="GelirVergi_SabitTanimlar" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="CashInvoiceType">
+        <s:restriction base="s:string">
+          <s:enumeration value="CashInvoice" />
+          <s:enumeration value="DiffrentPeriods" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="SaveInvoiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SaveInvoiceResult" type="tns:ServiceResultOfBoolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="LeaveInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:LeaveInfo" />
+  </wsdl:message>
+  <wsdl:message name="LeaveInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:LeaveInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrgOverTimeInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:OrgOverTimeInfo" />
+  </wsdl:message>
+  <wsdl:message name="OrgOverTimeInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:OrgOverTimeInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="SavePayrollSoapIn">
+    <wsdl:part name="parameters" element="tns:SavePayroll" />
+  </wsdl:message>
+  <wsdl:message name="SavePayrollSoapOut">
+    <wsdl:part name="parameters" element="tns:SavePayrollResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveInvoiceSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveInvoice" />
+  </wsdl:message>
+  <wsdl:message name="SaveInvoiceSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveInvoiceResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ErogluServicesSoap">
+    <wsdl:operation name="LeaveInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">İzin Bilgileri Listelenir.</wsdl:documentation>
+      <wsdl:input message="tns:LeaveInfoSoapIn" />
+      <wsdl:output message="tns:LeaveInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OrgOverTimeInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Oragizasyona Bağlı Fazla Mesai Bilgileri Listelenir.</wsdl:documentation>
+      <wsdl:input message="tns:OrgOverTimeInfoSoapIn" />
+      <wsdl:output message="tns:OrgOverTimeInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SavePayroll">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Puantaj Kaydı Oluşturulur.</wsdl:documentation>
+      <wsdl:input message="tns:SavePayrollSoapIn" />
+      <wsdl:output message="tns:SavePayrollSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveInvoice">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"> Fatura Kaydı Oluşturulur.</wsdl:documentation>
+      <wsdl:input message="tns:SaveInvoiceSoapIn" />
+      <wsdl:output message="tns:SaveInvoiceSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ErogluServicesHttpGet" />
+  <wsdl:portType name="ErogluServicesHttpPost" />
+  <wsdl:binding name="ErogluServicesSoap" type="tns:ErogluServicesSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="LeaveInfo">
+      <soap:operation soapAction="http://tempuri.org/LeaveInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OrgOverTimeInfo">
+      <soap:operation soapAction="http://tempuri.org/OrgOverTimeInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SavePayroll">
+      <soap:operation soapAction="http://tempuri.org/SavePayroll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveInvoice">
+      <soap:operation soapAction="http://tempuri.org/SaveInvoice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ErogluServicesSoap12" type="tns:ErogluServicesSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="LeaveInfo">
+      <soap12:operation soapAction="http://tempuri.org/LeaveInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OrgOverTimeInfo">
+      <soap12:operation soapAction="http://tempuri.org/OrgOverTimeInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SavePayroll">
+      <soap12:operation soapAction="http://tempuri.org/SavePayroll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveInvoice">
+      <soap12:operation soapAction="http://tempuri.org/SaveInvoice" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ErogluServicesHttpGet" type="tns:ErogluServicesHttpGet">
+    <http:binding verb="GET" />
+  </wsdl:binding>
+  <wsdl:binding name="ErogluServicesHttpPost" type="tns:ErogluServicesHttpPost">
+    <http:binding verb="POST" />
+  </wsdl:binding>
+  <wsdl:service name="ErogluServices">
+    <wsdl:port name="ErogluServicesSoap" binding="tns:ErogluServicesSoap">
+      <soap:address location="http://192.168.1.6/CustomPrg/XML/ErogluServices.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ErogluServicesSoap12" binding="tns:ErogluServicesSoap12">
+      <soap12:address location="http://192.168.1.6/CustomPrg/XML/ErogluServices.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ErogluServicesHttpGet" binding="tns:ErogluServicesHttpGet">
+      <http:address location="http://192.168.1.6/CustomPrg/XML/ErogluServices.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ErogluServicesHttpPost" binding="tns:ErogluServicesHttpPost">
+      <http:address location="http://192.168.1.6/CustomPrg/XML/ErogluServices.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,33 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="WinTexMNG_com_econt_ee_NomenclaturesService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://ee.econt.com/services/Nomenclatures/NomenclaturesService.soap</Value>
+    </Setting>
+    <Setting Name="WinTexMNG_com_econt_ee1_AddressService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://ee.econt.com/services/Nomenclatures/AddressService.soap</Value>
+    </Setting>
+    <Setting Name="WinTexMNG_LabelService_LabelService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://ee.econt.com/services/Shipments/LabelService.soap</Value>
+    </Setting>
+    <Setting Name="WinTexMNG_ShipmentService_ShipmentService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://ee.econt.com/services/Shipments/ShipmentService.soap</Value>
+    </Setting>
+    <Setting Name="WinTexMNG_ProfileService_ProfileService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://ee.econt.com/services/Profile/ProfileService.soap</Value>
+    </Setting>
+    <Setting Name="WinTexMNG_com_yurticikargo_testwebservices_KOPSWebServices" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://testwebservices.yurticikargo.com:9090/KOPSWebServices/ShippingOrderDispatcherServices</Value>
+    </Setting>
+    <Setting Name="WinTexMNG_tr_com_araskargo_customerservices_ArasCargoIntegrationService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://customerservices.araskargo.com.tr/ArasCargoCustomerIntegrationService/ArasCargoIntegrationService.svc</Value>
+    </Setting>
+    <Setting Name="WinTexMNG_tr_com_araskargo_customerws_Service" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://customerws.araskargo.com.tr/arascargoservice.asmx</Value>
+    </Setting>
+    <Setting Name="WinTexMNG_tr_com_araskargo_customerservicestest_ArasCargoIntegrationService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://customerservicestest.araskargo.com.tr/ArasCargoIntegrationService.svc</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:tns="http://ee.econt.com/services/Nomenclatures/R" xmlns:ns1="http://ee.econt.com/services/Nomenclatures" xmlns:ns2="http://ee.econt.com/services/Shipments" elementFormDefault="qualified" targetNamespace="http://ee.econt.com/services/Nomenclatures/R" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import schemaLocation="../schema.xsd" namespace="http://ee.econt.com/services/Nomenclatures" />
+  <xsd:import schemaLocation="../../Shipments/schema.xsd" namespace="http://ee.econt.com/services/Shipments" />
+  <xsd:complexType name="ValidateAddressRequest">
+    <xsd:annotation>
+      <xsd:documentation>Validates address based on input parameters 
+(see SOAP example &lt;a href="http://ee.econt.com/doc_templates/srv/ValidateAddressRequest.xml"&gt;&lt;font color="#0000ff"&gt;&lt;u&gt;Request&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;, &lt;a href="http://ee.econt.com/doc_templates/srv/ValidateAddressResponse.xml"&gt;&lt;font color="#0000ff"&gt;&lt;u&gt;Response&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;)
+(see JSON example &lt;a href="http://ee.econt.com/doc_templates/srv/ValidateAddressRequest.json"&gt;&lt;font color="#0000ff"&gt;&lt;u&gt;Request&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;, &lt;a href="http://ee.econt.com/doc_templates/srv/ValidateAddressResponse.json"&gt;&lt;font color="#0000ff"&gt;&lt;u&gt;Response&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;)</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="address" type="ns1:Address">
+        <xsd:annotation>
+          <xsd:documentation>Address (minimum required parameters: city name, street name and street number or quarter and other)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="ValidateAddressRequest" type="tns:ValidateAddressRequest" />
+  <xsd:complexType name="ValidateAddressResponse">
+    <xsd:annotation>
+      <xsd:documentation>Returns validation status &lt;a href="http://ee.econt.com/doc_templates/srv/ValidateAddressResponse.xml"&gt;&lt;font color="#0000ff"&gt;&lt;u&gt;(see example)&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="address" type="ns1:Address">
+        <xsd:annotation>
+          <xsd:documentation>Address details (country, location, etc.)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="validationStatus" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Normal, processed, invalid</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="ValidateAddressResponse" type="tns:ValidateAddressResponse" />
+  <xsd:complexType name="GetOfficesRequest">
+    <xsd:annotation>
+      <xsd:documentation>All offices of Econt Express in a country 
+(see SOAP example &lt;a href="http://ee.econt.com/doc_templates/srv/GetOfficesRequest.xml"&gt;&lt;font color="#0000ff"&gt;&lt;u&gt;Request&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;, &lt;a href="http://ee.econt.com/doc_templates/srv/GetOfficesResponse.xml"&gt;&lt;font color="#0000ff"&gt;&lt;u&gt;Response&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;)
+(see JSON example &lt;a href="http://ee.econt.com/doc_templates/srv/GetOfficesRequest.json"&gt;&lt;font color="#0000ff"&gt;&lt;u&gt;Request&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;, &lt;a href="http://ee.econt.com/doc_templates/srv/GetOfficesResponse.json"&gt;&lt;font color="#0000ff"&gt;&lt;u&gt;Response&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;)</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="countryCode" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Three-letter ISO Alpha-3 code of the country (e.g. AUT, BGR, etc.)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="cityID" type="xsd:int">
+        <xsd:annotation>
+          <xsd:documentation>ID of the city (optional)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="GetOfficesRequest" type="tns:GetOfficesRequest" />
+  <xsd:complexType name="GetOfficesResponse">
+    <xsd:annotation>
+      <xsd:documentation>Returns all Econt offices in a country and city (optional) &lt;a href="http://ee.econt.com/doc_templates/srv/GetOfficesResponse.xml"&gt;&lt;font color="#0000ff"&gt;&lt;u&gt;(see example)&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="offices" type="ns1:Office">
+        <xsd:annotation>
+          <xsd:documentation>Information about offices (name, address, working hours, coordinates, etc.)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="GetOfficesResponse" type="tns:GetOfficesResponse" />
+  <xsd:complexType name="GetCitiesRequest">
+    <xsd:annotation>
+      <xsd:documentation>Method for requesting the cities in a country 
+(see SOAP example &lt;a href="http://ee.econt.com/doc_templates/srv/GetCitiesRequest.xml"&gt;&lt;font color="#0000ff"&gt;&lt;u&gt;Request&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;, &lt;a href="http://ee.econt.com/doc_templates/srv/GetCitiesResponse.xml"&gt;&lt;font color="#0000ff"&gt;&lt;u&gt;Response&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;)
+(see JSON example  &lt;a href="http://ee.econt.com/doc_templates/srv/GetCitiesRequest.json"&gt;&lt;font color="#0000ff"&gt;&lt;u&gt;Request&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;, &lt;a href="http://ee.econt.com/doc_templates/srv/GetCitiesResponse.json"&gt;&lt;font color="#0000ff"&gt;&lt;u&gt;Response&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;)</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="countryCode" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Three-letter ISO Alpha-3 code of the country (e.g. AUT, BGR, etc.)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="GetCitiesRequest" type="tns:GetCitiesRequest" />
+  <xsd:complexType name="GetCitiesResponse">
+    <xsd:annotation>
+      <xsd:documentation>Returns all cities in a country &lt;a href="http://ee.econt.com/doc_templates/srv/GetCitiesResponse.xml"&gt;&lt;font color="#0000ff"&gt;&lt;u&gt;(see example)&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="cities" type="ns1:City">
+        <xsd:annotation>
+          <xsd:documentation>All cities in the requested country code(s)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="GetCitiesResponse" type="tns:GetCitiesResponse" />
+  <xsd:complexType name="GetCountriesRequest">
+    <xsd:annotation>
+      <xsd:documentation>All countries where Econt Express operates 
+(see SOAP example &lt;a href="http://ee.econt.com/doc_templates/srv/GetCountriesRequest.xml"&gt;&lt;font color="#0000ff"&gt;&lt;u&gt;Request&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;, &lt;a href="http://ee.econt.com/doc_templates/srv/GetCountriesResponse.xml"&gt;&lt;font color="#0000ff"&gt;&lt;u&gt;Response&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;)
+(see JSON example &lt;a href="http://ee.econt.com/doc_templates/srv/GetCountriesRequest.json"&gt;&lt;font color="#0000ff"&gt;&lt;u&gt;Request&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;, &lt;a href="http://ee.econt.com/doc_templates/srv/GetCountriesResponse.json"&gt;&lt;font color="#0000ff"&gt;&lt;u&gt;Response&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;)</xsd:documentation>
+    </xsd:annotation>
+  </xsd:complexType>
+  <xsd:element name="GetCountriesRequest" type="tns:GetCountriesRequest" />
+  <xsd:complexType name="GetCountriesResponse">
+    <xsd:annotation>
+      <xsd:documentation>Return all countries where Econt Express operates &lt;a href="http://ee.econt.com/doc_templates/srv/GetCountriesResponse.xml"&gt;&lt;font color="#0000ff"&gt;&lt;u&gt;(see example)&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="countries" type="ns1:Country">
+        <xsd:annotation>
+          <xsd:documentation>Name of the country</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="GetCountriesResponse" type="tns:GetCountriesResponse" />
+  <xsd:complexType name="GetStreetsRequest">
+    <xsd:annotation>
+      <xsd:documentation>Requests all streets in a city 
+(see SOAP example &lt;a href="http://ee.econt.com/doc_templates/srv/GetStreetsRequest.xml"&gt;&lt;font color="#0000ff"&gt;&lt;u&gt;Request&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;, &lt;a href="http://ee.econt.com/doc_templates/srv/GetStreetsResponse.xml"&gt;&lt;font color="#0000ff"&gt;&lt;u&gt;Response&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;)
+(see JSON example &lt;a href="http://ee.econt.com/doc_templates/srv/GetStreetsRequest.json"&gt;&lt;font color="#0000ff"&gt;&lt;u&gt;Request&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;, &lt;a href="http://ee.econt.com/doc_templates/srv/GetStreetsResponse.json"&gt;&lt;font color="#0000ff"&gt;&lt;u&gt;Response&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;)</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="cityID" type="xsd:int">
+        <xsd:annotation>
+          <xsd:documentation>ID of the city (optional)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="GetStreetsRequest" type="tns:GetStreetsRequest" />
+  <xsd:complexType name="GetStreetsResponse">
+    <xsd:annotation>
+      <xsd:documentation>Returns all streets in a city (optional) &lt;a href="http://ee.econt.com/doc_templates/srv/GetStreetsResponse.xml"&gt;&lt;font color="#0000ff"&gt;&lt;u&gt;(see example)&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="streets" type="ns1:Street">
+        <xsd:annotation>
+          <xsd:documentation>Street names</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="GetStreetsResponse" type="tns:GetStreetsResponse" />
+  <xsd:complexType name="GetQuartersRequest">
+    <xsd:annotation>
+      <xsd:documentation>Request all quarters in a city 
+(see SOAP example &lt;a href="http://ee.econt.com/doc_templates/srv/GetQuartersRequest.xml"&gt;&lt;font color="#0000ff"&gt;&lt;u&gt;Request&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;, &lt;a href="http://ee.econt.com/doc_templates/srv/GetQuartersResponse.xml"&gt;&lt;font color="#0000ff"&gt;&lt;u&gt;Response&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;)
+(see JSON example &lt;a href="http://ee.econt.com/doc_templates/srv/GetQuartersRequest.json"&gt;&lt;font color="#0000ff"&gt;&lt;u&gt;Request&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;, &lt;a href="http://ee.econt.com/doc_templates/srv/GetQuartersResponse.json"&gt;&lt;font color="#0000ff"&gt;&lt;u&gt;Response&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;)</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="cityID" type="xsd:int">
+        <xsd:annotation>
+          <xsd:documentation>ID of the city (optional)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="GetQuartersRequest" type="tns:GetQuartersRequest" />
+  <xsd:complexType name="GetQuartersResponse">
+    <xsd:annotation>
+      <xsd:documentation>All quarters in a city &lt;a href="http://ee.econt.com/doc_templates/srv/GetQuartersResponse.xml"&gt;&lt;font color="#0000ff"&gt;&lt;u&gt;(see example)&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="quarters" type="ns1:Quarter">
+        <xsd:annotation>
+          <xsd:documentation>Name of the quarter</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="GetQuartersResponse" type="tns:GetQuartersResponse" />
+  <xsd:complexType name="GetNearestOfficesRequest">
+    <xsd:annotation>
+      <xsd:documentation>Information service for offices near given address</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="address" type="ns1:Address">
+        <xsd:annotation>
+          <xsd:documentation>Аddress</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="shipmentType" type="ns2:ShipmentType">
+        <xsd:annotation>
+          <xsd:documentation>Shipment type</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="GetNearestOfficesRequest" type="tns:GetNearestOfficesRequest" />
+  <xsd:complexType name="GetNearestOfficesResponse">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="offices" type="ns1:Office">
+        <xsd:annotation>
+          <xsd:documentation>List of offices</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="GetNearestOfficesResponse" type="tns:GetNearestOfficesResponse" />
+</xsd:schema>

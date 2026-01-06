@@ -1,0 +1,1 @@
+sc create WinTexService binpath= "C:\WinTexDLL\WinTexService\bin\Debug\WinTexService.exe"

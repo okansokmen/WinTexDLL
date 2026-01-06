@@ -1,0 +1,820 @@
+﻿' auto login
+'wintexusername = YASIN
+'wintexpassword = 9001adam
+
+' Colins
+SERVER = monster
+DATABASE = tes
+USER = sa
+PASSWORD = Hayabusa1024
+CAPTION = COLINS Local
+
+' VERA
+SERVER = 192.168.1.216
+DATABASE = veragroup
+PASSWORD = wintex
+USER = sa
+CAPTION = VERA SERVER
+
+' VERA
+SERVER = monster
+DATABASE = veragroup
+PASSWORD = Hayabusa1024
+USER = sa
+CAPTION = VERA Local
+
+' Colins
+SERVER = 192.168.1.8
+DATABASE = TES
+USER = sa
+PASSWORD = er1303*?
+CAPTION = COLINS TR SERVER
+
+' Colins
+SERVER = 192.168.1.8
+DATABASE = TESDENEME
+USER = sa
+PASSWORD = er1303*?
+CAPTION = COLINS DENEME SERVER
+
+' Colins
+SERVER = 192.168.1.8
+DATABASE = MISIR
+USER = sa
+PASSWORD = er1303*?
+CAPTION = COLINS MISIR SERVER
+
+' OXXO
+SERVER = monster
+DATABASE = oxxo
+PASSWORD = Hayabusa1024
+USER = sa
+CAPTION = OXXO Local
+
+' OXXO server ayarlar
+SERVER = 192.1.0.34
+DATABASE = wintex
+USER = sa_wintex
+PASSWORD = saWinteX21@OXXO
+CAPTION = OXXO WinTex
+
+' Bateks
+SERVER = monster
+DATABASE = bateks
+USER = sa
+PASSWORD = Hayabusa1024
+CAPTION = Bateks Local
+
+' alders
+SERVER = MONSTER
+DATABASE = alderswintex
+PASSWORD = Hayabusa1024
+USER = sa
+CAPTION = Lokal ALDERS Dokuma
+
+' alders
+SERVER = alders2016
+DATABASE = alderswintex
+PASSWORD = Wintex12sa
+USER = sa
+CAPTION = ALDERS Dokuma
+
+' alders
+SERVER = alders2016
+DATABASE = aldersjersey
+PASSWORD = Wintex12sa
+USER = sa
+CAPTION = ALDERS Jersey
+
+' alders
+SERVER = alders2016
+DATABASE = alsey
+PASSWORD = Wintex12sa
+USER = sa
+CAPTION = Alsay
+
+' alders
+SERVER = alders2016
+DATABASE = albrander
+PASSWORD = Wintex12sa
+USER = sa
+CAPTION = Albrander 
+
+' alders
+SERVER = alders2016
+DATABASE = grace
+PASSWORD = Wintex12sa
+USER = sa
+CAPTION = Grace
+
+' bateks
+SERVER = 192.168.1.200
+DATABASE = bateks
+USER = sa
+PASSWORD = Bateks2023-
+CAPTION = Bateks
+
+' jeanci local
+SERVER = monster
+DATABASE = istwtx
+USER = sa
+PASSWORD = Hayabusa1024
+CAPTION = Jeanci Local
+
+' karmen local
+SERVER = monster
+DATABASE = wintexkarmen
+USER = sa
+PASSWORD = Hayabusa1024
+CAPTION = Karmen Local
+
+' Karmen
+SERVER = 192.168.2.3
+DATABASE = wintexkarmen
+USER = sa
+PASSWORD = Krmn2024!
+CAPTION = Karmen
+
+' jeanci yeni server
+SERVER = 192.168.8.13
+DATABASE = istwtx
+PASSWORD = damdandUstU2kurbaGa
+USER = sa
+CAPTION = TRK JEANCI SERVER
+
+SERVER = darindasql
+DATABASE = darinda
+PASSWORD = Darinda2020-
+USER = sa
+CAPTION = Darinda Server
+
+SERVER = MONSTER
+DATABASE = darinda
+PASSWORD = Hayabusa1024
+USER = sa
+CAPTION = LOCAL Darinda Server
+
+' bolero
+SERVER = 20.10.40.48
+DATABASE = bolero
+PASSWORD = Bolerotex2019@.!
+USER = sa
+CAPTION = Bolero Server
+
+' jeanci yeni server
+SERVER = 192.168.8.13
+DATABASE = srbwtxold
+PASSWORD = damdandUstU2kurbaGa
+USER = sa
+CAPTION = SRB JEANCI SERVER OLD
+
+' Sequel
+SERVER = 192.168.1.244
+DATABASE = sequel
+PASSWORD = Sequel2023-
+USER = sa
+CAPTION = Sequel SERVER
+
+' akdoku
+SERVER = 192.168.5.9
+DATABASE = akdoku
+PASSWORD = Akdoku2023*
+USER = sa
+CAPTION = Akdoku SERVER
+
+' akdoku
+SERVER = 192.168.5.9
+DATABASE = akdoku
+PASSWORD = Akdoku2023*
+USER = sa
+CAPTION = Akdoku SERVER
+
+' Vardar
+SERVER = 192.168.1.150
+DATABASE = wintexvardar
+PASSWORD =  wintex
+USER = wintex
+CAPTION = Vardar Server
+
+' BayBaz
+SERVER = server
+DATABASE = baybaz
+USER = sa
+PASSWORD = 121200
+CAPTION = BayBaz
+
+' Dönsa
+SERVER = 192.168.0.2
+DATABASE = donsa
+PASSWORD = 121200
+USER = sa
+CAPTION = DONSA SERVER
+
+' OXXO LOCAL server ayarlar
+SERVER = MONSTER
+DATABASE = oxxo
+USER = sa
+PASSWORD = Hayabusa1024
+CAPTION = Local OXXO WinTex
+
+' karmen
+SERVER = 192.168.2.3
+DATABASE = wintexkarmen
+PASSWORD = wintex
+USER = wintex
+CAPTION = Karmen Server
+
+' karmen
+SERVER = MONSTER
+DATABASE = wintexkarmen
+PASSWORD = Hayabusa1024
+USER = sa
+CAPTION = Karmen LOCAL
+
+' koton server
+SERVER = 192.168.0.2
+DATABASE = kotonwintex
+PASSWORD = Devre12345
+USER = sa
+CAPTION = KOTON SERVER
+
+SERVER = MONSTER
+DATABASE = gecit
+USER = sa
+PASSWORD = Hayabusa1024
+CAPTION = Local Gecit
+
+' OXXO server ayarlar
+SERVER = 192.1.0.34
+DATABASE = oxxo
+USER = sa_wintex
+PASSWORD = saWinTEX19OXXO
+CAPTION = OXXO Netsis
+
+'' Colins
+SERVER = MONSTER
+DATABASE = TES
+USER = sa
+PASSWORD = Hayabusa1024
+CAPTION = LOCAL COLINS
+
+' Colins
+SERVER = 192.168.1.8
+DATABASE = MISIRDENEME
+USER = sa
+PASSWORD = er1303*?
+CAPTION = COLINS MISIRDENEME SERVER
+
+' Colins
+SERVER = 192.168.1.8
+DATABASE = MISIRFASON
+USER = sa
+PASSWORD = er1303*?
+CAPTION = COLINS MISIRFASON SERVER
+
+' Colins
+SERVER = ER-WINTEX
+DATABASE = tes
+USER = sa
+PASSWORD = er1303*?
+CAPTION = COLINS TR SERVER
+
+' colins
+SERVER = MONSTER
+DATABASE = MISIR
+USER = sa
+PASSWORD = Hayabusa1024
+CAPTION = Lokal Colins Misir
+
+' Colins
+SERVER = 192.168.1.8
+DATABASE = NUMUNE
+USER = turkiye
+PASSWORD = 1
+CAPTION = COLINS NUMUNE
+
+' alders
+SERVER = MONSTER
+DATABASE = aldersjersey
+PASSWORD = Hayabusa1024
+USER = sa
+CAPTION = Lokal Jersey
+
+' alders
+SERVER = MONSTER
+DATABASE = alsey
+PASSWORD = Hayabusa1024
+USER = sa
+CAPTION = Lokal Alsey
+
+' alders
+SERVER = MONSTER
+DATABASE = albrander
+PASSWORD = Hayabusa1024
+USER = sa
+CAPTION = Lokal Albrander
+
+' local jeanci
+SERVER = MONSTER
+DATABASE = istwtx
+PASSWORD = Hayabusa1024
+USER = sa
+CAPTION = LOCAL TURKIYE JEANCI SERVER
+
+' local jeanci
+SERVER = MONSTER
+DATABASE = srbwtx
+PASSWORD = Hayabusa1024
+USER = sa
+CAPTION = LOCAL SIRBISTAN JEANCI SERVER
+
+' jeanci yeni server
+SERVER = 192.168.9.13
+DATABASE = srbwtx
+PASSWORD = Password1
+USER = sa
+CAPTION = SRB JEANCI SERVER
+
+SERVER = 192.168.1.150
+DATABASE = wintexvardar24032022
+PASSWORD =  wintex
+USER = wintex
+CAPTION = Vardar Yedek Server
+
+SERVER = 192.168.0.7
+DATABASE = gecit
+USER = sa
+PASSWORD = Gecit2020-
+CAPTION = GECIT CANLI
+
+'AKAY
+SERVER = 192.168.2.103
+DATABASE = akay
+PASSWORD = Akay121200
+USER = sa
+CAPTION = Akay Server
+
+' mothouse
+SERVER = MONSTER
+DATABASE = mothouse
+PASSWORD = Hayabusa1024
+USER = sa
+CAPTION = Local Mothouse SERVER
+
+' mothouse
+SERVER = 192.168.2.10
+DATABASE = wintex
+PASSWORD = Server2015
+USER = sa
+CAPTION = mothouse
+
+SERVER = MONSTER
+DATABASE = donsa
+PASSWORD = Hayabusa1024
+USER = sa
+CAPTION = LOCAL DONSA SERVER
+
+' colins
+SERVER = MONSTER
+DATABASE = tes
+USER = sa
+PASSWORD = Hayabusa1024
+CAPTION = Lokal Colins TR
+
+SERVER = MONSTER
+DATABASE = donsa
+PASSWORD = Hayabusa1024
+USER = sa
+CAPTION = LOCAL DONSA SERVER
+
+SERVER = MONSTER
+DATABASE = darinda
+PASSWORD = Hayabusa1024
+USER = sa
+CAPTION = LOCAL Darinda Server
+
+SERVER = 192.168.2.103
+DATABASE = akay
+PASSWORD = Akay121200
+USER = sa
+CAPTION = Akay Server
+
+SERVER = 192.168.2.103
+DATABASE = akay
+PASSWORD = Akay121200
+USER = sa
+CAPTION = Akay Server
+
+' indigo
+SERVER = 192.168.2.12
+DATABASE = indigowhite
+USER = sa
+PASSWORD = 1Q2w3e4r.
+CAPTION = indigowhite server
+
+SERVER = 192.168.1.35
+DATABASE = darinda
+PASSWORD = Darinda2020-
+USER = sa
+CAPTION = Darinda Server
+
+' donsa server ayarlar
+SERVER = 192.168.0.1
+DATABASE = donsa
+PASSWORD = 121200
+USER = sa
+CAPTION = DONSA SERVER
+
+' donsa server ayarlar
+SERVER = MONSTER
+DATABASE = donsa
+PASSWORD = Hayabusa1024
+USER = sa
+CAPTION = LOCAL DONSA SERVER
+
+SERVER = 192.168.2.103
+DATABASE = akay
+PASSWORD = Akay121200
+USER = sa
+CAPTION = DONSA2 SERVER
+
+' alders
+SERVER = MONSTER
+DATABASE = alderswintex
+PASSWORD = Hayabusa1024
+USER = sa
+CAPTION = Lokal ALDERS Dokuma
+
+' Colins
+SERVER = MONSTER
+DATABASE = tes
+PASSWORD = Hayabusa1024
+USER = sa
+CAPTION = COLINS Local
+
+' ttnc
+SERVER = 78.188.201.155:5702
+DATABASE = wintex
+USER = sa
+PASSWORD = Ttnc1012
+CAPTION = TTNC remote
+
+' local bolero
+SERVER = MONSTER
+DATABASE = bolero
+PASSWORD = Hayabusa1024
+USER = sa
+CAPTION = LOCAL BOLERO
+
+' ERS
+SERVER = 192.168.1.9
+DATABASE = fason
+PASSWORD =  
+USER = sa
+CAPTION = ERS TR SERVER
+
+' local donsa
+SERVER = MONSTER
+DATABASE = donsa
+PASSWORD = Hayabusa1024
+USER = sa
+CAPTION = LOCAL DONSA SERVER
+
+' Colins
+SERVER = MONSTER
+DATABASE = TES
+PASSWORD = Hayabusa1024
+USER = sa
+CAPTION = COLINS LOCAL
+
+' alders
+SERVER = 10.0.0.19
+DATABASE = alderswintex
+PASSWORD = Wintex12sa
+USER = sa
+CAPTION = ALDERS Dokuma
+
+' nurteks
+SERVER = 192.168.1.1
+DATABASE = nurteks
+PASSWORD = zurna
+USER = sa
+CAPTION = NURTEKS SERVER
+
+SERVER = MONSTER
+DATABASE = TES
+PASSWORD = Hayabusa1024
+USER = sa
+CAPTION = LOCAL TES SERVER
+
+SERVER = 192.1.0.34
+DATABASE = oxxo
+PASSWORD = sapass1
+USER = sa
+program = netsis
+CAPTION = OXXO Netsis
+
+' Koton
+SERVER = 192.168.0.2
+DATABASE = WINTEX
+PASSWORD = 12345
+USER = sa
+CAPTION = KOTON SERVER
+
+' local eroglu
+SERVER = MONSTER\SQL2016
+DATABASE = Eroglu
+PASSWORD = Hayabusa1024
+USER = sa
+CAPTION = Colins LOCAL TURKIYE SERVER
+
+SERVER = 192.168.0.1
+DATABASE = donsa
+PASSWORD = 121200
+USER = sa
+CAPTION = DONSA SERVER
+
+SERVER = MONSTER
+DATABASE = eroglu
+PASSWORD = Hayabusa1024
+USER = sa
+CAPTION = LOCAL COLINS SERVER
+
+SERVER = 192.168.0.1
+DATABASE = donsa
+PASSWORD = 121200
+USER = sa
+CAPTION = DONSA SERVER
+
+' deneme eroglu
+SERVER = 192.168.1.32
+DATABASE = tes
+PASSWORD = 1
+USER = sa
+CAPTION = Colins HIZLI SERVER
+
+SERVER = 192.168.0.1
+DATABASE = donsa
+PASSWORD = 121200
+USER = sa
+CAPTION = DONSA SERVER
+
+SERVER = 192.168.1.101
+DATABASE = TES
+PASSWORD = 1
+USER = Turkiye
+CAPTION = Erolu TEST Data
+
+' local OXXO
+SERVER = MONSTER
+DATABASE = oxxo
+PASSWORD = Hayabusa1024
+USER = sa
+CAPTION = LOCAL OXXO SERVER
+
+' local deneme
+SERVER = MONSTER
+DATABASE = deneme
+PASSWORD = Hayabusa1024
+USER = sa
+CAPTION = deneme
+
+SERVER = 192.168.0.1
+DATABASE = donsa
+PASSWORD = 121200
+USER = sa
+CAPTION = DONSA SERVER
+
+SERVER = MONSTER
+DATABASE = donsa
+PASSWORD = Hayabusa1024
+USER = sa
+CAPTION = LOCAL DONSA SERVER
+
+SERVER = MONSTER
+DATABASE = cuno
+PASSWORD = Hayabusa1024
+USER = sa
+CAPTION = LOCAL CUNO SERVER
+
+SERVER = MONSTER
+DATABASE = donsa
+PASSWORD = Hayabusa1024
+USER = sa
+CAPTION = LOCAL DONSA SERVER
+
+'SERVER = donsa
+SERVER = 192.168.0.1
+DATABASE = donsa
+PASSWORD = 121200
+USER = sa
+CAPTION = DONSA SERVER
+
+SERVER = MONSTER
+DATABASE = koton
+PASSWORD = Hayabusa1024
+USER = sa
+CAPTION = LOCAL KOTON SERVER
+
+SERVER = okan3020
+DATABASE = nurteks
+PASSWORD = Hayabusa1024
+USER = sa
+CAPTION = LOCAL NURTEKS SERVER
+
+SERVER = okan3020
+DATABASE = finteks
+PASSWORD = Hayabusa1024
+USER = sa
+CAPTION = LOCAL FINTEKS SERVER
+
+' Nurteks server ayarlar
+'SERVER = server
+SERVER = 192.168.1.1
+'DATABASE = nurteksDENEME
+DATABASE = nurteks
+'DATABASE = magaza
+PASSWORD = zurna
+USER = wintex
+CAPTION = NURTEKS
+
+' ERS
+SERVER = 192.168.1.9
+DATABASE = TES
+PASSWORD = 1303
+USER = sa
+CAPTION = ERS SERVER
+
+' rsan server ayarlar
+SERVER = 192.168.0.1
+DATABASE = tes
+PASSWORD = Bwwdvt8ct3
+USER = sa
+CAPTION = ORSAN SERVER
+
+' APS server ayarlar
+'SERVER = apssql
+'DATABASE = wintex
+'PASSWORD = 
+'USER = sa
+'CAPTION = APS SERVER
+
+' trio
+'SERVER = 192.168.1.2
+'DATABASE = trio
+'PASSWORD = Triotekstil2011
+'USER = sa
+
+' CNO server ayarlar
+SERVER = 192.168.0.3
+DATABASE = wintex
+PASSWORD = bts8970409
+USER = sa
+CAPTION = CUNO SERVER
+
+' FNTEKS
+SERVER = 192.168.16.2
+DATABASE = TESYENI
+PASSWORD = 9711515CAN
+USER = sa
+CAPTION = FINTEKS SERVER
+
+' Nurteks server ayarlar
+'SERVER = server
+'SERVER = 192.168.1.1
+'DATABASE = magaza
+'DATABASE = nurteks
+'PASSWORD = zurna
+'USER = sa
+
+'SERVER = 192.168.1.36
+'DATABASE = magaza
+'PASSWORD = Hayabusa1024
+'USER = sa
+
+'SERVER = 192.168.2.100
+'DATABASE = tes
+'PASSWORD = 123
+'USER = sa
+
+' aldersjersey
+SERVER = alders2012\sqlexpress
+DATABASE = AldersJersey
+PASSWORD = Wintex12sa
+USER = sa
+CAPTION = ALDERS JERSEY SERVER
+
+' jeanci eskiserver
+SERVER = 192.168.8.13
+DATABASE = wintexold
+PASSWORD = Password1
+USER = sa
+CAPTION = ESKI JEANCI SERVER
+
+SERVER = MONSTER
+DATABASE = srbwtx
+PASSWORD = Hayabusa1024
+USER = sa
+CAPTION = LOCAL JEANCI SRB SERVER
+
+runtime = 0
+RESUMEREPORT = 1
+linkfirma = 00
+linkgunesdatabase = SOLAR
+linkgunesserver = SWNT
+linkgunessirketno = 00
+stokonly = 0
+fislineswrtno  = 1
+newmaterialcalc = 1
+newselectengine = 1
+secimdeneme = 1
+regional = yes
+autotranslate = no
+;connectionstring = driver={SQL Server};address=192.168.0.55;server=GOKSINNT;Network=dbnmpntw;database=tes;uid=sa;pwd=;autotranslate=no;regional=no
+magazarenksakla = 0
+magazabedensakla = 0
+magazadeposakla = 1 
+lgld = 1
+prgname = WinTex
+iadeterminali = 1
+yenibarcode = 1
+decimalsymbol =.
+digitgroupingsymbol =,
+datesep = .
+magazareports = 0
+; winstore parametreleri
+iadeterminali = 1
+winstrprcxcngh = 1
+;Interval saniye cinsinden olacak
+interval = 20
+ModificationDate = 3.7.2000
+inteksetiket = 0
+inteksprintername =
+winstorecolins = 0
+toplustokfisi = 1
+topluuretimfisi = 1
+cantprintturkish = 0
+GSipChange = 1
+vensipsil = 1
+newsiparis = 1
+timeout = 1200
+uretfaturatutar = 1
+isemridepartman = 2
+logoeximyuklemebitistar = 0
+berteks = 0
+kotoncekilistform = 1
+connlogoread= driver={SQL Server};address=192.168.0.74;server=SELCUK2000;Network=dbnmpntw;database=GOLDK2;uid=sa;pwd=;autotranslate=no;regional=no
+deriparcarecete = 0
+tanataretiket=0
+mtkdepartman = 1
+demoversion = 0
+eskipastal=0
+;language = english
+eskionmaliyet=0
+newformstyle=1
+debugulineno=0
+decreasemtk=0
+apsautotransfer=0
+hexport=0
+himport=0
+modeltoleranshesabi=1
+surecplanlamasi=1
+APSisemrilogic = 0
+onmaliyetreel = 1
+winstrprcxcngh = 1
+;stokaramasort=ozelkod
+kumasetiketadedi=2
+barcodepauseprinter= 1	
+restartdemo = 0
+devirsayim = 0
+AYrenk = 1
+onmaliyetekrani = 2
+DeriFiyat= 1
+stokharlog=0
+magazatoptandepo=02
+magazaperakendedepo=01
+; language optionms are: Turkish, English, French, German, Bulgarian
+;language = neutral
+
+; bulgarian character set
+;charset = 204 
+
+; barkod basmnda etiketleri winspool uzerinden gonderme secenegi
+SpoolEtkToLpt=1
+; isemrinde KDV dahil alan cksn m?
+isemriKDV = 1
+onmaliyetrenkbeden=1
+; kumas satis
+; 1. kumas uretiminde sats yaplrken firma siparis firmas  olur
+kumassatis = 1
+;kumas testlerinde eski ekran
+kumastestold = 0 
+stoktahsis = 1
+kalitekontrol = 1
+devirsayim = 1
+zebexcomport = 1
+barkodluakstakip = 1
+siparisbarkod = 1
+fasonbarkod  = 1
+isemridepartman  = 1
+altmodeltakibi = 0

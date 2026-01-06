@@ -1,0 +1,665 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetTableValues">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Context" type="tns:UyumServiceRequestOfTableInfoIn" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UyumServiceRequestOfTableInfoIn">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Token" type="tns:UyumToken" />
+          <s:element minOccurs="0" maxOccurs="1" name="Value" type="tns:TableInfoIn" />
+          <s:element minOccurs="1" maxOccurs="1" name="Top" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="UyumToken">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TableInfoIn">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="TableName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="WhereClauseList" type="tns:ArrayOfWhereClause" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfWhereClause">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="WhereClause" nillable="true" type="tns:WhereClause" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="WhereClause">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="FieldName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Value" />
+          <s:element minOccurs="0" maxOccurs="1" name="Operator" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DType" type="tns:DbType" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="DbType">
+        <s:restriction base="s:string">
+          <s:enumeration value="AnsiString" />
+          <s:enumeration value="Binary" />
+          <s:enumeration value="Byte" />
+          <s:enumeration value="Boolean" />
+          <s:enumeration value="Currency" />
+          <s:enumeration value="Date" />
+          <s:enumeration value="DateTime" />
+          <s:enumeration value="Decimal" />
+          <s:enumeration value="Double" />
+          <s:enumeration value="Guid" />
+          <s:enumeration value="Int16" />
+          <s:enumeration value="Int32" />
+          <s:enumeration value="Int64" />
+          <s:enumeration value="Object" />
+          <s:enumeration value="SByte" />
+          <s:enumeration value="Single" />
+          <s:enumeration value="String" />
+          <s:enumeration value="Time" />
+          <s:enumeration value="UInt16" />
+          <s:enumeration value="UInt32" />
+          <s:enumeration value="UInt64" />
+          <s:enumeration value="VarNumeric" />
+          <s:enumeration value="AnsiStringFixedLength" />
+          <s:enumeration value="StringFixedLength" />
+          <s:enumeration value="Xml" />
+          <s:enumeration value="DateTime2" />
+          <s:enumeration value="DateTimeOffset" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="GetTableValuesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTableValuesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDataTableWithSQL">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Context" type="tns:UyumServiceRequestOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UyumServiceRequestOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Token" type="tns:UyumToken" />
+          <s:element minOccurs="0" maxOccurs="1" name="Value" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Top" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetDataTableWithSQLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDataTableWithSQLResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTableValuesWithPermission">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Context" type="tns:UyumServiceRequestOfTableInfoIn" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTableValuesWithPermissionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTableValuesWithPermissionResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetObjectToDataSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Context" type="tns:UyumServiceRequestOfObjectInfoIn" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UyumServiceRequestOfObjectInfoIn">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Token" type="tns:UyumToken" />
+          <s:element minOccurs="0" maxOccurs="1" name="Value" type="tns:ObjectInfoIn" />
+          <s:element minOccurs="1" maxOccurs="1" name="Top" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ObjectInfoIn">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ObjectCollectionTypeName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="LoadDetail" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="WhereClauseList" type="tns:ArrayOfWherePropertyClause" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfWherePropertyClause">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="WherePropertyClause" nillable="true" type="tns:WherePropertyClause" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="WherePropertyClause">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PropertyName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Value" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetObjectToDataSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetObjectToDataSetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetObjectWSDL">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Context" type="tns:UyumServiceRequestOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetObjectWSDLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetObjectWSDLResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertDataSetToCollection">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Context" type="tns:UyumServiceRequestOfDataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UyumServiceRequestOfDataSet">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Token" type="tns:UyumToken" />
+          <s:element minOccurs="0" maxOccurs="1" name="Value">
+            <s:complexType>
+              <s:sequence>
+                <s:element ref="s:schema" />
+                <s:any />
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="1" maxOccurs="1" name="Top" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="InsertDataSetToCollectionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InsertDataSetToCollectionResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertDataSetToCollection2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Context" type="tns:UyumServiceRequestOfDataSet" />
+            <s:element minOccurs="1" maxOccurs="1" name="DisableAutoIncrement" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertDataSetToCollection2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InsertDataSetToCollection2Result" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateDataSetToCollection">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Context" type="tns:UyumServiceRequestOfDataSet" />
+            <s:element minOccurs="1" maxOccurs="1" name="DisableAutoIncrement" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateDataSetToCollectionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateDataSetToCollectionResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteObject">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Context" type="tns:UyumServiceRequestOfObjectDeleteIn" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UyumServiceRequestOfObjectDeleteIn">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Token" type="tns:UyumToken" />
+          <s:element minOccurs="0" maxOccurs="1" name="Value" type="tns:ObjectDeleteIn" />
+          <s:element minOccurs="1" maxOccurs="1" name="Top" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ObjectDeleteIn">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ObjectCollectionTypeName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PromptValue" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="DeleteObjectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteObjectResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateObject">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Context" type="tns:UyumServiceRequestOfObjectsIn" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UyumServiceRequestOfObjectsIn">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Token" type="tns:UyumToken" />
+          <s:element minOccurs="0" maxOccurs="1" name="Value" type="tns:ObjectsIn" />
+          <s:element minOccurs="1" maxOccurs="1" name="Top" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ObjectsIn">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ObjectCollectionTypeName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpdateObjectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateObjectResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateInvoice">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Context" type="tns:UyumServiceRequestOfInt32" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UyumServiceRequestOfInt32">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Token" type="tns:UyumToken" />
+          <s:element minOccurs="1" maxOccurs="1" name="Value" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Top" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpdateInvoiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateInvoiceResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetTableValuesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTableValues" />
+  </wsdl:message>
+  <wsdl:message name="GetTableValuesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTableValuesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDataTableWithSQLSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDataTableWithSQL" />
+  </wsdl:message>
+  <wsdl:message name="GetDataTableWithSQLSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDataTableWithSQLResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTableValuesWithPermissionSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTableValuesWithPermission" />
+  </wsdl:message>
+  <wsdl:message name="GetTableValuesWithPermissionSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTableValuesWithPermissionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetObjectToDataSetSoapIn">
+    <wsdl:part name="parameters" element="tns:GetObjectToDataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetObjectToDataSetSoapOut">
+    <wsdl:part name="parameters" element="tns:GetObjectToDataSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetObjectWSDLSoapIn">
+    <wsdl:part name="parameters" element="tns:GetObjectWSDL" />
+  </wsdl:message>
+  <wsdl:message name="GetObjectWSDLSoapOut">
+    <wsdl:part name="parameters" element="tns:GetObjectWSDLResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertDataSetToCollectionSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertDataSetToCollection" />
+  </wsdl:message>
+  <wsdl:message name="InsertDataSetToCollectionSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertDataSetToCollectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertDataSetToCollection2SoapIn">
+    <wsdl:part name="parameters" element="tns:InsertDataSetToCollection2" />
+  </wsdl:message>
+  <wsdl:message name="InsertDataSetToCollection2SoapOut">
+    <wsdl:part name="parameters" element="tns:InsertDataSetToCollection2Response" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDataSetToCollectionSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateDataSetToCollection" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDataSetToCollectionSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateDataSetToCollectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteObjectSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteObject" />
+  </wsdl:message>
+  <wsdl:message name="DeleteObjectSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteObjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateObjectSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateObject" />
+  </wsdl:message>
+  <wsdl:message name="UpdateObjectSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateObjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateInvoiceSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateInvoice" />
+  </wsdl:message>
+  <wsdl:message name="UpdateInvoiceSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateInvoiceResponse" />
+  </wsdl:message>
+  <wsdl:portType name="UyumWebServiceSoap">
+    <wsdl:operation name="GetTableValues">
+      <wsdl:input message="tns:GetTableValuesSoapIn" />
+      <wsdl:output message="tns:GetTableValuesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataTableWithSQL">
+      <wsdl:input message="tns:GetDataTableWithSQLSoapIn" />
+      <wsdl:output message="tns:GetDataTableWithSQLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTableValuesWithPermission">
+      <wsdl:input message="tns:GetTableValuesWithPermissionSoapIn" />
+      <wsdl:output message="tns:GetTableValuesWithPermissionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetObjectToDataSet">
+      <wsdl:input message="tns:GetObjectToDataSetSoapIn" />
+      <wsdl:output message="tns:GetObjectToDataSetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetObjectWSDL">
+      <wsdl:input message="tns:GetObjectWSDLSoapIn" />
+      <wsdl:output message="tns:GetObjectWSDLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertDataSetToCollection">
+      <wsdl:input message="tns:InsertDataSetToCollectionSoapIn" />
+      <wsdl:output message="tns:InsertDataSetToCollectionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertDataSetToCollection2">
+      <wsdl:input message="tns:InsertDataSetToCollection2SoapIn" />
+      <wsdl:output message="tns:InsertDataSetToCollection2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDataSetToCollection">
+      <wsdl:input message="tns:UpdateDataSetToCollectionSoapIn" />
+      <wsdl:output message="tns:UpdateDataSetToCollectionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteObject">
+      <wsdl:input message="tns:DeleteObjectSoapIn" />
+      <wsdl:output message="tns:DeleteObjectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateObject">
+      <wsdl:input message="tns:UpdateObjectSoapIn" />
+      <wsdl:output message="tns:UpdateObjectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateInvoice">
+      <wsdl:input message="tns:UpdateInvoiceSoapIn" />
+      <wsdl:output message="tns:UpdateInvoiceSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="UyumWebServiceSoap" type="tns:UyumWebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetTableValues">
+      <soap:operation soapAction="http://tempuri.org/GetTableValues" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataTableWithSQL">
+      <soap:operation soapAction="http://tempuri.org/GetDataTableWithSQL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTableValuesWithPermission">
+      <soap:operation soapAction="http://tempuri.org/GetTableValuesWithPermission" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetObjectToDataSet">
+      <soap:operation soapAction="http://tempuri.org/GetObjectToDataSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetObjectWSDL">
+      <soap:operation soapAction="http://tempuri.org/GetObjectWSDL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertDataSetToCollection">
+      <soap:operation soapAction="http://tempuri.org/InsertDataSetToCollection" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertDataSetToCollection2">
+      <soap:operation soapAction="http://tempuri.org/InsertDataSetToCollection2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDataSetToCollection">
+      <soap:operation soapAction="http://tempuri.org/UpdateDataSetToCollection" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteObject">
+      <soap:operation soapAction="http://tempuri.org/DeleteObject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateObject">
+      <soap:operation soapAction="http://tempuri.org/UpdateObject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateInvoice">
+      <soap:operation soapAction="http://tempuri.org/UpdateInvoice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="UyumWebServiceSoap12" type="tns:UyumWebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetTableValues">
+      <soap12:operation soapAction="http://tempuri.org/GetTableValues" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataTableWithSQL">
+      <soap12:operation soapAction="http://tempuri.org/GetDataTableWithSQL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTableValuesWithPermission">
+      <soap12:operation soapAction="http://tempuri.org/GetTableValuesWithPermission" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetObjectToDataSet">
+      <soap12:operation soapAction="http://tempuri.org/GetObjectToDataSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetObjectWSDL">
+      <soap12:operation soapAction="http://tempuri.org/GetObjectWSDL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertDataSetToCollection">
+      <soap12:operation soapAction="http://tempuri.org/InsertDataSetToCollection" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertDataSetToCollection2">
+      <soap12:operation soapAction="http://tempuri.org/InsertDataSetToCollection2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDataSetToCollection">
+      <soap12:operation soapAction="http://tempuri.org/UpdateDataSetToCollection" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteObject">
+      <soap12:operation soapAction="http://tempuri.org/DeleteObject" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateObject">
+      <soap12:operation soapAction="http://tempuri.org/UpdateObject" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateInvoice">
+      <soap12:operation soapAction="http://tempuri.org/UpdateInvoice" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="UyumWebService">
+    <wsdl:port name="UyumWebServiceSoap" binding="tns:UyumWebServiceSoap">
+      <soap:address location="http://192.168.1.6/webservice/uyumwebservice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="UyumWebServiceSoap12" binding="tns:UyumWebServiceSoap12">
+      <soap12:address location="http://192.168.1.6/webservice/uyumwebservice.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,200 @@
+﻿{
+  "templateName": "Untitled template",
+  "templateVersion": "4",
+  "templatePriority": 0,
+  "detectionRules": {
+    "keywords": []
+  },
+  "objects": [
+    {
+      "name": "OrderNr",
+      "objectType": "field",
+      "fieldProperties": {
+        "fieldType": "rectangle",
+        "rectangle": [
+          29.25,
+          113.25,
+          129.0,
+          13.5
+        ],
+        "pageIndex": 0
+      }
+    },
+    {
+      "name": "Date",
+      "objectType": "field",
+      "fieldProperties": {
+        "fieldType": "rectangle",
+        "rectangle": [
+          188.25,
+          112.5,
+          126.0,
+          13.5
+        ],
+        "pageIndex": 0
+      }
+    },
+    {
+      "name": "Season",
+      "objectType": "field",
+      "fieldProperties": {
+        "fieldType": "rectangle",
+        "rectangle": [
+          35.25,
+          145.5,
+          135.0,
+          13.5
+        ],
+        "pageIndex": 0
+      }
+    },
+    {
+      "name": "Buyer",
+      "objectType": "field",
+      "fieldProperties": {
+        "fieldType": "rectangle",
+        "rectangle": [
+          184.5,
+          144.75,
+          132.0,
+          14.25
+        ],
+        "pageIndex": 0
+      }
+    },
+    {
+      "name": "Payment",
+      "objectType": "field",
+      "fieldProperties": {
+        "fieldType": "rectangle",
+        "rectangle": [
+          331.5,
+          143.25,
+          225.75,
+          16.5
+        ],
+        "pageIndex": 0
+      }
+    },
+    {
+      "name": "Article",
+      "objectType": "field",
+      "fieldProperties": {
+        "fieldType": "rectangle",
+        "rectangle": [
+          108.0,
+          210.0,
+          72.0,
+          24.75
+        ],
+        "pageIndex": 0
+      }
+    },
+    {
+      "name": "Description",
+      "objectType": "field",
+      "fieldProperties": {
+        "fieldType": "rectangle",
+        "rectangle": [
+          188.25,
+          215.25,
+          231.0,
+          19.5
+        ],
+        "pageIndex": 0
+      }
+    },
+    {
+      "name": "Price",
+      "objectType": "field",
+      "fieldProperties": {
+        "fieldType": "rectangle",
+        "rectangle": [
+          491.25,
+          207.0,
+          69.75,
+          12.75
+        ],
+        "pageIndex": 0
+      }
+    },
+    {
+      "name": "Composition",
+      "objectType": "field",
+      "fieldProperties": {
+        "fieldType": "rectangle",
+        "rectangle": [
+          117.75,
+          294.75,
+          435.75,
+          18.75
+        ],
+        "pageIndex": 0
+      }
+    },
+    {
+      "name": "CareInstructions",
+      "objectType": "field",
+      "fieldProperties": {
+        "fieldType": "rectangle",
+        "rectangle": [
+          36.75,
+          357.0,
+          520.5,
+          24.75
+        ],
+        "pageIndex": 0
+      }
+    },
+    {
+      "name": "Alarm",
+      "objectType": "field",
+      "fieldProperties": {
+        "fieldType": "rectangle",
+        "rectangle": [
+          186.75,
+          598.5,
+          369.0,
+          24.75
+        ],
+        "pageIndex": 0
+      }
+    },
+    {
+      "name": "TotalOrder",
+      "objectType": "table",
+      "tableProperties": {
+        "start": {
+          "expression": null,
+          "y": 473.25,
+          "pageIndex": 0
+        },
+        "end": {
+          "expression": null,
+          "y": 553.5,
+          "pageIndex": 0
+        },
+        "left": 34.5,
+        "right": 589.5
+      }
+    },
+    {
+      "name": "PartialShipments",
+      "objectType": "table",
+      "tableProperties": {
+        "start": {
+          "expression": null,
+          "y": 81.0,
+          "pageIndex": 1
+        },
+        "end": {
+          "expression": null,
+          "y": 809.25,
+          "pageIndex": 1
+        },
+        "left": 20.25,
+        "right": 575.25
+      }
+    }
+  ]
+}

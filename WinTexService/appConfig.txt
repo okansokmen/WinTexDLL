@@ -1,0 +1,170 @@
+    <!--<Eroğlu/>-->
+    
+    <add key="SERVER1" value="192.168.1.8"/>
+    <add key="DATABASE1" value="TESDENEME"/>
+    <add key="USERNAME1" value="sa"/>
+    <add key="PASSWORD1" value="er1303*?"/>
+
+    <add key="SERVER2" value="192.168.1.8"/>
+    <add key="DATABASE2" value="TES"/>
+    <add key="USERNAME2" value="sa"/>
+    <add key="PASSWORD2" value="er1303*?"/>
+
+    <add key="SERVER3" value="192.168.1.8"/>
+    <add key="DATABASE3" value="MISIR"/>
+    <add key="USERNAME3" value="sa"/>
+    <add key="PASSWORD3" value="er1303*?"/>
+
+    <add key="SERVER4" value="192.168.1.8"/>
+    <add key="DATABASE4" value="MISIRFASON"/>
+    <add key="USERNAME4" value="sa"/>
+    <add key="PASSWORD4" value="er1303*?"/>
+
+    <add key="SERVER5" value=""/>
+    <add key="DATABASE5" value=""/>
+    <add key="USERNAME5" value=""/>
+    <add key="PASSWORD5" value=""/>
+
+    <add key="SERVER6" value=""/>
+    <add key="DATABASE6" value=""/>
+    <add key="USERNAME6" value=""/>
+    <add key="PASSWORD6" value=""/>
+
+    <add key="SERVER7" value=""/>
+    <add key="DATABASE7" value=""/>
+    <add key="USERNAME7" value=""/>
+    <add key="PASSWORD7" value=""/>
+
+    <add key="SERVER8" value=""/>
+    <add key="DATABASE8" value=""/>
+    <add key="USERNAME8" value=""/>
+    <add key="PASSWORD8" value=""/>
+
+    <add key="SERVER9" value=""/>
+    <add key="DATABASE9" value=""/>
+    <add key="USERNAME9" value=""/>
+    <add key="PASSWORD9" value=""/>
+
+    <add key="SERVER10" value=""/>
+    <add key="DATABASE10" value=""/>
+    <add key="USERNAME10" value=""/>
+    <add key="PASSWORD10" value=""/>
+    
+    <add key="WinTexFileShareDomain" value="192.168.1.204"/>
+    <add key="WinTexFileSharePath" value="\\192.168.1.204\Wintex"/>
+    <add key="WinTexFileShareUsername" value="wintex"/>
+    <add key="WinTexFileSharePassword" value="W456s456+"/> 
+
+    <!--<Ers/>-->
+
+    <add key="SERVER1" value="10.201.2.11"/>
+    <add key="DATABASE1" value="tes"/>
+    <add key="USERNAME1" value="sa"/>
+    <add key="PASSWORD1" value=""/>
+
+    <add key="SERVER2" value=""/>
+    <add key="DATABASE2" value=""/>
+    <add key="USERNAME2" value=""/>
+    <add key="PASSWORD2" value=""/>
+
+    <add key="SERVER3" value=""/>
+    <add key="DATABASE3" value=""/>
+    <add key="USERNAME3" value=""/>
+    <add key="PASSWORD3" value=""/>
+
+    <add key="SERVER4" value=""/>
+    <add key="DATABASE4" value=""/>
+    <add key="USERNAME4" value=""/>
+    <add key="PASSWORD4" value=""/>
+
+    <add key="SERVER5" value=""/>
+    <add key="DATABASE5" value=""/>
+    <add key="USERNAME5" value=""/>
+    <add key="PASSWORD5" value=""/>
+
+    <add key="SERVER6" value=""/>
+    <add key="DATABASE6" value=""/>
+    <add key="USERNAME6" value=""/>
+    <add key="PASSWORD6" value=""/>
+
+    <add key="SERVER7" value=""/>
+    <add key="DATABASE7" value=""/>
+    <add key="USERNAME7" value=""/>
+    <add key="PASSWORD7" value=""/>
+
+    <add key="SERVER8" value=""/>
+    <add key="DATABASE8" value=""/>
+    <add key="USERNAME8" value=""/>
+    <add key="PASSWORD8" value=""/>
+
+    <add key="SERVER9" value=""/>
+    <add key="DATABASE9" value=""/>
+    <add key="USERNAME9" value=""/>
+    <add key="PASSWORD9" value=""/>
+
+    <add key="SERVER10" value=""/>
+    <add key="DATABASE10" value=""/>
+    <add key="USERNAME10" value=""/>
+    <add key="PASSWORD10" value=""/>
+
+    <add key="WinTexFileShareDomain" value="10.201.2.47"/>
+    <add key="WinTexFileSharePath" value="\\10.201.2.47\Wintex"/>
+    <add key="WinTexFileShareUsername" value="scan"/>
+    <add key="WinTexFileSharePassword" value="SC123"/>
+
+    <!--<Geçit/>-->
+
+    <!--<add key="SERVER1" value="192.168.0.7" />
+    <add key="DATABASE1" value="gecit" />
+    <add key="USERNAME1" value="sa" />
+    <add key="PASSWORD1" value="Gecit2020-" />
+
+    <add key="SERVER2" value=""/>
+    <add key="DATABASE2" value=""/>
+    <add key="USERNAME2" value=""/>
+    <add key="PASSWORD2" value=""/>
+
+    <add key="SERVER3" value=""/>
+    <add key="DATABASE3" value=""/>
+    <add key="USERNAME3" value=""/>
+    <add key="PASSWORD3" value=""/>
+
+    <add key="SERVER4" value=""/>
+    <add key="DATABASE4" value=""/>
+    <add key="USERNAME4" value=""/>
+    <add key="PASSWORD4" value=""/>
+
+    <add key="SERVER5" value=""/>
+    <add key="DATABASE5" value=""/>
+    <add key="USERNAME5" value=""/>
+    <add key="PASSWORD5" value=""/>
+
+    <add key="SERVER6" value=""/>
+    <add key="DATABASE6" value=""/>
+    <add key="USERNAME6" value=""/>
+    <add key="PASSWORD6" value=""/>
+
+    <add key="SERVER7" value=""/>
+    <add key="DATABASE7" value=""/>
+    <add key="USERNAME7" value=""/>
+    <add key="PASSWORD7" value=""/>
+
+    <add key="SERVER8" value=""/>
+    <add key="DATABASE8" value=""/>
+    <add key="USERNAME8" value=""/>
+    <add key="PASSWORD8" value=""/>
+
+    <add key="SERVER9" value=""/>
+    <add key="DATABASE9" value=""/>
+    <add key="USERNAME9" value=""/>
+    <add key="PASSWORD9" value=""/>
+
+    <add key="SERVER10" value=""/>
+    <add key="DATABASE10" value=""/>
+    <add key="USERNAME10" value=""/>
+    <add key="PASSWORD10" value=""/>
+
+    <add key="WinTexFileShareDomain" value="192.168.0.8"/>
+    <add key="WinTexFileSharePath" value="\\192.168.0.8\Wintex"/>
+    <add key="WinTexFileShareUsername" value="administrator"/>
+    <add key="WinTexFileSharePassword" value="Gecit2020-"/>-->

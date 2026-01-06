@@ -1,0 +1,17 @@
+## Ignore Visual Studio temporary files
+.vs/
+.vscode/
+bin/
+obj/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.cache
+*.log
+*.pdb
+Thumbs.db
+Desktop.ini
+*.bak
+*.tmp
+*.lock

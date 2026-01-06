@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Queries>
+  
+  <!-- üretim fişini stok irsaliyesi olarak UYUM programına aktarma sorgusu. Kolonların hepsine ihtiyaç var kolon sırası değiştirilebilir  -->
+  <Query CommandID = "EskiUyumUretimStokFisi"
+         CommandText = "select {1} w.*,
+                        cinsaciklamasi = (select top 1 aciklama
+                                          from ymodel with (NOLOCK)
+                                          where modelno = w.modelno),
+                        firmaid = case
+                                    when firma2id is not null then firma2id
+                                    else firma1id
+                                  end,
+                        cikistipi = case
+                                    when firma2id is not null and not (firma2dahilifirma = 'E') then 'CIKIS'
+                                    when firma2id is not null and firma2dahilifirma = 'E' then 'TRANSFER'
+                                    when firma2id is null and firma1dahilifirma = 'E' then 'TRANSFER'
+                                    else 'CIKIS'
+                                  end,
+                        doctraid = (select top 1 doctraid
+                                    from urethardoctraid with (NOLOCK)
+                                    where (firma = 'HEPSI' or firma = w.cikisfirm_atl)
+                                    and (cikistipi = 'HEPSI' or cikistipi = case
+                                                                              when firma2id is not null and not (firma2dahilifirma = 'E') then 'CIKIS'
+                                                                              when firma2id is not null and firma2dahilifirma = 'E' then 'TRANSFER'
+                                                                              when firma2id is null and firma1dahilifirma = 'E' then 'TRANSFER'
+                                                                              else 'CIKIS'
+                                                                            end)
+                                    and (personel = 'HEPSI' or personel = w.personel))
+                        from (select a.uretfisno, a.belgeno, a.belgetarihi, a.cikisdept, a.cikisfirm_atl, b.modelno, a.username,
+                              stokid = d.uyumid,
+                              adet = sum(coalesce(c.adet,0)),
+                              a.girisfirm_atl,
+                              firma1id = f.uyumid,
+                              firma1dahilifirma = f.dahilifirma,
+                              a.girisfirm2,
+                              birimid = (select top 1 uyumid
+                                        from birim with (NOLOCK)
+                                        where birim = 'AD'),
+                              girisdepoid = (select top 1 uyumdepoid
+                                        from firma with (NOLOCK)
+                                        where firma = a.girisfirm_atl),
+                              cikisdepoid = (select top 1 uyumdepoid
+                                        from firma with (NOLOCK)
+                                        where firma = a.cikisfirm_atl),
+                              firma2id = (select top 1 uyumid
+                                        from firma with (NOLOCK)
+                                        where firma = a.girisfirm2),
+                              firma2dahilifirma = (select top 1 dahilifirma
+                                        from firma with (NOLOCK)
+                                        where firma = a.girisfirm2),
+                              personel = (select top 1 personel
+                                        from personel with (NOLOCK)
+                                        where username = a.username)
+                              from uretharfis a with (NOLOCK),
+                                  uretharfislines b with (NOLOCK),
+                                  uretharrba c with (NOLOCK),
+                                  stok d with (NOLOCK),
+                                  firma e with (NOLOCK),
+                                  firma f with (NOLOCK)
+                              where a.uretfisno = b.uretfisno
+                                  and b.uretfisno = c.uretfisno
+                                  and b.ulineno = c.ulineno
+                                  and b.modelno = d.stokno
+                                  and a.cikisfirm_atl = e.firma
+                                  and a.girisfirm_atl = f.firma
+                                  and e.dahilifirma = 'E'
+                                  and a.uretfisno = '{0}'
+                              group by a.uretfisno, a.belgeno, a.belgetarihi, a.cikisdept, a.cikisfirm_atl,
+                                  a.girisfirm_atl, a.girisfirm2, b.modelno, a.username, f.dahilifirma,
+                                  d.uyumid, f.uyumid) w " >
+  </Query>
+
+  <Query CommandID = "EskiUyumAktarimOncesiStokFisi" 
+         CommandText = "update b 
+                    set b.uyumhareketkoduid = (select top 1 
+                    case 
+	                    when w.stokfistipi = 'Giris' 
+	                    then
+		                    case 
+			                    when w.stokhareketkodu in ('01 Uretimden iade','03 Mlz Uretimden iade','07 Satis Iade') then 1302
+			                    when w.stokhareketkodu = '02 Tedarikten Giris' and w.ithalat = 'E' then 1296
+			                    when w.stokhareketkodu = '02 Tedarikten Giris' and not (w.ithalat = 'E') then 1292
+			                    else 1292
+		                    end
+	                    else
+		                    case
+			                    when w.stokhareketkodu = '02 Tedarikten iade' then 1308
+			                    when w.stokhareketkodu = '07 Satis' and w.grupfirmasi = 'E' and w.uyumyurtdisisiparis = 'E' then 2865
+			                    when w.stokhareketkodu = '07 Satis' and w.grupfirmasi = 'E' and not (w.uyumyurtdisisiparis = 'E') then 2863
+			                    when w.stokhareketkodu = '07 Satis' and not (w.grupfirmasi = 'E') and w.uyumyurtdisisiparis = 'E' then 2866
+			                    when w.stokhareketkodu = '07 Satis' and not (w.grupfirmasi = 'E') and not (w.uyumyurtdisisiparis = 'E') then 2864
+                          else 1297
+                        end
+                    end
+                    from (select h.stokfisno, h.stokfistipi, j.stokhareketkodu, j.uyumhareketkoduid,
+                            k.anastokgrubu,
+                            l.grupfirmasi, l.yurtdisimusteri, l.uyumyurtdisisiparis,
+                            ithalat = (select top 1 x.ithalat
+                                      from isemri x with (NOLOCK) , isemrilines y with (NOLOCK)
+                                      where x.isemrino = y.isemrino
+                                      And y.isemrino = j.isemrino
+                                      And y.stokno = j.stokno
+                                      And y.renk = j.renk
+                                      And y.beden = j.beden)
+                            from stokfis h with (NOLOCK) , stokfislines j with (NOLOCK) , stok k with (NOLOCK) , firma l with (NOLOCK)
+                            where h.stokfisno = j.stokfisno
+                            and j.stokno = k.stokno
+                            and h.firma = l.firma
+                            and h.stokfisno = a.stokfisno
+                            and j.stokhareketno = b.stokhareketno
+                            and (j.uyumid is null or j.uyumid = 0)) w)
+                    from stokfis a , stokfislines b , stok c , firma d
+                    where a.stokfisno = b.stokfisno
+                    and b.stokno = c.stokno 
+                    and a.firma = d.firma
+                    and b.stokno Is Not null 
+                    and not (b.stokno = '')
+                    and (b.uyumid is null or b.uyumid = 0) 
+                    {0} ">
+  </Query>
+  
+  <!-- Deneme Sorgusu Açıklaması  -->
+  <Query CommandID = "Deneme"
+         CommandText = "Deneme SQL Cümlesi Filitre = {0} örnek and fisno = 1 , Top record Count = {1} örnek top 100">
+  </Query>
+
+</Queries>  
+

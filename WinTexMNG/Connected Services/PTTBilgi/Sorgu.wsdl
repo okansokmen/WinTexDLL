@@ -1,0 +1,902 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ax21="http://bilgi.ptt.gov.tr/xsd" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:ns="http://bilgi.ptt.gov.tr" xmlns:ns1="http://org.apache.axis2/xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://bilgi.ptt.gov.tr" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation>
+		Please Type your service description here
+	</wsdl:documentation>
+  <wsdl:types>
+    <xs:schema xmlns:ax22="http://bilgi.ptt.gov.tr/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://bilgi.ptt.gov.tr">
+      <xs:import namespace="http://bilgi.ptt.gov.tr/xsd" />
+      <xs:element name="postaUcret">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="input" nillable="true" type="ax22:InputPostaUcret" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="postaUcretResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="ax22:OutputUcret" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="kargoUcret">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="input" nillable="true" type="ax22:InputKargoUcret" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="kargoUcretResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="ax22:OutputUcret" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ucretKargo2">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="input" nillable="true" type="ax22:InputKargoUcret2" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ucretKargo2Response">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="ax22:OutputUcret" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="telgrafUcret">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="input" nillable="true" type="ax22:InputTelgrafUcret" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="telgrafUcretResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="ax22:OutputUcret" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="yurtDisiFaxUcret">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="input" nillable="true" type="ax22:InputKargoUcret" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="yurtDisiFaxUcretResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="ax22:OutputUcret" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ulkeKodGrupSorgulama">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="input" nillable="true" type="ax22:InputUlkeGrup" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ulkeKodGrupSorgulamaResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="ax22:OutputUlkeTum" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="gonderiDurumAciklamaSorgula">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="input" nillable="true" type="ax22:Input" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="gonderiDurumAciklamaSorgulaResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="ax22:Output" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ilceSorgula">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="input" nillable="true" type="ax22:Input" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ilceSorgulaResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="ax22:OutputIlce" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ekHizmetSorgula">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="input" nillable="true" type="ax22:Input" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ekHizmetSorgulaResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="ax22:OutputEkHizmet" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="KargomatSorgula">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="input" nillable="true" type="ax22:InputKargomatId" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="KargomatSorgulaResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="ax22:OutputKargomatAktiflik" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="kargomatListesi">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="input" nillable="true" type="ax22:InputKargomat" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="kargomatListesiResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="ax22:OutputKargomat" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="teslimSure">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="input" nillable="true" type="ax22:InputTeslimSure" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="teslimSureResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="ax22:OutputTeslimSure" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://bilgi.ptt.gov.tr/xsd">
+      <xs:complexType name="InputPostaUcret">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="adres" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="agirlik" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="dagitimTip" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="degerucret" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="desi" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="dosyatur" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ekhizmet" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="gonderiTip" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="gonderiTur" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="hesaplamaTipi" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="kullanici" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="mesafe" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="odemesekli" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="sifre" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="OutputUcret">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="sonucAciklama" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="sonucKodu" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="ucret" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="InputKargoUcret">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="agirlik" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="dagitimTip" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="degerucret" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="desi" type="xs:double" />
+          <xs:element minOccurs="0" name="dosyatur" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ekhizmet" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="gonderiTip" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="gonderiTur" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="hesaplamaTipi" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="kullanici" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="mesafe" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="odemesekli" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="sifre" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="InputKargoUcret2">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="agirlik" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="boy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="dagitimTip" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="degerucret" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="desi" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="dosyatur" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ekhizmet" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="en" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="gonderiTip" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="gonderiTur" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="hesaplamaTipi" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="kullanici" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="mesafe" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="odemesekli" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="sifre" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="yukseklik" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="InputTelgrafUcret">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="agirlik" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="dagitimTip" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="degerucret" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="desi" type="xs:double" />
+          <xs:element minOccurs="0" name="dosyatur" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ekhizmet" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="gonderiTip" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="gonderiTur" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="hesaplamaTipi" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="kullanici" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="mesafe" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="odemesekli" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="sifre" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="InputUlkeGrup">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="apg" type="xs:int" />
+          <xs:element minOccurs="0" name="fax" type="xs:int" />
+          <xs:element minOccurs="0" name="koli" type="xs:int" />
+          <xs:element minOccurs="0" name="kullanici" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="sifre" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="taahhut" type="xs:int" />
+          <xs:element minOccurs="0" name="turpex" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="OutputUlkeTum">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="donguList" nillable="true" type="ax21:OutputUlke" />
+          <xs:element minOccurs="0" name="sonucAciklama" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="sonucKodu" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="state" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="OutputUlke">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="apg_beyan_adet" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="apg_boyut" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="apg_max_agirlik" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="apg_teslim_sure" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="apg_ucret_grubu" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="apg_ulkesi" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="country" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="koli_odeme_sart_para_birimi" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="koli_odeme_sart_ust_limit" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="koli_ucak_beyan_adet" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="koli_ucak_degkon_ustlimit" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="koli_ucak_ilk_kademe_ucret" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="koli_ucak_kesir_ucret" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="koli_ucak_max_agirlik" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="koli_ucak_teslim_sure" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="koli_ulke_aciklama" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="koli_ulkesi" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="koli_yuzey_beyan_adet" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="koli_yuzey_degkon_ust_limit" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="koli_yuzey_ilk_kademe_ucret" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="koli_yuzey_kesir_ucret" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="koli_yuzey_max_agirlik" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="koli_yuzey_teslim_sure" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="turpex_teslim_sure" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="turpex_ulke_kod" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="turpex_ulkesi" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="ulke_ad" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ulke_kod" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Input">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="kullanici" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="sifre" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Output">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="dongu" nillable="true" type="ax21:OutputDongu" />
+          <xs:element minOccurs="0" name="sonucAciklama" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="sonucKodu" nillable="true" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="OutputDongu">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="gonderi_durum_aciklama" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="gonderi_durum_id" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ust_durum_ad" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ust_durum_id" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="OutputIlce">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="dongu" nillable="true" type="ax21:OutputDonguIlce" />
+          <xs:element minOccurs="0" name="sonucAciklama" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="sonucKodu" nillable="true" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="OutputDonguIlce">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="il_ad" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="il_id" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ilce_ad" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ilce_id" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="OutputEkHizmet">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="dongu" nillable="true" type="ax21:OutputDonguEkHizmet" />
+          <xs:element minOccurs="0" name="sonucAciklama" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="sonucKodu" nillable="true" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="OutputDonguEkHizmet">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ek_hizmet_ad" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ek_hizmet_id" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="InputKargomatId">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="kargomat_id" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="kullanici" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="sifre" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="OutputKargomatAktiflik">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="dongu" nillable="true" type="ax21:OutputKargomatDongu2" />
+          <xs:element minOccurs="0" name="kargomatAktif" type="xs:boolean" />
+          <xs:element minOccurs="0" name="sonucAciklama" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="sonucKodu" nillable="true" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="OutputKargomatDongu2">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="boylam" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="enlem" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="eposta" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="il_ad" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ilce_ad" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="kargomat_ad" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="kargomat_adres" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="kargomat_id" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="mahalle_ad" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="InputKargomat">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="il_id" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ilce_id" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="kullanici" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="sifre" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="OutputKargomat">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="dongu" nillable="true" type="ax21:OutputKargomatDongu" />
+          <xs:element minOccurs="0" name="sonucAciklama" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="sonucKodu" nillable="true" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="OutputKargomatDongu">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="boylam" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="enlem" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="il_ad" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="il_id" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ilce_ad" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ilce_id" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="kargomat_ad" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="kargomat_adres" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="kargomat_id" type="xs:long" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="InputTeslimSure">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="cikisIl" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="kullaniciAdi" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="musteriNo" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="sifre" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="sorguTip" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="varisIl" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="OutputTeslimSure">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="cut_off_time" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="hata_aciklama" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="r_code" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="sql_code" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="state" type="xs:boolean" />
+          <xs:element minOccurs="0" name="teslim_sure" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="teslimSureRequest">
+    <wsdl:part name="parameters" element="ns:teslimSure" />
+  </wsdl:message>
+  <wsdl:message name="teslimSureResponse">
+    <wsdl:part name="parameters" element="ns:teslimSureResponse" />
+  </wsdl:message>
+  <wsdl:message name="kargoUcretRequest">
+    <wsdl:part name="parameters" element="ns:kargoUcret" />
+  </wsdl:message>
+  <wsdl:message name="kargoUcretResponse">
+    <wsdl:part name="parameters" element="ns:kargoUcretResponse" />
+  </wsdl:message>
+  <wsdl:message name="telgrafUcretRequest">
+    <wsdl:part name="parameters" element="ns:telgrafUcret" />
+  </wsdl:message>
+  <wsdl:message name="telgrafUcretResponse">
+    <wsdl:part name="parameters" element="ns:telgrafUcretResponse" />
+  </wsdl:message>
+  <wsdl:message name="kargomatListesiRequest">
+    <wsdl:part name="parameters" element="ns:kargomatListesi" />
+  </wsdl:message>
+  <wsdl:message name="kargomatListesiResponse">
+    <wsdl:part name="parameters" element="ns:kargomatListesiResponse" />
+  </wsdl:message>
+  <wsdl:message name="ilceSorgulaRequest">
+    <wsdl:part name="parameters" element="ns:ilceSorgula" />
+  </wsdl:message>
+  <wsdl:message name="ilceSorgulaResponse">
+    <wsdl:part name="parameters" element="ns:ilceSorgulaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ulkeKodGrupSorgulamaRequest">
+    <wsdl:part name="parameters" element="ns:ulkeKodGrupSorgulama" />
+  </wsdl:message>
+  <wsdl:message name="ulkeKodGrupSorgulamaResponse">
+    <wsdl:part name="parameters" element="ns:ulkeKodGrupSorgulamaResponse" />
+  </wsdl:message>
+  <wsdl:message name="KargomatSorgulaRequest">
+    <wsdl:part name="parameters" element="ns:KargomatSorgula" />
+  </wsdl:message>
+  <wsdl:message name="KargomatSorgulaResponse">
+    <wsdl:part name="parameters" element="ns:KargomatSorgulaResponse" />
+  </wsdl:message>
+  <wsdl:message name="gonderiDurumAciklamaSorgulaRequest">
+    <wsdl:part name="parameters" element="ns:gonderiDurumAciklamaSorgula" />
+  </wsdl:message>
+  <wsdl:message name="gonderiDurumAciklamaSorgulaResponse">
+    <wsdl:part name="parameters" element="ns:gonderiDurumAciklamaSorgulaResponse" />
+  </wsdl:message>
+  <wsdl:message name="yurtDisiFaxUcretRequest">
+    <wsdl:part name="parameters" element="ns:yurtDisiFaxUcret" />
+  </wsdl:message>
+  <wsdl:message name="yurtDisiFaxUcretResponse">
+    <wsdl:part name="parameters" element="ns:yurtDisiFaxUcretResponse" />
+  </wsdl:message>
+  <wsdl:message name="ucretKargo2Request">
+    <wsdl:part name="parameters" element="ns:ucretKargo2" />
+  </wsdl:message>
+  <wsdl:message name="ucretKargo2Response">
+    <wsdl:part name="parameters" element="ns:ucretKargo2Response" />
+  </wsdl:message>
+  <wsdl:message name="postaUcretRequest">
+    <wsdl:part name="parameters" element="ns:postaUcret" />
+  </wsdl:message>
+  <wsdl:message name="postaUcretResponse">
+    <wsdl:part name="parameters" element="ns:postaUcretResponse" />
+  </wsdl:message>
+  <wsdl:message name="ekHizmetSorgulaRequest">
+    <wsdl:part name="parameters" element="ns:ekHizmetSorgula" />
+  </wsdl:message>
+  <wsdl:message name="ekHizmetSorgulaResponse">
+    <wsdl:part name="parameters" element="ns:ekHizmetSorgulaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SorguPortType">
+    <wsdl:operation name="teslimSure">
+      <wsdl:input wsaw:Action="urn:teslimSure" message="ns:teslimSureRequest" />
+      <wsdl:output wsaw:Action="urn:teslimSureResponse" message="ns:teslimSureResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="kargoUcret">
+      <wsdl:input wsaw:Action="urn:kargoUcret" message="ns:kargoUcretRequest" />
+      <wsdl:output wsaw:Action="urn:kargoUcretResponse" message="ns:kargoUcretResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="telgrafUcret">
+      <wsdl:input wsaw:Action="urn:telgrafUcret" message="ns:telgrafUcretRequest" />
+      <wsdl:output wsaw:Action="urn:telgrafUcretResponse" message="ns:telgrafUcretResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="kargomatListesi">
+      <wsdl:input wsaw:Action="urn:kargomatListesi" message="ns:kargomatListesiRequest" />
+      <wsdl:output wsaw:Action="urn:kargomatListesiResponse" message="ns:kargomatListesiResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ilceSorgula">
+      <wsdl:input wsaw:Action="urn:ilceSorgula" message="ns:ilceSorgulaRequest" />
+      <wsdl:output wsaw:Action="urn:ilceSorgulaResponse" message="ns:ilceSorgulaResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ulkeKodGrupSorgulama">
+      <wsdl:input wsaw:Action="urn:ulkeKodGrupSorgulama" message="ns:ulkeKodGrupSorgulamaRequest" />
+      <wsdl:output wsaw:Action="urn:ulkeKodGrupSorgulamaResponse" message="ns:ulkeKodGrupSorgulamaResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="KargomatSorgula">
+      <wsdl:input wsaw:Action="urn:KargomatSorgula" message="ns:KargomatSorgulaRequest" />
+      <wsdl:output wsaw:Action="urn:KargomatSorgulaResponse" message="ns:KargomatSorgulaResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="gonderiDurumAciklamaSorgula">
+      <wsdl:input wsaw:Action="urn:gonderiDurumAciklamaSorgula" message="ns:gonderiDurumAciklamaSorgulaRequest" />
+      <wsdl:output wsaw:Action="urn:gonderiDurumAciklamaSorgulaResponse" message="ns:gonderiDurumAciklamaSorgulaResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="yurtDisiFaxUcret">
+      <wsdl:input wsaw:Action="urn:yurtDisiFaxUcret" message="ns:yurtDisiFaxUcretRequest" />
+      <wsdl:output wsaw:Action="urn:yurtDisiFaxUcretResponse" message="ns:yurtDisiFaxUcretResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ucretKargo2">
+      <wsdl:input wsaw:Action="urn:ucretKargo2" message="ns:ucretKargo2Request" />
+      <wsdl:output wsaw:Action="urn:ucretKargo2Response" message="ns:ucretKargo2Response" />
+    </wsdl:operation>
+    <wsdl:operation name="postaUcret">
+      <wsdl:input wsaw:Action="urn:postaUcret" message="ns:postaUcretRequest" />
+      <wsdl:output wsaw:Action="urn:postaUcretResponse" message="ns:postaUcretResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ekHizmetSorgula">
+      <wsdl:input wsaw:Action="urn:ekHizmetSorgula" message="ns:ekHizmetSorgulaRequest" />
+      <wsdl:output wsaw:Action="urn:ekHizmetSorgulaResponse" message="ns:ekHizmetSorgulaResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SorguSoap11Binding" type="ns:SorguPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="teslimSure">
+      <soap:operation soapAction="urn:teslimSure" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="kargoUcret">
+      <soap:operation soapAction="urn:kargoUcret" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="telgrafUcret">
+      <soap:operation soapAction="urn:telgrafUcret" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="kargomatListesi">
+      <soap:operation soapAction="urn:kargomatListesi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ilceSorgula">
+      <soap:operation soapAction="urn:ilceSorgula" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ulkeKodGrupSorgulama">
+      <soap:operation soapAction="urn:ulkeKodGrupSorgulama" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KargomatSorgula">
+      <soap:operation soapAction="urn:KargomatSorgula" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="gonderiDurumAciklamaSorgula">
+      <soap:operation soapAction="urn:gonderiDurumAciklamaSorgula" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="yurtDisiFaxUcret">
+      <soap:operation soapAction="urn:yurtDisiFaxUcret" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ucretKargo2">
+      <soap:operation soapAction="urn:ucretKargo2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="postaUcret">
+      <soap:operation soapAction="urn:postaUcret" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ekHizmetSorgula">
+      <soap:operation soapAction="urn:ekHizmetSorgula" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SorguSoap12Binding" type="ns:SorguPortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="teslimSure">
+      <soap12:operation soapAction="urn:teslimSure" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="kargoUcret">
+      <soap12:operation soapAction="urn:kargoUcret" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="telgrafUcret">
+      <soap12:operation soapAction="urn:telgrafUcret" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="kargomatListesi">
+      <soap12:operation soapAction="urn:kargomatListesi" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ilceSorgula">
+      <soap12:operation soapAction="urn:ilceSorgula" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ulkeKodGrupSorgulama">
+      <soap12:operation soapAction="urn:ulkeKodGrupSorgulama" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KargomatSorgula">
+      <soap12:operation soapAction="urn:KargomatSorgula" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="gonderiDurumAciklamaSorgula">
+      <soap12:operation soapAction="urn:gonderiDurumAciklamaSorgula" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="yurtDisiFaxUcret">
+      <soap12:operation soapAction="urn:yurtDisiFaxUcret" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ucretKargo2">
+      <soap12:operation soapAction="urn:ucretKargo2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="postaUcret">
+      <soap12:operation soapAction="urn:postaUcret" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ekHizmetSorgula">
+      <soap12:operation soapAction="urn:ekHizmetSorgula" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SorguHttpBinding" type="ns:SorguPortType">
+    <http:binding verb="POST" />
+    <wsdl:operation name="teslimSure">
+      <http:operation location="teslimSure" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="kargoUcret">
+      <http:operation location="kargoUcret" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="telgrafUcret">
+      <http:operation location="telgrafUcret" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="kargomatListesi">
+      <http:operation location="kargomatListesi" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ilceSorgula">
+      <http:operation location="ilceSorgula" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ulkeKodGrupSorgulama">
+      <http:operation location="ulkeKodGrupSorgulama" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KargomatSorgula">
+      <http:operation location="KargomatSorgula" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="gonderiDurumAciklamaSorgula">
+      <http:operation location="gonderiDurumAciklamaSorgula" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="yurtDisiFaxUcret">
+      <http:operation location="yurtDisiFaxUcret" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ucretKargo2">
+      <http:operation location="ucretKargo2" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="postaUcret">
+      <http:operation location="postaUcret" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ekHizmetSorgula">
+      <http:operation location="ekHizmetSorgula" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Sorgu">
+    <wsdl:port name="SorguHttpSoap11Endpoint" binding="ns:SorguSoap11Binding">
+      <soap:address location="https://pttws.ptt.gov.tr/PttBilgi/services/Sorgu*" />
+    </wsdl:port>
+    <wsdl:port name="SorguHttpSoap12Endpoint" binding="ns:SorguSoap12Binding">
+      <soap12:address location="https://pttws.ptt.gov.tr/PttBilgi/services/Sorgu*" />
+    </wsdl:port>
+    <wsdl:port name="SorguHttpEndpoint" binding="ns:SorguHttpBinding">
+      <http:address location="https://pttws.ptt.gov.tr/PttBilgi/services/Sorgu*" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

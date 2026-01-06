@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:tns="http://ee.econt.com/services/PaymentReport/R" xmlns:ns1="http://ee.econt.com/services/PaymentReport" elementFormDefault="qualified" targetNamespace="http://ee.econt.com/services/PaymentReport/R" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import schemaLocation="../schema.xsd" namespace="http://ee.econt.com/services/PaymentReport" />
+  <xsd:complexType name="PaymentReportRequest">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="dateTo" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>End date('yyyy-mm-dd')</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="1" maxOccurs="1" name="dateFrom" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Start date('yyyy-mm-dd')</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="PaymentReportRequest" type="tns:PaymentReportRequest" />
+  <xsd:complexType name="PaymentReportResponse">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="PaymentReportRows" type="ns1:PaymentReportRow" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="PaymentReportResponse" type="tns:PaymentReportResponse" />
+</xsd:schema>

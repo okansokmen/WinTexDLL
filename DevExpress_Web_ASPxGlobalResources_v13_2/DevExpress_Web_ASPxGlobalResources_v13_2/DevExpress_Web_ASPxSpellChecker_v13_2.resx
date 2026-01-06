@@ -1,0 +1,89 @@
+<?xml version="1.0"?><root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ASPxSpellCheckerStringId.OptionsFormCaption">
+    <value>Yazım Denetimi Seçenekleri</value>
+  </data>
+  <data name="ASPxSpellCheckerStringId.SpellCheckFormCaption">
+    <value>Yazımı Denetle</value>
+  </data>
+  <data name="ASPxSpellCheckerStringId.FinishSpellChecking">
+    <value>Yazım denetimi tamamlandı.</value>
+  </data>
+  <data name="ASPxSpellCheckerStringId.NoSuggestionsText">
+    <value>(Öneri Yok)</value>
+  </data>
+  <data name="ASPxSpellCheckerStringId.NotInDictionary">
+    <value>Sözlükte Yok:</value>
+  </data>
+  <data name="ASPxSpellCheckerStringId.IgnoreOnceButton">
+    <value>Birkez Yoksay</value>
+  </data>
+  <data name="ASPxSpellCheckerStringId.IgnoreAllButton">
+    <value>Tümünü Yoksay</value>
+  </data>
+  <data name="ASPxSpellCheckerStringId.AddToDictionaryButton">
+    <value>Sözlüğe Ekle</value>
+  </data>
+  <data name="ASPxSpellCheckerStringId.ChangeTo">
+    <value>Değiştirilecek:</value>
+  </data>
+  <data name="ASPxSpellCheckerStringId.ChangeButton">
+    <value>Değiştir</value>
+  </data>
+  <data name="ASPxSpellCheckerStringId.ChangeAllButton">
+    <value>Tümünü Değiştir</value>
+  </data>
+  <data name="ASPxSpellCheckerStringId.GeneralOptions">
+    <value>Genel Seçenekler</value>
+  </data>
+  <data name="ASPxSpellCheckerStringId.IgnoreUppercase">
+    <value>BÜYÜK HARFLİ sözcükleri yoksay</value>
+  </data>
+  <data name="ASPxSpellCheckerStringId.IgnoreMixedCase">
+    <value>KaRıŞıK sözcükleri yoksay</value>
+  </data>
+  <data name="ASPxSpellCheckerStringId.IgnoreNumbers">
+    <value>Sayı içeren sözcükleri yoksay</value>
+  </data>
+  <data name="ASPxSpellCheckerStringId.IgnoreEmails">
+    <value>E-postaları Yoksay</value>
+  </data>
+  <data name="ASPxSpellCheckerStringId.IgnoreUrls">
+    <value>URL'leri yoksay</value>
+  </data>
+  <data name="ASPxSpellCheckerStringId.IgnoreTags">
+    <value>Biçimlendirme etiketlerini yoksay</value>
+  </data>
+  <data name="ASPxSpellCheckerStringId.InternationalDictionaries">
+    <value>Uluslararası sözlükler</value>
+  </data>
+  <data name="ASPxSpellCheckerStringId.ChooseDictionary">
+    <value>Yazım denetimi yaparken kullanmak için bir sözlük seçin.</value>
+  </data>
+  <data name="ASPxSpellCheckerStringId.Language">
+    <value>Dil:</value>
+  </data>
+  <data name="ASPxSpellCheckerStringId.OptionsButton">
+    <value>Seçenekler...</value>
+  </data>
+  <data name="ASPxSpellCheckerStringId.CloseButton">
+    <value>Kapat</value>
+  </data>
+  <data name="ASPxSpellCheckerStringId.OkButton">
+    <value>Tamam</value>
+  </data>
+  <data name="ASPxSpellCheckerStringId.CancelButton">
+    <value>Cancel</value>
+  </data>
+</root>

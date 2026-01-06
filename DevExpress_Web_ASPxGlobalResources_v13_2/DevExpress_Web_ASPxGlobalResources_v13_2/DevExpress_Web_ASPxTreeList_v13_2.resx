@@ -1,0 +1,56 @@
+<?xml version="1.0"?><root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ASPxTreeListStringId.CustomizationWindowCaption">
+    <value>Alan Seçici</value>
+  </data>
+  <data name="ASPxTreeListStringId.PopupEditFormCaption">
+    <value>Düzenleme Formu</value>
+  </data>
+  <data name="ASPxTreeListStringId.CommandEdit">
+    <value>Düzenle</value>
+  </data>
+  <data name="ASPxTreeListStringId.CommandNew">
+    <value>Yeni</value>
+  </data>
+  <data name="ASPxTreeListStringId.CommandDelete">
+    <value>Sil</value>
+  </data>
+  <data name="ASPxTreeListStringId.CommandUpdate">
+    <value>Güncelle</value>
+  </data>
+  <data name="ASPxTreeListStringId.CommandCancel">
+    <value>İptal</value>
+  </data>
+  <data name="ASPxTreeListStringId.ConfirmDelete">
+    <value>Silme işlemini doğrulayın!</value>
+  </data>
+  <data name="ASPxTreeListStringId.RecursiveDeleteError">
+    <value>Düğümün altında tanımlı olan başka düğümler var.</value>
+  </data>
+  <data name="ASPxTreeListStringId.Alt_Expand">
+    <value>[Genişlet]</value>
+  </data>
+  <data name="ASPxTreeListStringId.Alt_Collapse">
+    <value>[Daralt]</value>
+  </data>
+  <data name="ASPxTreeListStringId.Alt_SortedAscending">
+    <value>(A'dan Z'ye)</value>
+  </data>
+  <data name="ASPxTreeListStringId.Alt_SortedDescending">
+    <value>(Z'den A'ya)</value>
+  </data>
+  <data name="ASPxTreeListStringId.Alt_DragAndDropHideColumnIcon">
+    <value>Hide</value>
+  </data>
+</root>

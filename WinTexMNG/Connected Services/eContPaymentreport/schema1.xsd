@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:tns="http://ee.econt.com/services/PaymentReport" elementFormDefault="qualified" targetNamespace="http://ee.econt.com/services/PaymentReport" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:complexType name="PaymentReportRow">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="num" type="xsd:long">
+        <xsd:annotation>
+          <xsd:documentation>Shipment number</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="1" maxOccurs="1" name="type" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>CoD or money transfer</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="1" maxOccurs="1" name="payType" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Payment type office, address or bank</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="1" maxOccurs="1" name="payDate" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Pay date</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="1" maxOccurs="1" name="amount" type="xsd:double">
+        <xsd:annotation>
+          <xsd:documentation>Amount</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="1" maxOccurs="1" name="currency" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Currency</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="1" maxOccurs="1" name="createdTime" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Created time of the document</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="PaymentReportRow" type="tns:PaymentReportRow" />
+</xsd:schema>

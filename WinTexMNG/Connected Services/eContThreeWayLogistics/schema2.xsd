@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:tns="http://ee.econt.com/services/ThreeWayLogistics/R" elementFormDefault="qualified" targetNamespace="http://ee.econt.com/services/ThreeWayLogistics/R" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:complexType name="ThreeWayLogisticsRequest">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="requester_name" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="requester_phone" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="requester_email" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="requester_company_name" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="requester_username" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="supplier_company_name" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="supplier_contact_person" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="supplier_phone" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="supplier_city" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="supplier_address" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="supplier_date_for_visit" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="supplier_time_for_visit" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="receiver_name" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="receiver_company_name" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="receiver_phone" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="receiver_email" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="description_shipment_description" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="description_shipment_count" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="description_shipment_weight" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="description_additional_instructions" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="description_payment_sum_to_supplier" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="delivery_details_city" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="delivery_details_address" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="delivery_details_office" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="dc" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="dccp" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="email_on_delivery" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="invoice_before_pay" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="preview" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="test" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="payment_delivery_and_return_by_me" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="payment_return_by_me" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="payment_delivery_by_requester" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="payment_delivery_by_receiver" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="oc_sum" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="cd_sum" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="priority_delivery_time_before" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="priority_delivery_time_after" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="priority_delivery_time_in" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="ThreeWayLogisticsRequest" type="tns:ThreeWayLogisticsRequest" />
+  <xsd:complexType name="ThreeWayLogisticsResponse" />
+  <xsd:element name="ThreeWayLogisticsResponse" type="tns:ThreeWayLogisticsResponse" />
+</xsd:schema>

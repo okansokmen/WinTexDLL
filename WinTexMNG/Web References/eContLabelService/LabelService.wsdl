@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:ns2="http://ee.econt.com/services" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://ee.econt.com/services/Shipments" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://ee.econt.com/services/Shipments/R" targetNamespace="http://ee.econt.com/services/Shipments" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://ee.econt.com/services/Shipments">
+      <xsd:include schemaLocation="schema.xsd" />
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import schemaLocation="R/schema.xsd" namespace="http://ee.econt.com/services/Shipments/R" />
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import schemaLocation="../schema.xsd" namespace="http://ee.econt.com/services" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="createLabel">
+    <wsdl:part name="request" element="ns1:CreateLabelRequest" />
+  </wsdl:message>
+  <wsdl:message name="createLabelResponse">
+    <wsdl:part name="CreateLabelResponse" element="ns1:CreateLabelResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateLabelError">
+    <wsdl:part name="Error" element="ns2:Error" />
+  </wsdl:message>
+  <wsdl:message name="createLabels">
+    <wsdl:part name="request" element="ns1:CreateLabelsRequest" />
+  </wsdl:message>
+  <wsdl:message name="createLabelsResponse">
+    <wsdl:part name="CreateLabelsResponse" element="ns1:CreateLabelsResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateLabelsError">
+    <wsdl:part name="Error" element="ns2:Error" />
+  </wsdl:message>
+  <wsdl:message name="deleteLabels">
+    <wsdl:part name="request" element="ns1:DeleteLabelsRequest" />
+  </wsdl:message>
+  <wsdl:message name="deleteLabelsResponse">
+    <wsdl:part name="DeleteLabelsResponse" element="ns1:DeleteLabelsResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteLabelsError">
+    <wsdl:part name="Error" element="ns2:Error" />
+  </wsdl:message>
+  <wsdl:message name="updateLabel">
+    <wsdl:part name="request" element="ns1:UpdateLabelRequest" />
+  </wsdl:message>
+  <wsdl:message name="updateLabelResponse">
+    <wsdl:part name="UpdateLabelResponse" element="ns1:UpdateLabelResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateLabelError">
+    <wsdl:part name="Error" element="ns2:Error" />
+  </wsdl:message>
+  <wsdl:portType name="LabelService">
+    <wsdl:operation name="createLabel">
+      <wsdl:documentation>Method for creating label. Supports the following modes - calculate, validate, create</wsdl:documentation>
+      <wsdl:input message="tns:createLabel" />
+      <wsdl:output message="tns:createLabelResponse" />
+      <wsdl:fault name="CreateLabelError" message="tns:CreateLabelError" />
+    </wsdl:operation>
+    <wsdl:operation name="createLabels">
+      <wsdl:documentation>Method for creating multiple labels at once. Supports the following modes - calculate, validate, create</wsdl:documentation>
+      <wsdl:input message="tns:createLabels" />
+      <wsdl:output message="tns:createLabelsResponse" />
+      <wsdl:fault name="CreateLabelsError" message="tns:CreateLabelsError" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteLabels">
+      <wsdl:documentation>Method for deleting multiple labels at once.</wsdl:documentation>
+      <wsdl:input message="tns:deleteLabels" />
+      <wsdl:output message="tns:deleteLabelsResponse" />
+      <wsdl:fault name="DeleteLabelsError" message="tns:DeleteLabelsError" />
+    </wsdl:operation>
+    <wsdl:operation name="updateLabel">
+      <wsdl:input message="tns:updateLabel" />
+      <wsdl:output message="tns:updateLabelResponse" />
+      <wsdl:fault name="UpdateLabelError" message="tns:UpdateLabelError" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="LabelServiceBinding" type="tns:LabelService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="createLabel">
+      <soap:operation soapAction="createLabel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="CreateLabelError">
+        <soap:fault use="literal" name="CreateLabelError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="createLabels">
+      <soap:operation soapAction="createLabels" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="CreateLabelsError">
+        <soap:fault use="literal" name="CreateLabelsError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="deleteLabels">
+      <soap:operation soapAction="deleteLabels" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DeleteLabelsError">
+        <soap:fault use="literal" name="DeleteLabelsError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="updateLabel">
+      <soap:operation soapAction="updateLabel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="UpdateLabelError">
+        <soap:fault use="literal" name="UpdateLabelError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="LabelService">
+    <wsdl:port name="LabelService" binding="tns:LabelServiceBinding">
+      <soap:address location="http://ee.econt.com/services/Shipments/LabelService.soap" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

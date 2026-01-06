@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:tns="http://ee.econt.com/services/Profile/R" xmlns:ns1="http://ee.econt.com/services/Profile" elementFormDefault="qualified" targetNamespace="http://ee.econt.com/services/Profile/R" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import schemaLocation="../schema.xsd" namespace="http://ee.econt.com/services/Profile" />
+  <xsd:complexType name="GetClientProfilesRequest">
+    <xsd:annotation>
+      <xsd:documentation>Requests information about the client profiles (requires authorization) 
+(see SOAP example &lt;a href="http://ee.econt.com/doc_templates/srv/GetClientProfilesRequest.xml"&gt;&lt;font color="#0000ff"&gt;&lt;u&gt;Request&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;, &lt;a href="http://ee.econt.com/doc_templates/srv/GetClientProfilesResponse.xml"&gt;&lt;font color="#0000ff"&gt;&lt;u&gt;Response&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;)
+(see JSON example &lt;a href="http://ee.econt.com/doc_templates/srv/GetClientProfilesRequest.json"&gt;&lt;font color="#0000ff"&gt;&lt;u&gt;Request&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;, &lt;a href="http://ee.econt.com/doc_templates/srv/GetClientProfilesResponse.json"&gt;&lt;font color="#0000ff"&gt;&lt;u&gt;Response&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;)</xsd:documentation>
+    </xsd:annotation>
+  </xsd:complexType>
+  <xsd:element name="GetClientProfilesRequest" type="tns:GetClientProfilesRequest" />
+  <xsd:complexType name="GetClientProfilesResponse">
+    <xsd:annotation>
+      <xsd:documentation>Returns detailed information about the client profiles &lt;a href="http://ee.econt.com/doc_templates/srv/GetClientProfilesResponse.xml"&gt;&lt;font color="#0000ff"&gt;&lt;u&gt;(see example)&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="profiles" type="ns1:ProfilesResponseElement">
+        <xsd:annotation>
+          <xsd:documentation>Information about the client profiles</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="GetClientProfilesResponse" type="tns:GetClientProfilesResponse" />
+</xsd:schema>

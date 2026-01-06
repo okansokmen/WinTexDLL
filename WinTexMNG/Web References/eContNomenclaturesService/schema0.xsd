@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:tns="http://ee.econt.com/services" elementFormDefault="qualified" targetNamespace="http://ee.econt.com/services" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:simpleType name="Weekday">
+    <xsd:annotation>
+      <xsd:documentation>Weekdays</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="monday">
+        <xsd:annotation>
+          <xsd:documentation>Monday</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="tuesday">
+        <xsd:annotation>
+          <xsd:documentation>Tuesday</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="wednesday">
+        <xsd:annotation>
+          <xsd:documentation>Wednesday</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="thursday">
+        <xsd:annotation>
+          <xsd:documentation>Thursday</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="friday">
+        <xsd:annotation>
+          <xsd:documentation>Friday</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="saturday">
+        <xsd:annotation>
+          <xsd:documentation>Saturday</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="sunday">
+        <xsd:annotation>
+          <xsd:documentation>Sunday</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:element name="Weekday" type="tns:Weekday" />
+  <xsd:complexType name="HostedFile">
+    <xsd:annotation>
+      <xsd:documentation>A file hosted on Econt's servers</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="id" type="xsd:int" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="filename" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>The name of the hosted file</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="mimeType" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>File type (text, xml, application, x-msexcel)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="URL" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>The URL address of the hosted file</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="content" type="xsd:base64Binary">
+        <xsd:annotation>
+          <xsd:documentation>The content of the hosted file</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="HostedFile" type="tns:HostedFile" />
+  <xsd:complexType name="Error">
+    <xsd:annotation>
+      <xsd:documentation>Generic error</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="type" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>The type of error - usually the exception class name</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="message" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>The error message in user language</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="fields" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>The fields which caused the error</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="innerErrors" type="tns:Error">
+        <xsd:annotation>
+          <xsd:documentation>The causes of the error</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="Error" type="tns:Error" />
+</xsd:schema>

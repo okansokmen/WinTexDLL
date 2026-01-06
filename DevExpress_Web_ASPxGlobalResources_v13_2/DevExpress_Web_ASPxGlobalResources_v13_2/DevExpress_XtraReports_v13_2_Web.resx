@@ -1,0 +1,155 @@
+﻿<?xml version="1.0"?><root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ASPxReportsStringId.DocumentViewer_RemoteAuthenticatorCredentialHandled_Error">
+    <value>Rapor Sunucusunda oturum açmak için, RequestCredentials olayını işleyin.</value>
+  </data>
+  <data name="ASPxReportsStringId.DocumentViewer_RemoteAuthenticatorCredential_Error">
+    <value>Kullanıcı kimlik bilgileri boş olamaz.</value>
+  </data>
+  <data name="ASPxReportsStringId.DocumentViewer_RemoteAuthenticatorLogin_Error">
+    <value>Belirtilen kullanıcı kimlik bilgileri ile oturum açılamadı.</value>
+  </data>
+  <data name="ASPxReportsStringId.DocumentViewer_RemoteConfigurationAuthenticator_Error">
+    <value>Rapor Sunucusunda oturum açmak için, ConfigurationRemoteSourceReportServer özelliğine uygun kimlik doğrulayıcısı atayın.</value>
+  </data>
+  <data name="ASPxReportsStringId.DocumentViewer_RemotePageByPage_Error">
+    <value>Uzak bir raporu görüntülemek için, SettingsViewer ve PageByPage özelliğini etkinleştirin.</value>
+  </data>
+  <data name="ASPxReportsStringId.DocumentViewer_RemoteReportServerSettingsAndConfiguration_Error">
+    <value>Bir seferde sadece SettingsRemoteSourceReportServer veya ASPxDocumentViewer arasında ConfigurationRemoteSourceReportServer özelliğini ya atayabilirsiniz.</value>
+  </data>
+  <data name="ASPxReportsStringId.DocumentViewer_RemoteRequestCredentials_Error">
+    <value>RequestCredentials olayı çalıştırılamamıştır.</value>
+  </data>
+  <data name="ASPxReportsStringId.DocumentViewer_RemoteSettingsAndConfiguration_Error">
+    <value>Rapor Sunucusu veya WCF Rapor Hizmeti tek seferde sadece bir ASPxDocumentViewer uzak bir belge kaynağı olarak atanabilir.</value>
+  </data>
+  <data name="ASPxReportsStringId.DocumentViewer_RemoteWcfReportServiceSettingsAndConfiguration_Error">
+    <value>Tek seferde sadece bir ASPxDocumentViewer, SettingsRemoteSourceWcfReportService veya ConfigurationRemoteSourceWcfReportService atayabilirsiniz.</value>
+  </data>
+  <data name="ASPxReportsStringId.ExportName_csv">
+    <value>Csv</value>
+  </data>
+  <data name="ASPxReportsStringId.ExportName_html">
+    <value>Html</value>
+  </data>
+  <data name="ASPxReportsStringId.ExportName_mht">
+    <value>Mht</value>
+  </data>
+  <data name="ASPxReportsStringId.ExportName_pdf">
+    <value>Pdf</value>
+  </data>
+  <data name="ASPxReportsStringId.ExportName_png">
+    <value>Resim</value>
+  </data>
+  <data name="ASPxReportsStringId.ExportName_rtf">
+    <value>Rtf</value>
+  </data>
+  <data name="ASPxReportsStringId.ExportName_txt">
+    <value>Metin</value>
+  </data>
+  <data name="ASPxReportsStringId.ExportName_xls">
+    <value>Xls</value>
+  </data>
+  <data name="ASPxReportsStringId.ExportName_xlsx">
+    <value>Xlsx</value>
+  </data>
+  <data name="ASPxReportsStringId.ParametersPanel_False">
+    <value>Hayır</value>
+  </data>
+  <data name="ASPxReportsStringId.ParametersPanel_Reset">
+    <value>Sıfırla</value>
+  </data>
+  <data name="ASPxReportsStringId.ParametersPanel_Submit">
+    <value>Onayla</value>
+  </data>
+  <data name="ASPxReportsStringId.ParametersPanel_True">
+    <value>Evet</value>
+  </data>
+  <data name="ASPxReportsStringId.SearchDialog_Cancel">
+    <value>İptal</value>
+  </data>
+  <data name="ASPxReportsStringId.SearchDialog_Case">
+    <value>Harf eşleştir</value>
+  </data>
+  <data name="ASPxReportsStringId.SearchDialog_Case_AccessKey">
+    <value></value>
+  </data>
+  <data name="ASPxReportsStringId.SearchDialog_Down">
+    <value>Aşağı</value>
+  </data>
+  <data name="ASPxReportsStringId.SearchDialog_Down_AccessKey">
+    <value></value>
+  </data>
+  <data name="ASPxReportsStringId.SearchDialog_FindNext">
+    <value>Sonrakini Bul</value>
+  </data>
+  <data name="ASPxReportsStringId.SearchDialog_FindWhat">
+    <value>Ne&amp;nbsp;bulunacak</value>
+  </data>
+  <data name="ASPxReportsStringId.SearchDialog_FindWhat_AccessKey">
+    <value></value>
+  </data>
+  <data name="ASPxReportsStringId.SearchDialog_Finished">
+    <value>Doküman içinde arama işlemi bitti.</value>
+  </data>
+  <data name="ASPxReportsStringId.SearchDialog_Header">
+    <value>Ara</value>
+  </data>
+  <data name="ASPxReportsStringId.SearchDialog_Up">
+    <value>Yukarı</value>
+  </data>
+  <data name="ASPxReportsStringId.SearchDialog_Up_AccessKey">
+    <value></value>
+  </data>
+  <data name="ASPxReportsStringId.SearchDialog_WholeWord">
+    <value>Yalnızca tam sözcükleri eşleştir</value>
+  </data>
+  <data name="ASPxReportsStringId.SearchDialog_WholeWord_AccessKey">
+    <value></value>
+  </data>
+  <data name="ASPxReportsStringId.ToolBarItemText_FirstPage">
+    <value>İlk Sayfa</value>
+  </data>
+  <data name="ASPxReportsStringId.ToolBarItemText_LastPage">
+    <value>Son Sayfa</value>
+  </data>
+  <data name="ASPxReportsStringId.ToolBarItemText_NextPage">
+    <value>Sonraki Sayfa</value>
+  </data>
+  <data name="ASPxReportsStringId.ToolBarItemText_OfLabel">
+    <value> </value>
+  </data>
+  <data name="ASPxReportsStringId.ToolBarItemText_PageLabel">
+    <value>Sayfa</value>
+  </data>
+  <data name="ASPxReportsStringId.ToolBarItemText_PreviousPage">
+    <value>Önceki Sayfa</value>
+  </data>
+  <data name="ASPxReportsStringId.ToolBarItemText_PrintPage">
+    <value>Geçerli sayfayı yazdır</value>
+  </data>
+  <data name="ASPxReportsStringId.ToolBarItemText_PrintReport">
+    <value>Raporu yazdır</value>
+  </data>
+  <data name="ASPxReportsStringId.ToolBarItemText_SaveToDisk">
+    <value>Raporu dışarı aktar ve diske kaydet</value>
+  </data>
+  <data name="ASPxReportsStringId.ToolBarItemText_SaveToWindow">
+    <value>Raporu dışarı aktar ve yeni sayfada görüntüle</value>
+  </data>
+  <data name="ASPxReportsStringId.ToolBarItemText_Search">
+    <value>Arama penceresini göster</value>
+  </data>
+</root>

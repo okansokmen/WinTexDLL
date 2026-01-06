@@ -1,0 +1,759 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2C97A556-4B83-43EC-8D18-E8AE9D389941}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <StartupObject>
+    </StartupObject>
+    <RootNamespace>WinTexTicimax</RootNamespace>
+    <AssemblyName>WinTexTicimax</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <RegisterForComInterop>false</RegisterForComInterop>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <RegisterForComInterop>false</RegisterForComInterop>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.Desktop.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v21.1.Core, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGrid.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="Microsoft.InteropFormTools, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Microsoft.InteropFormTools.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Windows.Design.Extensibility, Version=4.3.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Microsoft.Windows.Design.Extensibility.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Windows.Design.Interaction, Version=4.3.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Microsoft.Windows.Design.Interaction.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp">
+      <HintPath>..\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AnaMenu.Designer.vb">
+      <DependentUpon>AnaMenu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AnaMenu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Connected Services\CustomServis\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\SiparisServis\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\UrunServis\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\UyeServis\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="frmListView.Designer.vb">
+      <DependentUpon>frmListView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmListView.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTicimaxParameters.Designer.vb">
+      <DependentUpon>frmTicimaxParameters.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmTicimaxParameters.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HTMain.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="SiparisClass.vb" />
+    <Compile Include="SQLServerClass.vb" />
+    <Compile Include="UrunClass.vb" />
+    <Compile Include="UtilLogFile.vb" />
+    <Compile Include="UtilRoot.vb" />
+    <Compile Include="UtilSQL.vb" />
+    <Compile Include="utilWebService.vb" />
+    <Compile Include="UyeClass.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AnaMenu.resx">
+      <DependentUpon>AnaMenu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListView.resx">
+      <DependentUpon>frmListView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTicimaxParameters.resx">
+      <DependentUpon>frmTicimaxParameters.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\CustomServis\CustomServis.wsdl" />
+    <None Include="Connected Services\CustomServis\CustomServis.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\CustomServis\CustomServis1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\CustomServis\CustomServis2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\CustomServis\CustomServis3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\CustomServis\WinTexTicimax.CustomServis.AddFavoriUrunResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CustomServis\WinTexTicimax.CustomServis.AddFiyatAlarmUrunResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CustomServis\WinTexTicimax.CustomServis.AddStokAlarmUrunResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CustomServis\WinTexTicimax.CustomServis.DeleteMailListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CustomServis\WinTexTicimax.CustomServis.DeleteMenuResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CustomServis\WinTexTicimax.CustomServis.DeleteWebhookResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CustomServis\WinTexTicimax.CustomServis.Entegrasyon.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CustomServis\WinTexTicimax.CustomServis.GetCampaingBannersResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CustomServis\WinTexTicimax.CustomServis.GetFavoriUrunlerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CustomServis\WinTexTicimax.CustomServis.GetFiyatAlarmUrunlerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CustomServis\WinTexTicimax.CustomServis.GetMailListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CustomServis\WinTexTicimax.CustomServis.GetMenuResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CustomServis\WinTexTicimax.CustomServis.GetStokAlarmUrunlerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CustomServis\WinTexTicimax.CustomServis.KargoDesiFiyatSelectResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CustomServis\WinTexTicimax.CustomServis.KargoFirma.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CustomServis\WinTexTicimax.CustomServis.KargoIl.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CustomServis\WinTexTicimax.CustomServis.KargoIlce.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CustomServis\WinTexTicimax.CustomServis.KargoUlke.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CustomServis\WinTexTicimax.CustomServis.MailList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CustomServis\WinTexTicimax.CustomServis.RemoveFavoriUrunResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CustomServis\WinTexTicimax.CustomServis.RemoveFiyatAlarmUrunResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CustomServis\WinTexTicimax.CustomServis.RemoveStokAlarmUrunResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CustomServis\WinTexTicimax.CustomServis.SaveMailListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CustomServis\WinTexTicimax.CustomServis.SaveMenuResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CustomServis\WinTexTicimax.CustomServis.SaveWebhookResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CustomServis\WinTexTicimax.CustomServis.SelectBankaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CustomServis\WinTexTicimax.CustomServis.SelectIadeOdemeListesiResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CustomServis\WinTexTicimax.CustomServis.SelectSilinenUyelerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CustomServis\WinTexTicimax.CustomServis.SelectWebhookResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CustomServis\WinTexTicimax.CustomServis.ServisGetSupportTicketMessagesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CustomServis\WinTexTicimax.CustomServis.ServisGetSupportTicketsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CustomServis\WinTexTicimax.CustomServis.ServisGetSupportTicketSubjectsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CustomServis\WinTexTicimax.CustomServis.ServisSaveSupportTicketAnswerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CustomServis\WinTexTicimax.CustomServis.ServisSaveSupportTicketResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CustomServis\WinTexTicimax.CustomServis.WebDegisimTalepResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CustomServis\WinTexTicimax.CustomServis.WebDegisimTalepUpdateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CustomServis\WinTexTicimax.CustomServis.WebDegisimTalepUrunResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CustomServis\WinTexTicimax.CustomServis.WebIadeTalepResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CustomServis\WinTexTicimax.CustomServis.WebIadeTalepUpdateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CustomServis\WinTexTicimax.CustomServis.WebIadeTalepUrunResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CustomServis\WinTexTicimax.CustomServis.WebKampanya.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CustomServis\WinTexTicimax.CustomServis.WebKampanyaTicimax.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CustomServis\WinTexTicimax.CustomServis.WebTaksitSecenekResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SiparisServis\SiparisServis.wsdl" />
+    <None Include="Connected Services\SiparisServis\SiparisServis.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SiparisServis\SiparisServis1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SiparisServis\SiparisServis2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SiparisServis\SiparisServis3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SiparisServis\SiparisServis4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SiparisServis\WinTexTicimax.SiparisServis.BLPaketlemeDurum.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SiparisServis\WinTexTicimax.SiparisServis.EFaturaIptalResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SiparisServis\WinTexTicimax.SiparisServis.IadeOdemeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SiparisServis\WinTexTicimax.SiparisServis.SaveBekleyenAramaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SiparisServis\WinTexTicimax.SiparisServis.SaveEFaturaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SiparisServis\WinTexTicimax.SiparisServis.SaveSiparisKargoPaketKargoTakipNoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SiparisServis\WinTexTicimax.SiparisServis.SelectEFaturaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SiparisServis\WinTexTicimax.SiparisServis.SelectIadeOdemeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SiparisServis\WinTexTicimax.SiparisServis.SelectOdemeTipleriResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SiparisServis\WinTexTicimax.SiparisServis.SelectSiparisDurumlariResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SiparisServis\WinTexTicimax.SiparisServis.SelectSiparisDurumLogListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SiparisServis\WinTexTicimax.SiparisServis.SelectSiparisDurumResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SiparisServis\WinTexTicimax.SiparisServis.ServisSepet.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SiparisServis\WinTexTicimax.SiparisServis.SetReferansNoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SiparisServis\WinTexTicimax.SiparisServis.SetSepetKampanyaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SiparisServis\WinTexTicimax.SiparisServis.SetSiparisDurumListeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SiparisServis\WinTexTicimax.SiparisServis.SetSiparisDurumResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SiparisServis\WinTexTicimax.SiparisServis.SetSiparisOdemeDurumResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SiparisServis\WinTexTicimax.SiparisServis.SetSiparisUrunDurumResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SiparisServis\WinTexTicimax.SiparisServis.SiparisAnonimlestirResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SiparisServis\WinTexTicimax.SiparisServis.SiparisiKargoyaGonderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SiparisServis\WinTexTicimax.SiparisServis.SiparisOdemeTipleri.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SiparisServis\WinTexTicimax.SiparisServis.SiparisUrunDurumlari.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SiparisServis\WinTexTicimax.SiparisServis.UpdateEfaturaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SiparisServis\WinTexTicimax.SiparisServis.UrunIdaneNedenleriResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SiparisServis\WinTexTicimax.SiparisServis.WebHediyeCekiUygulaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SiparisServis\WinTexTicimax.SiparisServis.WebKargoFirma.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SiparisServis\WinTexTicimax.SiparisServis.WebKargoPaket.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SiparisServis\WinTexTicimax.SiparisServis.WebMagaza.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SiparisServis\WinTexTicimax.SiparisServis.WebSaveMagazaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SiparisServis\WinTexTicimax.SiparisServis.WebSepet.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SiparisServis\WinTexTicimax.SiparisServis.WebSiparis.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SiparisServis\WinTexTicimax.SiparisServis.WebSiparisKampanya.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SiparisServis\WinTexTicimax.SiparisServis.WebSiparisOdeme.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SiparisServis\WinTexTicimax.SiparisServis.WebSiparisSaveResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SiparisServis\WinTexTicimax.SiparisServis.WebSiparisUrun.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SiparisServis\WinTexTicimax.SiparisServis.WebUpdateSepetResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UrunServis\UrunServis.wsdl" />
+    <None Include="Connected Services\UrunServis\UrunServis.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\UrunServis\UrunServis1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\UrunServis\UrunServis2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\UrunServis\UrunServis3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\UrunServis\UrunServis4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\UrunServis\WinTexTicimax.UrunServis.AsortiGrup.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UrunServis\WinTexTicimax.UrunServis.AsortiMiktar.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UrunServis\WinTexTicimax.UrunServis.DeleteKombinUrunResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UrunServis\WinTexTicimax.UrunServis.DeleteKonsinyeUrunResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UrunServis\WinTexTicimax.UrunServis.DeleteTakimUrunResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UrunServis\WinTexTicimax.UrunServis.DeleteTamamlayiciUrunResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UrunServis\WinTexTicimax.UrunServis.DeleteUrunDetayTabResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UrunServis\WinTexTicimax.UrunServis.EkSecenekDeger.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UrunServis\WinTexTicimax.UrunServis.EkSecenekGrup.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UrunServis\WinTexTicimax.UrunServis.Etiket.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UrunServis\WinTexTicimax.UrunServis.IlgiliUrun.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UrunServis\WinTexTicimax.UrunServis.Kategori.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UrunServis\WinTexTicimax.UrunServis.Marka.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UrunServis\WinTexTicimax.UrunServis.ParaBirimi.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UrunServis\WinTexTicimax.UrunServis.SaveAksesuarGrupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UrunServis\WinTexTicimax.UrunServis.SaveAksesuarUrunResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UrunServis\WinTexTicimax.UrunServis.SaveKombinUrunResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UrunServis\WinTexTicimax.UrunServis.SaveKonsinyeUrunResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UrunServis\WinTexTicimax.UrunServis.SaveMagazaStokResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UrunServis\WinTexTicimax.UrunServis.SaveResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UrunServis\WinTexTicimax.UrunServis.SaveTakimUrunResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UrunServis\WinTexTicimax.UrunServis.SaveTamamlayiciUrunResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UrunServis\WinTexTicimax.UrunServis.SaveUrunDetayTabResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UrunServis\WinTexTicimax.UrunServis.SaveUrunResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UrunServis\WinTexTicimax.UrunServis.SelectAksesuarGrupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UrunServis\WinTexTicimax.UrunServis.SelectAksesuarUrunResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UrunServis\WinTexTicimax.UrunServis.SelectKombinurunResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UrunServis\WinTexTicimax.UrunServis.SelectKonsinyeUrunResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UrunServis\WinTexTicimax.UrunServis.SelectMagazaStokResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UrunServis\WinTexTicimax.UrunServis.SelectTakimUrunResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UrunServis\WinTexTicimax.UrunServis.SelectTamamlayiciUrunResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UrunServis\WinTexTicimax.UrunServis.SelectUrunDetayTabResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UrunServis\WinTexTicimax.UrunServis.SiparisUrunDurumlari.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UrunServis\WinTexTicimax.UrunServis.Tedarikci.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UrunServis\WinTexTicimax.UrunServis.TeknikDetayDeger.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UrunServis\WinTexTicimax.UrunServis.TeknikDetayGrup.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UrunServis\WinTexTicimax.UrunServis.TeknikDetayOzellik.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UrunServis\WinTexTicimax.UrunServis.UpdateAnaUrunResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UrunServis\WinTexTicimax.UrunServis.UpdateKonsinyeUrunResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UrunServis\WinTexTicimax.UrunServis.UpdateUrlResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UrunServis\WinTexTicimax.UrunServis.UpdateUrunDetayTabResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UrunServis\WinTexTicimax.UrunServis.Urun360ResimYukleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UrunServis\WinTexTicimax.UrunServis.UrunBarkodGuncelleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UrunServis\WinTexTicimax.UrunServis.UrunEtiket.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UrunServis\WinTexTicimax.UrunServis.UrunKarti.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UrunServis\WinTexTicimax.UrunServis.UrunKategori.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UrunServis\WinTexTicimax.UrunServis.UrunKategoriGuncelleByStokKoduResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UrunServis\WinTexTicimax.UrunServis.UrunOdemeSecenek.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UrunServis\WinTexTicimax.UrunServis.UrunOdemeSecenekBanka.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UrunServis\WinTexTicimax.UrunServis.UrunResimListeleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UrunServis\WinTexTicimax.UrunServis.UrunResimYukleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UrunServis\WinTexTicimax.UrunServis.UrunYorum.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UrunServis\WinTexTicimax.UrunServis.Varyasyon.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UrunServis\WinTexTicimax.UrunServis.WebServisResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UyeServis\UyeServis.wsdl" />
+    <None Include="Connected Services\UyeServis\UyeServis.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\UyeServis\UyeServis1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\UyeServis\UyeServis2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\UyeServis\UyeServis3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\UyeServis\WinTexTicimax.UyeServis.ParaPuanGuncelleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UyeServis\WinTexTicimax.UyeServis.UpdateUyeIzinResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UyeServis\WinTexTicimax.UyeServis.Uye.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UyeServis\WinTexTicimax.UyeServis.UyeAdres.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UyeServis\WinTexTicimax.UyeServis.UyeGirisiSonuc.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UyeServis\WinTexTicimax.UyeServis.UyeIzinGecmisiResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UyeServis\WinTexTicimax.UyeServis.UyeSilResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UyeServis\WinTexTicimax.UyeServis.UyeTuru.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\CustomServis\" />
+    <WCFMetadataStorage Include="Connected Services\SiparisServis\" />
+    <WCFMetadataStorage Include="Connected Services\UrunServis\" />
+    <WCFMetadataStorage Include="Connected Services\UyeServis\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\CustomServis\CustomServis.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\CustomServis\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\CustomServis\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\CustomServis\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SiparisServis\SiparisServis.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SiparisServis\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SiparisServis\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SiparisServis\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\UrunServis\UrunServis.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\UrunServis\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\UrunServis\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\UrunServis\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\UyeServis\UyeServis.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\UyeServis\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\UyeServis\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\UyeServis\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>

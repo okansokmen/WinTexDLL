@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:tns="http://ee.econt.com/services/Nomenclatures" xmlns:ns1="http://ee.econt.com/services/Shipments" elementFormDefault="qualified" targetNamespace="http://ee.econt.com/services/Nomenclatures" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import schemaLocation="../Shipments/schema.xsd" namespace="http://ee.econt.com/services/Shipments" />
+  <xsd:complexType name="Country">
+    <xsd:annotation>
+      <xsd:documentation>Country. Required fields for valid country - ID or code (code2 or code3)</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="id" type="xsd:int" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="code2" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2"&gt;&lt;font color="#0000ff"&gt;&lt;u&gt;ISO 3166-1 alpha-2 code&lt;/u&gt;&lt;/font&gt;&lt;/a&gt; (e.g. BG, GB, GR)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="code3" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3"&gt;&lt;font color="#0000ff"&gt;&lt;u&gt;ISO 3166-1 alpha-3 code&lt;/u&gt;&lt;/font&gt;&lt;/a&gt; (e.g. BGR ,GBR, GRC)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="name" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>The bulgarian name of the country</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="nameEn" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>The international name of the country</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="isEU" type="xsd:boolean">
+        <xsd:annotation>
+          <xsd:documentation>True if country is a member of the EU</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="Country" type="tns:Country" />
+  <xsd:complexType name="Address">
+    <xsd:annotation>
+      <xsd:documentation>Address. Required fields for valid address - city, street and street number (or quarter and other). Use respective fields or all joined together in the field &amp;lt;fullAddress&amp;gt;</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="id" type="xsd:int" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="city" type="tns:City">
+        <xsd:annotation>
+          <xsd:documentation>The city where the address is located</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="fullAddress" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>The whole address</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="quarter" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Quarter name</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="street" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Street name</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="num" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Street number</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="other" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Block number, entrance number, floor, apartment number and other additional information</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="location" type="tns:GeoLocation">
+        <xsd:annotation>
+          <xsd:documentation>Geo coordinates</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="zip" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>ZIP code</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="Address" type="tns:Address" />
+  <xsd:complexType name="City">
+    <xsd:annotation>
+      <xsd:documentation>City served by Econt Express. Required fields for valid city - ID or name + post code (if the City is outside Bulgaria, country is required)</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="id" type="xsd:int" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="country" type="tns:Country">
+        <xsd:annotation>
+          <xsd:documentation>The country where the city is located</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="postCode" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Post code</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="name" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Bulgarian name</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="nameEn" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>International name</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="regionName" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Bulgarian name of the region</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="regionNameEn" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>International name of the region</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="phoneCode" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>The phone prefix code for the city</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="location" type="tns:GeoLocation">
+        <xsd:annotation>
+          <xsd:documentation>Geo location</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="expressCityDeliveries" type="xsd:boolean">
+        <xsd:annotation>
+          <xsd:documentation>Indicates if express city deliveries are available</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="City" type="tns:City" />
+  <xsd:complexType name="Office">
+    <xsd:annotation>
+      <xsd:documentation>Office of Econt Express. Required fields for identifying an office - code or ID</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="id" type="xsd:int" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="code" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>A code identifying the office</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="isMPS" type="xsd:boolean">
+        <xsd:annotation>
+          <xsd:documentation>True if the office is a mobile post station</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="isAPS" type="xsd:boolean">
+        <xsd:annotation>
+          <xsd:documentation>True if the office is an automatic post station</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="name" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>The bulgarian name of the office</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="nameEn" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>The international name of the office</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="phones" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>A list of phone numbers for the office</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="emails" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>A list of email addresses for the office</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="address" type="tns:Address">
+        <xsd:annotation>
+          <xsd:documentation>The address where the office is located</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="info" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Additional information</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="currency" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>The currency the office works with</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="language" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>The language the office works with</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="normalBusinessHoursFrom" type="xsd:time">
+        <xsd:annotation>
+          <xsd:documentation>Business hours for parcel pickup and delivery from/to an address on weekdays</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="normalBusinessHoursTo" type="xsd:time">
+        <xsd:annotation>
+          <xsd:documentation>Business hours for parcel pickup and delivery from/to an address on weekdays</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="halfDayBusinessHoursFrom" type="xsd:time">
+        <xsd:annotation>
+          <xsd:documentation>Business hours for parcel pickup and delivery from/to an address on saturdays</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="halfDayBusinessHoursTo" type="xsd:time">
+        <xsd:annotation>
+          <xsd:documentation>Business hours for parcel pickup and delivery from/to an address on saturdays</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="shipmentTypes" type="ns1:ShipmentType">
+        <xsd:annotation>
+          <xsd:documentation>Types of shipments which can be sent/collected to/from the office</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="partnerCode" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Partner code</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="hubCode" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Code of the distribution center associated with the office</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="hubName" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Name of the distribution center associated with the office</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="hubNameEn" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>International name of the distribution center associated with the office</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="Office" type="tns:Office" />
+  <xsd:complexType name="Quarter">
+    <xsd:annotation>
+      <xsd:documentation>Quarter of the city</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="id" type="xsd:int" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="cityID" type="xsd:int">
+        <xsd:annotation>
+          <xsd:documentation>ID of the city</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="name" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Bulgarian name of the quarter</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="nameEn" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>International name of the quarter</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="Quarter" type="tns:Quarter" />
+  <xsd:complexType name="GeoLocation">
+    <xsd:annotation>
+      <xsd:documentation>A geographic location</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="latitude" type="xsd:double">
+        <xsd:annotation>
+          <xsd:documentation>Geographic coordinate that specifies the north–south position of a point on the Earth's surface</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="longitude" type="xsd:double">
+        <xsd:annotation>
+          <xsd:documentation>Geographic coordinate that specifies the east-west position of a point on the Earth's surface</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="confidence" type="xsd:int">
+        <xsd:annotation>
+          <xsd:documentation>The expected accuracy of the location:
+0-none, there are either no coordinates or the coordinates do not represent the location;
+1-low;
+2-medium;
+3-high;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="GeoLocation" type="tns:GeoLocation" />
+  <xsd:complexType name="Street">
+    <xsd:annotation>
+      <xsd:documentation>Street in the city</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="id" type="xsd:int" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="cityID" type="xsd:int">
+        <xsd:annotation>
+          <xsd:documentation>ID of the city</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="name" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Bulgarian name of the street</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="nameEn" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>International name of the street</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="Street" type="tns:Street" />
+</xsd:schema>

@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36310.24
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "WinTexAI2", "WinTexAI2\WinTexAI2.vbproj", "{89F8CEEE-8B36-454A-9A49-583CA7190572}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{89F8CEEE-8B36-454A-9A49-583CA7190572}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89F8CEEE-8B36-454A-9A49-583CA7190572}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89F8CEEE-8B36-454A-9A49-583CA7190572}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{89F8CEEE-8B36-454A-9A49-583CA7190572}.Debug|x64.Build.0 = Debug|Any CPU
+		{89F8CEEE-8B36-454A-9A49-583CA7190572}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{89F8CEEE-8B36-454A-9A49-583CA7190572}.Debug|x86.Build.0 = Debug|Any CPU
+		{89F8CEEE-8B36-454A-9A49-583CA7190572}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89F8CEEE-8B36-454A-9A49-583CA7190572}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89F8CEEE-8B36-454A-9A49-583CA7190572}.Release|x64.ActiveCfg = Release|Any CPU
+		{89F8CEEE-8B36-454A-9A49-583CA7190572}.Release|x64.Build.0 = Release|Any CPU
+		{89F8CEEE-8B36-454A-9A49-583CA7190572}.Release|x86.ActiveCfg = Release|Any CPU
+		{89F8CEEE-8B36-454A-9A49-583CA7190572}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A477DB5B-5792-4DF5-B649-C3D72AEB9A77}
+	EndGlobalSection
+EndGlobal

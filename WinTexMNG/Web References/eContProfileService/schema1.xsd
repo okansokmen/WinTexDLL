@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:ns3="http://ee.econt.com/services/Shipments" xmlns:tns="http://ee.econt.com/services/Profile" xmlns:ns1="http://ee.econt.com/services/Nomenclatures" xmlns:ns2="http://ee.econt.com/services" elementFormDefault="qualified" targetNamespace="http://ee.econt.com/services/Profile" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import schemaLocation="../Nomenclatures/schema.xsd" namespace="http://ee.econt.com/services/Nomenclatures" />
+  <xsd:import schemaLocation="../schema.xsd" namespace="http://ee.econt.com/services" />
+  <xsd:import schemaLocation="../Shipments/schema.xsd" namespace="http://ee.econt.com/services/Shipments" />
+  <xsd:complexType name="ClientProfile">
+    <xsd:annotation>
+      <xsd:documentation>Information about the client profile (corporate or private)</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="id" type="xsd:int" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="name" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Name</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="nameEn" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>International name</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="phones" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Phone numbers (only digits and optional "+" in the beginning)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="email" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>E-mail addresses</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="skypeAccounts" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Skype accounts</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="clientNumber" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Client number</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="clientNumberEn" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Client number (en)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="juridicalEntity" type="xsd:boolean">
+        <xsd:annotation>
+          <xsd:documentation>The client is a company</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="personalIDType" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Personal identification type (EGN, PIN, PK, PASSPORT)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="personalIDNumber" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Personal ID number (EGN)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="companyType" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Company type (registration of the company)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="ein" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Registration number</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="ddsEinPrefix" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>VAT registration prefix (two-letter code)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="ddsEin" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>VAT registration</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="registrationAddress" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Company's registration address</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="molName" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Name of the company's representative</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="molEGN" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Unique citizenship number (EGN) of the company's representative</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="molIDNum" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>ID cart of the company's representative</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="ClientProfile" type="tns:ClientProfile" />
+  <xsd:complexType name="CDPayOptions">
+    <xsd:annotation>
+      <xsd:documentation>Payment options for "cash on delivery" service</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="num" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Shipment number</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="client" type="tns:ClientProfile">
+        <xsd:annotation>
+          <xsd:documentation>Client</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="moneyTransfer" type="xsd:boolean">
+        <xsd:annotation>
+          <xsd:documentation>Payment with money transfer</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="express" type="xsd:boolean">
+        <xsd:annotation>
+          <xsd:documentation>Express</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="method" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>"Office", "door" or "bank"</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="address" type="ns1:Address">
+        <xsd:annotation>
+          <xsd:documentation>Address</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="officeCode" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Office code</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="IBAN" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>International Bank Account Number</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="BIC" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Bank Identifier Code</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="bankCurrency" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Currency of the bank account</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="payDays" type="xsd:int">
+        <xsd:annotation>
+          <xsd:documentation>Only for method=bank, either payDays or payWeekdays</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="payWeekdays" type="ns2:Weekday">
+        <xsd:annotation>
+          <xsd:documentation>Only for method=bank, either payDays or payWeekdays</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="additionalInstructions" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Additional instructions</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="CDPayOptions" type="tns:CDPayOptions" />
+  <xsd:complexType name="ProfilesResponseElement">
+    <xsd:annotation>
+      <xsd:documentation>Information about the client's addresses, "cash on delivery" payment options and templates with instructions</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="client" type="tns:ClientProfile">
+        <xsd:annotation>
+          <xsd:documentation>Client information</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="addresses" type="ns1:Address">
+        <xsd:annotation>
+          <xsd:documentation>Addresses</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="cdPayOptions" type="tns:CDPayOptions">
+        <xsd:annotation>
+          <xsd:documentation>"Cash on delivery" payment options</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="instructionTemplates" type="ns3:Instruction">
+        <xsd:annotation>
+          <xsd:documentation>Templates with instructions</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="ProfilesResponseElement" type="tns:ProfilesResponseElement" />
+</xsd:schema>

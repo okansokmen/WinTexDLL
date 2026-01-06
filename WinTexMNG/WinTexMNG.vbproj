@@ -1,0 +1,996 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E653588A-D800-428D-ABD0-F2797E84A0B8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>WinTexMNG</RootNamespace>
+    <AssemblyName>WinTexMNG</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.InteropFormTools, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Microsoft.InteropFormTools.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Windows.Design.Extensibility, Version=4.3.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Microsoft.Windows.Design.Extensibility.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Windows.Design.Interaction, Version=4.3.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Microsoft.Windows.Design.Interaction.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=106.12.0.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.106.12.0\lib\net452\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Configuration">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Private>False</Private>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.Drawing.Design">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.EnterpriseServices">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Web">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Web.Extensions">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Web.Services">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xaml">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <Private>False</Private>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Connected Services\ArasService\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\eContPaymentreport\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\eContThreeWayLogistics\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\mngiade\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\PTTBilgi\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\PTTGonderiTakipV2\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\PTTService\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="frmAras.Designer.vb">
+      <DependentUpon>frmAras.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAras.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmByExpress.Designer.vb">
+      <DependentUpon>frmByExpress.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmByExpress.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmKargoZamani.Designer.vb">
+      <DependentUpon>frmKargoZamani.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmKargoZamani.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMNG.Designer.vb">
+      <DependentUpon>frmMNG.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMNG.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNacSms.Designer.vb">
+      <DependentUpon>frmNacSms.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmNacSms.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPTT.Designer.vb">
+      <DependentUpon>frmPTT.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmPTT.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmYurtici.Designer.vb">
+      <DependentUpon>frmYurtici.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmYurtici.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HTMain.vb" />
+    <Compile Include="Connected Services\musterikargosiparis\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="SQLServerClass.vb" />
+    <Compile Include="utilAras.vb" />
+    <Compile Include="utilByExpress.vb" />
+    <Compile Include="utilecont.vb" />
+    <Compile Include="utilKargoZamani.vb" />
+    <Compile Include="UtilLogFile.vb" />
+    <Compile Include="utilMNG.vb" />
+    <Compile Include="utilNacSMS.vb" />
+    <Compile Include="utilPostman.vb" />
+    <Compile Include="utilPTT.vb" />
+    <Compile Include="UtilRoot.vb" />
+    <Compile Include="UtilSQL.vb" />
+    <Compile Include="utilTakipsan.vb" />
+    <Compile Include="utilWebService.vb" />
+    <Compile Include="utilYurtici.vb" />
+    <Compile Include="Web References\com.yurticikargo.testwebservices\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\tr.com.araskargo.customerservicestest\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\tr.com.araskargo.customerservices\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\tr.com.araskargo.customerws\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="frmAras.resx">
+      <DependentUpon>frmAras.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmByExpress.resx">
+      <DependentUpon>frmByExpress.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmKargoZamani.resx">
+      <DependentUpon>frmKargoZamani.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMNG.resx">
+      <DependentUpon>frmMNG.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNacSms.resx">
+      <DependentUpon>frmNacSms.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPTT.resx">
+      <DependentUpon>frmPTT.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmYurtici.resx">
+      <DependentUpon>frmYurtici.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Connected Services\ArasService\ArasCargoIntegrationService.wsdl" />
+    <None Include="Connected Services\ArasService\ArasCargoIntegrationService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ArasService\ArasCargoIntegrationService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ArasService\ArasCargoIntegrationService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ArasService\ArasCargoIntegrationService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ArasService\WinTexMNG.ArasService.CallCourierReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\eContPaymentreport\PaymentReportService.wsdl" />
+    <None Include="Connected Services\eContPaymentreport\schema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\eContPaymentreport\schema1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\eContPaymentreport\schema2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\eContPaymentreport\WinTexMNG.eContPaymentreport.PaymentReportResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\eContPaymentreport\WinTexMNG.eContPaymentreport.PaymentReportRow.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\eContThreeWayLogistics\schema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\eContThreeWayLogistics\schema1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\eContThreeWayLogistics\schema2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\eContThreeWayLogistics\ThreeWayLogisticsService.wsdl" />
+    <None Include="Connected Services\eContThreeWayLogistics\WinTexMNG.eContThreeWayLogistics.ThreeWayLogisticsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\eContThreeWayLogistics\WinTexMNG.eContThreeWayLogistics.threeWayLogisticsResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\mngiade\musterisiparisnew.wsdl" />
+    <None Include="Connected Services\musterikargosiparis\musterikargosiparis.wsdl" />
+    <None Include="Connected Services\musterikargosiparis\WinTexMNG.musterikargosiparis.GonderiBarkodResponce.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\musterikargosiparis\WinTexMNG.musterikargosiparis.GonderiTeslimatProblemiIadeYanitiResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\musterikargosiparis\WinTexMNG.musterikargosiparis.GonderiTeslimatProblemleriResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\musterikargosiparis\WinTexMNG.musterikargosiparis.KargoBilgileriByReferansResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\musterikargosiparis\WinTexMNG.musterikargosiparis.KargoBilgileriByTarihResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\musterikargosiparis\WinTexMNG.musterikargosiparis.MarketPlaceOrderCancelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\musterikargosiparis\WinTexMNG.musterikargosiparis.MngGonderiKgDesiUpdateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\musterikargosiparis\WinTexMNG.musterikargosiparis.MusteriBayiIslemResponce.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\musterikargosiparis\WinTexMNG.musterikargosiparis.MusteriOzelRaporResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\musterikargosiparis\WinTexMNG.musterikargosiparis.MusteriSiparisIptalResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\musterikargosiparis\WinTexMNG.musterikargosiparis.MusteriTeslimatIptalIstegiResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\musterikargosiparis\WinTexMNG.musterikargosiparis.PaletSiparisListesiResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\musterikargosiparis\WinTexMNG.musterikargosiparis.SiparisToPaletIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\musterikargosiparis\WinTexMNG.musterikargosiparis.TekBarkodGonderiIptaliResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PTTBilgi\Sorgu.wsdl" />
+    <None Include="Connected Services\PTTBilgi\WinTexMNG.PTTBilgi.ekHizmetSorgulaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PTTBilgi\WinTexMNG.PTTBilgi.gonderiDurumAciklamaSorgulaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PTTBilgi\WinTexMNG.PTTBilgi.ilceSorgulaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PTTBilgi\WinTexMNG.PTTBilgi.kargomatListesiResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PTTBilgi\WinTexMNG.PTTBilgi.KargomatSorgulaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PTTBilgi\WinTexMNG.PTTBilgi.kargoUcretResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PTTBilgi\WinTexMNG.PTTBilgi.Output.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PTTBilgi\WinTexMNG.PTTBilgi.OutputEkHizmet.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PTTBilgi\WinTexMNG.PTTBilgi.OutputIlce.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PTTBilgi\WinTexMNG.PTTBilgi.OutputKargomat.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PTTBilgi\WinTexMNG.PTTBilgi.OutputKargomatAktiflik.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PTTBilgi\WinTexMNG.PTTBilgi.OutputTeslimSure.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PTTBilgi\WinTexMNG.PTTBilgi.OutputUcret.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PTTBilgi\WinTexMNG.PTTBilgi.OutputUlkeTum.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PTTBilgi\WinTexMNG.PTTBilgi.postaUcretResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PTTBilgi\WinTexMNG.PTTBilgi.telgrafUcretResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PTTBilgi\WinTexMNG.PTTBilgi.teslimSureResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PTTBilgi\WinTexMNG.PTTBilgi.ucretKargo2Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PTTBilgi\WinTexMNG.PTTBilgi.ulkeKodGrupSorgulamaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PTTBilgi\WinTexMNG.PTTBilgi.yurtDisiFaxUcretResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PTTGonderiTakipV2\Sorgu.wsdl" />
+    <None Include="Connected Services\PTTGonderiTakipV2\WinTexMNG.PTTGonderiTakipV2.getAllDropPointInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PTTGonderiTakipV2\WinTexMNG.PTTGonderiTakipV2.getCityResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PTTGonderiTakipV2\WinTexMNG.PTTGonderiTakipV2.getDistrictResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PTTGonderiTakipV2\WinTexMNG.PTTGonderiTakipV2.getDropPointInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PTTGonderiTakipV2\WinTexMNG.PTTGonderiTakipV2.gonderiSorgu2Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PTTGonderiTakipV2\WinTexMNG.PTTGonderiTakipV2.gonderiSorguResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PTTGonderiTakipV2\WinTexMNG.PTTGonderiTakipV2.gonderiSorgu_referansNoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PTTGonderiTakipV2\WinTexMNG.PTTGonderiTakipV2.OutputAllEn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PTTGonderiTakipV2\WinTexMNG.PTTGonderiTakipV2.OutputCity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PTTGonderiTakipV2\WinTexMNG.PTTGonderiTakipV2.OutputDistrict.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PTTGonderiTakipV2\WinTexMNG.PTTGonderiTakipV2.OutputDropPoint.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PTTGonderiTakipV2\WinTexMNG.PTTGonderiTakipV2.OutputDropPointAll.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PTTGonderiTakipV2\WinTexMNG.PTTGonderiTakipV2.OutputTum.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PTTGonderiTakipV2\WinTexMNG.PTTGonderiTakipV2.OutputTum2.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PTTGonderiTakipV2\WinTexMNG.PTTGonderiTakipV2.referansSorguResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PTTGonderiTakipV2\WinTexMNG.PTTGonderiTakipV2.shipmentInquiryEnResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PTTGonderiTakipV2\WinTexMNG.PTTGonderiTakipV2.shipmentInquiry_ReferenceNumberEnResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PTTService\Sorgu.wsdl" />
+    <None Include="Connected Services\PTTService\WinTexMNG.PTTService.barkodVeriSilResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PTTService\WinTexMNG.PTTService.kabulEkle2Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PTTService\WinTexMNG.PTTService.kabulEkleParcaliBarkodResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PTTService\WinTexMNG.PTTService.kabulEkleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PTTService\WinTexMNG.PTTService.kabulEkle_altmusteriResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PTTService\WinTexMNG.PTTService.olcumGuncelleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PTTService\WinTexMNG.PTTService.Output.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PTTService\WinTexMNG.PTTService.Output2.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PTTService\WinTexMNG.PTTService.OutputDelete.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PTTService\WinTexMNG.PTTService.OutputIstek.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PTTService\WinTexMNG.PTTService.OutputRefDelete.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PTTService\WinTexMNG.PTTService.OutputUpdate.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PTTService\WinTexMNG.PTTService.referansVeriSilResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PTTService\WinTexMNG.PTTService.siparisIstekEkle2Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PTTService\WinTexMNG.PTTService.siparisIstekEkleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\DataSources\System.Data.DataSet.datasource" />
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Web References\com.yurticikargo.testwebservices\cancelReturnShipmentCodeResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.yurticikargo.testwebservices\cancelShipmentResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.yurticikargo.testwebservices\createShipmentDetailResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.yurticikargo.testwebservices\createShipmentResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.yurticikargo.testwebservices\createShipmentWithDeliveryResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.yurticikargo.testwebservices\KOPSWebServices.wsdl" />
+    <None Include="Web References\com.yurticikargo.testwebservices\queryShipmentDetailResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.yurticikargo.testwebservices\queryShipmentResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.yurticikargo.testwebservices\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Web References\com.yurticikargo.testwebservices\saveReturnShipmentCodeResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\eContAddressService\AddressService.wsdl" />
+    <None Include="Web References\eContAddressService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+    </None>
+    <None Include="Web References\eContAddressService\schema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\eContAddressService\schema0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\eContAddressService\schema1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\eContNomenclaturesService\NomenclaturesService.wsdl" />
+    <None Include="Web References\eContNomenclaturesService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+    </None>
+    <None Include="Web References\eContNomenclaturesService\schema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\eContNomenclaturesService\schema0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\eContNomenclaturesService\schema1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\eContLabelService\LabelService.wsdl" />
+    <None Include="Web References\eContLabelService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+    </None>
+    <None Include="Web References\eContLabelService\schema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\eContLabelService\schema0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\eContLabelService\schema1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\eContProfileService\ProfileService.wsdl" />
+    <None Include="Web References\eContProfileService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+    </None>
+    <None Include="Web References\eContProfileService\schema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\eContProfileService\schema0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\eContProfileService\schema1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\eContShipmentService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+    </None>
+    <None Include="Web References\eContShipmentService\schema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\eContShipmentService\schema0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\eContShipmentService\schema1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\eContShipmentService\ShipmentService.wsdl" />
+    <None Include="Web References\tr.com.araskargo.customerservicestest\ArasCargoIntegrationService.wsdl" />
+    <None Include="Web References\tr.com.araskargo.customerservicestest\ArasCargoIntegrationService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\tr.com.araskargo.customerservicestest\ArasCargoIntegrationService0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\tr.com.araskargo.customerservicestest\ArasCargoIntegrationService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\tr.com.araskargo.customerservicestest\ArasCargoIntegrationService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\tr.com.araskargo.customerservicestest\CallCourierReturn.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\tr.com.araskargo.customerservicestest\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Web References\tr.com.araskargo.customerservices\ArasCargoIntegrationService.wsdl" />
+    <None Include="Web References\tr.com.araskargo.customerservices\ArasCargoIntegrationService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\tr.com.araskargo.customerservices\ArasCargoIntegrationService0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\tr.com.araskargo.customerservices\ArasCargoIntegrationService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\tr.com.araskargo.customerservices\ArasCargoIntegrationService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\tr.com.araskargo.customerservices\CallCourierReturn.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\tr.com.araskargo.customerservices\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Web References\tr.com.araskargo.customerws\AddressResultDto.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\tr.com.araskargo.customerws\arascargoservice.wsdl" />
+    <None Include="Web References\tr.com.araskargo.customerws\BarcodeResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\tr.com.araskargo.customerws\BarcodeResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\tr.com.araskargo.customerws\CanceledShipmentInfo.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\tr.com.araskargo.customerws\CancelNewDoc.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\tr.com.araskargo.customerws\CustomerAddress.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\tr.com.araskargo.customerws\DeliveryInfo.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\tr.com.araskargo.customerws\DispatchResultInfo.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\tr.com.araskargo.customerws\IncomingCargoInfo.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\tr.com.araskargo.customerws\IrsaliyeData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\tr.com.araskargo.customerws\IrsaliyeData.xsd" />
+    <None Include="Web References\tr.com.araskargo.customerws\Order.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\tr.com.araskargo.customerws\OrderPiecesResultInfo.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\tr.com.araskargo.customerws\OrderResultInfo.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\tr.com.araskargo.customerws\RecallResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\tr.com.araskargo.customerws\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Web References\tr.com.araskargo.customerws\ResultMessage.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\tr.com.araskargo.customerws\SaveAddressResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\tr.com.araskargo.customerws\WebCargoData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\tr.com.araskargo.customerws\WebCargoData.xsd" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\ArasService\" />
+    <WCFMetadataStorage Include="Connected Services\eContPaymentreport\" />
+    <WCFMetadataStorage Include="Connected Services\eContThreeWayLogistics\" />
+    <WCFMetadataStorage Include="Connected Services\mngiade\" />
+    <WCFMetadataStorage Include="Connected Services\musterikargosiparis\" />
+    <WCFMetadataStorage Include="Connected Services\PTTBilgi\" />
+    <WCFMetadataStorage Include="Connected Services\PTTGonderiTakipV2\" />
+    <WCFMetadataStorage Include="Connected Services\PTTService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\musterikargosiparis\musterikargosiparis.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\musterikargosiparis\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\musterikargosiparis\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\musterikargosiparis\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\PTTService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\PTTService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\PTTService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\PTTBilgi\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\PTTBilgi\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\PTTBilgi\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\PTTGonderiTakipV2\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\PTTGonderiTakipV2\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\PTTGonderiTakipV2\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://ee.econt.com/services/Nomenclatures/AddressService.soap%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\eContAddressService\</RelPath>
+      <UpdateFromURL>http://ee.econt.com/services/Nomenclatures/AddressService.soap%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>WinTexMNG_com_econt_ee1_AddressService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://ee.econt.com/services/Nomenclatures/NomenclaturesService.soap%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\eContNomenclaturesService\</RelPath>
+      <UpdateFromURL>http://ee.econt.com/services/Nomenclatures/NomenclaturesService.soap%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>WinTexMNG_com_econt_ee_NomenclaturesService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://ee.econt.com/services/Profile/ProfileService.soap%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\eContProfileService\</RelPath>
+      <UpdateFromURL>http://ee.econt.com/services/Profile/ProfileService.soap%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>WinTexMNG_ProfileService_ProfileService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://ee.econt.com/services/Shipments/LabelService.soap%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\eContLabelService\</RelPath>
+      <UpdateFromURL>http://ee.econt.com/services/Shipments/LabelService.soap%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>WinTexMNG_LabelService_LabelService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://ee.econt.com/services/Shipments/ShipmentService.soap%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\eContShipmentService\</RelPath>
+      <UpdateFromURL>http://ee.econt.com/services/Shipments/ShipmentService.soap%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>WinTexMNG_ShipmentService_ShipmentService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://testwebservices.yurticikargo.com:9090/KOPSWebServices/ShippingOrderDispatcherServices%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\com.yurticikargo.testwebservices\</RelPath>
+      <UpdateFromURL>http://testwebservices.yurticikargo.com:9090/KOPSWebServices/ShippingOrderDispatcherServices%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>WinTexMNG_com_yurticikargo_testwebservices_KOPSWebServices</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://customerservices.araskargo.com.tr/ArasCargoCustomerIntegrationService/ArasCargoIntegrationService.svc">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\tr.com.araskargo.customerservices\</RelPath>
+      <UpdateFromURL>https://customerservices.araskargo.com.tr/ArasCargoCustomerIntegrationService/ArasCargoIntegrationService.svc</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>WinTexMNG_tr_com_araskargo_customerservices_ArasCargoIntegrationService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://customerservicestest.araskargo.com.tr/ArasCargoIntegrationService.svc">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\tr.com.araskargo.customerservicestest\</RelPath>
+      <UpdateFromURL>https://customerservicestest.araskargo.com.tr/ArasCargoIntegrationService.svc</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>WinTexMNG_tr_com_araskargo_customerservicestest_ArasCargoIntegrationService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://customerws.araskargo.com.tr/arascargoservice.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\tr.com.araskargo.customerws\</RelPath>
+      <UpdateFromURL>https://customerws.araskargo.com.tr/arascargoservice.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>WinTexMNG_tr_com_araskargo_customerws_Service</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\eContThreeWayLogistics\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\eContThreeWayLogistics\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\eContThreeWayLogistics\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\eContPaymentreport\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\eContPaymentreport\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\eContPaymentreport\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mngiade\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mngiade\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mngiade\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\mngiade\musterisiparisnew1.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\tr.com.araskargo.customerservices\ArasCargoIntegrationService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\tr.com.araskargo.customerws\arascargoservice.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\tr.com.araskargo.customerservicestest\ArasCargoIntegrationService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ArasService\ArasCargoIntegrationService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ArasService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ArasService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ArasService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>

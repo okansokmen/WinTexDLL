@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:ns2="http://ee.econt.com/services" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://ee.econt.com/services/ThreeWayLogistics" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://ee.econt.com/services/ThreeWayLogistics/R" targetNamespace="http://ee.econt.com/services/ThreeWayLogistics" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://ee.econt.com/services/ThreeWayLogistics">
+      <xsd:include schemaLocation="schema.xsd" />
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import schemaLocation="R/schema.xsd" namespace="http://ee.econt.com/services/ThreeWayLogistics/R" />
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import schemaLocation="../schema.xsd" namespace="http://ee.econt.com/services" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="threeWayLogistics">
+    <wsdl:part name="request" element="ns1:ThreeWayLogisticsRequest" />
+  </wsdl:message>
+  <wsdl:message name="threeWayLogisticsResponse">
+    <wsdl:part name="ThreeWayLogisticsResponse" element="ns1:ThreeWayLogisticsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ThreeWayLogisticsError">
+    <wsdl:part name="Error" element="ns2:Error" />
+  </wsdl:message>
+  <wsdl:portType name="ThreeWayLogisticsService">
+    <wsdl:operation name="threeWayLogistics">
+      <wsdl:input message="tns:threeWayLogistics" />
+      <wsdl:output message="tns:threeWayLogisticsResponse" />
+      <wsdl:fault name="ThreeWayLogisticsError" message="tns:ThreeWayLogisticsError" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ThreeWayLogisticsServiceBinding" type="tns:ThreeWayLogisticsService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="threeWayLogistics">
+      <soap:operation soapAction="threeWayLogistics" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ThreeWayLogisticsError">
+        <soap:fault use="literal" name="ThreeWayLogisticsError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ThreeWayLogisticsService">
+    <wsdl:port name="ThreeWayLogisticsService" binding="tns:ThreeWayLogisticsServiceBinding">
+      <soap:address location="http://ee.econt.com/services/ThreeWayLogistics/ThreeWayLogisticsService.soap" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

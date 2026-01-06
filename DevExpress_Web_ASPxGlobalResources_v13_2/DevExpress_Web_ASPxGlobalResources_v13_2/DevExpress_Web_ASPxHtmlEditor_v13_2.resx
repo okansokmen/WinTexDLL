@@ -1,0 +1,503 @@
+﻿<?xml version="1.0"?><root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ASPxHtmlEditorStringId.Alt_ConstrainProportions">
+    <value>Oran Korumasını Aç</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.Alt_ConstrainProportionsOff">
+    <value>Oran Korumasını Kapat</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.DesignViewTab">
+    <value>Tasarım Görünümü</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.HtmlViewTab">
+    <value>HTML</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.PreviewTab">
+    <value>Önizleme</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.CommandCut">
+    <value>Kes</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.CommandCopy">
+    <value>Kopyala</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.CommandPaste">
+    <value>Yapıştır</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.CommandPasteRtf">
+    <value>Word'e Yapıştır</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.CommandUndo">
+    <value>Geri Al</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.CommandRedo">
+    <value>Yinele</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.CommandPrint">
+    <value>Yazdır</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.CommandRemoveFormat">
+    <value>Biçimi Temizle</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.CommandSubscript">
+    <value>Altsimge</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.CommandSuperscript">
+    <value>Üstsimge</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.CommandOrderedList">
+    <value>Sıralı Liste</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.CommandBulletList">
+    <value>Madde İşareti</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.CommandIndent">
+    <value>Girinti</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.CommandOutdent">
+    <value>Çıkıntı</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.CommandUnlink">
+    <value>Bağlantıyı Kaldır</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.CommandCheckSpelling">
+    <value>Yazım Denetimi</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.CommandBold">
+    <value>Kalın</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.CommandItalic">
+    <value>İtalik</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.CommandUnderline">
+    <value>Altı Çizili</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.CommandStrikethrough">
+    <value>Üstü Çizili</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.CommandLeft">
+    <value>Sola Hizala</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.CommandCenter">
+    <value>Ortala</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.CommandRight">
+    <value>Sağa Hizala</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.CommandJustify">
+    <value>İki Yana Yasla</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.CommandBackColor">
+    <value>Arkaplan Rengi</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.CommandForeColor">
+    <value>Önplan Rengi</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.CommandApplyCss">
+    <value>CSS'yi Uygula</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.CommandFullscreen">
+    <value>Tam Ekran</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.InsertImage">
+    <value>Resim Ekle</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.ChangeImage">
+    <value>Resmi Değiştir</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.ContextMenu_ChangeImage">
+    <value>Resmi Değiştir...</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.SelectImage">
+    <value>Resim Seç</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.InsertLink">
+    <value>Bağlantı Ekle</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.ChangeLink">
+    <value>Bağlantıyı Değiştir</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.ContextMenu_ChangeLink">
+    <value>Bağlantıyı Değiştir...</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.SelectDocument">
+    <value>Belge Seç</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.FontSize">
+    <value>Yazı Tipi Boyutu</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.FontName">
+    <value>Yazı Tipi Adı</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.Paragraph">
+    <value>Paragraf</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.PasteRtf_Instructions">
+    <value>Lütfen aşağıdaki kutuya yapıştırarak Tamam'a basın.</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.PasteRtf_StripFont">
+    <value>Şerit yazı tipi</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.ButtonOk">
+    <value>Tamam</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.ButtonCancel">
+    <value>İptal</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.ButtonChange">
+    <value>Değişitir</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.ButtonInsert">
+    <value>Ekle</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.ButtonSelect">
+    <value>Seç</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.InsertLink_Url">
+    <value>URL</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.InsertLink_Email">
+    <value>E-posta adresi</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.InsertLink_DisplayProperties">
+    <value>Görüntü Özellikleri</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.InsertLink_Text">
+    <value>Metin</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.InsertLink_ToolTip">
+    <value>İpucu</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.InsertLink_OpenInNewWindow">
+    <value>Yeni pencerede aç</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.InsertLink_EmailTo">
+    <value>Kime</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.InsertLink_Subject">
+    <value>Konu</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.InsertLink_SelectDocument">
+    <value>Invoke a dialog allowing you to select a document</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.DefaultErrorText">
+    <value>HTML içeriği geçersiz</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.RequiredHtmlContentError">
+    <value>İçerik boş olamaz</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.RequiredFieldError">
+    <value>Bu alan zorunludur</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.InsertImage_FromWeb">
+    <value>Web üzerinden (URL)</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.InsertImage_FromLocal">
+    <value>Bilgisayardan</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.InsertImage_EnterUrl">
+    <value>Resmin web adresini belirtin</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.InsertImage_SaveToServer">
+    <value>Dosyayı sunucuya kaydet</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.InsertImage_Preview">
+    <value>Resim önizlemesi</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.InsertImage_UploadInstructions">
+    <value>Resim yüklemek için bilgisayara gözat</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.InsertImage_MoreOptions">
+    <value>Daha fazla seçenek</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.InsertImage_UseFloat">
+    <value>Metni resmin etrafında kaydır</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.InsertImage_SelectImage">
+    <value>Resim seçiciyi açın</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.ImageProps_Size">
+    <value>Boyut</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.ImageProps_OriginalSize">
+    <value>Orjinal resim boyutu</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.ImageProps_CustomSize">
+    <value>Özel boyut</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.ImageProps_Width">
+    <value>Genişlik</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.ImageProps_Pixels">
+    <value>pixel</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.ImageProps_Height">
+    <value>Yükseklik</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.ImageProps_CreateThumbnail">
+    <value>Küçük resim oluştur</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.ImageProps_NewImageName">
+    <value>Yeni resim ismi</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.ImageProps_Position">
+    <value>Pozisyon</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.ImageProps_PositionLeft">
+    <value>Sola Hizalı</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.ImageProps_PositionCenter">
+    <value>Ortalı</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.ImageProps_PositionRight">
+    <value>Sağa Hizalı</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.ImageProps_Description">
+    <value>Açıklama</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.ImageProps_Margins">
+    <value>Kenar Boşlukları</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.ImageProps_MarginTop">
+    <value>Üst</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.ImageProps_MarginBottom">
+    <value>Alt</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.ImageProps_MarginLeft">
+    <value>Sol</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.ImageProps_MarginRight">
+    <value>Sağ</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.ImageProps_Border">
+    <value>Çerçeve</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.ImageProps_BorderWidth">
+    <value>Çerçeve boyutu</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.ImageProps_BorderColor">
+    <value>Renk</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.ImageProps_CssClass">
+    <value>CSS sınıfı</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.InvalidUrlErrorText">
+    <value>Geçersiz URL biçimi veya dosya bu URL kullanılarak bulunamıyor</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.InsertTable">
+    <value>Tablo Ekle...</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.TableProperties">
+    <value>Tablo Özellikleri...</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.ContextMenu_TableProperties">
+    <value>Tablo Özellikleri...</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.TableCellProperties">
+    <value>Hücre Özellikleri...</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.ContextMenu_TableCellProperties">
+    <value>Hücre Özellikleri...</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.TableColumnProperties">
+    <value>Sütun Özellikleri...</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.ContextMenu_TableColumnProperties">
+    <value>Sütun Özellikleri...</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.TableRowProperties">
+    <value>Satır Özellikleri...</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.ContextMenu_TableRowProperties">
+    <value>Satır Özellikleri...</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.ChangeTableColumn_Size">
+    <value>Boyut</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.InsertTableRowAbove">
+    <value>Üste Satır Ekle</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.InsertTableRowBelow">
+    <value>Alta Satır Ekle</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.InsertTableColumnToLeft">
+    <value>Sola Sütun Ekle</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.InsertTableColumnToRight">
+    <value>Sağa Sütun Ekle</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.DeleteTable">
+    <value>Tabloyu Sil</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.DeleteTableRow">
+    <value>Satırı Sil</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.DeleteTableColumn">
+    <value>Sütunu Sil</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.MergeTableCellDown">
+    <value>Alttaki İle Birleştir</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.MergeTableCellHorizontal">
+    <value>Sağdaki İle Birleştir</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.SplitTableCellVertical">
+    <value>Dikey Böl</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.SplitTableCellHorizontal">
+    <value>Yatay Böl</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.InsertTable_Size">
+    <value>Tablo Boyutu</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.InsertTable_Columns">
+    <value>Sütunlar</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.InsertTable_Rows">
+    <value>Satırlar</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.InsertTable_Width">
+    <value>Genişlik</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.InsertTable_Height">
+    <value>Yükseklik</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.InsertTable_FullWidth">
+    <value>Tam genişlik</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.InsertTable_AutoFitToContent">
+    <value>Otomatik sığdır</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.InsertTable_Custom">
+    <value>Özel</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.InsertTable_EqualColumnWidths">
+    <value>Eşit sütun genişlikleri</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.InsertTable_Layout">
+    <value>Görünüm</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.InsertTable_CellPaddings">
+    <value>Hücre dolgusu</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.InsertTable_Alignment">
+    <value>Hizalama</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.InsertTable_VertAlignment">
+    <value>Dikey</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.InsertTable_HorzAlignment">
+    <value>Yatay</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.InsertTable_None">
+    <value>Yok</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.InsertTable_Alignment_Left">
+    <value>Sol</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.InsertTable_Alignment_Center">
+    <value>Orta</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.InsertTable_Alignment_Right">
+    <value>Sağ</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.InsertTable_VAlignment_Top">
+    <value>Üst</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.InsertTable_VAlignment_Bottom">
+    <value>Alt</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.InsertTable_VAlignment_Middle">
+    <value>Orta</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.InsertTable_CellSpacing">
+    <value>Hücre boşluğu</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.InsertTable_Appearance">
+    <value>Görünüm</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.InsertTable_BorderColor">
+    <value>Çerçeve rengi</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.InsertTable_BorderSize">
+    <value>Çerçeve boyutu</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.InsertTable_BgColor">
+    <value>Arkaplan rengi</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.InsertTable_Accessibility">
+    <value>Erişilebilirlik</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.InsertTable_Headers">
+    <value>Başlıklar</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.InsertTable_FirstRow">
+    <value>İlk Satır</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.InsertTable_FirstColumn">
+    <value>İlk Sütun</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.InsertTable_Both">
+    <value>Her ikisi de</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.InsertTable_Caption">
+    <value>Başlık</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.InsertTable_Summary">
+    <value>Özet</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.InsertTable_ApplyToAllCell">
+    <value>Tablodaki tüm hücrelere uygula</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.SelectAll">
+    <value>Tümünü Seç</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.SaveAsRtf">
+    <value>Zengin Metin Biçimi (.rtf)</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.SaveAsDocx">
+    <value>Word Belgesi (.docx)</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.SaveAsMht">
+    <value>Tek Dosyalı Web Sayfası (.mht)</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.SaveAsOdt">
+    <value>OpenDocument Metni (.odt)</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.SaveAsPdf">
+    <value>PDF (.pdf)</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.SaveAsTxt">
+    <value>Düz Metin (.txt)</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.SaveAsRtf_ToolTip">
+    <value>RTF dosyasını dışarı aktar ve yerel diske kaydet</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.SaveAsDocx_ToolTip">
+    <value>DOCX dosyasını dışarı aktar ve yerel diske kaydet</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.SaveAsMht_ToolTip">
+    <value>MHT dosyasını dışarı aktar ve yerel diske kaydet</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.SaveAsOdt_ToolTip">
+    <value>ODT dosyasını dışarı aktar ve yerel diske kaydet</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.SaveAsPdf_ToolTip">
+    <value>PDF dosyasını dışarı aktar ve yerel diske kaydet</value>
+  </data>
+  <data name="ASPxHtmlEditorStringId.SaveAsTxt_ToolTip">
+    <value>TXT dosyasını dışarı aktar ve yerel diske kaydet</value>
+  </data>
+</root>

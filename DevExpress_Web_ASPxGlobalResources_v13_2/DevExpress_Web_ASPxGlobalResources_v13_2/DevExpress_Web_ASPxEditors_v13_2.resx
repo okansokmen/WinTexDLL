@@ -1,0 +1,125 @@
+<?xml version="1.0"?><!DOCTYPE root []><root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ASPxEditorsStringId.Calendar_Cancel">
+    <value>İptal</value>
+  </data>
+  <data name="ASPxEditorsStringId.Calendar_Clear">
+    <value>Temizle</value>
+  </data>
+  <data name="ASPxEditorsStringId.Calendar_OK">
+    <value>Tamam</value>
+  </data>
+  <data name="ASPxEditorsStringId.Calendar_Today">
+    <value>Bugün</value>
+  </data>
+  <data name="ASPxEditorsStringId.Captcha_DefaultErrorText">
+    <value>Doğrulama kodu yanlış</value>
+  </data>
+  <data name="ASPxEditorsStringId.Captcha_DefaultImageAlternateText">
+    <value>Doğrulama resmi</value>
+  </data>
+  <data name="ASPxEditorsStringId.Captcha_DefaultTextBoxLabelText">
+    <value>Görüntülenen kodu girin:</value>
+  </data>
+  <data name="ASPxEditorsStringId.Captcha_RefreshText">
+    <value>Başka kod göster</value>
+  </data>
+  <data name="ASPxEditorsStringId.CheckBox_Checked">
+    <value>İşaretli</value>
+  </data>
+  <data name="ASPxEditorsStringId.CheckBox_Unchecked">
+    <value>İşaretli değil</value>
+  </data>
+  <data name="ASPxEditorsStringId.CheckBox_Undefined">
+    <value>?</value>
+  </data>
+  <data name="ASPxEditorsStringId.ColorEdit_Cancel">
+    <value>İptal</value>
+  </data>
+  <data name="ASPxEditorsStringId.ColorEdit_CustomColor">
+    <value>Özel Renk...</value>
+  </data>
+  <data name="ASPxEditorsStringId.ColorEdit_OK">
+    <value>Tamam</value>
+  </data>
+  <data name="ASPxEditorsStringId.DefaultErrorText">
+    <value>Geçersiz değer</value>
+  </data>
+  <data name="ASPxEditorsStringId.FilterConrol_Empty">
+    <value>&amp;lt;boş&amp;gt;</value>
+  </data>
+  <data name="ASPxEditorsStringId.FilterConrol_EmptyEnter">
+    <value>&amp;lt;değer girin&amp;gt;</value>
+  </data>
+  <data name="ASPxEditorsStringId.FilterControl_AddCondition">
+    <value>Koşul Ekle</value>
+  </data>
+  <data name="ASPxEditorsStringId.FilterControl_AddConditionHint">
+    <value>Bu grup için yeni koşul ekle</value>
+  </data>
+  <data name="ASPxEditorsStringId.FilterControl_AddGroup">
+    <value>Grup Ekle</value>
+  </data>
+  <data name="ASPxEditorsStringId.FilterControl_AddValueHint">
+    <value>Liste için yeni öğe ekle</value>
+  </data>
+  <data name="ASPxEditorsStringId.FilterControl_BetweenAnd">
+    <value>Ve</value>
+  </data>
+  <data name="ASPxEditorsStringId.FilterControl_Cancel">
+    <value>İptal</value>
+  </data>
+  <data name="ASPxEditorsStringId.FilterControl_ClauseType">
+    <value>Eşit, Eşit değil, Büyük, Eşit veya büyük, Küçük, Küçük veya eşit, Arasında, Arasında değil, İçerir, İçermez, İle başlar, İle biter, Benzer, Benzemez, Boş, Boş değil, Herhangi biri, Hiçbiri</value>
+  </data>
+  <data name="ASPxEditorsStringId.FilterControl_ClearFilter">
+    <value>Temizle</value>
+  </data>
+  <data name="ASPxEditorsStringId.FilterControl_GroupType">
+    <value>Ve,Veya,Ve Değil,Veya Değil</value>
+  </data>
+  <data name="ASPxEditorsStringId.FilterControl_Not">
+    <value>Yok</value>
+  </data>
+  <data name="ASPxEditorsStringId.FilterControl_OK">
+    <value>Tamam</value>
+  </data>
+  <data name="ASPxEditorsStringId.FilterControl_PopupHeaderText">
+    <value>Filtre Oluşturucu</value>
+  </data>
+  <data name="ASPxEditorsStringId.FilterControl_Remove">
+    <value>Kaldır</value>
+  </data>
+  <data name="ASPxEditorsStringId.FilterControl_RemoveConditionHint">
+    <value>Bu koşulu kaldır</value>
+  </data>
+  <data name="ASPxEditorsStringId.FilterControl_ShowFilterControl">
+    <value>Filtre Oluştur</value>
+  </data>
+  <data name="ASPxEditorsStringId.RegExValidationErrorText">
+    <value>Geçersiz değer</value>
+  </data>
+  <data name="ASPxEditorsStringId.RequiredFieldErrorText">
+    <value>*</value>
+  </data>
+  <data name="ASPxEditorsStringId.TrackBar_Decrement">
+    <value>Azalt</value>
+  </data>
+  <data name="ASPxEditorsStringId.TrackBar_Drag">
+    <value>Sürükle</value>
+  </data>
+  <data name="ASPxEditorsStringId.TrackBar_Increment">
+    <value>Arttır</value>
+  </data>
+</root>

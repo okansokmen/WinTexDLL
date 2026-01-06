@@ -1,0 +1,1138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:ns3="http://ee.econt.com/services" xmlns:tns="http://ee.econt.com/services/Shipments" xmlns:ns1="http://ee.econt.com/services/Profile" xmlns:ns2="http://ee.econt.com/services/Nomenclatures" elementFormDefault="qualified" targetNamespace="http://ee.econt.com/services/Shipments" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import schemaLocation="../Profile/schema.xsd" namespace="http://ee.econt.com/services/Profile" />
+  <xsd:import schemaLocation="../Nomenclatures/schema.xsd" namespace="http://ee.econt.com/services/Nomenclatures" />
+  <xsd:import schemaLocation="../schema.xsd" namespace="http://ee.econt.com/services" />
+  <xsd:simpleType name="ShipmentType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="document">
+        <xsd:annotation>
+          <xsd:documentation>Documents (up to 0.5kg)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="pack">
+        <xsd:annotation>
+          <xsd:documentation>Parcel (up to 50kg)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="post_pack">
+        <xsd:annotation>
+          <xsd:documentation>Post parcel (up to 20kg, 60x60x60cm and subcode = office-office)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="pallet">
+        <xsd:annotation>
+          <xsd:documentation>Pallet (80x120x180cm and up to 1000kg)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="cargo">
+        <xsd:annotation>
+          <xsd:documentation>Cargo express (palletized shipment over 80x120x180cm up to 200x200x180 and up to 500kg)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="documentpallet">
+        <xsd:annotation>
+          <xsd:documentation>Pallet + documents</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="big_letter">
+        <xsd:annotation>
+          <xsd:documentation>Letter (big)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="small_letter">
+        <xsd:annotation>
+          <xsd:documentation>Letter (small)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="money_transfer">
+        <xsd:annotation>
+          <xsd:documentation>Money transfer</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="pp">
+        <xsd:annotation>
+          <xsd:documentation>Post transfer</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:element name="ShipmentType" type="tns:ShipmentType" />
+  <xsd:complexType name="ReturnInstructionParams">
+    <xsd:annotation>
+      <xsd:documentation>Parameters for returning shipment instructions</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="returnParcelDestination" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Destination of the return parcel (empty -&amp;gt; no return parcel, sender -&amp;gt; return to sender, office -&amp;gt; return to office, address -&amp;gt; return to address)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="returnParcelIsDocument" type="xsd:boolean">
+        <xsd:annotation>
+          <xsd:documentation>Indicates if the return parcel is document (true -&amp;gt; the return shipment is a document, false -&amp;gt; the return shipment is the same type as the original)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="daysUntilReturn" type="xsd:int">
+        <xsd:annotation>
+          <xsd:documentation>The maximum period (in days) for sending the return shipment</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="returnParcelPaymentSide" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Payer of the return shipment (sender, receiver)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="returnParcelReceiverClient" type="ns1:ClientProfile">
+        <xsd:annotation>
+          <xsd:documentation>Receiver for the return shipment (if empty -&amp;gt; original sender)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="returnParcelReceiverAgent" type="ns1:ClientProfile">
+        <xsd:annotation>
+          <xsd:documentation>Receiver's authorized person for the return shipment (if empty -&amp;gt; original sender's authorized person)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="returnParcelReceiverOfficeCode" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Receiver's office code for the return shipment (if empty -&amp;gt; original sender's office code)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="returnParcelReceiverAddress" type="ns2:Address">
+        <xsd:annotation>
+          <xsd:documentation>Receiver's address for the return shipment (if empty -&amp;gt; original sender's address)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="printReturnParcel" type="xsd:boolean">
+        <xsd:annotation>
+          <xsd:documentation>If label for return shipment should be generated upon creation of the first shipment</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="rejectAction" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>The actions available if the shipment is rejected:
+
+contact - contact sender (rejectContact)
+instruction - text with instructions (rejectInstruction)
+return_to_sender - return to sender
+return_to_office - return to other - to office (rejectReturnClient, RejectReturnAgent, RejectReturnOfficeCode)
+return_to_address - return to other - to address (rejectReturnClient, RejectReturnAgent, RejectReturnAddress)
+
+The fields: rejectInstruction, rejectContact, rejectReturnReceiver or rejectReturnToSender cannot be used at once</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="rejectInstruction" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Text instruction if the shipment is rejected by the receiver</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="rejectContact" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Phone or e-mail contact if the shipment is rejected by the receiver</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="rejectReturnClient" type="ns1:ClientProfile">
+        <xsd:annotation>
+          <xsd:documentation>Client, to whom the original (first) shipment should be returned</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="rejectReturnAgent" type="ns1:ClientProfile">
+        <xsd:annotation>
+          <xsd:documentation>Authorized person, to whom the original (first) shipment should be returned</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="rejectReturnOfficeCode" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>The code of the office, where the original (first) shipment should be returned</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="rejectReturnAddress" type="ns2:Address">
+        <xsd:annotation>
+          <xsd:documentation>Address, where the original (first) shipment should be returned to</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="rejectOriginalParcelPaySide" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Payer of the original (first) shipment if it is rejected by the receiver after review (sender, receiver)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="rejectReturnParcelPaySide" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Payer of the return shipment if the original (first) is rejected by the receiver after review (sender, receiver)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="1" maxOccurs="1" name="signatureDocuments" type="xsd:boolean">
+        <xsd:annotation>
+          <xsd:documentation>Marks if the returning documents should be signed by the client (returnParcelIsDocument should be 'true')</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="1" maxOccurs="1" name="signaturePenColor" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>The color of the pen, which have to be used for signing the documents</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="1" maxOccurs="1" name="signatureCount" type="xsd:int">
+        <xsd:annotation>
+          <xsd:documentation>Number of total signatures that have to be done</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="1" maxOccurs="1" name="signaturePageNumbers" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Page numbers of the document where the client should put his signature</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="1" maxOccurs="1" name="signatureOtherInstructions" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Other or additional instructions in free text</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="ReturnInstructionParams" type="tns:ReturnInstructionParams" />
+  <xsd:complexType name="Instruction">
+    <xsd:annotation>
+      <xsd:documentation>Additional instructions for receiving, giving over or returning of shipment</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="id" type="xsd:int" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="type" type="tns:InstructionType">
+        <xsd:annotation>
+          <xsd:documentation>The type of the instruction</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="title" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>The title of the instruction for receiving or giving over a shipment</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="description" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Content of the instruction for receiving or giving over a shipment</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="attachments" type="ns3:HostedFile">
+        <xsd:annotation>
+          <xsd:documentation>Attached files with instructions for receiving or giving over a shipment</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="voiceDescription" type="ns3:HostedFile">
+        <xsd:annotation>
+          <xsd:documentation>Recorded voice message with instruction for receiving or giving over a shipment (mp3)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="returnInstructionParams" type="tns:ReturnInstructionParams">
+        <xsd:annotation>
+          <xsd:documentation>Instruction parameters for returning a shipment</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="name" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Instruction template name</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="applyToAllParcels" type="xsd:boolean">
+        <xsd:annotation>
+          <xsd:documentation>Whether or not the template should be applied for all sender's shipments</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="applyToReceivers" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Whether or not the template should be applied for all sender's shipments to given receivers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="Instruction" type="tns:Instruction" />
+  <xsd:simpleType name="InstructionType">
+    <xsd:annotation>
+      <xsd:documentation>Instruction types</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="take">
+        <xsd:annotation>
+          <xsd:documentation>Instruction type for collecting a shipment from the sender</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="give">
+        <xsd:annotation>
+          <xsd:documentation>Instruction type for giving over a shipment to the receiver</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="return">
+        <xsd:annotation>
+          <xsd:documentation>Instruction type for returning a shipment</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="services">
+        <xsd:annotation>
+          <xsd:documentation>Instruction type for additional services</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:element name="InstructionType" type="tns:InstructionType" />
+  <xsd:complexType name="ShippingLabel">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="shipmentNumber" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Shipment number</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="previousShipmentNumber" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>The number of the parent (previous) shipment</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="previousShipmentReceiverPhone" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>The phone number of the receiver of the parent (previous) shipment</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="senderClient" type="ns1:ClientProfile">
+        <xsd:annotation>
+          <xsd:documentation>Sender</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="senderAgent" type="ns1:ClientProfile">
+        <xsd:annotation>
+          <xsd:documentation>Authorized sender</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="senderAddress" type="ns2:Address">
+        <xsd:annotation>
+          <xsd:documentation>Address of the sender</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="senderOfficeCode" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Office code of the sender</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="emailOnDelivery" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>E-mail for delivery notification</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="smsOnDelivery" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Indicates whether or not a SMS should be send after the delivery</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="receiverClient" type="ns1:ClientProfile">
+        <xsd:annotation>
+          <xsd:documentation>Receiver</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="receiverAgent" type="ns1:ClientProfile">
+        <xsd:annotation>
+          <xsd:documentation>Authorized receiver</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="receiverAddress" type="ns2:Address">
+        <xsd:annotation>
+          <xsd:documentation>Address of the receiver</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="receiverOfficeCode" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Office code of the receiver</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="receiverProviderID" type="xsd:int">
+        <xsd:annotation>
+          <xsd:documentation>Provider ID of the receiver</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="receiverBIC" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>BIC of the receiver</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="receiverIBAN" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>IBAN of the receiver</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="envelopeNumbers" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Envelope numbers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="packCount" type="xsd:int">
+        <xsd:annotation>
+          <xsd:documentation>Pack count</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="packs" type="tns:PackElement">
+        <xsd:annotation>
+          <xsd:documentation>Packs</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="shipmentType" type="tns:ShipmentType">
+        <xsd:annotation>
+          <xsd:documentation>Shipment type</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="weight" type="xsd:double">
+        <xsd:annotation>
+          <xsd:documentation>Weight</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="sizeUnder60cm" type="xsd:boolean">
+        <xsd:annotation>
+          <xsd:documentation>Indicates if all shipment dimensions are under 60cm (by default: 'false')</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="shipmentDimensionsL" type="xsd:double">
+        <xsd:annotation>
+          <xsd:documentation>Shipment dimensions (lenght)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="shipmentDimensionsW" type="xsd:double">
+        <xsd:annotation>
+          <xsd:documentation>Shipment dimensions (width)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="shipmentDimensionsH" type="xsd:double">
+        <xsd:annotation>
+          <xsd:documentation>Shipment dimensions (height)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="shipmentDescription" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Shipment description</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="orderNumber" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Order number</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="sendDate" type="xsd:date">
+        <xsd:annotation>
+          <xsd:documentation>The date when the shipment is sent</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="holidayDeliveryDay" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>'Halfday', 'workday', or specific date (yyyy-mm-dd)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="keepUpright" type="xsd:boolean">
+        <xsd:annotation>
+          <xsd:documentation>Indicates if the shipment should be kept upright (ON/OFF)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="services" type="tns:ShippingLabelServices">
+        <xsd:annotation>
+          <xsd:documentation>Services</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="instructions" type="tns:Instruction">
+        <xsd:annotation>
+          <xsd:documentation>Instructions</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="payAfterAccept" type="xsd:boolean">
+        <xsd:annotation>
+          <xsd:documentation>Indicates whether or not the shipment can be checked before payment</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="payAfterTest" type="xsd:boolean">
+        <xsd:annotation>
+          <xsd:documentation>Indicates whether or not the shipment can be tested before payment</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="packingListType" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Packing list type - file, digital, loading</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="packingList" type="tns:PackingListElement">
+        <xsd:annotation>
+          <xsd:documentation>Packing list</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="partialDelivery" type="xsd:boolean">
+        <xsd:annotation>
+          <xsd:documentation>Indicates whether or not partial delivery is allowed</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="paymentSenderMethod" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Payment method of the sender - &amp;lt;empty&amp;gt;, cash or credit</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="paymentReceiverMethod" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Payment method of the receiver - &amp;lt;empty&amp;gt;, cash or credit</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="paymentReceiverAmount" type="xsd:double">
+        <xsd:annotation>
+          <xsd:documentation>Amount of the payment for the receiver</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="paymentReceiverAmountIsPercent" type="xsd:boolean">
+        <xsd:annotation>
+          <xsd:documentation>Indicates if the payment due from the receiver is a percentage</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="paymentOtherClientNumber" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>The number of the client who is paying as a third party</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="paymentOtherAmount" type="xsd:double">
+        <xsd:annotation>
+          <xsd:documentation>Amount to be paid from third party</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="paymentOtherAmountIsPercent" type="xsd:boolean">
+        <xsd:annotation>
+          <xsd:documentation>Indicates if the payment due from third party is a percentage</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="mediator" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Mediator for the shipment</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="paymentToken" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Payment token for blocking payments</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="ShippingLabel" type="tns:ShippingLabel" />
+  <xsd:complexType name="ShippingLabelServices">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="priorityTimeFrom" type="xsd:time">
+        <xsd:annotation>
+          <xsd:documentation>Earliest time for delivery (format: HH:MM)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="priorityTimeTo" type="xsd:time">
+        <xsd:annotation>
+          <xsd:documentation>Latest time for delivery (format: HH:MM)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="deliveryReceipt" type="xsd:boolean">
+        <xsd:annotation>
+          <xsd:documentation>Indicates if delivery receipt should be returned to sender (additional service - DC)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="digitalReceipt" type="xsd:boolean">
+        <xsd:annotation>
+          <xsd:documentation>Indicates if delivery receipt should be returned to sender with digital receipt (additional service - EDC)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="goodsReceipt" type="xsd:boolean">
+        <xsd:annotation>
+          <xsd:documentation>Indicates if confirmation for receiving goods should be delivered to sender (additional service - DC-CP)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="twoWayShipment" type="xsd:boolean">
+        <xsd:annotation>
+          <xsd:documentation>Indicates if it is a two-way shipment (additional service - DP)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="deliveryToFloor" type="xsd:boolean">
+        <xsd:annotation>
+          <xsd:documentation>Indicates if there is delivery to floor (additional service)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="pack5" type="xsd:int" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="pack6" type="xsd:int" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="pack8" type="xsd:int" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="pack9" type="xsd:int" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="pack10" type="xsd:int" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="pack12" type="xsd:int" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="refrigeratedPack" type="xsd:int">
+        <xsd:annotation>
+          <xsd:documentation>Indicates if the shipment should be transported with a cooler bag (additional service - REF)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="declaredValueAmount" type="xsd:double">
+        <xsd:annotation>
+          <xsd:documentation>The declared value of the shipment</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="declaredValueCurrency" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>The currency of the declared value of the shipment</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="moneyTransferAmount" type="xsd:double">
+        <xsd:annotation>
+          <xsd:documentation>Money transfer amount</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="expressMoneyTransfer" type="xsd:boolean">
+        <xsd:annotation>
+          <xsd:documentation>Express money transfer</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="cdAmount" type="xsd:double">
+        <xsd:annotation>
+          <xsd:documentation>"Cash on delivery" amount</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="cdType" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>"Cash on delivery" accepted types: get or give</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="cdCurrency" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>"Cash on delivery" currency</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="cdPayOptionsTemplate" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>"Cash on delivery" payment options template</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="cdPayOptions" type="ns1:CDPayOptions">
+        <xsd:annotation>
+          <xsd:documentation>"Cash on delivery" payment options</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="invoiceBeforePayCD" type="xsd:boolean">
+        <xsd:annotation>
+          <xsd:documentation>Providing invoice before payment of "Cash on delivery"</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="smsNotification" type="xsd:boolean">
+        <xsd:annotation>
+          <xsd:documentation>SMS notifications for the receiver</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="invoiceNum" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Invoice number (up to 11 digits) and date (31.12.21) for department sale</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="ShippingLabelServices" type="tns:ShippingLabelServices" />
+  <xsd:complexType name="PackingListElement">
+    <xsd:annotation>
+      <xsd:documentation>Packing list</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="inventoryNum" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Inventory number</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="description" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Description</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="weight" type="xsd:double">
+        <xsd:annotation>
+          <xsd:documentation>Weight</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="count" type="xsd:int">
+        <xsd:annotation>
+          <xsd:documentation>count</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="price" type="xsd:double">
+        <xsd:annotation>
+          <xsd:documentation>Price</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="file" type="ns3:HostedFile">
+        <xsd:annotation>
+          <xsd:documentation>File</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="PackingListElement" type="tns:PackingListElement" />
+  <xsd:complexType name="ShipmentStatus">
+    <xsd:annotation>
+      <xsd:documentation>Status of the shipment</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="shipmentNumber" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Shipment number</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="storageOfficeName" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Storage office name</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="storagePersonName" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Storage person name</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="createdTime" type="xsd:dateTime">
+        <xsd:annotation>
+          <xsd:documentation>Created time</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="sendTime" type="xsd:dateTime">
+        <xsd:annotation>
+          <xsd:documentation>The time when the shipment is sent</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="deliveryTime" type="xsd:dateTime">
+        <xsd:annotation>
+          <xsd:documentation>Delivery time</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="shipmentType" type="tns:ShipmentType">
+        <xsd:annotation>
+          <xsd:documentation>Shipment type</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="packCount" type="xsd:int">
+        <xsd:annotation>
+          <xsd:documentation>Count of packs</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="shipmentDescription" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Shipment description</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="weight" type="xsd:double">
+        <xsd:annotation>
+          <xsd:documentation>Weight</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="senderDeliveryType" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Sender delivery type - door or office</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="senderClient" type="ns1:ClientProfile">
+        <xsd:annotation>
+          <xsd:documentation>Sender</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="senderAgent" type="ns1:ClientProfile">
+        <xsd:annotation>
+          <xsd:documentation>Authorized sender</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="senderOfficeCode" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>The office code of the sender</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="senderAddress" type="ns2:Address">
+        <xsd:annotation>
+          <xsd:documentation>Address of the sender</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="receiverDeliveryType" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Receiver delivery type - door or office</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="receiverClient" type="ns1:ClientProfile">
+        <xsd:annotation>
+          <xsd:documentation>Receiver</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="receiverAgent" type="ns1:ClientProfile">
+        <xsd:annotation>
+          <xsd:documentation>Authorized receiver</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="receiverOfficeCode" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>The office code of the receiver</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="receiverAddress" type="ns2:Address">
+        <xsd:annotation>
+          <xsd:documentation>The address of the receiver</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="cdCollectedAmount" type="xsd:double">
+        <xsd:annotation>
+          <xsd:documentation>Collected "cash on delivery" amount</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="cdCollectedCurrency" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Collected "cash on delivery" currency</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="cdCollectedTime" type="xsd:dateTime">
+        <xsd:annotation>
+          <xsd:documentation>Collected "cash on delivery" time</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="cdPaidAmount" type="xsd:double">
+        <xsd:annotation>
+          <xsd:documentation>"Cash on delivery" paid amount</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="cdPaidCurrency" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>"Cash on delivery" paid currency</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="cdPaidTime" type="xsd:dateTime">
+        <xsd:annotation>
+          <xsd:documentation>Paid "cash on delivery" time</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="totalPrice" type="xsd:double">
+        <xsd:annotation>
+          <xsd:documentation>The total price of the shipment</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="currency" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Currency</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="discountPercent" type="xsd:double">
+        <xsd:annotation>
+          <xsd:documentation>Discount percentage</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="discountAmount" type="xsd:double">
+        <xsd:annotation>
+          <xsd:documentation>Amount of discount</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="discountDescription" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Description of the discount</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="senderDueAmount" type="xsd:double">
+        <xsd:annotation>
+          <xsd:documentation>Due amount from the sender</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="receiverDueAmount" type="xsd:double">
+        <xsd:annotation>
+          <xsd:documentation>Due amount from the receiver</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="otherDueAmount" type="xsd:double">
+        <xsd:annotation>
+          <xsd:documentation>Other due amounts</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="deliveryAttemptCount" type="xsd:int">
+        <xsd:annotation>
+          <xsd:documentation>Count of delivery attempts</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="previousShipmentNumber" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>The previous shipment number (if any)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="services" type="tns:ShipmentStatusService">
+        <xsd:annotation>
+          <xsd:documentation>Services</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="nextShipments" type="tns:NextShipmentElement">
+        <xsd:annotation>
+          <xsd:documentation>Subsequent shipments (if there are instructions for returning shipments/documents)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="trackingEvents" type="tns:ShipmentTrackingEvent">
+        <xsd:annotation>
+          <xsd:documentation>Shipment tracking events</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="pdfURL" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>URL with the PDF result</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="expectedDeliveryDate" type="xsd:date">
+        <xsd:annotation>
+          <xsd:documentation>Expected delivery date</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="returnShipmentURL" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Return shipment form URL</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="ShipmentStatus" type="tns:ShipmentStatus" />
+  <xsd:complexType name="ShipmentStatusService">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="type" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Type</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="description" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Description</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="count" type="xsd:double">
+        <xsd:annotation>
+          <xsd:documentation>Shipment status count</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="paymentSide" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Indicates the payment side (sender, receiver, other)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="price" type="xsd:double">
+        <xsd:annotation>
+          <xsd:documentation>Price</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="currency" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Currency</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="ShipmentStatusService" type="tns:ShipmentStatusService" />
+  <xsd:complexType name="ShipmentTrackingEvent">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="isReceipt" type="xsd:boolean">
+        <xsd:annotation>
+          <xsd:documentation>Indicates if the event is of a return receipt (DC)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="destinationType" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Destination type</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="destinationDetails" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Destination details</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="destinationDetailsEn" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Destination details (en)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="officeName" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Office name</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="officeNameEn" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Office name (en)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="cityName" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>City name</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="cityNameEn" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>International city name</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="countryCode" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Three-letter ISO Alpha-3 code of the country (e.g. AUT, BGR, etc.)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="1" maxOccurs="1" name="officeCode" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>destination office code</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="time" type="xsd:dateTime">
+        <xsd:annotation>
+          <xsd:documentation>Time</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="ShipmentTrackingEvent" type="tns:ShipmentTrackingEvent" />
+  <xsd:complexType name="NextShipmentElement">
+    <xsd:annotation>
+      <xsd:documentation>Shipment created from previous</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="shipmentNumber" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Shipment number</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="reason" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Reason</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="pdfURL" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>URL with the PDF result</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="NextShipmentElement" type="tns:NextShipmentElement" />
+  <xsd:complexType name="CreateLabelResultElement">
+    <xsd:annotation>
+      <xsd:documentation>Result from creating label</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="label" type="tns:ShipmentStatus">
+        <xsd:annotation>
+          <xsd:documentation>Label status</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="error" type="ns3:Error">
+        <xsd:annotation>
+          <xsd:documentation>Error</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="CreateLabelResultElement" type="tns:CreateLabelResultElement" />
+  <xsd:complexType name="DeleteLabelsResultElement">
+    <xsd:annotation>
+      <xsd:documentation>Result from deleting labels</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="shipmentNum" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Shipment number</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="error" type="ns3:Error">
+        <xsd:annotation>
+          <xsd:documentation>Error</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="DeleteLabelsResultElement" type="tns:DeleteLabelsResultElement" />
+  <xsd:complexType name="ShipmentStatusResultElement">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="status" type="tns:ShipmentStatus">
+        <xsd:annotation>
+          <xsd:documentation>Shipment status</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="error" type="ns3:Error">
+        <xsd:annotation>
+          <xsd:documentation>Error</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="ShipmentStatusResultElement" type="tns:ShipmentStatusResultElement" />
+  <xsd:complexType name="RequestCourierStatusResultElement">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="status" type="tns:RequestCourierStatus">
+        <xsd:annotation>
+          <xsd:documentation>request courier status</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="error" type="ns3:Error">
+        <xsd:annotation>
+          <xsd:documentation>Error</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="RequestCourierStatusResultElement" type="tns:RequestCourierStatusResultElement" />
+  <xsd:complexType name="RequestCourierStatus">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="id" type="xsd:int">
+        <xsd:annotation>
+          <xsd:documentation>Request courier ID</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="status" type="tns:RequestCourierStatusType">
+        <xsd:annotation>
+          <xsd:documentation>Request courier status</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="note" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Remarks (additional info)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="RequestCourierStatus" type="tns:RequestCourierStatus" />
+  <xsd:simpleType name="RequestCourierStatusType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="unprocess">
+        <xsd:annotation>
+          <xsd:documentation>Not processed</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="process">
+        <xsd:annotation>
+          <xsd:documentation>Processed and assigned to a courier</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="taken">
+        <xsd:annotation>
+          <xsd:documentation>Shipment is taken from client's address</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="reject">
+        <xsd:annotation>
+          <xsd:documentation>Canceled</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="reject_client">
+        <xsd:annotation>
+          <xsd:documentation>Canceled by client</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:element name="RequestCourierStatusType" type="tns:RequestCourierStatusType" />
+  <xsd:complexType name="PackElement">
+    <xsd:annotation>
+      <xsd:documentation>Pack</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="width" type="xsd:float">
+        <xsd:annotation>
+          <xsd:documentation>Pack width</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="1" maxOccurs="1" name="height" type="xsd:float">
+        <xsd:annotation>
+          <xsd:documentation>Pack height</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="1" maxOccurs="1" name="length" type="xsd:float">
+        <xsd:annotation>
+          <xsd:documentation>Pack length</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="1" maxOccurs="1" name="weight" type="xsd:float">
+        <xsd:annotation>
+          <xsd:documentation>Pack weight</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="PackElement" type="tns:PackElement" />
+</xsd:schema>

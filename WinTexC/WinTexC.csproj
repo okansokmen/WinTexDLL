@@ -1,0 +1,242 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3AB2AB8B-FCF5-43A4-9995-B0581C10BFAC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WinTexC</RootNamespace>
+    <AssemblyName>WinTexC</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.CodeParser.v20.1, Version=20.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v20.1, Version=20.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.DataAccess.v20.1, Version=20.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.DataAccess.v20.1.UI, Version=20.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Images.v20.1, Version=20.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Mvvm.v20.1, Version=20.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v20.1.Core, Version=20.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Pdf.v20.1.Core, Version=20.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.PivotGrid.v20.1.Core, Version=20.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v20.1.Export, Version=20.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v20.1.Core, Version=20.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v20.1.Core, Version=20.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Sparkline.v20.1.Core, Version=20.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.Desktop.v20.1, Version=20.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v20.1, Version=20.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v20.1.UI, Version=20.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v20.1, Version=20.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Charts.v20.1.Core, Version=20.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v20.1, Version=20.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v20.1.Extensions, Version=20.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v20.1.Wizard, Version=20.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraEditors.v20.1, Version=20.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGauges.v20.1.Core, Version=20.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGrid.v20.1, Version=20.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v20.1, Version=20.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraNavBar.v20.1, Version=20.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPivotGrid.v20.1, Version=20.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v20.1, Version=20.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v20.1, Version=20.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v20.1.Extensions, Version=20.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraRichEdit.v20.1, Version=20.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v20.1, Version=20.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraVerticalGrid.v20.1, Version=20.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class1.cs" />
+    <Compile Include="durumtakip.cs" />
+    <Compile Include="durumtakip_aciklamalar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="durumtakip_aciklamalar.Designer.cs">
+      <DependentUpon>durumtakip_aciklamalar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="durumtakip_aktif.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="durumtakip_aktif.Designer.cs">
+      <DependentUpon>durumtakip_aktif.cs</DependentUpon>
+    </Compile>
+    <Compile Include="durumtakip_cp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="durumtakip_cp.Designer.cs">
+      <DependentUpon>durumtakip_cp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="durumtakip_cpdetay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="durumtakip_cpdetay.Designer.cs">
+      <DependentUpon>durumtakip_cpdetay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="durumtakip_cp_musteri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="durumtakip_cp_musteri.Designer.cs">
+      <DependentUpon>durumtakip_cp_musteri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="durumtakip_cp_rapor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="durumtakip_cp_rapor.Designer.cs">
+      <DependentUpon>durumtakip_cp_rapor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="durumtakip_dosyapaneli.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="durumtakip_dosyapaneli.Designer.cs">
+      <DependentUpon>durumtakip_dosyapaneli.cs</DependentUpon>
+    </Compile>
+    <Compile Include="durumtakip_mailkisi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="durumtakip_mailkisi.Designer.cs">
+      <DependentUpon>durumtakip_mailkisi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="durumtakip_mailkisi_grup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="durumtakip_mailkisi_grup.designer.cs">
+      <DependentUpon>durumtakip_mailkisi_grup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="durumtakip_personel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="durumtakip_personel.Designer.cs">
+      <DependentUpon>durumtakip_personel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="durumtakip_siparisyetkilileri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="durumtakip_siparisyetkilileri.Designer.cs">
+      <DependentUpon>durumtakip_siparisyetkilileri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="durumtakip_stirapor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="durumtakip_stirapor.Designer.cs">
+      <DependentUpon>durumtakip_stirapor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="excel_read_lpp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="excel_read_lpp.Designer.cs">
+      <DependentUpon>excel_read_lpp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="excel_read_zara_askili.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="excel_read_zara_askili.Designer.cs">
+      <DependentUpon>excel_read_zara_askili.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="durumtakip_aciklamalar.resx">
+      <DependentUpon>durumtakip_aciklamalar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="durumtakip_aktif.resx">
+      <DependentUpon>durumtakip_aktif.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="durumtakip_cp.resx">
+      <DependentUpon>durumtakip_cp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="durumtakip_cpdetay.resx">
+      <DependentUpon>durumtakip_cpdetay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="durumtakip_cp_musteri.resx">
+      <DependentUpon>durumtakip_cp_musteri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="durumtakip_cp_rapor.resx">
+      <DependentUpon>durumtakip_cp_rapor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="durumtakip_dosyapaneli.resx">
+      <DependentUpon>durumtakip_dosyapaneli.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="durumtakip_mailkisi.resx">
+      <DependentUpon>durumtakip_mailkisi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="durumtakip_mailkisi_grup.resx">
+      <DependentUpon>durumtakip_mailkisi_grup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="durumtakip_personel.resx">
+      <DependentUpon>durumtakip_personel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="durumtakip_siparisyetkilileri.resx">
+      <DependentUpon>durumtakip_siparisyetkilileri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="durumtakip_stirapor.resx">
+      <DependentUpon>durumtakip_stirapor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="excel_read_lpp.resx">
+      <DependentUpon>excel_read_lpp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="excel_read_zara_askili.resx">
+      <DependentUpon>excel_read_zara_askili.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

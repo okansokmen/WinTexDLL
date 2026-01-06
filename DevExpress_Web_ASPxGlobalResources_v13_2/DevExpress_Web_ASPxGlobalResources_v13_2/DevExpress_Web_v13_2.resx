@@ -1,0 +1,318 @@
+<?xml version="1.0"?><root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ASPxperienceStringId.DataViewBase_EmptyDataText">
+    <value>Gösterilecek veri yok</value>
+  </data>
+  <data name="ASPxperienceStringId.DataView_PagerPageSize">
+    <value>Sayfa boyutu</value>
+  </data>
+  <data name="ASPxperienceStringId.DataView_PagerRowPerPage">
+    <value>Satır sayısı:</value>
+  </data>
+  <data name="ASPxperienceStringId.DataView_PagerSummaryAllPages">
+    <value>Tüm sayfalar</value>
+  </data>
+  <data name="ASPxperienceStringId.DataView_PagerSummaryFormat">
+    <value>Sayfa: {0}/{1}</value>
+  </data>
+  <data name="ASPxperienceStringId.DataView_ShowMoreItemsText">
+    <value>Devamı...</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_Cancel">
+    <value>İptal</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_DeleteConfirm">
+    <value>'{0}' silmek istediğnize emin misiniz?</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_ErrorAccessProhibited">
+    <value>Erişim engellendi. İşlem tamamlanamadı.</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_ErrorAlreadyExists">
+    <value>Belirtilen dosya/klasör zaten var</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_ErrorFileNotFound">
+    <value>Dosya bulunamadı</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_ErrorFolderNotFound">
+    <value>Klasör bulunamadı</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_ErrorIO">
+    <value>Belirlenemeyen IO hatası. İşlem tamamlanamadı.</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_ErrorInvalidSymbols">
+    <value>Bu isim geçersiz karakterler içeriyor. İşlem tamamlanamadı.</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_ErrorNameCannotBeEmpty">
+    <value>Dosya/klasör adı boş olamaz.</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_ErrorNoAccess">
+    <value>Erişim engellendi. İşlem tamamlanamadı.</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_ErrorOther">
+    <value>Belirtilmemiş hata</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_ErrorRootFolderNotSpecified">
+    <value>Kök klasör belirtilmemiş veya yok.</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_ErrorThumbnail">
+    <value>Küçük resim klasörüne erişim izni yok.</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_ErrorUploadSeveralFiles">
+    <value>{0}/{1} dosyanın yüklenmesi tamamlandı.</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_ErrorUsedByAnotherProcess">
+    <value>Dosya/klasör başka bir işlem tarafından kullanıldığından işlem tamamlanamadı.</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_ErrorWrongExtension">
+    <value>Bu dosya uzantısına izin verilmemektedir. İşlem tamamlanamadı.</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_FileInfoTypeCaption_FileName">
+    <value>İsim</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_FileInfoTypeCaption_LastWriteTime">
+    <value>Deiğitirilme Zamanı</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_FileInfoTypeCaption_Size">
+    <value>Boyut</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_Filter">
+    <value>Filtre:</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_Folder">
+    <value>Klasör</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_FolderBrowserPopupHeader">
+    <value>Hedef Klasör Seç</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_FolderLocked">
+    <value>Yüklemeye Kilitli</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_GridViewFilter_DateMonth">
+    <value>Son 30 Gün</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_GridViewFilter_DateToday">
+    <value>Bugün</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_GridViewFilter_DateWeek">
+    <value>Son 7 Gün</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_GridViewFilter_DateYear">
+    <value>Son 365 Gün</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_GridViewFilter_SizeEmpty">
+    <value>Boş ({0})</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_GridViewFilter_SizeGigantic">
+    <value>Çok çok büyük ({0})</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_GridViewFilter_SizeHuge">
+    <value>Çok büyük ({0})</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_GridViewFilter_SizeLarge">
+    <value>Büyük ({0})</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_GridViewFilter_SizeMedium">
+    <value>Orta ({0})</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_GridViewFilter_SizeSmall">
+    <value>Küçük ({0})</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_GridViewFilter_SizeTiny">
+    <value>Çok küçük ({0})</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_InformationUnitSymbol">
+    <value>B</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_MovePopupHeader">
+    <value>Hedef Klasör Seç</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_NewFolderName">
+    <value>Yeni Klasör</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_Ok">
+    <value>Tamam</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_Path">
+    <value>Yol:</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_TbCopy">
+    <value>Kopyala</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_TbCreate">
+    <value>Oluştur (F7)</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_TbDelete">
+    <value>Sil (Del)</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_TbDownload">
+    <value>İndir</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_TbMove">
+    <value>Taşı (F6)</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_TbRefresh">
+    <value>Yenile</value>
+  </data>
+  <data name="ASPxperienceStringId.FileManager_TbRename">
+    <value>Yeniden Adlandır (F2)</value>
+  </data>
+  <data name="ASPxperienceStringId.Loading">
+    <value>Yükleniyor&amp;hellip;</value>
+  </data>
+  <data name="ASPxperienceStringId.Loading">
+    <value>Yükleniyor&amp;hellip;</value>
+  </data>
+  <data name="ASPxperienceStringId.NewsControl_BackToTop">
+    <value>En Üste Git</value>
+  </data>
+  <data name="ASPxperienceStringId.NewsControl_Page">
+    <value>Sayfa:</value>
+  </data>
+  <data name="ASPxperienceStringId.Pager_All">
+    <value>Tümü</value>
+  </data>
+  <data name="ASPxperienceStringId.Pager_First">
+    <value>İlk</value>
+  </data>
+  <data name="ASPxperienceStringId.Pager_Last">
+    <value>Son</value>
+  </data>
+  <data name="ASPxperienceStringId.Pager_Next">
+    <value>Sonraki</value>
+  </data>
+  <data name="ASPxperienceStringId.Pager_PageSize">
+    <value>Sayfa Boyutu</value>
+  </data>
+  <data name="ASPxperienceStringId.Pager_PageSizeAllItem">
+    <value>Tümü</value>
+  </data>
+  <data name="ASPxperienceStringId.Pager_Prev">
+    <value>Önceki</value>
+  </data>
+  <data name="ASPxperienceStringId.Pager_SummaryAllPagesFormat">
+    <value>Sayfa: {0} - {1} ({2} öğe)</value>
+  </data>
+  <data name="ASPxperienceStringId.Pager_SummaryFormat">
+    <value>Sayfa: {0} - {1} ({2} öğe)</value>
+  </data>
+  <data name="ASPxperienceStringId.PopupControl_CloseButton">
+    <value>[Kapat]</value>
+  </data>
+  <data name="ASPxperienceStringId.PopupControl_CollapseButton">
+    <value>[Daralt/Genişlet]</value>
+  </data>
+  <data name="ASPxperienceStringId.PopupControl_MaximizeButton">
+    <value>[Genişlet/Geri Al]</value>
+  </data>
+  <data name="ASPxperienceStringId.PopupControl_PinButton">
+    <value>[Sabitle/Ayır]</value>
+  </data>
+  <data name="ASPxperienceStringId.PopupControl_RefreshButton">
+    <value>[Yenile]</value>
+  </data>
+  <data name="ASPxperienceStringId.PopupControl_SizeGrip">
+    <value>[Yeniden Boyutlandır]</value>
+  </data>
+  <data name="ASPxperienceStringId.Ribbon_FileTabText">
+    <value>Dosya</value>
+  </data>
+  <data name="ASPxperienceStringId.TitleIndex_BackToTop">
+    <value>[En Üste Git]</value>
+  </data>
+  <data name="ASPxperienceStringId.TitleIndex_FilterCaption">
+    <value>Filtre:&amp;nbsp;&amp;nbsp;&amp;nbsp;</value>
+  </data>
+  <data name="ASPxperienceStringId.TitleIndex_FilterHint">
+    <value>&lt;b&gt;?&lt;/b&gt; = herhangi bir tekil karakter
+ &lt;b&gt;*&lt;/b&gt; = herhangi bir karakter</value>
+  </data>
+  <data name="ASPxperienceStringId.TitleIndex_NoData">
+    <value>Filtre kriterleri için veri yok</value>
+  </data>
+  <data name="ASPxperienceStringId.TreeView_AltCollapse">
+    <value>Daralt</value>
+  </data>
+  <data name="ASPxperienceStringId.TreeView_AltExpand">
+    <value>Genişlet</value>
+  </data>
+  <data name="ASPxperienceStringId.TreeView_AltLoading">
+    <value>Yükleniyor</value>
+  </data>
+  <data name="ASPxperienceStringId.UploadControl_AccessDeniedError">
+    <value>Sunucu yoluna "{0}" erişim reddedildi. Geçerli (veya ana) klasördeki dosyaları yazmak için izin yok.</value>
+  </data>
+  <data name="ASPxperienceStringId.UploadControl_AddButton">
+    <value>Akle</value>
+  </data>
+  <data name="ASPxperienceStringId.UploadControl_BrowseButton">
+    <value>Gözat...</value>
+  </data>
+  <data name="ASPxperienceStringId.UploadControl_CancelButton">
+    <value>İptal</value>
+  </data>
+  <data name="ASPxperienceStringId.UploadControl_ClearFileSelectionButtonToolTip">
+    <value>Seçimi temizle</value>
+  </data>
+  <data name="ASPxperienceStringId.UploadControl_EnctypeError">
+    <value>Formun 'multipart/form-data' özelliği ayarlı olmadığından, dosya yükleme başarısız oldu.</value>
+  </data>
+  <data name="ASPxperienceStringId.UploadControl_FileDoesNotExistError">
+    <value>Yükleme dosyası bulunamadı</value>
+  </data>
+  <data name="ASPxperienceStringId.UploadControl_GeneralError">
+    <value>Dosya yüklemesi harici bir hata nedeniyle başarısız oldu</value>
+  </data>
+  <data name="ASPxperienceStringId.UploadControl_InvalidWindowsPath">
+    <value>Dosya yolu "{0}" geçerli bir Windows yolu değildir.</value>
+  </data>
+  <data name="ASPxperienceStringId.UploadControl_MaxSize">
+    <value>Dosya boyutu izin verilen maksimum boyutu aşıyor ({0} byte)</value>
+  </data>
+  <data name="ASPxperienceStringId.UploadControl_MultiSelection">
+    <value>Dikkat!</value>
+  </data>
+  <data name="ASPxperienceStringId.UploadControl_NotAllowedContentTypes">
+    <value>Bu içerik türüne izin verilmiyor.</value>
+  </data>
+  <data name="ASPxperienceStringId.UploadControl_NotAllowedFileExtension">
+    <value>Bu dosya uzantısına izin verilmiyor.</value>
+  </data>
+  <data name="ASPxperienceStringId.UploadControl_PlatformErrorText">
+    <value>HTML5 desteği olan bir tarayıcı kullanın veya bu içeriği görüntülemek ve dosya yüklemek için &lt;a href="{0}"&gt;Microsoft Silverlight v3&lt;/ a&gt; yükleyin</value>
+  </data>
+  <data name="ASPxperienceStringId.UploadControl_RemoveButton">
+    <value>Kaldır</value>
+  </data>
+  <data name="ASPxperienceStringId.UploadControl_SelectedSeveralFiles">
+    <value>Yükleme için {0} dosya seçildi</value>
+  </data>
+  <data name="ASPxperienceStringId.UploadControl_SilverlightPluginLink">
+    <value>Bu içeriği görüntülemek ve dosya yüklemek için &lt;a href="{0}"&gt; Microsoft Silverlight v3  &lt;/ a&gt; kurun.</value>
+  </data>
+  <data name="ASPxperienceStringId.UploadControl_TooManyFilesError">
+    <value>Çok sayıda dosya seçildi. Seçilen dosyaların sayısını azaltın ve yeniden deneyin.</value>
+  </data>
+  <data name="ASPxperienceStringId.UploadControl_UnspecifiedError">
+    <value>Sunucu isteğin yerine getirmesini engelledi ve belirtilmemiş bir iç hatayla karşılaşıldı.</value>
+  </data>
+  <data name="ASPxperienceStringId.UploadControl_UploadButton">
+    <value>Yükle</value>
+  </data>
+  <data name="ASPxperienceStringId.UploadControl_UploadModeNotSupported">
+    <value>Tarayıcınız bu dosya yükleme modunu desteklemiyor.</value>
+  </data>
+  <data name="ASPxperienceStringId.UploadControl_UploadWasCanceledError">
+    <value>Dosya yükleme iptal edildi.</value>
+  </data>
+</root>

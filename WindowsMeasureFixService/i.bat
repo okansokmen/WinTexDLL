@@ -1,0 +1,1 @@
+sc create WinTexMeasureFixService binpath= "C:\WinTexDLL\WindowsMeasureFixService\bin\Debug\WindowsMeasureFixService.exe"

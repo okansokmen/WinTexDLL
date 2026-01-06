@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:ns3="http://ee.econt.com/services/Nomenclatures" xmlns:tns="http://ee.econt.com/services/Shipments/R" xmlns:ns1="http://ee.econt.com/services/Shipments" xmlns:ns2="http://ee.econt.com/services/Profile" elementFormDefault="qualified" targetNamespace="http://ee.econt.com/services/Shipments/R" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import schemaLocation="../schema.xsd" namespace="http://ee.econt.com/services/Shipments" />
+  <xsd:import schemaLocation="../../Profile/schema.xsd" namespace="http://ee.econt.com/services/Profile" />
+  <xsd:import schemaLocation="../../Nomenclatures/schema.xsd" namespace="http://ee.econt.com/services/Nomenclatures" />
+  <xsd:complexType name="CreateLabelResponse">
+    <xsd:annotation>
+      <xsd:documentation>Returns information about the created label &lt;a href="http://ee.econt.com/doc_templates/srv/CreateLabelResponse.xml"&gt;&lt;font color="#0000ff"&gt;&lt;u&gt;(see example)&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="label" type="ns1:ShipmentStatus">
+        <xsd:annotation>
+          <xsd:documentation>Information about the shipment/label</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="1" maxOccurs="1" name="blockingPaymentURL" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>URL for making a blocking payment for the parcel</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="CreateLabelResponse" type="tns:CreateLabelResponse" />
+  <xsd:complexType name="GetShipmentStatusesRequest">
+    <xsd:annotation>
+      <xsd:documentation>Requests statuses of shipments 
+(see example SOAP &lt;a href="http://ee.econt.com/doc_templates/srv/GetShipmentStatusesRequest.xml"&gt;&lt;font color="#0000ff"&gt;&lt;u&gt;Request&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;, &lt;a href="http://ee.econt.com/doc_templates/srv/GetShipmentStatusesResponse.xml"&gt;&lt;font color="#0000ff"&gt;&lt;u&gt;Response&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;)
+(see example JSON &lt;a href="http://ee.econt.com/doc_templates/srv/GetShipmentStatusesRequest.json"&gt;&lt;font color="#0000ff"&gt;&lt;u&gt;Request&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;, &lt;a href="http://ee.econt.com/doc_templates/srv/GetShipmentStatusesResponse.json"&gt;&lt;font color="#0000ff"&gt;&lt;u&gt;Response&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;)</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="shipmentNumbers" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Shipment numbers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="GetShipmentStatusesRequest" type="tns:GetShipmentStatusesRequest" />
+  <xsd:complexType name="GetShipmentStatusesResponse">
+    <xsd:annotation>
+      <xsd:documentation>Shipment statuses information &lt;a href="http://ee.econt.com/doc_templates/srv/GetShipmentStatusesResponse.xml"&gt;&lt;font color="#0000ff"&gt;&lt;u&gt;(see example)&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="shipmentStatuses" type="ns1:ShipmentStatusResultElement">
+        <xsd:annotation>
+          <xsd:documentation>Information about the shipment statuses</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="GetShipmentStatusesResponse" type="tns:GetShipmentStatusesResponse" />
+  <xsd:complexType name="CreateLabelRequest">
+    <xsd:annotation>
+      <xsd:documentation>Request for creating a label
+(see SOAP example &lt;a href="http://ee.econt.com/doc_templates/srv/CreateLabelRequest.xml"&gt;&lt;font color="#0000ff"&gt;&lt;u&gt;Request&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;, &lt;a href="http://ee.econt.com/doc_templates/srv/CreateLabelResponse.xml"&gt;&lt;font color="#0000ff"&gt;&lt;u&gt;Response&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;)
+(see JSON example &lt;a href="http://ee.econt.com/doc_templates/srv/CreateLabelRequest.json"&gt;&lt;font color="#0000ff"&gt;&lt;u&gt;Request&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;, &lt;a href="http://ee.econt.com/doc_templates/srv/CreateLabelResponse.json"&gt;&lt;font color="#0000ff"&gt;&lt;u&gt;Response&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;)</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="label" type="ns1:ShippingLabel">
+        <xsd:annotation>
+          <xsd:documentation>Shipment label</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="requestCourierTimeFrom" type="xsd:time">
+        <xsd:annotation>
+          <xsd:documentation>Indicates the beginning of the time period in which the shipment can be collected from you</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="requestCourierTimeTo" type="xsd:time">
+        <xsd:annotation>
+          <xsd:documentation>Indicates the end of the time period in which the shipment can be collected</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="mode" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Supported modes - calculate, validate, create, calculate_with_block</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="CreateLabelRequest" type="tns:CreateLabelRequest" />
+  <xsd:complexType name="RequestCourierRequest">
+    <xsd:annotation>
+      <xsd:documentation>Creates courier request 
+(see SOAP example &lt;a href="http://ee.econt.com/doc_templates/srv/RequestCourierRequest.xml"&gt;&lt;font color="#0000ff"&gt;&lt;u&gt;Request&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;, &lt;a href="http://ee.econt.com/doc_templates/srv/RequestCourierResponse.xml"&gt;&lt;font color="#0000ff"&gt;&lt;u&gt;Response&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;)
+(see JSON example &lt;a href="http://ee.econt.com/doc_templates/srv/RequestCourierRequest.json"&gt;&lt;font color="#0000ff"&gt;&lt;u&gt;Request&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;, &lt;a href="http://ee.econt.com/doc_templates/srv/RequestCourierResponse.json"&gt;&lt;font color="#0000ff"&gt;&lt;u&gt;Response&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;)</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="requestTimeFrom" type="xsd:dateTime">
+        <xsd:annotation>
+          <xsd:documentation>Indicates the beginning of the time the courier can collect (SOAP: YYYY-MM-DDTHH:MM:SS+03:00) (JSON: unix timestamp)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="requestTimeTo" type="xsd:dateTime">
+        <xsd:annotation>
+          <xsd:documentation>Indicates the end of the time the courier can collect (SOAP: YYYY-MM-DDTHH:MM:SS+03:00) (JSON: unix timestamp)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="shipmentType" type="ns1:ShipmentType">
+        <xsd:annotation>
+          <xsd:documentation>Shipment type (pack, post_pack, etc.)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="shipmentPackCount" type="xsd:int">
+        <xsd:annotation>
+          <xsd:documentation>Count of shipments</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="shipmentWeight" type="xsd:double">
+        <xsd:annotation>
+          <xsd:documentation>Shipment weight (kg)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="senderClient" type="ns2:ClientProfile">
+        <xsd:annotation>
+          <xsd:documentation>Client</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="senderAgent" type="ns2:ClientProfile">
+        <xsd:annotation>
+          <xsd:documentation>Authorized person</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="senderAddress" type="ns3:Address">
+        <xsd:annotation>
+          <xsd:documentation>The address of the sender</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="RequestCourierRequest" type="tns:RequestCourierRequest" />
+  <xsd:complexType name="RequestCourierResponse">
+    <xsd:annotation>
+      <xsd:documentation>Returns courier request ID &lt;a href="http://ee.econt.com/doc_templates/srv/RequestCourierResponse.xml"&gt;&lt;font color="#0000ff"&gt;&lt;u&gt;(see example)&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="courierRequestID" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>ID of the courier request</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="RequestCourierResponse" type="tns:RequestCourierResponse" />
+  <xsd:complexType name="CreateLabelsRequest">
+    <xsd:annotation>
+      <xsd:documentation>Request for creating multiple labels 
+(see SOAP example &lt;a href="http://ee.econt.com/doc_templates/srv/CreateLabelsRequest.xml"&gt;&lt;font color="#0000ff"&gt;&lt;u&gt;Request&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;, &lt;a href="http://ee.econt.com/doc_templates/srv/CreateLabelsResponse.xml"&gt;&lt;font color="#0000ff"&gt;&lt;u&gt;Response&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;)
+(see JSON example &lt;a href="http://ee.econt.com/doc_templates/srv/CreateLabelsRequest.json"&gt;&lt;font color="#0000ff"&gt;&lt;u&gt;Request&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;, &lt;a href="http://ee.econt.com/doc_templates/srv/CreateLabelsResponse.json"&gt;&lt;font color="#0000ff"&gt;&lt;u&gt;Response&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;)</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="labels" type="ns1:ShippingLabel">
+        <xsd:annotation>
+          <xsd:documentation>Shipment labels</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="runAsyncAndEmailResultTo" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>E-mail</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="mode" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Supported modes - validate, calculate, create</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="CreateLabelsRequest" type="tns:CreateLabelsRequest" />
+  <xsd:complexType name="CreateLabelsResponse">
+    <xsd:annotation>
+      <xsd:documentation>Returns information about multiple labels &lt;a href="http://ee.econt.com/doc_templates/srv/CreateLabelsResponse.xml"&gt;&lt;font color="#0000ff"&gt;&lt;u&gt;(see example)&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="results" type="ns1:CreateLabelResultElement">
+        <xsd:annotation>
+          <xsd:documentation>Information about the labels' statuses</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="CreateLabelsResponse" type="tns:CreateLabelsResponse" />
+  <xsd:complexType name="DeleteLabelsRequest">
+    <xsd:annotation>
+      <xsd:documentation>Request for deleting labels 
+(see SOAP example &lt;a href="http://ee.econt.com/doc_templates/srv/DeleteLabelsRequest.xml"&gt;&lt;font color="#0000ff"&gt;&lt;u&gt;Request&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;, &lt;a href="http://ee.econt.com/doc_templates/srv/DeleteLabelsResponse.xml"&gt;&lt;font color="#0000ff"&gt;&lt;u&gt;Response&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;)
+(see JSON example &lt;a href="http://ee.econt.com/doc_templates/srv/DeleteLabelsRequest.json"&gt;&lt;font color="#0000ff"&gt;&lt;u&gt;Request&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;, &lt;a href="http://ee.econt.com/doc_templates/srv/DeleteLabelsResponse.json"&gt;&lt;font color="#0000ff"&gt;&lt;u&gt;Response&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;)</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="shipmentNumbers" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Shipment numbers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="DeleteLabelsRequest" type="tns:DeleteLabelsRequest" />
+  <xsd:complexType name="DeleteLabelsResponse">
+    <xsd:annotation>
+      <xsd:documentation>Returns information about the d &lt;a href="http://ee.econt.com/doc_templates/srv/DeleteLabelsResponse.xml"&gt;&lt;font color="#0000ff"&gt;&lt;u&gt;(see example)&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="results" type="ns1:DeleteLabelsResultElement">
+        <xsd:annotation>
+          <xsd:documentation>Information about the labels' statuses</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="DeleteLabelsResponse" type="tns:DeleteLabelsResponse" />
+  <xsd:complexType name="GetRequestCourierStatusRequest">
+    <xsd:annotation>
+      <xsd:documentation>Requests statuses of courier requests
+(see example SOAP &lt;a href="http://ee.econt.com/doc_templates/srv/GetRequestCourierStatusRequest.xml"&gt;&lt;font color="#0000ff"&gt;&lt;u&gt;Request&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;, &lt;a href="http://ee.econt.com/doc_templates/srv/GetRequestCourierStatusResponse.xml"&gt;&lt;font color="#0000ff"&gt;&lt;u&gt;Response&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;)
+(see example JSON &lt;a href="http://ee.econt.com/doc_templates/srv/GetRequestCourierStatusRequest.json"&gt;&lt;font color="#0000ff"&gt;&lt;u&gt;Request&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;, &lt;a href="http://ee.econt.com/doc_templates/srv/GetRequestCourierStatusResponse.json"&gt;&lt;font color="#0000ff"&gt;&lt;u&gt;Response&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;)</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="requestCourierIds" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Request courier IDs</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="GetRequestCourierStatusRequest" type="tns:GetRequestCourierStatusRequest" />
+  <xsd:complexType name="GetRequestCourierStatusResponse">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="requestCourierStatus" type="ns1:RequestCourierStatusResultElement">
+        <xsd:annotation>
+          <xsd:documentation>Information about the request courier status</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="GetRequestCourierStatusResponse" type="tns:GetRequestCourierStatusResponse" />
+  <xsd:complexType name="UpdateLabelRequest">
+    <xsd:annotation>
+      <xsd:documentation>Request for updating a label</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="label" type="ns1:ShippingLabel">
+        <xsd:annotation>
+          <xsd:documentation>Shipment label</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="1" maxOccurs="1" name="requestCourierTimeFrom" type="xsd:time">
+        <xsd:annotation>
+          <xsd:documentation>Indicates the beginning of the time period in which the shipment can be collected from you</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="1" maxOccurs="1" name="requestCourierTimeTo" type="xsd:time">
+        <xsd:annotation>
+          <xsd:documentation>Indicates the end of the time period in which the shipment can be collected</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="UpdateLabelRequest" type="tns:UpdateLabelRequest" />
+  <xsd:complexType name="UpdateLabelResponse">
+    <xsd:annotation>
+      <xsd:documentation>Returns information about the updated label</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="label" type="ns1:ShipmentStatus">
+        <xsd:annotation>
+          <xsd:documentation>Information about the shipment/label</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="UpdateLabelResponse" type="tns:UpdateLabelResponse" />
+</xsd:schema>

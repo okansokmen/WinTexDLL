@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:ns2="http://ee.econt.com/services" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://ee.econt.com/services/PaymentReport" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://ee.econt.com/services/PaymentReport/R" targetNamespace="http://ee.econt.com/services/PaymentReport" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://ee.econt.com/services/PaymentReport">
+      <xsd:include schemaLocation="schema.xsd" />
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import schemaLocation="R/schema.xsd" namespace="http://ee.econt.com/services/PaymentReport/R" />
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import schemaLocation="../schema.xsd" namespace="http://ee.econt.com/services" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="PaymentReport">
+    <wsdl:part name="request" element="ns1:PaymentReportRequest" />
+  </wsdl:message>
+  <wsdl:message name="PaymentReportResponse">
+    <wsdl:part name="PaymentReportRow" element="tns:PaymentReportRow" />
+  </wsdl:message>
+  <wsdl:message name="PaymentReportError">
+    <wsdl:part name="Error" element="ns2:Error" />
+  </wsdl:message>
+  <wsdl:portType name="PaymentReportService">
+    <wsdl:operation name="PaymentReport">
+      <wsdl:input message="tns:PaymentReport" />
+      <wsdl:output message="tns:PaymentReportResponse" />
+      <wsdl:fault name="PaymentReportError" message="tns:PaymentReportError" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PaymentReportServiceBinding" type="tns:PaymentReportService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="PaymentReport">
+      <soap:operation soapAction="PaymentReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PaymentReportError">
+        <soap:fault use="literal" name="PaymentReportError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PaymentReportService">
+    <wsdl:port name="PaymentReportService" binding="tns:PaymentReportServiceBinding">
+      <soap:address location="http://ee.econt.com/services/PaymentReport/PaymentReportService.soap" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

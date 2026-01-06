@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="64a8ec2b-4568-4d08-b31a-961755b066c7" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://ee.econt.com/services/ThreeWayLogistics/ThreeWayLogisticsService.soap?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ThreeWayLogisticsService.wsdl" MetadataType="Wsdl" ID="9853f5e2-573d-4c5e-8906-9a1237b0af70" SourceId="1" SourceUrl="http://ee.econt.com/services/ThreeWayLogistics/ThreeWayLogisticsService.soap?wsdl" />
+    <MetadataFile FileName="schema.xsd" MetadataType="Schema" ID="1d15b61b-6d33-4b07-aad3-e665365134b7" SourceId="1" SourceUrl="http://ee.econt.com/services/schema.xsd" />
+    <MetadataFile FileName="schema1.xsd" MetadataType="Schema" ID="b9d1ddc6-1fbe-463b-a7a4-57f18fbe2b1d" SourceId="1" SourceUrl="http://ee.econt.com/services/ThreeWayLogistics/schema.xsd" />
+    <MetadataFile FileName="schema2.xsd" MetadataType="Schema" ID="1ced4eb1-fd62-4c46-ad6e-a7cd7eace1d1" SourceId="1" SourceUrl="http://ee.econt.com/services/ThreeWayLogistics/R/schema.xsd" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

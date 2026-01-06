@@ -1,0 +1,44 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="WinTexDLL_GeneralB2B_GeneralB2BService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://192.168.1.3/WebService/B2B/GeneralB2BService.asmx</Value>
+    </Setting>
+    <Setting Name="WinTexDLL_UyumsoftGeneralSenfoniService_GeneralSenfoniService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://192.168.1.3/WebService/General/GeneralSenfoniService.asmx</Value>
+    </Setting>
+    <Setting Name="WinTexDLL_UyumsoftGetWEBService_UyumGetWebService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://192.168.1.3/WebService/ERP/UyumGetWebService.asmx</Value>
+    </Setting>
+    <Setting Name="WinTexDLL_UyumsoftSaveWebService_UyumSaveWebService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://192.168.1.3/WebService/ERP/UyumSaveWebService.asmx</Value>
+    </Setting>
+    <Setting Name="WinTexDLL_UyumErogluProduction_ErogluProduction" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://192.168.1.3/webservice/eroglu/ErogluProduction.asmx</Value>
+    </Setting>
+    <Setting Name="WinTexDLL_UyumWebService_UyumWebService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://192.168.1.3/webservice/uyumwebservice.asmx</Value>
+    </Setting>
+    <Setting Name="SQL1" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Select * from siparis</Value>
+    </Setting>
+    <Setting Name="TESConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=msi;Initial Catalog=TES;Persist Security Info=True;User ID=sa;Password=Hayabusa1024&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=msi;Initial Catalog=TES;Persist Security Info=True;User ID=sa;Password=Hayabusa1024</Value>
+    </Setting>
+    <Setting Name="WinTexDLL_tr_com_turkkep_efinttestws_EFaturaEntegrasyon2" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://efinttestws.turkkep.com.tr/EFaturaEntegrasyon2.asmx</Value>
+    </Setting>
+    <Setting Name="WinTexDLL_net_edoksis_efaturatest_IrsaliyeWebService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://wstesteirsaliye.edoksis.net/IrsaliyeWebService.asmx</Value>
+    </Setting>
+    <Setting Name="WinTexDLL_tr_com_parkentegrasyon_wstest_EFaturaIntegration" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://wstest.parkentegrasyon.com.tr/EFaturaIntegration.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

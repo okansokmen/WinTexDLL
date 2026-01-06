@@ -1,0 +1,2153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="IrsaliyeZarfGonderUBLTR">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IrsaliyeUBL" type="tns:IrsaliyeZarfGonderUBLTRGirdi" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="IrsaliyeZarfGonderUBLTRGirdi">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:IrsaliyeGirdi">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Etiket" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="XSLTRumuzu" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Belgeler" type="tns:ArrayOfIrsaliyeUBLTRBelgesi" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="IrsaliyeGirdi">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Kimlik" type="tns:IrsaliyeKimlik" />
+          <s:element minOccurs="0" maxOccurs="1" name="KimlikNo" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="IrsaliyeKimlik">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Sistem" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Kullanici" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Sifre" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfIrsaliyeUBLTRBelgesi">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="IrsaliyeUBLTRBelgesi" nillable="true" type="tns:IrsaliyeUBLTRBelgesi" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="IrsaliyeUBLTRBelgesi">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Icerik" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="gonderenVkn" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="gonderenAlias" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="aliciVkn" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="aliciAlias" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="erpNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ERPInvoiceReference" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="OlusturmaZamani" nillable="true" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="IrsaliyeZarfGonderUBLTRResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IrsaliyeZarfGonderUBLTRResult" type="tns:IrsaliyeZarfGonderUBLTRCikti" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="IrsaliyeZarfGonderUBLTRCikti">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:IrsaliyeCikti">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="ZarfETTN" type="s1:guid" />
+              <s:element minOccurs="0" maxOccurs="1" name="SistemTarafindanVerilenIrsaliyeNumaralari" type="tns:ArrayOfOlusanIrsaliyeNumarasi" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="IrsaliyeCikti">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Sonuc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Mesaj" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DurumKodu" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfOlusanIrsaliyeNumarasi">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="OlusanIrsaliyeNumarasi" nillable="true" type="tns:OlusanIrsaliyeNumarasi" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OlusanIrsaliyeNumarasi">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IrsaliyeETTN" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="IRsaliyeNo" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="IrsaliyeZarfGonderYapisal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IrsaliyeYapisal" type="tns:IrsaliyeZarfGonderYapisalGirdi" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="IrsaliyeZarfGonderYapisalGirdi">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:IrsaliyeGirdi">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="XSLTRumuzu" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Zarf" type="tns:IrsaliyeZarf" />
+              <s:element minOccurs="0" maxOccurs="1" name="Belgeler" type="tns:ArrayOfIrsaliyeGonderim" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="IrsaliyeZarf">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ZarfETTN" type="s1:guid" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfIrsaliyeGonderim">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="IrsaliyeGonderim" nillable="true" type="tns:IrsaliyeGonderim" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="IrsaliyeGonderim">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="despatch" type="tns:Despatch" />
+          <s:element minOccurs="0" maxOccurs="1" name="gonderenVkn" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="gonderenAlias" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="aliciVkn" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="aliciAlias" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="erpNo" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Despatch">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UBLVersionID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomizationID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProfileID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CopyIndicator" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="UUID" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="IssueDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="IssueTime" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="DespatchAdviceTypeCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LineCountNumeric" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Note" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="OrderReference" type="tns:OrderReference" />
+          <s:element minOccurs="0" maxOccurs="1" name="AdditionalDocumentReference" type="tns:ArrayOfAdditionalDocumentReference" />
+          <s:element minOccurs="0" maxOccurs="1" name="Signature" type="tns:Signature" />
+          <s:element minOccurs="0" maxOccurs="1" name="DespatchSupplierParty" type="tns:Party" />
+          <s:element minOccurs="0" maxOccurs="1" name="DeliveryCustomerParty" type="tns:Party" />
+          <s:element minOccurs="0" maxOccurs="1" name="BuyerCustomerParty" type="tns:Party" />
+          <s:element minOccurs="0" maxOccurs="1" name="SellerSupplierParty" type="tns:Party" />
+          <s:element minOccurs="0" maxOccurs="1" name="OriginatorCustomerParty" type="tns:Party" />
+          <s:element minOccurs="0" maxOccurs="1" name="Shipment" type="tns:Shipment" />
+          <s:element minOccurs="0" maxOccurs="1" name="DespatchLine" type="tns:ArrayOfDespatchLine" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OrderReference">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SalesOrderID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IssueDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="OrderTypeCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DocumentReference" type="tns:ArrayOfDocumentReference" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfDocumentReference">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DocumentReference" nillable="true" type="tns:DocumentReference" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DocumentReference">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IssueDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="DocumentTypeCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DocumentType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DocumentDescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Attachment" type="tns:Attachment" />
+          <s:element minOccurs="1" maxOccurs="1" name="ValidtyPeriod" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="IssuerParty" type="tns:Party" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Attachment">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ExternalReference" type="tns:ExternalReference" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmbeddedDocumentBinaryObject" type="tns:BinaryObject" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ExternalReference">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="URI" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="BinaryObject">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MimeCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EncodingCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Filename" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CharacterSetCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Value" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Party">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="WebsiteURI" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IDScheme" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PostalAddressID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StreetName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BuildingNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CitySubdivisionName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CityName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PostalZone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CountryName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TaxSchemeName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Telephone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Telefax" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ElectronicMail" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FamilyName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AdditionalPartyIdentifications" type="tns:ArrayOfPartyIdentification" />
+          <s:element minOccurs="0" maxOccurs="1" name="PhysicalLocation" type="tns:PhysicalLocation" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfPartyIdentification">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PartyIdentification" nillable="true" type="tns:PartyIdentification" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PartyIdentification">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Schema" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PhysicalLocation">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AddressID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Room" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StreetName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BuildingNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CitySubdivisionName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CityName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PostalZone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfAdditionalDocumentReference">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="AdditionalDocumentReference" nillable="true" type="tns:AdditionalDocumentReference" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="AdditionalDocumentReference">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IssueDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="DocumentTypeCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DocumentType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DocumentDescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Attachment" type="tns:Attachment" />
+          <s:element minOccurs="1" maxOccurs="1" name="ValidtyPeriod" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="IssuerParty" type="tns:Party" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Signature">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PartyIdentificationID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PartyIdentificationScheme" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StreetName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BuildingNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CitySubdivisionName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CityName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PostalZone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CountryName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ExternalReferenceURI" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Shipment">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ValueAmount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ValueAmountScheme" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LicensePlateID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LicensePlateIDScheme" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DriverPerson" type="tns:ArrayOfDriverPerson" />
+          <s:element minOccurs="0" maxOccurs="1" name="PartyIdentificationID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PartyIdentificationIDScheme" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PartyNameName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PostalAddressID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StreetName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BuildingNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CitySubdivisionName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CityName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PostalZone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Region" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BuildingName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Room" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CountryName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ActualDespatchDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ActualDespatchTime" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="TransportEquipment" type="tns:ArrayOfTransportEquipment" />
+          <s:element minOccurs="1" maxOccurs="1" name="ActualDeliveryDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ActualDeliveryTime" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="ActualPackage" type="tns:ActualPackage" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfDriverPerson">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DriverPerson" nillable="true" type="tns:DriverPerson" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DriverPerson">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FamilyName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Title" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NationalityID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NationalityIDScheme" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTransportEquipment">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TransportEquipment" nillable="true" type="tns:TransportEquipment" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TransportEquipment">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IDScheme" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ActualPackage">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Quantity" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfDespatchLine">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DespatchLine" nillable="true" type="tns:DespatchLine" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DespatchLine">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DeliveredQuantity" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DeliveredQuantityUnitCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LineID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ItemName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SellersItemIdentificationID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ShipmentID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="InvoiceLineID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="InvoicedQuantity" nillable="true" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="LineExtensionAmount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LineExtensionAmountCurrencyID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="InvoiceLineItemName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PriceAmount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PriceAmountCurrencyID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BrandName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ModelName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BuyersItemIdentificationID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ManufacturersItemIdentificationID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AdditionalItemIdentificationID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ImprintNumber" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="OutstandingQuantity" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="OutstandingQuantityUniteCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OutstandingReason" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="OversupplyQuantity" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="OversupplyQuantityUniteCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Note" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="Shipment" type="tns:Shipment" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="IrsaliyeZarfGonderYapisalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IrsaliyeZarfGonderYapisalResult" type="tns:IrsaliyeZarfGonderYapisalCikti" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="IrsaliyeZarfGonderYapisalCikti">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:IrsaliyeCikti">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="ZarfETTN" type="s1:guid" />
+              <s:element minOccurs="0" maxOccurs="1" name="SistemTarafindanVerilenIrsaliyeNumaralari" type="tns:ArrayOfOlusanIrsaliyeNumarasi" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="IrsaliyeTekarGonder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Irsaliye" type="tns:IrsaliyeTekrarGonderGirdi" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="IrsaliyeTekrarGonderGirdi">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:IrsaliyeGirdi">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="IrsaliyeETTN" type="s1:guid" />
+              <s:element minOccurs="0" maxOccurs="1" name="gonderenVkn" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="gonderenAlias" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="aliciVkn" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="aliciAlias" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="IrsaliyeTekarGonderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IrsaliyeTekarGonderResult" type="tns:IrsaliyeTekrarGonderCikti" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="IrsaliyeTekrarGonderCikti">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:IrsaliyeCikti">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="ZarfETTN" type="s1:guid" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="GelenIrsaliyeListelemeUBL">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Girdi" type="tns:GelenIrsaliyeListelemeUBLTRGirdi" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GelenIrsaliyeListelemeUBLTRGirdi">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:IrsaliyeGirdi">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="IrsaliyeDuzenlemeBaslangic" nillable="true" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="IrsaliyeDuzenlemeBitis" nillable="true" type="s:dateTime" />
+              <s:element minOccurs="0" maxOccurs="1" name="KullaniciGrubu" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ErpNumarasi" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="GelenIrsaliyeListelemeUBLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GelenIrsaliyeListelemeUBLResult" type="tns:GelenIrsaliyeListelemeUBLTRCikti" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GelenIrsaliyeListelemeUBLTRCikti">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:IrsaliyeCikti">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Irsaliye" type="tns:ArrayOfIrsaliyeUBLTRBelgesi" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="GelenIrsaliyeListelemeYapisal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Girdi" type="tns:GelenIrsaliyeListelemeYapisalGirdi" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GelenIrsaliyeListelemeYapisalGirdi">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:IrsaliyeGirdi">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="IrsaliyeDuzenlemeBaslangic" nillable="true" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="IrsaliyeDuzenlemeBitis" nillable="true" type="s:dateTime" />
+              <s:element minOccurs="0" maxOccurs="1" name="IrsaliyeETTN" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="KullaniciGrubu" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ErpNumarasi" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TarihFormati" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="GelenIrsaliyeListelemeYapisalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GelenIrsaliyeListelemeYapisalResult" type="tns:GelenIrsaliyeListelemeYapisalCikti" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GelenIrsaliyeListelemeYapisalCikti">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:IrsaliyeCikti">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Irsaliyeler" type="tns:ArrayOfGelenIrsaliyeListelemeYapisi" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfGelenIrsaliyeListelemeYapisi">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="GelenIrsaliyeListelemeYapisi" nillable="true" type="tns:GelenIrsaliyeListelemeYapisi" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="GelenIrsaliyeListelemeYapisi">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Irsaliye" type="tns:Despatch" />
+          <s:element minOccurs="1" maxOccurs="1" name="ZarfETTN" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="OlusturmaZamani" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Durum" type="tns:SistemYanitiDurumKodlari" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="SistemYanitiDurumKodlari">
+        <s:restriction base="s:string">
+          <s:enumeration value="BOS" />
+          <s:enumeration value="ZARF_KUYRUGA_EKLENDI" />
+          <s:enumeration value="ZARF_ISLENIYOR" />
+          <s:enumeration value="ZIP_DOSYASI_DEGIL" />
+          <s:enumeration value="ZARF_ID_UZUNLUGU_GECERSIZ" />
+          <s:enumeration value="ZARF_ARSIVDEN_KOPYALANAMADI" />
+          <s:enumeration value="ZIP_ACILAMADI" />
+          <s:enumeration value="ZIP_BIR_DOSYA_ICERMELI" />
+          <s:enumeration value="XML_DOSYASI_DEGIL" />
+          <s:enumeration value="ZARF_ID_VE_XML_DOSYASININ_ADI_AYNI_OLMALI" />
+          <s:enumeration value="DOKUMAN_AYRISTIRILAMADI" />
+          <s:enumeration value="ZARF_ID_YOK" />
+          <s:enumeration value="ZARF_ID_VE_ZIP_DOSYASI_ADI_AYNI_OLMALI" />
+          <s:enumeration value="GECERSIZ_VERSIYON" />
+          <s:enumeration value="SCHEMATRON_KONTROL_SONUCU_HATALI" />
+          <s:enumeration value="XML_SEMA_KONTROLUNEN_GECEMEDI" />
+          <s:enumeration value="IMZA_SAHIBI_TCKN_VKN_ALINAMADI" />
+          <s:enumeration value="IMZA_KAYDEDILEMEDI" />
+          <s:enumeration value="GONDERILEN_ZARF_SISTEMDE_DAHA_ONCE_KAYITLI_OLAN_BIR_FATURAYI_ICERMEKTEDIR" />
+          <s:enumeration value="GONDERILEN_ZARF_SISTEMDE_DAHA_ONCE_KAYITLI_OLAN_BIR_BELGEYI_ICERMEKTEDIR" />
+          <s:enumeration value="YETKI_KONTROL_EDILEMEDI" />
+          <s:enumeration value="GONDERICI_BIRIM_YETKISI_YOK" />
+          <s:enumeration value="POSTA_KUTUSU_YETKISI_YOK" />
+          <s:enumeration value="IMZA_YETKISI_KONTROL_EDILEMEDI" />
+          <s:enumeration value="IMZA_SAHIBI_YETKISIZ" />
+          <s:enumeration value="ADRES_KONTROL_EDILEMEDI" />
+          <s:enumeration value="ADRES_BULUNAMADI" />
+          <s:enumeration value="KULLANICI_ETIKETI_GIB_VERI_TABANINDA_TANIMLI_DEGILDI" />
+          <s:enumeration value="SISTEM_YANITI_HAZIRLANAMADI" />
+          <s:enumeration value="SISTEM_HATASI" />
+          <s:enumeration value="ZARF_BASARIYLA_ISLENDI" />
+          <s:enumeration value="DOKUMAN_BULUNAN_ADRESE_GONDERILEMEDI" />
+          <s:enumeration value="DOKUMAN_GONDERIMI_BASARISIZ_TEKRAR_GONDERME_SONLANDI" />
+          <s:enumeration value="HEDEFTEN_SISTEM_YANITI_GELMEDI" />
+          <s:enumeration value="HEDEFTEN_SISTEM_YANITI_BASARISIZ_GELDI" />
+          <s:enumeration value="FATURA_IPTALE_KONU_EDILDI" />
+          <s:enumeration value="BASARIYLA_TAMAMLANDI" />
+          <s:enumeration value="ZARF_ID_SISTEMDE_MEVCUT" />
+          <s:enumeration value="ZARF_ARSIVE_EKLENEMEDI" />
+          <s:enumeration value="ZARF_KUYRUGA_EKLENEMEDI" />
+          <s:enumeration value="ZARF_ID_BULUNAMADI" />
+          <s:enumeration value="GECERSIZ_ZARF_ADI" />
+          <s:enumeration value="BILINMEYEN_DURUM" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="IrsaliyeFirmalari">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Girdi" type="tns:IrsaliyeFirmalariGirdi" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="IrsaliyeFirmalariGirdi">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:IrsaliyeGirdi">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="SorgulamaZamani" nillable="true" type="s:dateTime" />
+              <s:element minOccurs="0" maxOccurs="1" name="KontrolKimlikNo" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="IrsaliyeFirmalariResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IrsaliyeFirmalariResult" type="tns:IrsaliyeFirmalariCikti" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="IrsaliyeFirmalariCikti">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:IrsaliyeCikti">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Firmalar" type="tns:ArrayOfIrsaliyeFirma" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfIrsaliyeFirma">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="IrsaliyeFirma" nillable="true" type="tns:IrsaliyeFirma" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="IrsaliyeFirma">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Identifier" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Alias" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Title" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Type" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="RegisterTime" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="IrsaliyeFirmalariHistory">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Girdi" type="tns:IrsaliyeFirmalariGirdi" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IrsaliyeFirmalariHistoryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IrsaliyeFirmalariHistoryResult" type="tns:IrsaliyeFirmalariCiktiHistory" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="IrsaliyeFirmalariCiktiHistory">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:IrsaliyeCikti">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="AktifFirmalar" type="tns:ArrayOfDespatchCompaniesHistory" />
+              <s:element minOccurs="0" maxOccurs="1" name="SilinenFirmalar" type="tns:ArrayOfDespatchCompaniesHistory" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfDespatchCompaniesHistory">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DespatchCompaniesHistory" nillable="true" type="tns:DespatchCompaniesHistory" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DespatchCompaniesHistory">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Identifier" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Alias" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Title" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Type" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="RegisterTime" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="StartTime" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="FinishTime" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="AliasCreationTime" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="AccountType" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="IrsaliyeUygulamaYanitiListelemeUBL">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Girdi" type="tns:IrsaliyeUygulamaYanitiListelemeGirdi" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="IrsaliyeUygulamaYanitiListelemeGirdi">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:IrsaliyeGirdi">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="SubelerideIslemle" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="UygulamaYanitiDuzenlemeTarihiBaslangic" nillable="true" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="UygulamaYanitiDuzenlemeTarihiBitis" nillable="true" type="s:dateTime" />
+              <s:element minOccurs="0" maxOccurs="1" name="TarihFormati" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="IrsaliyeUygulamaYanitiListelemeUBLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IrsaliyeUygulamaYanitiListelemeUBLResult" type="tns:IrsaliyeUygulamaYanitiListelemeUBLCikti" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="IrsaliyeUygulamaYanitiListelemeUBLCikti">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:IrsaliyeCikti">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="UygulamaYaniti" type="tns:ArrayOfIrsaliyeUBLTRBelgesi" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="IrsaliyeUygulamaYanitiListelemeYapisal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Girdi" type="tns:IrsaliyeUygulamaYanitiListelemeGirdi" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IrsaliyeUygulamaYanitiListelemeYapisalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IrsaliyeUygulamaYanitiListelemeYapisalResult" type="tns:IrsaliyeUygulamaYanitiListelemeCikti" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="IrsaliyeUygulamaYanitiListelemeCikti">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:IrsaliyeCikti">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="UygulamaYanitlari" type="tns:ArrayOfIrsaliyeUygulamaYaniti" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfIrsaliyeUygulamaYaniti">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="IrsaliyeUygulamaYaniti" nillable="true" type="tns:IrsaliyeUygulamaYaniti" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="IrsaliyeUygulamaYaniti">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Alici" type="tns:Taraf" />
+          <s:element minOccurs="1" maxOccurs="1" name="BelgeETTN" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="Notlar" type="tns:ArrayOfString" />
+          <s:element minOccurs="1" maxOccurs="1" name="OlusturmaZamani" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="BelgeYanitlari" type="tns:ArrayOfIrsaliyeBelgeYaniti" />
+          <s:element minOccurs="0" maxOccurs="1" name="PKEtiketi" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Taraf">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Mukellef">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Etiket" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Mukellef">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="KimlikNO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tipi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Adi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Soyadi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="WebSitesi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BinaNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BinaAdi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Sokak" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ilce" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Sehir" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ulke" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PostaKodu" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VergiDairesi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Telefon" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FaxNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EMail" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Sube" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Mahalle" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IcKapiNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SabitTanimlamaNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TarafKimlikleri" type="tns:ArrayOfTarafKimlikleri" />
+          <s:element minOccurs="0" maxOccurs="1" name="NACEKodu" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BlokAdi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Kasaba" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EndPointID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="KayitIsmi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="KayitNumarasi" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="KayitTarihi" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="TekKisimi" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="OdenmisSermaye" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="HalkaAcikmi" nillable="true" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="UlkeID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TuristHesapNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ParaBirimi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IkametgahUlkesi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BankaAdi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OdemeNotu" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PasaportNo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PasaportTarihi" nillable="true" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTarafKimlikleri">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TarafKimlikleri" nillable="true" type="tns:TarafKimlikleri" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TarafKimlikleri">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="KimlikTipi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="KimlikNo" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfIrsaliyeBelgeYaniti">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="IrsaliyeBelgeYaniti" nillable="true" type="tns:IrsaliyeBelgeYaniti" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="IrsaliyeBelgeYaniti">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ReferansBelgeNo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ReferansBelgeTarihi" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="TekilYanit" type="tns:IrsaliyeYanit" />
+          <s:element minOccurs="0" maxOccurs="1" name="YanitSatirlari" type="tns:ArrayOfIrsaliyeSatirYaniti" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="IrsaliyeYanit">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="YanitETTN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="YanitKodu" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Aciklamalar" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfIrsaliyeSatirYaniti">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="IrsaliyeSatirYaniti" nillable="true" type="tns:IrsaliyeSatirYaniti" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="IrsaliyeSatirYaniti">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="SatirReferansi" nillable="true" type="s:unsignedByte" />
+          <s:element minOccurs="0" maxOccurs="1" name="Yanitlar" type="tns:ArrayOfIrsaliyeYanit" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfIrsaliyeYanit">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="IrsaliyeYanit" nillable="true" type="tns:IrsaliyeYanit" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="IrsaliyeAlindi">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Girdi" type="tns:IrsaliyeAlindiGirdi" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="IrsaliyeAlindiGirdi">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:IrsaliyeGirdi">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="IrsaliyeETTN" type="s1:guid" />
+              <s:element minOccurs="1" maxOccurs="1" name="TersIslem" nillable="true" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="Giden" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ErpNumarasi" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="IrsaliyeAlindiResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IrsaliyeAlindiResult" type="tns:IrsaliyeAlindiCikti" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="IrsaliyeAlindiCikti">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:IrsaliyeCikti" />
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="IrsaliyeUygulamaYanitiAlindi">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Girdi" type="tns:IrsaliyeUygulamaYanitiAlindiGirdi" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="IrsaliyeUygulamaYanitiAlindiGirdi">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:IrsaliyeGirdi">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="UygulamaYanitiETTN" type="s1:guid" />
+              <s:element minOccurs="1" maxOccurs="1" name="TersIslem" nillable="true" type="s:boolean" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="IrsaliyeUygulamaYanitiAlindiResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IrsaliyeUygulamaYanitiAlindiResult" type="tns:IrsaliyeUygulamaYanitiAlindiCikti" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="IrsaliyeUygulamaYanitiAlindiCikti">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:IrsaliyeCikti" />
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="IrsaliyeSorgulama">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Girdi" type="tns:IrsaliyeSorgulamaGirdi" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="IrsaliyeSorgulamaGirdi">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:IrsaliyeGirdi">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="ZarfETTN" type="s1:guid" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="IrsaliyeSorgulamaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IrsaliyeSorgulamaResult" type="tns:IrsaliyeSorgulamaCikti" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="IrsaliyeSorgulamaCikti">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:IrsaliyeCikti">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Durum" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Aciklama" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="IrsaliyeGoruntule">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Girdi" type="tns:IrsaliyeGoruntulemeGirdi" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="IrsaliyeGoruntulemeGirdi">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:IrsaliyeGirdi">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="Giden" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="Gelen" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="IrsaliyeETTN" type="s1:guid" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="IrsaliyeGoruntuleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IrsaliyeGoruntuleResult" type="tns:IrsaliyeGoruntulemeCikti" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="IrsaliyeGoruntulemeCikti">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:IrsaliyeCikti">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="URL" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="ZarfOnizleme">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Girdi" type="tns:IrsaliyeZarfOnizlemeGirdi" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="IrsaliyeZarfOnizlemeGirdi">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:IrsaliyeGirdi">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="XSLTRumuzu" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Zarf" type="tns:IrsaliyeZarf" />
+              <s:element minOccurs="0" maxOccurs="1" name="Belgeler" type="tns:ArrayOfIrsaliyeGonderim" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="ZarfOnizlemeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ZarfOnizlemeResult" type="tns:IrsaliyeZarfOnizlemeCikti" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="IrsaliyeZarfOnizlemeCikti">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:IrsaliyeCikti">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="IrsaliyeBelgeleri" type="tns:ArrayOfIrsaliyeOnizleme" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfIrsaliyeOnizleme">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="IrsaliyeOnizleme" nillable="true" type="tns:IrsaliyeOnizleme" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="IrsaliyeOnizleme">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IrsaliyeETTN" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="IrsaliyeHTML" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="IrsaliyeFiiliRedYanitiGonder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Girdi" type="tns:IrsaliyeFiiliRedGirdi" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="IrsaliyeFiiliRedGirdi">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:IrsaliyeGirdi">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="IrsaliyeETTN" type="s1:guid" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="IrsaliyeFiiliRedYanitiGonderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IrsaliyeFiiliRedYanitiGonderResult" type="tns:IrsaliyeFiiliRedCikti" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="IrsaliyeFiiliRedCikti">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:IrsaliyeCikti">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="ZarfETTN" type="s1:guid" />
+              <s:element minOccurs="1" maxOccurs="1" name="IrsaliyeYanitiETTN" type="s1:guid" />
+              <s:element minOccurs="0" maxOccurs="1" name="IrsaliyeYanitiNo" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="IrsaliyeYanitiGonder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Girdi" type="tns:IrsaliyeYanitiGirdi" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="IrsaliyeYanitiGirdi">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:IrsaliyeGirdi">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="IrsaliyeETTN" type="s1:guid" />
+              <s:element minOccurs="1" maxOccurs="1" name="IrsaliyeYanitiETTN" nillable="true" type="s1:guid" />
+              <s:element minOccurs="0" maxOccurs="1" name="IrsaliyeYanitiNo" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="IrsaliyeYanitiTarihi" nillable="true" type="s:dateTime" />
+              <s:element minOccurs="0" maxOccurs="1" name="Notlar" type="tns:ArrayOfString" />
+              <s:element minOccurs="0" maxOccurs="1" name="IrsaliyeYanitiKalemi" type="tns:ArrayOfIrsaliyeYanitiKalemi" />
+              <s:element minOccurs="0" maxOccurs="1" name="XsltRumuz" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfIrsaliyeYanitiKalemi">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="IrsaliyeYanitiKalemi" nillable="true" type="tns:IrsaliyeYanitiKalemi" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="IrsaliyeYanitiKalemi">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="KalemId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ReferansIrsaliyeKalemId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TeslimAlinanMiktar" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EksikMiktar" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ReddedilenMiktar" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ReddedilmeNedeni" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ReddedilmeNedeniKodu" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FazlaAlinanMiktar" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BirimKodu" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TeslimTarihi" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="SikayetKodu" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SikayetAciklama" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Notlar" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="IrsaliyeYanitiGonderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IrsaliyeYanitiGonderResult" type="tns:IrsaliyeYanitiCikti" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="IrsaliyeYanitiCikti">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:IrsaliyeCikti">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="ZarfETTN" type="s1:guid" />
+              <s:element minOccurs="1" maxOccurs="1" name="IrsaliyeYanitiETTN" type="s1:guid" />
+              <s:element minOccurs="0" maxOccurs="1" name="IrsaliyeYanitiNo" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="IrsaliyeYanitiGonderUBL">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Girdi" type="tns:IrsaliyeYanitiUBLGirdi" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="IrsaliyeYanitiUBLGirdi">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:IrsaliyeGirdi">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="IrsaliyeETTN" type="s1:guid" />
+              <s:element minOccurs="1" maxOccurs="1" name="IrsaliyeYanitiETTN" nillable="true" type="s1:guid" />
+              <s:element minOccurs="0" maxOccurs="1" name="IrsaliyeYanitiNo" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="IrsaliyeYanitiTarihi" nillable="true" type="s:dateTime" />
+              <s:element minOccurs="0" maxOccurs="1" name="IrsaliyeYaniti" type="s:base64Binary" />
+              <s:element minOccurs="0" maxOccurs="1" name="XsltRumuz" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TarihFormati" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="IrsaliyeYanitiGonderUBLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IrsaliyeYanitiGonderUBLResult" type="tns:IrsaliyeYanitiUBLCikti" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="IrsaliyeYanitiUBLCikti">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:IrsaliyeCikti">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="ZarfETTN" type="s1:guid" />
+              <s:element minOccurs="1" maxOccurs="1" name="IrsaliyeYanitiETTN" type="s1:guid" />
+              <s:element minOccurs="0" maxOccurs="1" name="IrsaliyeYanitiNo" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="IrsaliyeIndir">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Girdi" type="tns:IrsaliyeIndirGirdi" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="IrsaliyeIndirGirdi">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:IrsaliyeGirdi">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="IrsaliyeETTN" type="s1:guid" />
+              <s:element minOccurs="0" maxOccurs="1" name="Tipi" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Format" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Pozisyon" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="IrsaliyeIndirResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IrsaliyeIndirResult" type="tns:IrsaliyeIndirCikti" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="IrsaliyeIndirCikti">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:IrsaliyeCikti">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Icerik" type="s:base64Binary" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="GelenIrsaliyeYanitiListeleme">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Girdi" type="tns:GelenIrsaliyeYanitiListelemeGirdi" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GelenIrsaliyeYanitiListelemeGirdi">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:IrsaliyeGirdi">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="SubelerideIslemle" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="IrsaliyeETTN" nillable="true" type="s1:guid" />
+              <s:element minOccurs="1" maxOccurs="1" name="DuzenlemeTarihiBaslangic" nillable="true" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="DuzenlemeTarihiBitis" nillable="true" type="s:dateTime" />
+              <s:element minOccurs="0" maxOccurs="1" name="TarihFormati" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="GelenIrsaliyeYanitiListelemeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GelenIrsaliyeYanitiListelemeResult" type="tns:GelenIrsaliyeYanitiListelemeCikti" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GelenIrsaliyeYanitiListelemeCikti">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:IrsaliyeCikti">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="IrsaliyeYaniti" type="tns:ArrayOfReceiptAdvice" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfReceiptAdvice">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ReceiptAdvice" nillable="true" type="tns:ReceiptAdvice" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ReceiptAdvice">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UBLVersionID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomizationID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProfileID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CopyIndicator" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="UUID" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="IssueDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="IssueTime" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="LineCountNumeric" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Signature" type="tns:Signature" />
+          <s:element minOccurs="0" maxOccurs="1" name="DeliveryCustomerParty" type="tns:Party" />
+          <s:element minOccurs="0" maxOccurs="1" name="DespatchSupplierParty" type="tns:Party" />
+          <s:element minOccurs="0" maxOccurs="1" name="BuyerCustomerParty" type="tns:Party" />
+          <s:element minOccurs="0" maxOccurs="1" name="SellerSupplierParty" type="tns:Party" />
+          <s:element minOccurs="0" maxOccurs="1" name="Note" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="OrderReference" type="tns:OrderReference" />
+          <s:element minOccurs="0" maxOccurs="1" name="AdditionalDocumentReference" type="tns:ArrayOfAdditionalDocumentReference" />
+          <s:element minOccurs="0" maxOccurs="1" name="Shipment" type="tns:Shipment" />
+          <s:element minOccurs="0" maxOccurs="1" name="ReceiptAdviceTypeCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DespatchDocumentReference" type="tns:AdditionalDocumentReference" />
+          <s:element minOccurs="0" maxOccurs="1" name="ReceiptLine" type="tns:ArrayOfReceiptLine" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfReceiptLine">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ReceiptLine" nillable="true" type="tns:ReceiptLine" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ReceiptLine">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Note" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="ShortQuantity" type="tns:Quantity" />
+          <s:element minOccurs="0" maxOccurs="1" name="ReceivedQuantity" type="tns:Quantity" />
+          <s:element minOccurs="0" maxOccurs="1" name="RejectedQuantity" type="tns:Quantity" />
+          <s:element minOccurs="0" maxOccurs="1" name="RejectReasonCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RejectReason" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="OversupplyQuantity" type="tns:Quantity" />
+          <s:element minOccurs="1" maxOccurs="1" name="ReceivedDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="TimingComplaintCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TimingComplaint" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OrderLineReference" type="tns:OrderLineReference" />
+          <s:element minOccurs="0" maxOccurs="1" name="DespatchLineReference" type="tns:LineReference" />
+          <s:element minOccurs="0" maxOccurs="1" name="DocumentReference" type="tns:ArrayOfAdditionalDocumentReference" />
+          <s:element minOccurs="0" maxOccurs="1" name="Item" type="tns:Item" />
+          <s:element minOccurs="0" maxOccurs="1" name="Shipment" type="tns:ArrayOfShipment" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Quantity">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UnitCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Number" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OrderLineReference">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="LineID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SalesOrderLineID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UUID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LineStatusCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OrderReference" type="tns:OrderReference" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="LineReference">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="LineID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LineStatusCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DocumentReference" type="tns:AdditionalDocumentReference" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Item">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Keyword" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BrandName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ModelName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BuyersItemIdentification" type="tns:ItemIdentification" />
+          <s:element minOccurs="0" maxOccurs="1" name="SellersItemIdentification" type="tns:ItemIdentification" />
+          <s:element minOccurs="0" maxOccurs="1" name="ManufacturersItemIdentification" type="tns:ItemIdentification" />
+          <s:element minOccurs="0" maxOccurs="1" name="AdditionalItemIdentification" type="tns:ItemIdentification" />
+          <s:element minOccurs="0" maxOccurs="1" name="OriginCountry" type="tns:Country" />
+          <s:element minOccurs="0" maxOccurs="1" name="CommodityClassification" type="tns:CommodityClassification" />
+          <s:element minOccurs="0" maxOccurs="1" name="ItemInstance" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ItemIdentification">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Country">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="IdentificationCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CommodityClassification">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ItemClassificationCode" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfShipment">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Shipment" nillable="true" type="tns:Shipment" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GelenIrsaliyeYanitiListelemeUBL">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Girdi" type="tns:GelenIrsaliyeYanitiListelemeUBLGirdi" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GelenIrsaliyeYanitiListelemeUBLGirdi">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:IrsaliyeGirdi">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="SubelerideIslemle" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="IrsaliyeETTN" nillable="true" type="s1:guid" />
+              <s:element minOccurs="1" maxOccurs="1" name="DuzenlemeTarihiBaslangic" nillable="true" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="DuzenlemeTarihiBitis" nillable="true" type="s:dateTime" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="GelenIrsaliyeYanitiListelemeUBLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GelenIrsaliyeYanitiListelemeUBLResult" type="tns:GelenIrsaliyeYanitiListelemeUBLCikti" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GelenIrsaliyeYanitiListelemeUBLCikti">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:IrsaliyeCikti">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Icerik" type="tns:ArrayOfBase64Binary" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfBase64Binary">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="base64Binary" nillable="true" type="s:base64Binary" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="IrsaliyeYanitiAlindi">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Girdi" type="tns:IrsaliyeYanitiAlindiGirdi" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="IrsaliyeYanitiAlindiGirdi">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:IrsaliyeGirdi">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="IrsaliyeYanitiETTN" type="s1:guid" />
+              <s:element minOccurs="1" maxOccurs="1" name="TersIslem" nillable="true" type="s:boolean" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="IrsaliyeYanitiAlindiResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IrsaliyeYanitiAlindiResult" type="tns:IrsaliyeYanitiAlindiCikti" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="IrsaliyeYanitiAlindiCikti">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:IrsaliyeCikti" />
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="IrsaliyeStatuSorgulama">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Girdi" type="tns:IrsaliyeStatuSorgulamaGirdi" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="IrsaliyeStatuSorgulamaGirdi">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:IrsaliyeGirdi">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="IrsaliyeETTN" type="s1:guid" />
+              <s:element minOccurs="1" maxOccurs="1" name="Giden" type="s:boolean" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="IrsaliyeStatuSorgulamaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IrsaliyeStatuSorgulamaResult" type="tns:IrsaliyeStatuSorgulamaCikti" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="IrsaliyeStatuSorgulamaCikti">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:IrsaliyeCikti">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Statu" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="IrsaliyeOnayla">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Girdi" type="tns:IrsaliyeOnayGirdi" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="IrsaliyeOnayGirdi">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:IrsaliyeGirdi">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="ZarfETTN" type="s1:guid" />
+              <s:element minOccurs="0" maxOccurs="1" name="IrsaliyeNumaralari" type="tns:ArrayOfOlusanIrsaliyeNumarasi" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="IrsaliyeOnaylaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IrsaliyeOnaylaResult" type="tns:IrsaliyeOnayCikti" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="IrsaliyeOnayCikti">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:IrsaliyeCikti" />
+        </s:complexContent>
+      </s:complexType>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="guid">
+        <s:restriction base="s:string">
+          <s:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="IrsaliyeZarfGonderUBLTRSoapIn">
+    <wsdl:part name="parameters" element="tns:IrsaliyeZarfGonderUBLTR" />
+  </wsdl:message>
+  <wsdl:message name="IrsaliyeZarfGonderUBLTRSoapOut">
+    <wsdl:part name="parameters" element="tns:IrsaliyeZarfGonderUBLTRResponse" />
+  </wsdl:message>
+  <wsdl:message name="IrsaliyeZarfGonderYapisalSoapIn">
+    <wsdl:part name="parameters" element="tns:IrsaliyeZarfGonderYapisal" />
+  </wsdl:message>
+  <wsdl:message name="IrsaliyeZarfGonderYapisalSoapOut">
+    <wsdl:part name="parameters" element="tns:IrsaliyeZarfGonderYapisalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IrsaliyeTekarGonderSoapIn">
+    <wsdl:part name="parameters" element="tns:IrsaliyeTekarGonder" />
+  </wsdl:message>
+  <wsdl:message name="IrsaliyeTekarGonderSoapOut">
+    <wsdl:part name="parameters" element="tns:IrsaliyeTekarGonderResponse" />
+  </wsdl:message>
+  <wsdl:message name="GelenIrsaliyeListelemeUBLSoapIn">
+    <wsdl:part name="parameters" element="tns:GelenIrsaliyeListelemeUBL" />
+  </wsdl:message>
+  <wsdl:message name="GelenIrsaliyeListelemeUBLSoapOut">
+    <wsdl:part name="parameters" element="tns:GelenIrsaliyeListelemeUBLResponse" />
+  </wsdl:message>
+  <wsdl:message name="GelenIrsaliyeListelemeYapisalSoapIn">
+    <wsdl:part name="parameters" element="tns:GelenIrsaliyeListelemeYapisal" />
+  </wsdl:message>
+  <wsdl:message name="GelenIrsaliyeListelemeYapisalSoapOut">
+    <wsdl:part name="parameters" element="tns:GelenIrsaliyeListelemeYapisalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IrsaliyeFirmalariSoapIn">
+    <wsdl:part name="parameters" element="tns:IrsaliyeFirmalari" />
+  </wsdl:message>
+  <wsdl:message name="IrsaliyeFirmalariSoapOut">
+    <wsdl:part name="parameters" element="tns:IrsaliyeFirmalariResponse" />
+  </wsdl:message>
+  <wsdl:message name="IrsaliyeFirmalariHistorySoapIn">
+    <wsdl:part name="parameters" element="tns:IrsaliyeFirmalariHistory" />
+  </wsdl:message>
+  <wsdl:message name="IrsaliyeFirmalariHistorySoapOut">
+    <wsdl:part name="parameters" element="tns:IrsaliyeFirmalariHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IrsaliyeUygulamaYanitiListelemeUBLSoapIn">
+    <wsdl:part name="parameters" element="tns:IrsaliyeUygulamaYanitiListelemeUBL" />
+  </wsdl:message>
+  <wsdl:message name="IrsaliyeUygulamaYanitiListelemeUBLSoapOut">
+    <wsdl:part name="parameters" element="tns:IrsaliyeUygulamaYanitiListelemeUBLResponse" />
+  </wsdl:message>
+  <wsdl:message name="IrsaliyeUygulamaYanitiListelemeYapisalSoapIn">
+    <wsdl:part name="parameters" element="tns:IrsaliyeUygulamaYanitiListelemeYapisal" />
+  </wsdl:message>
+  <wsdl:message name="IrsaliyeUygulamaYanitiListelemeYapisalSoapOut">
+    <wsdl:part name="parameters" element="tns:IrsaliyeUygulamaYanitiListelemeYapisalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IrsaliyeAlindiSoapIn">
+    <wsdl:part name="parameters" element="tns:IrsaliyeAlindi" />
+  </wsdl:message>
+  <wsdl:message name="IrsaliyeAlindiSoapOut">
+    <wsdl:part name="parameters" element="tns:IrsaliyeAlindiResponse" />
+  </wsdl:message>
+  <wsdl:message name="IrsaliyeUygulamaYanitiAlindiSoapIn">
+    <wsdl:part name="parameters" element="tns:IrsaliyeUygulamaYanitiAlindi" />
+  </wsdl:message>
+  <wsdl:message name="IrsaliyeUygulamaYanitiAlindiSoapOut">
+    <wsdl:part name="parameters" element="tns:IrsaliyeUygulamaYanitiAlindiResponse" />
+  </wsdl:message>
+  <wsdl:message name="IrsaliyeSorgulamaSoapIn">
+    <wsdl:part name="parameters" element="tns:IrsaliyeSorgulama" />
+  </wsdl:message>
+  <wsdl:message name="IrsaliyeSorgulamaSoapOut">
+    <wsdl:part name="parameters" element="tns:IrsaliyeSorgulamaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IrsaliyeGoruntuleSoapIn">
+    <wsdl:part name="parameters" element="tns:IrsaliyeGoruntule" />
+  </wsdl:message>
+  <wsdl:message name="IrsaliyeGoruntuleSoapOut">
+    <wsdl:part name="parameters" element="tns:IrsaliyeGoruntuleResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZarfOnizlemeSoapIn">
+    <wsdl:part name="parameters" element="tns:ZarfOnizleme" />
+  </wsdl:message>
+  <wsdl:message name="ZarfOnizlemeSoapOut">
+    <wsdl:part name="parameters" element="tns:ZarfOnizlemeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IrsaliyeFiiliRedYanitiGonderSoapIn">
+    <wsdl:part name="parameters" element="tns:IrsaliyeFiiliRedYanitiGonder" />
+  </wsdl:message>
+  <wsdl:message name="IrsaliyeFiiliRedYanitiGonderSoapOut">
+    <wsdl:part name="parameters" element="tns:IrsaliyeFiiliRedYanitiGonderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IrsaliyeYanitiGonderSoapIn">
+    <wsdl:part name="parameters" element="tns:IrsaliyeYanitiGonder" />
+  </wsdl:message>
+  <wsdl:message name="IrsaliyeYanitiGonderSoapOut">
+    <wsdl:part name="parameters" element="tns:IrsaliyeYanitiGonderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IrsaliyeYanitiGonderUBLSoapIn">
+    <wsdl:part name="parameters" element="tns:IrsaliyeYanitiGonderUBL" />
+  </wsdl:message>
+  <wsdl:message name="IrsaliyeYanitiGonderUBLSoapOut">
+    <wsdl:part name="parameters" element="tns:IrsaliyeYanitiGonderUBLResponse" />
+  </wsdl:message>
+  <wsdl:message name="IrsaliyeIndirSoapIn">
+    <wsdl:part name="parameters" element="tns:IrsaliyeIndir" />
+  </wsdl:message>
+  <wsdl:message name="IrsaliyeIndirSoapOut">
+    <wsdl:part name="parameters" element="tns:IrsaliyeIndirResponse" />
+  </wsdl:message>
+  <wsdl:message name="GelenIrsaliyeYanitiListelemeSoapIn">
+    <wsdl:part name="parameters" element="tns:GelenIrsaliyeYanitiListeleme" />
+  </wsdl:message>
+  <wsdl:message name="GelenIrsaliyeYanitiListelemeSoapOut">
+    <wsdl:part name="parameters" element="tns:GelenIrsaliyeYanitiListelemeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GelenIrsaliyeYanitiListelemeUBLSoapIn">
+    <wsdl:part name="parameters" element="tns:GelenIrsaliyeYanitiListelemeUBL" />
+  </wsdl:message>
+  <wsdl:message name="GelenIrsaliyeYanitiListelemeUBLSoapOut">
+    <wsdl:part name="parameters" element="tns:GelenIrsaliyeYanitiListelemeUBLResponse" />
+  </wsdl:message>
+  <wsdl:message name="IrsaliyeYanitiAlindiSoapIn">
+    <wsdl:part name="parameters" element="tns:IrsaliyeYanitiAlindi" />
+  </wsdl:message>
+  <wsdl:message name="IrsaliyeYanitiAlindiSoapOut">
+    <wsdl:part name="parameters" element="tns:IrsaliyeYanitiAlindiResponse" />
+  </wsdl:message>
+  <wsdl:message name="IrsaliyeStatuSorgulamaSoapIn">
+    <wsdl:part name="parameters" element="tns:IrsaliyeStatuSorgulama" />
+  </wsdl:message>
+  <wsdl:message name="IrsaliyeStatuSorgulamaSoapOut">
+    <wsdl:part name="parameters" element="tns:IrsaliyeStatuSorgulamaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IrsaliyeOnaylaSoapIn">
+    <wsdl:part name="parameters" element="tns:IrsaliyeOnayla" />
+  </wsdl:message>
+  <wsdl:message name="IrsaliyeOnaylaSoapOut">
+    <wsdl:part name="parameters" element="tns:IrsaliyeOnaylaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IrsaliyeWebServiceSoap">
+    <wsdl:operation name="IrsaliyeZarfGonderUBLTR">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Irsaliye UBLTR Gonderme Fonksiyonu</wsdl:documentation>
+      <wsdl:input message="tns:IrsaliyeZarfGonderUBLTRSoapIn" />
+      <wsdl:output message="tns:IrsaliyeZarfGonderUBLTRSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IrsaliyeZarfGonderYapisal">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Irsaliye Yapisal Gonderme Fonksiyonu</wsdl:documentation>
+      <wsdl:input message="tns:IrsaliyeZarfGonderYapisalSoapIn" />
+      <wsdl:output message="tns:IrsaliyeZarfGonderYapisalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IrsaliyeTekarGonder">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Irsaliye Tekrar Gonderme Fonksiyonu</wsdl:documentation>
+      <wsdl:input message="tns:IrsaliyeTekarGonderSoapIn" />
+      <wsdl:output message="tns:IrsaliyeTekarGonderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GelenIrsaliyeListelemeUBL">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Gelen Irsaliye UBLTR Listeleme Fonksiyonu</wsdl:documentation>
+      <wsdl:input message="tns:GelenIrsaliyeListelemeUBLSoapIn" />
+      <wsdl:output message="tns:GelenIrsaliyeListelemeUBLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GelenIrsaliyeListelemeYapisal">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Gelen Irsaliye Yapisal Listeleme Fonksiyonu</wsdl:documentation>
+      <wsdl:input message="tns:GelenIrsaliyeListelemeYapisalSoapIn" />
+      <wsdl:output message="tns:GelenIrsaliyeListelemeYapisalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IrsaliyeFirmalari">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Irsaliye Firmalari Listeleme Fonksiyonu</wsdl:documentation>
+      <wsdl:input message="tns:IrsaliyeFirmalariSoapIn" />
+      <wsdl:output message="tns:IrsaliyeFirmalariSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IrsaliyeFirmalariHistory">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Irsaliye Firmalari Listeleme History Fonksiyonu</wsdl:documentation>
+      <wsdl:input message="tns:IrsaliyeFirmalariHistorySoapIn" />
+      <wsdl:output message="tns:IrsaliyeFirmalariHistorySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IrsaliyeUygulamaYanitiListelemeUBL">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Irsaliye Uygulama Yaniti Listeleme Fonksiyonu</wsdl:documentation>
+      <wsdl:input message="tns:IrsaliyeUygulamaYanitiListelemeUBLSoapIn" />
+      <wsdl:output message="tns:IrsaliyeUygulamaYanitiListelemeUBLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IrsaliyeUygulamaYanitiListelemeYapisal">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Irsaliye Uygulama Yaniti Listeleme Yapısal Fonksiyonu</wsdl:documentation>
+      <wsdl:input message="tns:IrsaliyeUygulamaYanitiListelemeYapisalSoapIn" />
+      <wsdl:output message="tns:IrsaliyeUygulamaYanitiListelemeYapisalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IrsaliyeAlindi">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Irsaliye Alindi &amp; Ters Islem</wsdl:documentation>
+      <wsdl:input message="tns:IrsaliyeAlindiSoapIn" />
+      <wsdl:output message="tns:IrsaliyeAlindiSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IrsaliyeUygulamaYanitiAlindi">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Ilgili Irsaliyenin ERP Tarafindan Alindigini Isleyen Fonkisyon</wsdl:documentation>
+      <wsdl:input message="tns:IrsaliyeUygulamaYanitiAlindiSoapIn" />
+      <wsdl:output message="tns:IrsaliyeUygulamaYanitiAlindiSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IrsaliyeSorgulama">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Ilgili Irsaliyenin Durumunu Bildirir</wsdl:documentation>
+      <wsdl:input message="tns:IrsaliyeSorgulamaSoapIn" />
+      <wsdl:output message="tns:IrsaliyeSorgulamaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IrsaliyeGoruntule">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">İlgili Irsaliyeyi Görüntüler</wsdl:documentation>
+      <wsdl:input message="tns:IrsaliyeGoruntuleSoapIn" />
+      <wsdl:output message="tns:IrsaliyeGoruntuleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ZarfOnizleme">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Irsaliye Yapisal Önizleme Fonksiyonu</wsdl:documentation>
+      <wsdl:input message="tns:ZarfOnizlemeSoapIn" />
+      <wsdl:output message="tns:ZarfOnizlemeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IrsaliyeFiiliRedYanitiGonder">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Irsaliye Fiili Red Yaniti Gonderme Fonksiyonu</wsdl:documentation>
+      <wsdl:input message="tns:IrsaliyeFiiliRedYanitiGonderSoapIn" />
+      <wsdl:output message="tns:IrsaliyeFiiliRedYanitiGonderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IrsaliyeYanitiGonder">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Irsaliye Yaniti Gonderme Fonksiyonu</wsdl:documentation>
+      <wsdl:input message="tns:IrsaliyeYanitiGonderSoapIn" />
+      <wsdl:output message="tns:IrsaliyeYanitiGonderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IrsaliyeYanitiGonderUBL">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Irsaliye Yaniti ULB Gonderme Fonksiyonu</wsdl:documentation>
+      <wsdl:input message="tns:IrsaliyeYanitiGonderUBLSoapIn" />
+      <wsdl:output message="tns:IrsaliyeYanitiGonderUBLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IrsaliyeIndir">
+      <wsdl:input message="tns:IrsaliyeIndirSoapIn" />
+      <wsdl:output message="tns:IrsaliyeIndirSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GelenIrsaliyeYanitiListeleme">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Irsaliye Yaniti Listeleme Fonksiyonu</wsdl:documentation>
+      <wsdl:input message="tns:GelenIrsaliyeYanitiListelemeSoapIn" />
+      <wsdl:output message="tns:GelenIrsaliyeYanitiListelemeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GelenIrsaliyeYanitiListelemeUBL">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Irsaliye Yaniti Listeleme UBL Fonksiyonu</wsdl:documentation>
+      <wsdl:input message="tns:GelenIrsaliyeYanitiListelemeUBLSoapIn" />
+      <wsdl:output message="tns:GelenIrsaliyeYanitiListelemeUBLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IrsaliyeYanitiAlindi">
+      <wsdl:input message="tns:IrsaliyeYanitiAlindiSoapIn" />
+      <wsdl:output message="tns:IrsaliyeYanitiAlindiSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IrsaliyeStatuSorgulama">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Irsaliye Durum Sorgulama Fonksiyonu</wsdl:documentation>
+      <wsdl:input message="tns:IrsaliyeStatuSorgulamaSoapIn" />
+      <wsdl:output message="tns:IrsaliyeStatuSorgulamaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IrsaliyeOnayla">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Irsaliye Taslak Onay</wsdl:documentation>
+      <wsdl:input message="tns:IrsaliyeOnaylaSoapIn" />
+      <wsdl:output message="tns:IrsaliyeOnaylaSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IrsaliyeWebServiceHttpGet" />
+  <wsdl:portType name="IrsaliyeWebServiceHttpPost" />
+  <wsdl:binding name="IrsaliyeWebServiceSoap" type="tns:IrsaliyeWebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="IrsaliyeZarfGonderUBLTR">
+      <soap:operation soapAction="http://tempuri.org/IrsaliyeZarfGonderUBLTR" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IrsaliyeZarfGonderYapisal">
+      <soap:operation soapAction="http://tempuri.org/IrsaliyeZarfGonderYapisal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IrsaliyeTekarGonder">
+      <soap:operation soapAction="http://tempuri.org/IrsaliyeTekarGonder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GelenIrsaliyeListelemeUBL">
+      <soap:operation soapAction="http://tempuri.org/GelenIrsaliyeListelemeUBL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GelenIrsaliyeListelemeYapisal">
+      <soap:operation soapAction="http://tempuri.org/GelenIrsaliyeListelemeYapisal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IrsaliyeFirmalari">
+      <soap:operation soapAction="http://tempuri.org/IrsaliyeFirmalari" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IrsaliyeFirmalariHistory">
+      <soap:operation soapAction="http://tempuri.org/IrsaliyeFirmalariHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IrsaliyeUygulamaYanitiListelemeUBL">
+      <soap:operation soapAction="http://tempuri.org/IrsaliyeUygulamaYanitiListelemeUBL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IrsaliyeUygulamaYanitiListelemeYapisal">
+      <soap:operation soapAction="http://tempuri.org/IrsaliyeUygulamaYanitiListelemeYapisal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IrsaliyeAlindi">
+      <soap:operation soapAction="http://tempuri.org/IrsaliyeAlindi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IrsaliyeUygulamaYanitiAlindi">
+      <soap:operation soapAction="http://tempuri.org/IrsaliyeUygulamaYanitiAlindi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IrsaliyeSorgulama">
+      <soap:operation soapAction="http://tempuri.org/IrsaliyeSorgulama" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IrsaliyeGoruntule">
+      <soap:operation soapAction="http://tempuri.org/IrsaliyeGoruntule" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZarfOnizleme">
+      <soap:operation soapAction="http://tempuri.org/ZarfOnizleme" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IrsaliyeFiiliRedYanitiGonder">
+      <soap:operation soapAction="http://tempuri.org/IrsaliyeFiiliRedYanitiGonder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IrsaliyeYanitiGonder">
+      <soap:operation soapAction="http://tempuri.org/IrsaliyeYanitiGonder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IrsaliyeYanitiGonderUBL">
+      <soap:operation soapAction="http://tempuri.org/IrsaliyeYanitiGonderUBL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IrsaliyeIndir">
+      <soap:operation soapAction="http://tempuri.org/IrsaliyeIndir" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GelenIrsaliyeYanitiListeleme">
+      <soap:operation soapAction="http://tempuri.org/GelenIrsaliyeYanitiListeleme" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GelenIrsaliyeYanitiListelemeUBL">
+      <soap:operation soapAction="http://tempuri.org/GelenIrsaliyeYanitiListelemeUBL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IrsaliyeYanitiAlindi">
+      <soap:operation soapAction="http://tempuri.org/IrsaliyeYanitiAlindi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IrsaliyeStatuSorgulama">
+      <soap:operation soapAction="http://tempuri.org/IrsaliyeStatuSorgulama" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IrsaliyeOnayla">
+      <soap:operation soapAction="http://tempuri.org/IrsaliyeOnayla" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="IrsaliyeWebServiceSoap12" type="tns:IrsaliyeWebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="IrsaliyeZarfGonderUBLTR">
+      <soap12:operation soapAction="http://tempuri.org/IrsaliyeZarfGonderUBLTR" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IrsaliyeZarfGonderYapisal">
+      <soap12:operation soapAction="http://tempuri.org/IrsaliyeZarfGonderYapisal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IrsaliyeTekarGonder">
+      <soap12:operation soapAction="http://tempuri.org/IrsaliyeTekarGonder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GelenIrsaliyeListelemeUBL">
+      <soap12:operation soapAction="http://tempuri.org/GelenIrsaliyeListelemeUBL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GelenIrsaliyeListelemeYapisal">
+      <soap12:operation soapAction="http://tempuri.org/GelenIrsaliyeListelemeYapisal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IrsaliyeFirmalari">
+      <soap12:operation soapAction="http://tempuri.org/IrsaliyeFirmalari" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IrsaliyeFirmalariHistory">
+      <soap12:operation soapAction="http://tempuri.org/IrsaliyeFirmalariHistory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IrsaliyeUygulamaYanitiListelemeUBL">
+      <soap12:operation soapAction="http://tempuri.org/IrsaliyeUygulamaYanitiListelemeUBL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IrsaliyeUygulamaYanitiListelemeYapisal">
+      <soap12:operation soapAction="http://tempuri.org/IrsaliyeUygulamaYanitiListelemeYapisal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IrsaliyeAlindi">
+      <soap12:operation soapAction="http://tempuri.org/IrsaliyeAlindi" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IrsaliyeUygulamaYanitiAlindi">
+      <soap12:operation soapAction="http://tempuri.org/IrsaliyeUygulamaYanitiAlindi" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IrsaliyeSorgulama">
+      <soap12:operation soapAction="http://tempuri.org/IrsaliyeSorgulama" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IrsaliyeGoruntule">
+      <soap12:operation soapAction="http://tempuri.org/IrsaliyeGoruntule" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZarfOnizleme">
+      <soap12:operation soapAction="http://tempuri.org/ZarfOnizleme" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IrsaliyeFiiliRedYanitiGonder">
+      <soap12:operation soapAction="http://tempuri.org/IrsaliyeFiiliRedYanitiGonder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IrsaliyeYanitiGonder">
+      <soap12:operation soapAction="http://tempuri.org/IrsaliyeYanitiGonder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IrsaliyeYanitiGonderUBL">
+      <soap12:operation soapAction="http://tempuri.org/IrsaliyeYanitiGonderUBL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IrsaliyeIndir">
+      <soap12:operation soapAction="http://tempuri.org/IrsaliyeIndir" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GelenIrsaliyeYanitiListeleme">
+      <soap12:operation soapAction="http://tempuri.org/GelenIrsaliyeYanitiListeleme" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GelenIrsaliyeYanitiListelemeUBL">
+      <soap12:operation soapAction="http://tempuri.org/GelenIrsaliyeYanitiListelemeUBL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IrsaliyeYanitiAlindi">
+      <soap12:operation soapAction="http://tempuri.org/IrsaliyeYanitiAlindi" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IrsaliyeStatuSorgulama">
+      <soap12:operation soapAction="http://tempuri.org/IrsaliyeStatuSorgulama" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IrsaliyeOnayla">
+      <soap12:operation soapAction="http://tempuri.org/IrsaliyeOnayla" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="IrsaliyeWebServiceHttpGet" type="tns:IrsaliyeWebServiceHttpGet">
+    <http:binding verb="GET" />
+  </wsdl:binding>
+  <wsdl:binding name="IrsaliyeWebServiceHttpPost" type="tns:IrsaliyeWebServiceHttpPost">
+    <http:binding verb="POST" />
+  </wsdl:binding>
+  <wsdl:service name="IrsaliyeWebService">
+    <wsdl:port name="IrsaliyeWebServiceSoap" binding="tns:IrsaliyeWebServiceSoap">
+      <soap:address location="https://wstesteirsaliye.edoksis.net/IrsaliyeWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="IrsaliyeWebServiceSoap12" binding="tns:IrsaliyeWebServiceSoap12">
+      <soap12:address location="https://wstesteirsaliye.edoksis.net/IrsaliyeWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="IrsaliyeWebServiceHttpGet" binding="tns:IrsaliyeWebServiceHttpGet">
+      <http:address location="https://wstesteirsaliye.edoksis.net/IrsaliyeWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="IrsaliyeWebServiceHttpPost" binding="tns:IrsaliyeWebServiceHttpPost">
+      <http:address location="https://wstesteirsaliye.edoksis.net/IrsaliyeWebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

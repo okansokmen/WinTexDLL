@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:ns2="http://ee.econt.com/services" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://ee.econt.com/services/Nomenclatures" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://ee.econt.com/services/Nomenclatures/R" targetNamespace="http://ee.econt.com/services/Nomenclatures" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://ee.econt.com/services/Nomenclatures">
+      <xsd:include schemaLocation="schema.xsd" />
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import schemaLocation="R/schema.xsd" namespace="http://ee.econt.com/services/Nomenclatures/R" />
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import schemaLocation="../schema.xsd" namespace="http://ee.econt.com/services" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="validateAddress">
+    <wsdl:part name="request" element="ns1:ValidateAddressRequest" />
+  </wsdl:message>
+  <wsdl:message name="validateAddressResponse">
+    <wsdl:part name="ValidateAddressResponse" element="ns1:ValidateAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidateAddressError">
+    <wsdl:part name="Error" element="ns2:Error" />
+  </wsdl:message>
+  <wsdl:message name="getNearestOffices">
+    <wsdl:part name="request" element="ns1:GetNearestOfficesRequest" />
+  </wsdl:message>
+  <wsdl:message name="getNearestOfficesResponse">
+    <wsdl:part name="GetNearestOfficesResponse" element="ns1:GetNearestOfficesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetNearestOfficesError">
+    <wsdl:part name="Error" element="ns2:Error" />
+  </wsdl:message>
+  <wsdl:portType name="AddressService">
+    <wsdl:operation name="validateAddress">
+      <wsdl:documentation>Basic method for validation of address. Requires the following input parameters: city name, street name and street number OR quarter and other</wsdl:documentation>
+      <wsdl:input message="tns:validateAddress" />
+      <wsdl:output message="tns:validateAddressResponse" />
+      <wsdl:fault name="ValidateAddressError" message="tns:ValidateAddressError" />
+    </wsdl:operation>
+    <wsdl:operation name="getNearestOffices">
+      <wsdl:documentation>Information service for offices near given address</wsdl:documentation>
+      <wsdl:input message="tns:getNearestOffices" />
+      <wsdl:output message="tns:getNearestOfficesResponse" />
+      <wsdl:fault name="GetNearestOfficesError" message="tns:GetNearestOfficesError" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AddressServiceBinding" type="tns:AddressService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="validateAddress">
+      <soap:operation soapAction="validateAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ValidateAddressError">
+        <soap:fault use="literal" name="ValidateAddressError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getNearestOffices">
+      <soap:operation soapAction="getNearestOffices" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GetNearestOfficesError">
+        <soap:fault use="literal" name="GetNearestOfficesError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AddressService">
+    <wsdl:port name="AddressService" binding="tns:AddressServiceBinding">
+      <soap:address location="http://ee.econt.com/services/Nomenclatures/AddressService.soap" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

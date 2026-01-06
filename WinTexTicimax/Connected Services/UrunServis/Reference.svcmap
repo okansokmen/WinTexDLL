@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c12409da-3b99-410a-85a5-faef6de3ba2c" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://benimpabucum.com/servis/urunservis.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="UrunServis.wsdl" MetadataType="Wsdl" ID="22bffdef-4f40-47f3-93ae-fe8f4b9fa17c" SourceId="1" SourceUrl="https://benimpabucum.com/servis/UrunServis.svc?wsdl" />
+    <MetadataFile FileName="UrunServis.xsd" MetadataType="Schema" ID="c07ea3cb-4155-40a8-a332-400a2d19dde5" SourceId="1" SourceUrl="https://benimpabucum.com/servis/UrunServis.svc?xsd=xsd0" />
+    <MetadataFile FileName="UrunServis1.xsd" MetadataType="Schema" ID="f990cd9f-2a3d-4423-a1f8-0d665e0eb38c" SourceId="1" SourceUrl="https://benimpabucum.com/servis/UrunServis.svc?xsd=xsd4" />
+    <MetadataFile FileName="UrunServis.disco" MetadataType="Disco" ID="ea18ffd5-eee7-4f14-8d91-cb7536298465" SourceId="1" SourceUrl="https://benimpabucum.com/servis/UrunServis.svc?disco" />
+    <MetadataFile FileName="UrunServis2.xsd" MetadataType="Schema" ID="b6da2dba-a355-4cab-ae4b-344ae93ae268" SourceId="1" SourceUrl="https://benimpabucum.com/servis/UrunServis.svc?xsd=xsd1" />
+    <MetadataFile FileName="UrunServis3.xsd" MetadataType="Schema" ID="e5e70558-7e12-42c6-829c-85d207629b8d" SourceId="1" SourceUrl="https://benimpabucum.com/servis/UrunServis.svc?xsd=xsd2" />
+    <MetadataFile FileName="UrunServis4.xsd" MetadataType="Schema" ID="3d7dfbed-8ae5-4441-94c4-86facc4c8534" SourceId="1" SourceUrl="https://benimpabucum.com/servis/UrunServis.svc?xsd=xsd3" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

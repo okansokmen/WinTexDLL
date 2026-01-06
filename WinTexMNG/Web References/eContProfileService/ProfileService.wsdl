@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:ns2="http://ee.econt.com/services" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://ee.econt.com/services/Profile" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://ee.econt.com/services/Profile/R" targetNamespace="http://ee.econt.com/services/Profile" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://ee.econt.com/services/Profile">
+      <xsd:include schemaLocation="schema.xsd" />
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import schemaLocation="R/schema.xsd" namespace="http://ee.econt.com/services/Profile/R" />
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import schemaLocation="../schema.xsd" namespace="http://ee.econt.com/services" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="getClientProfiles">
+    <wsdl:part name="request" element="ns1:GetClientProfilesRequest" />
+  </wsdl:message>
+  <wsdl:message name="getClientProfilesResponse">
+    <wsdl:part name="GetClientProfilesResponse" element="ns1:GetClientProfilesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetClientProfilesError">
+    <wsdl:part name="Error" element="ns2:Error" />
+  </wsdl:message>
+  <wsdl:portType name="ProfileService">
+    <wsdl:documentation>Service providing information about client profiles</wsdl:documentation>
+    <wsdl:operation name="getClientProfiles">
+      <wsdl:documentation>Basic method for requesting information about client profiles. Requires authorization.</wsdl:documentation>
+      <wsdl:input message="tns:getClientProfiles" />
+      <wsdl:output message="tns:getClientProfilesResponse" />
+      <wsdl:fault name="GetClientProfilesError" message="tns:GetClientProfilesError" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ProfileServiceBinding" type="tns:ProfileService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getClientProfiles">
+      <soap:operation soapAction="getClientProfiles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GetClientProfilesError">
+        <soap:fault use="literal" name="GetClientProfilesError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ProfileService">
+    <wsdl:port name="ProfileService" binding="tns:ProfileServiceBinding">
+      <soap:address location="http://ee.econt.com/services/Profile/ProfileService.soap" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

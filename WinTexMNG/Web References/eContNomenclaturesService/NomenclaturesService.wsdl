@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:ns2="http://ee.econt.com/services" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://ee.econt.com/services/Nomenclatures" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://ee.econt.com/services/Nomenclatures/R" targetNamespace="http://ee.econt.com/services/Nomenclatures" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://ee.econt.com/services/Nomenclatures">
+      <xsd:include schemaLocation="schema.xsd" />
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import schemaLocation="R/schema.xsd" namespace="http://ee.econt.com/services/Nomenclatures/R" />
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import schemaLocation="../schema.xsd" namespace="http://ee.econt.com/services" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="getCountries">
+    <wsdl:part name="request" element="ns1:GetCountriesRequest" />
+  </wsdl:message>
+  <wsdl:message name="getCountriesResponse">
+    <wsdl:part name="GetCountriesResponse" element="ns1:GetCountriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCountriesError">
+    <wsdl:part name="Error" element="ns2:Error" />
+  </wsdl:message>
+  <wsdl:message name="getCities">
+    <wsdl:part name="request" element="ns1:GetCitiesRequest" />
+  </wsdl:message>
+  <wsdl:message name="getCitiesResponse">
+    <wsdl:part name="GetCitiesResponse" element="ns1:GetCitiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCitiesError">
+    <wsdl:part name="Error" element="ns2:Error" />
+  </wsdl:message>
+  <wsdl:message name="getOffices">
+    <wsdl:part name="request" element="ns1:GetOfficesRequest" />
+  </wsdl:message>
+  <wsdl:message name="getOfficesResponse">
+    <wsdl:part name="GetOfficesResponse" element="ns1:GetOfficesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOfficesError">
+    <wsdl:part name="Error" element="ns2:Error" />
+  </wsdl:message>
+  <wsdl:message name="getStreets">
+    <wsdl:part name="request" element="ns1:GetStreetsRequest" />
+  </wsdl:message>
+  <wsdl:message name="getStreetsResponse">
+    <wsdl:part name="GetStreetsResponse" element="ns1:GetStreetsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStreetsError">
+    <wsdl:part name="Error" element="ns2:Error" />
+  </wsdl:message>
+  <wsdl:message name="getQuarters">
+    <wsdl:part name="request" element="ns1:GetQuartersRequest" />
+  </wsdl:message>
+  <wsdl:message name="getQuartersResponse">
+    <wsdl:part name="GetQuartersResponse" element="ns1:GetQuartersResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetQuartersError">
+    <wsdl:part name="Error" element="ns2:Error" />
+  </wsdl:message>
+  <wsdl:portType name="NomenclaturesService">
+    <wsdl:operation name="getCountries">
+      <wsdl:documentation>Basic method for requesting information about the countries where Econt Express operates. Input parameters: none</wsdl:documentation>
+      <wsdl:input message="tns:getCountries" />
+      <wsdl:output message="tns:getCountriesResponse" />
+      <wsdl:fault name="GetCountriesError" message="tns:GetCountriesError" />
+    </wsdl:operation>
+    <wsdl:operation name="getCities">
+      <wsdl:documentation>Basic method for requesting information about city names in a country. Input parameters: countryCode</wsdl:documentation>
+      <wsdl:input message="tns:getCities" />
+      <wsdl:output message="tns:getCitiesResponse" />
+      <wsdl:fault name="GetCitiesError" message="tns:GetCitiesError" />
+    </wsdl:operation>
+    <wsdl:operation name="getOffices">
+      <wsdl:documentation>Basic method for requesting information about offices. Input parameters: countryCode and cityID (optional)</wsdl:documentation>
+      <wsdl:input message="tns:getOffices" />
+      <wsdl:output message="tns:getOfficesResponse" />
+      <wsdl:fault name="GetOfficesError" message="tns:GetOfficesError" />
+    </wsdl:operation>
+    <wsdl:operation name="getStreets">
+      <wsdl:documentation>Basic method for requesting information about street names. Input parameters: cityID (optional)</wsdl:documentation>
+      <wsdl:input message="tns:getStreets" />
+      <wsdl:output message="tns:getStreetsResponse" />
+      <wsdl:fault name="GetStreetsError" message="tns:GetStreetsError" />
+    </wsdl:operation>
+    <wsdl:operation name="getQuarters">
+      <wsdl:documentation>Basic method for requesting information about quarter names. Input parameters: cityID (optional)</wsdl:documentation>
+      <wsdl:input message="tns:getQuarters" />
+      <wsdl:output message="tns:getQuartersResponse" />
+      <wsdl:fault name="GetQuartersError" message="tns:GetQuartersError" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NomenclaturesServiceBinding" type="tns:NomenclaturesService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getCountries">
+      <soap:operation soapAction="getCountries" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GetCountriesError">
+        <soap:fault use="literal" name="GetCountriesError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getCities">
+      <soap:operation soapAction="getCities" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GetCitiesError">
+        <soap:fault use="literal" name="GetCitiesError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getOffices">
+      <soap:operation soapAction="getOffices" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GetOfficesError">
+        <soap:fault use="literal" name="GetOfficesError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getStreets">
+      <soap:operation soapAction="getStreets" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GetStreetsError">
+        <soap:fault use="literal" name="GetStreetsError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getQuarters">
+      <soap:operation soapAction="getQuarters" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GetQuartersError">
+        <soap:fault use="literal" name="GetQuartersError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="NomenclaturesService">
+    <wsdl:port name="NomenclaturesService" binding="tns:NomenclaturesServiceBinding">
+      <soap:address location="http://ee.econt.com/services/Nomenclatures/NomenclaturesService.soap" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

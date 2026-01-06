@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="15065aa3-fef5-4211-9505-4034ffc25be3" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://benimpabucum.com/servis/uyeservis.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="UyeServis.xsd" MetadataType="Schema" ID="4f747372-ba48-4be9-80bc-ca92d851b96a" SourceId="1" SourceUrl="https://benimpabucum.com/servis/UyeServis.svc?xsd=xsd3" />
+    <MetadataFile FileName="UyeServis1.xsd" MetadataType="Schema" ID="497e17e1-b04b-417c-900c-11a618ee3784" SourceId="1" SourceUrl="https://benimpabucum.com/servis/UyeServis.svc?xsd=xsd2" />
+    <MetadataFile FileName="UyeServis.disco" MetadataType="Disco" ID="3fd7f3e3-7a7a-40a5-afcd-47d77b3de47a" SourceId="1" SourceUrl="https://benimpabucum.com/servis/UyeServis.svc?disco" />
+    <MetadataFile FileName="UyeServis2.xsd" MetadataType="Schema" ID="348c1125-f69a-4061-9020-fc9e9cfe6aec" SourceId="1" SourceUrl="https://benimpabucum.com/servis/UyeServis.svc?xsd=xsd0" />
+    <MetadataFile FileName="UyeServis3.xsd" MetadataType="Schema" ID="c461f498-1a95-464e-a61f-3366f289925b" SourceId="1" SourceUrl="https://benimpabucum.com/servis/UyeServis.svc?xsd=xsd1" />
+    <MetadataFile FileName="UyeServis.wsdl" MetadataType="Wsdl" ID="680f8816-ba34-4475-bafc-057a51ff4745" SourceId="1" SourceUrl="https://benimpabucum.com/servis/UyeServis.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

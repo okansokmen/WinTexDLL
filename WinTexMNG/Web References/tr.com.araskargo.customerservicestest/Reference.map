@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="https://customerservicestest.araskargo.com.tr/ArasCargoIntegrationService.svc?xsd=xsd3" filename="ArasCargoIntegrationService.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.DiscoveryDocumentReference" url="https://customerservicestest.araskargo.com.tr/ArasCargoIntegrationService.svc?disco" filename="ArasCargoIntegrationService.disco" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="https://customerservicestest.araskargo.com.tr/ArasCargoIntegrationService.svc?xsd=xsd1" filename="ArasCargoIntegrationService0.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="https://customerservicestest.araskargo.com.tr/ArasCargoIntegrationService.svc?xsd=xsd2" filename="ArasCargoIntegrationService1.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="https://customerservicestest.araskargo.com.tr/ArasCargoIntegrationService.svc?wsdl" filename="ArasCargoIntegrationService.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="https://customerservicestest.araskargo.com.tr/ArasCargoIntegrationService.svc?xsd=xsd0" filename="ArasCargoIntegrationService2.xsd" />
+  </Results>
+</DiscoveryClientResultsFile>

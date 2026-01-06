@@ -1,0 +1,1823 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>
+    </SchemaVersion>
+    <ProjectGuid>{FB6251CA-C4C2-4394-95A8-BFDEA20DEF35}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>WinTexDLL</RootNamespace>
+    <AssemblyName>WinTexDLL</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsFormsWithCustomSubMain</MyType>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <Prefer32Bit>false</Prefer32Bit>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <StartupObject>Sub Main</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ADODB, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\Program Files (x86)\Stimulsoft-2020-2-2\Reports.Net\.NETFramework4.5\ADODB.dll</HintPath>
+    </Reference>
+    <Reference Include="Devart.Data, Version=5.0.2120.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Program Files (x86)\Devart\dotConnect\PostgreSQL\Devart.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Devart.Data.PostgreSql, Version=7.12.1328.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Program Files (x86)\Devart\dotConnect\PostgreSQL\Devart.Data.PostgreSql.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.BonusSkins.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Charts.v21.1.Core, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.CodeParser.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Dashboard.v21.1.Core, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Dashboard.v21.1.Win, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Data.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Diagram.v21.1.Core, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.DataVisualization.v21.1.Core, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Docs.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.Win.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Images.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Map.v21.1.Core, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Pdf.v21.1.Core, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Persistent.Base.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v21.1.Core, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v21.1.Core, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Office.v21.1.Core, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v21.1.Core, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Snap.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Snap.v21.1.Core, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Snap.v21.1.Extensions, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Sparkline.v21.1.Core, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.SpellChecker.v21.1.Core, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Spreadsheet.v21.1.Core, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.TreeMap.v21.1.Core, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Data.Desktop.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v21.1.UI, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Xpo.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Xpo.v21.1.Extensions, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v21.1.Extensions, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v21.1.Wizard, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v21.1.UI, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraDiagram.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="DevExpress.Pdf.v21.1.Drawing, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraGauges.v21.1.Core, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraGauges.v21.1.Presets, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraGauges.v21.1.Win, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraMap.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraPdfViewer.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraPrinting.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraNavBar.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraPivotGrid.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v21.1.Export, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.DataAccess.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.DataAccess.v21.1.UI, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v21.1.Extensions, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v21.1.Service, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraScheduler.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraScheduler.v21.1.Core.Desktop, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraScheduler.v21.1.Core, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraScheduler.v21.1.Extensions, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraScheduler.v21.1.Reporting, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraScheduler.v21.1.Reporting.Extensions, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraSpellChecker.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraSpreadsheet.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeMap.v21.1.UI, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeMap.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraVerticalGrid.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraWizard.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DirectShowLib-2005, Version=2.1.0.0, Culture=neutral, PublicKeyToken=67e7b740cdfc2d3f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DirectShowLib-2005.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>..\iTextSharp\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.pdfa">
+      <HintPath>..\iTextSharp\itextsharp.pdfa.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.xtra">
+      <HintPath>..\iTextSharp\itextsharp.xtra.dll</HintPath>
+    </Reference>
+    <Reference Include="LibExcel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Program Files (x86)\Stimulsoft-2020-2-2\Reports.Net\.NETFramework4.5\LibExcel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AnalysisServices.AdomdClient, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Program Files\Microsoft.NET\ADOMD.NET\160\Microsoft.AnalysisServices.AdomdClient.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.InteropFormTools">
+      <HintPath>..\Microsoft.InteropFormTools.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Outlook, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.OutlookViewCtl, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Tools.Outlook.v9.0, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Windows.Design.Extensibility, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Windows.Design.Interaction, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NuGet.Core, Version=1.6.30117.9648, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Stimulsoft2015-2\Net\NuGet.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Stimulsoft.Base, Version=2019.1.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Program Files (x86)\Stimulsoft-2020-2-2\Reports.Net\.NETFramework4.5\Stimulsoft.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Controls, Version=2019.1.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Program Files (x86)\Stimulsoft-2020-2-2\Reports.Net\.NETFramework4.5\Stimulsoft.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Controls.Win, Version=2019.1.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Program Files (x86)\Stimulsoft-2020-2-2\Reports.Net\.NETFramework4.5\Stimulsoft.Controls.Win.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Dashboard, Version=2019.1.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Program Files (x86)\Stimulsoft-2020-2-2\Dashboards.WIN\.NETFramework4.5\Stimulsoft.Dashboard.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Dashboard.Design, Version=2019.1.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Program Files (x86)\Stimulsoft-2020-2-2\Dashboards.WIN\.NETFramework4.5\Stimulsoft.Dashboard.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Dashboard.Drawing, Version=2019.1.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Program Files (x86)\Stimulsoft-2020-2-2\Dashboards.WIN\.NETFramework4.5\Stimulsoft.Dashboard.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Dashboard.Export, Version=2019.1.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Program Files (x86)\Stimulsoft-2020-2-2\Dashboards.WIN\.NETFramework4.5\Stimulsoft.Dashboard.Export.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Dashboard.Viewer, Version=2019.1.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Program Files (x86)\Stimulsoft-2020-2-2\Dashboards.WIN\.NETFramework4.5\Stimulsoft.Dashboard.Viewer.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Data, Version=2019.1.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Program Files (x86)\Stimulsoft-2020-2-2\Reports.Net\.NETFramework4.5\Stimulsoft.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Database, Version=2019.1.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Program Files (x86)\Stimulsoft-2020-2-2\Reports.Net\.NETFramework4.5\Stimulsoft.Database.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Design, Version=2019.1.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Program Files (x86)\Stimulsoft-2020-2-2\Reports.Net\.NETFramework4.5\Stimulsoft.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Editor, Version=2019.1.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Program Files (x86)\Stimulsoft-2020-2-2\Reports.Net\.NETFramework4.5\Stimulsoft.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Map, Version=2019.1.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Program Files (x86)\Stimulsoft-2020-2-2\Reports.Net\.NETFramework4.5\Stimulsoft.Map.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Report, Version=2019.1.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Program Files (x86)\Stimulsoft-2020-2-2\Reports.Net\.NETFramework4.5\Stimulsoft.Report.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Report.Check, Version=2019.1.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Program Files (x86)\Stimulsoft-2020-2-2\Reports.Net\.NETFramework4.5\Stimulsoft.Report.Check.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Report.Design, Version=2019.1.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Program Files (x86)\Stimulsoft-2020-2-2\Reports.Net\.NETFramework4.5\Stimulsoft.Report.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Report.Helper, Version=2019.1.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Program Files (x86)\Stimulsoft-2020-2-2\Reports.Net\.NETFramework4.5\Stimulsoft.Report.Helper.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Report.Web, Version=2019.1.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Program Files (x86)\Stimulsoft-2020-2-2\Reports.Net\.NETFramework4.5\Stimulsoft.Report.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Report.Win, Version=2019.1.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Program Files (x86)\Stimulsoft-2020-2-2\Reports.Net\.NETFramework4.5\Stimulsoft.Report.Win.dll</HintPath>
+    </Reference>
+    <Reference Include="Svg, Version=2.2.1.39233, Culture=neutral, PublicKeyToken=12a0bac221edeae2, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Program Files (x86)\Stimulsoft-2020-2-2\Reports.Net\.NETFramework4.5\Svg.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Data.OracleClient">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Deployment">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Design">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Drawing.Design">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.EnterpriseServices">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Web">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Web.Services">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xaml">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="WindowsBase">
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Net" />
+    <Import Include="System.Net.Mail" />
+    <Import Include="System.Web" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="forms\AboutBoxWinTex.Designer.vb">
+      <DependentUpon>AboutBoxWinTex.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\AboutBoxWinTex.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\DevXReportDesigner.Designer.vb">
+      <DependentUpon>DevXReportDesigner.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\DevXReportDesigner.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\DevXReportViewer.Designer.vb">
+      <DependentUpon>DevXReportViewer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\DevXReportViewer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmAddCamera.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\AdvancedEditor.Designer.vb">
+      <DependentUpon>AdvancedEditor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\AdvancedEditor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\AdvancedPicture.Designer.vb">
+      <DependentUpon>AdvancedPicture.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\AdvancedPicture.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmBrowse.Designer.vb">
+      <DependentUpon>frmBrowse.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmBrowse.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmBulDegistir.Designer.vb">
+      <DependentUpon>frmBulDegistir.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmBulDegistir.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmCameraConfiguration.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\DevXReports.Designer.vb">
+      <DependentUpon>DevXReports.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\DevXReports.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmCrsSoft.designer.vb">
+      <DependentUpon>frmCrsSoft.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmCrsSoft.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmDashboardDesigner.Designer.vb">
+      <DependentUpon>frmDashboardDesigner.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmDashboardDesigner.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmDoviz.Designer.vb">
+      <DependentUpon>frmDoviz.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmDoviz.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmDragDrop.Designer.vb">
+      <DependentUpon>frmDragDrop.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmDragDrop.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmEliar.Designer.vb">
+      <DependentUpon>frmEliar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmEliar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmGant4.Designer.vb">
+      <DependentUpon>frmGant4.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmGant4.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmGetDevXReport.Designer.vb">
+      <DependentUpon>frmGetDevXReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmGetDevXReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmGetString.Designer.vb">
+      <DependentUpon>frmGetString.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmGetString.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmLanguage.Designer.vb">
+      <DependentUpon>frmLanguage.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmLanguage.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmLuxand.Designer.vb">
+      <DependentUpon>frmLuxand.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmLuxand.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmMap.Designer.vb">
+      <DependentUpon>frmMap.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmMap.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmPDFViewer.Designer.vb">
+      <DependentUpon>frmPDFViewer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmPDFViewer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmRPAParameters.Designer.vb">
+      <DependentUpon>frmRPAParameters.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmRPAParameters.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmSipPictures.Designer.vb">
+      <DependentUpon>frmSipPictures.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmSipPictures.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmSpreadSheet.Designer.vb">
+      <DependentUpon>frmSpreadSheet.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmSpreadSheet.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmStatus.Designer.vb">
+      <DependentUpon>frmStatus.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmStatus.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmSTIDashboardViewer.Designer.vb">
+      <DependentUpon>frmSTIDashboardViewer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmSTIDashboardViewer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmStyleShoots.Designer.vb">
+      <DependentUpon>frmStyleShoots.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmStyleShoots.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmSysPar.Designer.vb">
+      <DependentUpon>frmSysPar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmSysPar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmUyumParameters.Designer.vb">
+      <DependentUpon>frmUyumParameters.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmUyumParameters.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\GridReport.Designer.vb">
+      <DependentUpon>GridReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\GridReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\ReportDesigner.Designer.vb">
+      <DependentUpon>ReportDesigner.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\ReportDesigner.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\ReportViewer.Designer.vb">
+      <DependentUpon>ReportViewer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\ReportViewer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\TestWinTexDLL.Designer.vb">
+      <DependentUpon>TestWinTexDLL.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\TestWinTexDLL.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmDashboardViewer.Designer.vb">
+      <DependentUpon>frmDashboardViewer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmDashboardViewer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RESX\PrintRibbonControllerResources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PrintRibbonControllerResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\DespatchConnect\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceRefAbit\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="TESDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TESDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="util\eDokSisIrsaliye.vb" />
+    <Compile Include="util\eIrsaliye.vb" />
+    <Compile Include="util\Grid.vb" />
+    <Compile Include="util\NetworkConnection.vb" />
+    <Compile Include="util\ParkIrsaliye.vb" />
+    <Compile Include="util\PostgreClass.vb" />
+    <Compile Include="util\SQLServerClass.vb" />
+    <Compile Include="util\StiReportDesign.vb" />
+    <Compile Include="util\StiReportView.vb" />
+    <Compile Include="util\TurkKEPeIrsaliye.vb" />
+    <Compile Include="util\UtilAbit.vb" />
+    <Compile Include="util\UtilCamera.vb" />
+    <Compile Include="forms\frmCaptureVideo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\SpreadReport.Designer.vb">
+      <DependentUpon>SpreadReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\SpreadReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="util\HTMain.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="util\utilData.vb" />
+    <Compile Include="util\UtilDXGrid.vb" />
+    <Compile Include="util\utilEliar.vb" />
+    <Compile Include="util\utilftp.vb" />
+    <Compile Include="util\UtilKur.vb" />
+    <Compile Include="util\UtilLogFile.vb" />
+    <Compile Include="util\UtilLogo.vb" />
+    <Compile Include="util\utilMSTranslator.vb" />
+    <Compile Include="util\UtilRegistry.vb" />
+    <Compile Include="util\UtilRoot.vb" />
+    <Compile Include="util\utilRPA.vb" />
+    <Compile Include="util\UtilSQL.vb" />
+    <Compile Include="util\utilSReports.vb" />
+    <Compile Include="RESX\XRDesignRibbonControllerResources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>XRDesignRibbonControllerResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="util\utileIrsaliye.vb" />
+    <Compile Include="util\utilStyleShoots.vb" />
+    <Compile Include="util\UtilUyumsoft.vb" />
+    <Compile Include="util\UtilUyumsoftBOM.vb" />
+    <Compile Include="util\UtilUyumsoftCari.vb" />
+    <Compile Include="util\UtilUyumsoftSatinalmaSiparis.vb" />
+    <Compile Include="util\UtilUyumsoftSiparis.vb" />
+    <Compile Include="util\UtilUyumsoftStok.vb" />
+    <Compile Include="util\UtilUyumsoftStokFis.vb" />
+    <Compile Include="util\UtilUyumsoftStokFisindenSatisSiparisi.vb" />
+    <Compile Include="util\UtilUyumsoftUretim.vb" />
+    <Compile Include="util\UtilUyumsoftUretimIsEmri.vb" />
+    <Compile Include="Web References\GeneralB2B\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\net.edoksis.efaturatest\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\tr.com.parkentegrasyon.wstest\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\tr.com.turkkep.efinttestws\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\UyumErogluProduction\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\UyumsoftGeneralSenfoniService\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\UyumsoftGetWEBService\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\UyumsoftSaveWebService\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\UyumWebService\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="forms\AboutBoxWinTex.resx">
+      <DependentUpon>AboutBoxWinTex.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\DevXReportDesigner.resx">
+      <DependentUpon>DevXReportDesigner.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\DevXReportDesigner.tr-TR.resx">
+      <DependentUpon>DevXReportDesigner.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\DevXReportDesigner.tr.resx">
+      <DependentUpon>DevXReportDesigner.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\DevXReportViewer.resx">
+      <DependentUpon>DevXReportViewer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\DevXReportViewer.tr.resx">
+      <DependentUpon>DevXReportViewer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmAddCamera.resx">
+      <DependentUpon>frmAddCamera.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\AdvancedEditor.resx">
+      <DependentUpon>AdvancedEditor.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\AdvancedPicture.resx">
+      <DependentUpon>AdvancedPicture.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmBrowse.resx">
+      <DependentUpon>frmBrowse.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmBulDegistir.resx">
+      <DependentUpon>frmBulDegistir.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmCameraConfiguration.resx">
+      <DependentUpon>frmCameraConfiguration.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\DevXReports.resx">
+      <DependentUpon>DevXReports.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmCrsSoft.resx">
+      <DependentUpon>frmCrsSoft.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmDashboardDesigner.resx">
+      <DependentUpon>frmDashboardDesigner.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmDoviz.resx">
+      <DependentUpon>frmDoviz.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmDragDrop.resx">
+      <DependentUpon>frmDragDrop.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmEliar.resx">
+      <DependentUpon>frmEliar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmGant4.resx">
+      <DependentUpon>frmGant4.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmGetDevXReport.resx">
+      <DependentUpon>frmGetDevXReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmGetString.resx">
+      <DependentUpon>frmGetString.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmLanguage.resx">
+      <DependentUpon>frmLanguage.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmLuxand.resx">
+      <DependentUpon>frmLuxand.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmMap.resx">
+      <DependentUpon>frmMap.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmPDFViewer.resx">
+      <DependentUpon>frmPDFViewer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmRPAParameters.resx">
+      <DependentUpon>frmRPAParameters.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmSipPictures.resx">
+      <DependentUpon>frmSipPictures.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmSpreadSheet.resx">
+      <DependentUpon>frmSpreadSheet.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmStatus.resx">
+      <DependentUpon>frmStatus.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmSTIDashboardViewer.resx">
+      <DependentUpon>frmSTIDashboardViewer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmStyleShoots.resx">
+      <DependentUpon>frmStyleShoots.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmSysPar.resx">
+      <DependentUpon>frmSysPar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmUyumParameters.resx">
+      <DependentUpon>frmUyumParameters.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\GridReport.resx">
+      <DependentUpon>GridReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmCaptureVideo.resx">
+      <DependentUpon>frmCaptureVideo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\ReportDesigner.resx">
+      <DependentUpon>ReportDesigner.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\ReportViewer.resx">
+      <DependentUpon>ReportViewer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\SpreadReport.resx">
+      <DependentUpon>SpreadReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\TestWinTexDLL.resx">
+      <DependentUpon>TestWinTexDLL.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmDashboardViewer.resx">
+      <DependentUpon>frmDashboardViewer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RESX\PrintRibbonControllerResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>PrintRibbonControllerResources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RESX\XRDesignRibbonControllerResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>XRDesignRibbonControllerResources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\DataSources\System.Data.DataSet.datasource" />
+    <None Include="My Project\DataSources\System.Data.DataTable.datasource" />
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Service References\DespatchConnect\DespatchIntegration.wsdl" />
+    <None Include="Service References\DespatchConnect\DespatchIntegration.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DespatchConnect\DespatchIntegration1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DespatchConnect\DespatchIntegration2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DespatchConnect\DespatchIntegration3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DespatchConnect\DespatchIntegration4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DespatchConnect\DespatchIntegration5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DespatchConnect\DespatchIntegration6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DespatchConnect\DespatchIntegration7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DespatchConnect\DespatchIntegration8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DespatchConnect\DespatchIntegration9.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DespatchConnect\WinTexDLL.DespatchConnect.ClonedDespatchServiceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DespatchConnect\WinTexDLL.DespatchConnect.DateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DespatchConnect\WinTexDLL.DespatchConnect.DespatchesDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DespatchConnect\WinTexDLL.DespatchConnect.DespatchesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DespatchConnect\WinTexDLL.DespatchConnect.DespatchIdentitiesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DespatchConnect\WinTexDLL.DespatchConnect.DespatchResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DespatchConnect\WinTexDLL.DespatchConnect.DespatchStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DespatchConnect\WinTexDLL.DespatchConnect.DespatchStatusWithLogResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DespatchConnect\WinTexDLL.DespatchConnect.DespatchViewResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DespatchConnect\WinTexDLL.DespatchConnect.FlagResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DespatchConnect\WinTexDLL.DespatchConnect.InboxDespatchListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DespatchConnect\WinTexDLL.DespatchConnect.InboxReceiptAdviceDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DespatchConnect\WinTexDLL.DespatchConnect.InboxReceiptAdviceListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DespatchConnect\WinTexDLL.DespatchConnect.InboxReceiptAdvicesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DespatchConnect\WinTexDLL.DespatchConnect.OutboxDespatchListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DespatchConnect\WinTexDLL.DespatchConnect.PdfDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DespatchConnect\WinTexDLL.DespatchConnect.ReceiptAdviceIdentitiesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DespatchConnect\WinTexDLL.DespatchConnect.ReceiptAdviceStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DespatchConnect\WinTexDLL.DespatchConnect.Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DespatchConnect\WinTexDLL.DespatchConnect.StringResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DespatchConnect\WinTexDLL.DespatchConnect.SystemUsersResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DespatchConnect\WinTexDLL.DespatchConnect.UserAliassesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceRefAbit\AbitWsdl.wsdl">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceRefAbit\WinTexDLL.ServiceRefAbit.WebServisResultTypeOfBeyanname.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceRefAbit\WinTexDLL.ServiceRefAbit.WebServisResultTypeOfGelen1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceRefAbit\WinTexDLL.ServiceRefAbit.WebServisResultTypeOfIntacBilgisi1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceRefAbit\WinTexDLL.ServiceRefAbit.WebServisResultTypeOfIntacBilgisiKalemBazinda1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceRefAbit\WinTexDLL.ServiceRefAbit.WebServisResultTypeOfListBeyanname.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="TESDataSet.xsc">
+      <DependentUpon>TESDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="TESDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TESDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TESDataSet.xss">
+      <DependentUpon>TESDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Web References\GeneralB2B\B2BBank.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\GeneralB2B\B2BBankInstallment.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\GeneralB2B\B2BBankMember.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\GeneralB2B\B2BIdCodeDesc.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\GeneralB2B\B2BItemList.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\GeneralB2B\B2bMessage.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\GeneralB2B\GeneralB2BService.wsdl" />
+    <None Include="Web References\GeneralB2B\PriceResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\GeneralB2B\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Web References\GeneralB2B\ResultInfo.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\GeneralB2B\UserInfo.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\net.edoksis.efaturatest\GelenIrsaliyeListelemeUBLTRCikti.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\net.edoksis.efaturatest\GelenIrsaliyeListelemeYapisalCikti.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\net.edoksis.efaturatest\GelenIrsaliyeYanitiListelemeCikti.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\net.edoksis.efaturatest\GelenIrsaliyeYanitiListelemeUBLCikti.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\net.edoksis.efaturatest\IrsaliyeAlindiCikti.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\net.edoksis.efaturatest\IrsaliyeFiiliRedCikti.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\net.edoksis.efaturatest\IrsaliyeFirmalariCikti.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\net.edoksis.efaturatest\IrsaliyeFirmalariCiktiHistory.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\net.edoksis.efaturatest\IrsaliyeGoruntulemeCikti.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\net.edoksis.efaturatest\IrsaliyeIndirCikti.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\net.edoksis.efaturatest\IrsaliyeOnayCikti.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\net.edoksis.efaturatest\IrsaliyeSorgulamaCikti.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\net.edoksis.efaturatest\IrsaliyeStatuSorgulamaCikti.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\net.edoksis.efaturatest\IrsaliyeTekrarGonderCikti.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\net.edoksis.efaturatest\IrsaliyeUygulamaYanitiAlindiCikti.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\net.edoksis.efaturatest\IrsaliyeUygulamaYanitiListelemeCikti.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\net.edoksis.efaturatest\IrsaliyeUygulamaYanitiListelemeUBLCikti.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\net.edoksis.efaturatest\IrsaliyeWebService.wsdl" />
+    <None Include="Web References\net.edoksis.efaturatest\IrsaliyeYanitiAlindiCikti.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\net.edoksis.efaturatest\IrsaliyeYanitiCikti.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\net.edoksis.efaturatest\IrsaliyeYanitiUBLCikti.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\net.edoksis.efaturatest\IrsaliyeZarfGonderUBLTRCikti.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\net.edoksis.efaturatest\IrsaliyeZarfGonderYapisalCikti.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\net.edoksis.efaturatest\IrsaliyeZarfOnizlemeCikti.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\net.edoksis.efaturatest\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Web References\tr.com.parkentegrasyon.wstest\CancelDraftInvoiceResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\tr.com.parkentegrasyon.wstest\CreditNoteSummary.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\tr.com.parkentegrasyon.wstest\DespatchSummary.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\tr.com.parkentegrasyon.wstest\DisaridanYuklenenBelge.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\tr.com.parkentegrasyon.wstest\EFaturaIntegration.wsdl" />
+    <None Include="Web References\tr.com.parkentegrasyon.wstest\GIBUSER.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\tr.com.parkentegrasyon.wstest\GtbResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\tr.com.parkentegrasyon.wstest\InvoiceResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\tr.com.parkentegrasyon.wstest\InvoiceSummary.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\tr.com.parkentegrasyon.wstest\KontorSorgulamaResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\tr.com.parkentegrasyon.wstest\LoginRes.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\tr.com.parkentegrasyon.wstest\ParkInvoiceStatusRes.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\tr.com.parkentegrasyon.wstest\PARKInvoiceType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\tr.com.parkentegrasyon.wstest\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Web References\tr.com.parkentegrasyon.wstest\SendInvoiceResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\tr.com.parkentegrasyon.wstest\Stylefiles.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\tr.com.parkentegrasyon.wstest\TurmobSorgulamaClass.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\tr.com.turkkep.efinttestws\CreditReturnType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\tr.com.turkkep.efinttestws\CrmInvoice.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\tr.com.turkkep.efinttestws\DespatchInvoice.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\tr.com.turkkep.efinttestws\DespatchInvoiceListReturnType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\tr.com.turkkep.efinttestws\DespatchInvoiceReturnType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\tr.com.turkkep.efinttestws\EFaturaEntegrasyon2.wsdl" />
+    <None Include="Web References\tr.com.turkkep.efinttestws\EntResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\tr.com.turkkep.efinttestws\Invoice.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\tr.com.turkkep.efinttestws\InvoiceExportByPercent.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\tr.com.turkkep.efinttestws\InvoiceListReturnType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\tr.com.turkkep.efinttestws\InvoiceNumberReturnType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\tr.com.turkkep.efinttestws\InvoiceReturnType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\tr.com.turkkep.efinttestws\InvoiceReturnTypeMainOrganization.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\tr.com.turkkep.efinttestws\OkcRaporReturnType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\tr.com.turkkep.efinttestws\pdfHtmlReturnType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\tr.com.turkkep.efinttestws\pdfReturnType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\tr.com.turkkep.efinttestws\PostalCode.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\tr.com.turkkep.efinttestws\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Web References\tr.com.turkkep.efinttestws\RegisteredParty.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\tr.com.turkkep.efinttestws\SendDespatchInvoiceReturnType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\tr.com.turkkep.efinttestws\SendDespatchMainOrgReturnType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\tr.com.turkkep.efinttestws\SendInvoiceReturnType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\UyumErogluProduction\ErogluProduction.wsdl" />
+    <None Include="Web References\UyumErogluProduction\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Web References\UyumErogluProduction\ServiceResultOfBoolean.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\UyumErogluProduction\ServiceResultOfInt32.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\UyumsoftGeneralSenfoniService\GeneralSenfoniService.wsdl" />
+    <None Include="Web References\UyumsoftGeneralSenfoniService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Web References\UyumsoftGeneralSenfoniService\ServiceResultOfBoolean.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\UyumsoftGeneralSenfoniService\ServiceResultOfListOfFieldPermissionSetup.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\UyumsoftGeneralSenfoniService\ServiceResultOfListOfInt32.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\UyumsoftGeneralSenfoniService\ServiceResultOfListOfServiceWaybillInfoForTnt.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\UyumsoftGetWEBService\ItemImageClass.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\UyumsoftGetWEBService\MobServiceResultOfListOfMobBwhItemD.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\UyumsoftGetWEBService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Web References\UyumsoftGetWEBService\ServiceResultOfArrayOfByte.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\UyumsoftGetWEBService\ServiceResultOfBoolean.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\UyumsoftGetWEBService\ServiceResultOfDataSet.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\UyumsoftGetWEBService\ServiceResultOfListOfBaseClass.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\UyumsoftGetWEBService\ServiceResultOfListOfSrvItem.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\UyumsoftGetWEBService\ServiceResultOfString.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\UyumsoftGetWEBService\ServiceResultOfUserAliassesResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\UyumsoftGetWEBService\UyumGetWebService.wsdl" />
+    <None Include="Web References\UyumsoftGetWEBService\UyumServiceResponseOfDataTable.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\UyumsoftGetWEBService\UyumServiceResponseOfString.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\UyumsoftSaveWebService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Web References\UyumsoftSaveWebService\ServiceResultOfBoolean.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\UyumsoftSaveWebService\ServiceResultOfListOfInt32.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\UyumsoftSaveWebService\UyumSaveWebService.wsdl" />
+    <None Include="Web References\UyumsoftSaveWebService\UyumServiceResponseOfString.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\UyumWebService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Web References\UyumWebService\UyumServiceResponseOfBoolean.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\UyumWebService\UyumServiceResponseOfDataTable.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\UyumWebService\UyumServiceResponseOfInt32.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\UyumWebService\UyumServiceResponseOfString.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\UyumWebService\uyumwebservice.wsdl" />
+    <None Include="ZaraTemplate.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DirectX.Capture\DirectX.Capture.csproj">
+      <Project>{8C0015DB-69E1-46E7-8705-3A4F8BE2E5E7}</Project>
+      <Name>DirectX.Capture</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DShowNET\DShowNET.csproj">
+      <Project>{CE009BFA-5EF6-4153-B2A1-2FA79698A9AE}</Project>
+      <Name>DShowNET</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Luxand\FaceSDK.NET.csproj">
+      <Project>{b45ab02a-57c6-457f-96d7-156d31c4f654}</Project>
+      <Name>FaceSDK.NET</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\misc 04.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\photo 03.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\photo 17.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Aqua Glass Folders Icon 19.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Aqua Glass Folders Icon 20.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Documents &amp; Settings Folder.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\error.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\forbidden.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\photo 04.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Aqua Glass Folders Icon 191.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Aqua Glass Folders Icon 201.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\photo 07.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Aqua Glass Folders Icon 202.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Red light.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background.jpg" />
+    <None Include="Resources\background1.jpg" />
+    <Content Include="Resources\wintex.ico" />
+    <None Include="Service References\ServiceRefAbit\AbitWsdl.disco" />
+    <None Include="Service References\ServiceRefAbit\configuration91.svcinfo" />
+    <None Include="Service References\ServiceRefAbit\configuration.svcinfo" />
+    <None Include="Service References\ServiceRefAbit\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Web References\GeneralB2B\GeneralB2BService.disco" />
+    <None Include="Web References\UyumsoftGeneralSenfoniService\GeneralSenfoniService.disco" />
+    <None Include="Web References\UyumsoftGetWEBService\UyumGetWebService.disco" />
+    <None Include="Web References\UyumsoftSaveWebService\UyumSaveWebService.disco" />
+    <None Include="Web References\UyumErogluProduction\ErogluProduction.disco" />
+    <None Include="Web References\UyumWebService\uyumwebservice.disco" />
+    <None Include="Service References\DespatchConnect\DespatchIntegration.disco" />
+    <None Include="Service References\DespatchConnect\configuration91.svcinfo" />
+    <None Include="Service References\DespatchConnect\configuration.svcinfo" />
+    <None Include="Service References\DespatchConnect\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Web References\tr.com.turkkep.efinttestws\EFaturaEntegrasyon2.disco" />
+    <None Include="Web References\net.edoksis.efaturatest\IrsaliyeWebService.disco" />
+    <Content Include="Script1.sql" />
+    <None Include="Web References\tr.com.parkentegrasyon.wstest\EFaturaIntegration.disco" />
+    <Content Include="XML\ar.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="XML\be.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="XML\bg.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="XML\ca-ES.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="XML\cs.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="XML\de.ext.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="XML\de.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="XML\el-GR.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="XML\en-GB.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="XML\en.ext.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="XML\en.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="XML\es.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="XML\eu-ES.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="XML\fa.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="XML\fr.ext.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="XML\fr.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="XML\gl-ES.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="XML\hr.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="XML\hu.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="XML\id.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="XML\it.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="XML\ka.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="XML\Lt-sr-SP.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="XML\lt.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="XML\nb-NO.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="XML\nl.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="XML\pl.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="XML\pt-BR.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="XML\ro.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="XML\ru.ext.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="XML\ru.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="XML\sk.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="XML\sv.ext.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="XML\sv.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="XML\tr.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="XML\uk.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="XML\zh-CHS.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="XML\zh-CHT.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\DespatchConnect\" />
+    <WCFMetadataStorage Include="Service References\ServiceRefAbit\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://192.168.1.3/webservice/eroglu/ErogluProduction.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\UyumErogluProduction\</RelPath>
+      <UpdateFromURL>http://192.168.1.3/webservice/eroglu/ErogluProduction.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>WinTexDLL_UyumErogluProduction_ErogluProduction</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://192.168.1.3/WebService/B2B/GeneralB2BService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\GeneralB2B\</RelPath>
+      <UpdateFromURL>http://192.168.1.3/WebService/B2B/GeneralB2BService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>WinTexDLL_GeneralB2B_GeneralB2BService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://192.168.1.3/WebService/ERP/UyumGetWebService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\UyumsoftGetWEBService\</RelPath>
+      <UpdateFromURL>http://192.168.1.3/WebService/ERP/UyumGetWebService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>WinTexDLL_UyumsoftGetWEBService_UyumGetWebService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://192.168.1.3/WebService/ERP/UyumSaveWebService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\UyumsoftSaveWebService\</RelPath>
+      <UpdateFromURL>http://192.168.1.3/WebService/ERP/UyumSaveWebService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>WinTexDLL_UyumsoftSaveWebService_UyumSaveWebService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://192.168.1.3/WebService/General/GeneralSenfoniService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\UyumsoftGeneralSenfoniService\</RelPath>
+      <UpdateFromURL>http://192.168.1.3/WebService/General/GeneralSenfoniService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>WinTexDLL_UyumsoftGeneralSenfoniService_GeneralSenfoniService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://192.168.1.3/webservice/uyumwebservice.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\UyumWebService\</RelPath>
+      <UpdateFromURL>http://192.168.1.3/webservice/uyumwebservice.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>WinTexDLL_UyumWebService_UyumWebService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://efinttestws.turkkep.com.tr/EFaturaEntegrasyon2.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\tr.com.turkkep.efinttestws\</RelPath>
+      <UpdateFromURL>http://efinttestws.turkkep.com.tr/EFaturaEntegrasyon2.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>WinTexDLL_tr_com_turkkep_efinttestws_EFaturaEntegrasyon2</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://efaturatest.edoksis.net/IrsaliyeWebService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\net.edoksis.efaturatest\</RelPath>
+      <UpdateFromURL>https://efaturatest.edoksis.net/IrsaliyeWebService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>WinTexDLL_net_edoksis_efaturatest_IrsaliyeWebService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://wstest.parkentegrasyon.com.tr/EFaturaIntegration.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\tr.com.parkentegrasyon.wstest\</RelPath>
+      <UpdateFromURL>https://wstest.parkentegrasyon.com.tr/EFaturaIntegration.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>WinTexDLL_tr_com_parkentegrasyon_wstest_EFaturaIntegration</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

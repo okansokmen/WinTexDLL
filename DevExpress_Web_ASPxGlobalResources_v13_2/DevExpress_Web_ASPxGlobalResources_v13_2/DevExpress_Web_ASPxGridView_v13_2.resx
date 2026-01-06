@@ -1,0 +1,223 @@
+<?xml version="1.0"?><root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ASPxGridViewStringId.GroupPanel">
+    <value>Gruplamak için sütun başlığını buraya sürükleyin</value>
+  </data>
+  <data name="ASPxGridViewStringId.EmptyDataRow">
+    <value>Gösterilecek veri yok</value>
+  </data>
+  <data name="ASPxGridViewStringId.EmptyHeaders">
+    <value>Sütunü buraya sürükleyin...</value>
+  </data>
+  <data name="ASPxGridViewStringId.ConfirmDelete">
+    <value>Silme işlemini onaylayın!</value>
+  </data>
+  <data name="ASPxGridViewStringId.ConfirmOnLosingBatchChanges">
+    <value>Geçerli eylemi gerçekleştirmek istediğinizden emin misiniz? Kaydedilmemiş tüm veriler kaybolur.</value>
+  </data>
+  <data name="ASPxGridViewStringId.GroupContinuedOnNextPage">
+    <value>(Diğer sayfada devam ediyor...)</value>
+  </data>
+  <data name="ASPxGridViewStringId.CustomizationWindowCaption">
+    <value>Alan Seçici</value>
+  </data>
+  <data name="ASPxGridViewStringId.PopupEditFormCaption">
+    <value>Düzenleme Formu</value>
+  </data>
+  <data name="ASPxGridViewStringId.HeaderFilterShowAllItem">
+    <value>(Tümü)</value>
+  </data>
+  <data name="ASPxGridViewStringId.HeaderFilterShowBlanksItem">
+    <value>(Boş olanlar)</value>
+  </data>
+  <data name="ASPxGridViewStringId.HeaderFilterShowNonBlanksItem">
+    <value>(Boş olmayanlar)</value>
+  </data>
+  <data name="ASPxGridViewStringId.HeaderFilterSelectAll">
+    <value>(Tümünü Seç)</value>
+  </data>
+  <data name="ASPxGridViewStringId.HeaderFilterOkButton">
+    <value>Tamam</value>
+  </data>
+  <data name="ASPxGridViewStringId.HeaderFilterCancelButton">
+    <value>İptal</value>
+  </data>
+  <data name="ASPxGridViewStringId.CommandEdit">
+    <value>Düzenle</value>
+  </data>
+  <data name="ASPxGridViewStringId.CommandNew">
+    <value>Yeni</value>
+  </data>
+  <data name="ASPxGridViewStringId.CommandDelete">
+    <value>Sil</value>
+  </data>
+  <data name="ASPxGridViewStringId.CommandSelect">
+    <value>Seç</value>
+  </data>
+  <data name="ASPxGridViewStringId.CommandCancel">
+    <value>İptal</value>
+  </data>
+  <data name="ASPxGridViewStringId.CommandUpdate">
+    <value>Güncelle</value>
+  </data>
+  <data name="ASPxGridViewStringId.CommandClearFilter">
+    <value>Temizle</value>
+  </data>
+  <data name="ASPxGridViewStringId.CommandApplyFilter">
+    <value>Uygula</value>
+  </data>
+  <data name="ASPxGridViewStringId.CommandBatchEditUpdate">
+    <value>Değişiklikleri kaydet</value>
+  </data>
+  <data name="ASPxGridViewStringId.CommandBatchEditCancel">
+    <value>Değişiklikleri iptal et</value>
+  </data>
+  <data name="ASPxGridViewStringId.AutoFilterBeginsWith">
+    <value>İle başlar</value>
+  </data>
+  <data name="ASPxGridViewStringId.AutoFilterContains">
+    <value>İçerir</value>
+  </data>
+  <data name="ASPxGridViewStringId.AutoFilterDoesNotContain">
+    <value>İçermez</value>
+  </data>
+  <data name="ASPxGridViewStringId.AutoFilterEndsWith">
+    <value>İle biter</value>
+  </data>
+  <data name="ASPxGridViewStringId.AutoFilterEquals">
+    <value>Eşit</value>
+  </data>
+  <data name="ASPxGridViewStringId.AutoFilterGreater">
+    <value>Büyük</value>
+  </data>
+  <data name="ASPxGridViewStringId.AutoFilterGreaterOrEqual">
+    <value>Büyük veya eşit</value>
+  </data>
+  <data name="ASPxGridViewStringId.AutoFilterLess">
+    <value>Küçük</value>
+  </data>
+  <data name="ASPxGridViewStringId.AutoFilterLessOrEqual">
+    <value>Küçük veya eşit</value>
+  </data>
+  <data name="ASPxGridViewStringId.AutoFilterNotEqual">
+    <value>Eşit değil</value>
+  </data>
+  <data name="ASPxGridViewStringId.AutoFilterLike">
+    <value>Benzer ('%', '_')</value>
+  </data>
+  <data name="ASPxGridViewStringId.AutoFilterLikeToolTip">
+    <value>Sadece iki özel karakter desteklenir:
+ '%' işareti sıfır veya daha fazla sayıda karakter eşleşmesi için,
+ '_' işareti tek karakter için kullanılır.</value>
+  </data>
+  <data name="ASPxGridViewStringId.Alt_HeaderFilterButton" xml:space="preserve">
+    <value>[Filtre]</value>
+  </data>
+  <data name="ASPxGridViewStringId.Alt_HeaderFilterButton">
+    <value>[Filtre]</value>
+  </data>
+  <data name="ASPxGridViewStringId.Alt_HeaderFilterButtonActive">
+    <value>[Filtrelenmiş]</value>
+  </data>
+  <data name="ASPxGridViewStringId.Alt_SortedAscending">
+    <value>(A'dan Z'ye)</value>
+  </data>
+  <data name="ASPxGridViewStringId.Alt_SortedDescending">
+    <value>(Z'den A'ya)</value>
+  </data>
+  <data name="ASPxGridViewStringId.Alt_DragAndDropHideColumnIcon">
+    <value>Gizle</value>
+  </data>
+  <data name="ASPxGridViewStringId.Alt_Expand">
+    <value>[Genişlet]</value>
+  </data>
+  <data name="ASPxGridViewStringId.Alt_Collapse">
+    <value>[Daralt]</value>
+  </data>
+  <data name="ASPxGridViewStringId.Alt_FilterRowButton">
+    <value>[Koşul]</value>
+  </data>
+  <data name="ASPxGridViewStringId.Outlook_Older">
+    <value>Eski</value>
+  </data>
+  <data name="ASPxGridViewStringId.Outlook_LastMonth">
+    <value>Son Ay</value>
+  </data>
+  <data name="ASPxGridViewStringId.Outlook_EarlierThisMonth">
+    <value>Bu Aydan Önce</value>
+  </data>
+  <data name="ASPxGridViewStringId.Outlook_ThreeWeeksAgo">
+    <value>Üç Hafta Önce</value>
+  </data>
+  <data name="ASPxGridViewStringId.Outlook_TwoWeeksAgo">
+    <value>İki Hafta Önce</value>
+  </data>
+  <data name="ASPxGridViewStringId.Outlook_LastWeek">
+    <value>Son Hafta</value>
+  </data>
+  <data name="ASPxGridViewStringId.Outlook_Yesterday">
+    <value>Dün</value>
+  </data>
+  <data name="ASPxGridViewStringId.Outlook_Today">
+    <value>Bugün</value>
+  </data>
+  <data name="ASPxGridViewStringId.Outlook_Tomorrow">
+    <value>Yarın</value>
+  </data>
+  <data name="ASPxGridViewStringId.Outlook_NextWeek">
+    <value>Sonraki Hafta</value>
+  </data>
+  <data name="ASPxGridViewStringId.Outlook_TwoWeeksAway">
+    <value>İki Hafta Sonra</value>
+  </data>
+  <data name="ASPxGridViewStringId.Outlook_ThreeWeeksAway">
+    <value>Üç Hafta Sonra</value>
+  </data>
+  <data name="ASPxGridViewStringId.Outlook_LaterThisMonth">
+    <value>Bu Aydan Sonra</value>
+  </data>
+  <data name="ASPxGridViewStringId.Outlook_NextMonth">
+    <value>Sonraki Ay</value>
+  </data>
+  <data name="ASPxGridViewStringId.Outlook_BeyondNextMonth">
+    <value>Sonraki Aydan Sonra</value>
+  </data>
+  <data name="ASPxGridViewStringId.Summary_Sum">
+    <value>Toplam={0}</value>
+  </data>
+  <data name="ASPxGridViewStringId.Summary_Sum_OtherColumn">
+    <value>Toplam {1}/{0}</value>
+  </data>
+  <data name="ASPxGridViewStringId.Summary_Min">
+    <value>Min={0}</value>
+  </data>
+  <data name="ASPxGridViewStringId.Summary_Min_OtherColumn">
+    <value>Min {1}/{0}</value>
+  </data>
+  <data name="ASPxGridViewStringId.Summary_Max">
+    <value>Max={0}</value>
+  </data>
+  <data name="ASPxGridViewStringId.Summary_Max_OtherColumn">
+    <value>Max {1}/{0}</value>
+  </data>
+  <data name="ASPxGridViewStringId.Summary_Average">
+    <value>Ortalama={0}</value>
+  </data>
+  <data name="ASPxGridViewStringId.Summary_Average_OtherColumn">
+    <value>Ortalama {1}/{0}</value>
+  </data>
+  <data name="ASPxGridViewStringId.Summary_Count">
+    <value>Sayı={0}</value>
+  </data>
+</root>

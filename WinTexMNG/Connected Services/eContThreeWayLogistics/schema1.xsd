@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:tns="http://ee.econt.com/services/ThreeWayLogistics" elementFormDefault="qualified" targetNamespace="http://ee.econt.com/services/ThreeWayLogistics" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />

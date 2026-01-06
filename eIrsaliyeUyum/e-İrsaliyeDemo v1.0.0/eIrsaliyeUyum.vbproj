@@ -1,0 +1,299 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0F7C18D6-D1D6-4482-AD57-20C8C4AE1E6E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>eIrsaliyeUyum</RootNamespace>
+    <AssemblyName>eIrsaliyeUyum</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>Off</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <RemoveIntegerChecks>true</RemoveIntegerChecks>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <RemoveIntegerChecks>true</RemoveIntegerChecks>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <MyType>Windows</MyType>
+  </PropertyGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Threading.Tasks" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClientConnection.vb" />
+    <Compile Include="DespatchTasks.vb" />
+    <Compile Include="Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmInfo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmInfo.Designer.vb">
+      <DependentUpon>FrmInfo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmUyumSettings.Designer.vb">
+      <DependentUpon>FrmUyumSettings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmUyumSettings.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmViewer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmViewer.Designer.vb">
+      <DependentUpon>FrmViewer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MethodParameters.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MethodParameters.Designer.vb">
+      <DependentUpon>MethodParameters.vb</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="Service References\DespatchConnect\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="AppSettings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>AppSettings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="SQLServerClass.vb" />
+    <Compile Include="UIMain.vb" />
+    <Compile Include="UtilLogFile.vb" />
+    <Compile Include="UtilRoot.vb" />
+    <Compile Include="UtilSQL.vb" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmInfo.resx">
+      <DependentUpon>FrmInfo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmUyumSettings.resx">
+      <DependentUpon>FrmUyumSettings.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmViewer.resx">
+      <DependentUpon>FrmViewer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MethodParameters.resx">
+      <DependentUpon>MethodParameters.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My</CustomToolNamespace>
+    </None>
+    <None Include="Service References\DespatchConnect\DespatchIntegration.wsdl" />
+    <None Include="Service References\DespatchConnect\DespatchIntegration1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DespatchConnect\DespatchIntegration11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DespatchConnect\DespatchIntegration12.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DespatchConnect\DespatchIntegration13.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DespatchConnect\DespatchIntegration14.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DespatchConnect\DespatchIntegration15.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DespatchConnect\DespatchIntegration16.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DespatchConnect\DespatchIntegration17.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DespatchConnect\DespatchIntegration18.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DespatchConnect\DespatchIntegration19.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AppSettings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>AppSettings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\DespatchConnect\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DespatchConnect\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DespatchConnect\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DespatchConnect\eIrsaliyeUyum.DespatchConnect.ClonedDespatchServiceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DespatchConnect\eIrsaliyeUyum.DespatchConnect.DateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DespatchConnect\eIrsaliyeUyum.DespatchConnect.DespatchesDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DespatchConnect\eIrsaliyeUyum.DespatchConnect.DespatchesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DespatchConnect\eIrsaliyeUyum.DespatchConnect.DespatchIdentitiesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DespatchConnect\eIrsaliyeUyum.DespatchConnect.DespatchResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DespatchConnect\eIrsaliyeUyum.DespatchConnect.DespatchStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DespatchConnect\eIrsaliyeUyum.DespatchConnect.DespatchStatusWithLogResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DespatchConnect\eIrsaliyeUyum.DespatchConnect.DespatchViewResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DespatchConnect\eIrsaliyeUyum.DespatchConnect.FlagResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DespatchConnect\eIrsaliyeUyum.DespatchConnect.InboxDespatchListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DespatchConnect\eIrsaliyeUyum.DespatchConnect.InboxReceiptAdviceDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DespatchConnect\eIrsaliyeUyum.DespatchConnect.InboxReceiptAdviceListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DespatchConnect\eIrsaliyeUyum.DespatchConnect.InboxReceiptAdvicesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DespatchConnect\eIrsaliyeUyum.DespatchConnect.OutboxDespatchListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DespatchConnect\eIrsaliyeUyum.DespatchConnect.PdfDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DespatchConnect\eIrsaliyeUyum.DespatchConnect.ReceiptAdviceIdentitiesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DespatchConnect\eIrsaliyeUyum.DespatchConnect.ReceiptAdviceStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DespatchConnect\eIrsaliyeUyum.DespatchConnect.Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DespatchConnect\eIrsaliyeUyum.DespatchConnect.StringResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DespatchConnect\eIrsaliyeUyum.DespatchConnect.SystemUsersResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DespatchConnect\eIrsaliyeUyum.DespatchConnect.UserAliassesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DespatchConnect\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DespatchConnect\DespatchIntegration.disco" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

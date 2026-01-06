@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="60c98ad6-58ae-436c-898e-f7bd74126d67" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address=" https://customerservices.araskargo.com.tr/ArasCargoCustomerIntegrationService/ArasCargoIntegrationService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ArasCargoIntegrationService.xsd" MetadataType="Schema" ID="f7b50280-c2f6-4749-98c6-9b55b24a9d2b" SourceId="1" SourceUrl="https://customerservices.araskargo.com.tr/ArasCargoCustomerIntegrationService/ArasCargoIntegrationService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ArasCargoIntegrationService.disco" MetadataType="Disco" ID="17a148e5-2a75-4d8c-9786-342f19f82c9c" SourceId="1" SourceUrl="https://customerservices.araskargo.com.tr/ArasCargoCustomerIntegrationService/ArasCargoIntegrationService.svc?disco" />
+    <MetadataFile FileName="ArasCargoIntegrationService.wsdl" MetadataType="Wsdl" ID="88e5c4be-bbe5-439f-a72a-52ce52df4415" SourceId="1" SourceUrl="https://customerservices.araskargo.com.tr/ArasCargoCustomerIntegrationService/ArasCargoIntegrationService.svc?wsdl" />
+    <MetadataFile FileName="ArasCargoIntegrationService1.xsd" MetadataType="Schema" ID="d4bc3f36-0e84-4584-a191-180ce56a01bb" SourceId="1" SourceUrl="https://customerservices.araskargo.com.tr/ArasCargoCustomerIntegrationService/ArasCargoIntegrationService.svc?xsd=xsd2" />
+    <MetadataFile FileName="ArasCargoIntegrationService2.xsd" MetadataType="Schema" ID="81a8657c-098c-4b11-ba69-bd93d07df283" SourceId="1" SourceUrl="https://customerservices.araskargo.com.tr/ArasCargoCustomerIntegrationService/ArasCargoIntegrationService.svc?xsd=xsd3" />
+    <MetadataFile FileName="ArasCargoIntegrationService3.xsd" MetadataType="Schema" ID="9b039285-1fd8-411a-a65f-4041c7ab356b" SourceId="1" SourceUrl="https://customerservices.araskargo.com.tr/ArasCargoCustomerIntegrationService/ArasCargoIntegrationService.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
