@@ -313,15 +313,107 @@ Module UtilMail
                 SendGMail = True
             End If
 
-        Catch ex1 As SmtpException
-            If oEmail IsNot Nothing Then oEmail.Dispose()
-            ErrDisp(ex1, "Sending Email Failed. Smtp Error." + ex1.Message + " " + cErrMsg)
-        Catch ex2 As ArgumentOutOfRangeException
-            If oEmail IsNot Nothing Then oEmail.Dispose()
-            ErrDisp(ex2, "Sending Email Failed. Check Port Number." + ex2.Message + " " + cErrMsg)
-        Catch ex3 As InvalidOperationException
-            If oEmail IsNot Nothing Then oEmail.Dispose()
-            ErrDisp(ex3, "Sending Email Failed. Check Port Number." + ex3.Message + " " + cErrMsg)
+        Catch ex As System.Net.Mail.SmtpFailedRecipientException
+            ' Tek bir alıcı başarısız oldu (bazı alıcılar gidebilir, biri fail olabilir)
+            ErrDisp(ex, "SendGMail: Recipient failed. " &
+                      "FailedRecipient=" & ex.FailedRecipient & " " &
+                      "StatusCode=" & ex.StatusCode.ToString() & " " &
+                      "Inner=" & If(ex.InnerException Is Nothing, "", ex.InnerException.Message) & " " & cErrMsg)
+
+        Catch ex As System.Net.Mail.SmtpFailedRecipientsException
+            ' Birden fazla alıcı başarısız oldu
+            Dim failed As String = ""
+            For Each r In ex.InnerExceptions
+                failed &= " [" & r.FailedRecipient & ":" & r.StatusCode.ToString() & "]"
+            Next
+            ErrDisp(ex, "SendGMail: Multiple recipients failed. " &
+                      "Failed=" & failed & " " &
+                      "Inner=" & If(ex.InnerException Is Nothing, "", ex.InnerException.Message) & " " & cErrMsg)
+
+        Catch ex As System.Net.Mail.SmtpException
+            ' Auth / TLS / server / bağlantı / politika hataları genelde burada
+            ErrDisp(ex, "SendGMail: SMTP error. " &
+                      "StatusCode=" & ex.StatusCode.ToString() & " " &
+                      "Inner=" & If(ex.InnerException Is Nothing, "", ex.InnerException.Message) & " " & cErrMsg)
+
+        Catch ex As System.Net.Mail.SmtpFailedRecipientException
+            ErrDisp(ex, "SendGMail: Failed recipient. " &
+                      "FailedRecipient=" & ex.FailedRecipient & " " &
+                      "Inner=" & If(ex.InnerException Is Nothing, "", ex.InnerException.Message) & " " & cErrMsg)
+
+        Catch ex As System.Security.Authentication.AuthenticationException
+            ' TLS/SSL handshake / sertifika doğrulama
+            ErrDisp(ex, "SendGMail: TLS/SSL authentication failed. " &
+                      "Inner=" & If(ex.InnerException Is Nothing, "", ex.InnerException.Message) & " " & cErrMsg)
+
+        Catch ex As System.Net.WebException
+            ' Ağ katmanı hataları (proxy, bağlantı, DNS vs.) bazen buradan gelebilir
+            ErrDisp(ex, "SendGMail: Network(WebException). " &
+                      "Status=" & ex.Status.ToString() & " " &
+                      "Inner=" & If(ex.InnerException Is Nothing, "", ex.InnerException.Message) & " " & cErrMsg)
+
+        Catch ex As System.Net.Sockets.SocketException
+            ' DNS/port/timeout/connection refused gibi düşük seviye ağ hataları
+            ErrDisp(ex, "SendGMail: Socket error. " &
+                      "ErrorCode=" & ex.ErrorCode.ToString() & " " &
+                      "Inner=" & If(ex.InnerException Is Nothing, "", ex.InnerException.Message) & " " & cErrMsg)
+
+        Catch ex As TimeoutException
+            ErrDisp(ex, "SendGMail: Timeout. " &
+                      "Inner=" & If(ex.InnerException Is Nothing, "", ex.InnerException.Message) & " " & cErrMsg)
+
+        Catch ex As UnauthorizedAccessException
+            ' Attachment dosyasına erişim yok, vb.
+            ErrDisp(ex, "SendGMail: Unauthorized file access (attachment?). " &
+                      "Inner=" & If(ex.InnerException Is Nothing, "", ex.InnerException.Message) & " " & cErrMsg)
+
+        Catch ex As System.IO.FileNotFoundException
+            ErrDisp(ex, "SendGMail: Attachment file not found. " &
+                      "File=" & ex.FileName & " " &
+                      "Inner=" & If(ex.InnerException Is Nothing, "", ex.InnerException.Message) & " " & cErrMsg)
+
+        Catch ex As System.IO.DirectoryNotFoundException
+            ErrDisp(ex, "SendGMail: Attachment folder not found. " &
+                      "Inner=" & If(ex.InnerException Is Nothing, "", ex.InnerException.Message) & " " & cErrMsg)
+
+        Catch ex As System.IO.IOException
+            ErrDisp(ex, "SendGMail: File I/O error (attachment?). " &
+                      "Inner=" & If(ex.InnerException Is Nothing, "", ex.InnerException.Message) & " " & cErrMsg)
+
+        Catch ex As System.FormatException
+            ' MailAddress parse, invalid address format vb.
+            ErrDisp(ex, "SendGMail: Format error (address/body). " &
+                      "Inner=" & If(ex.InnerException Is Nothing, "", ex.InnerException.Message) & " " & cErrMsg)
+
+        Catch ex As ArgumentException
+            ErrDisp(ex, "SendGMail: Argument error. " &
+                      "Inner=" & If(ex.InnerException Is Nothing, "", ex.InnerException.Message) & " " & cErrMsg)
+
+        Catch ex As ArgumentOutOfRangeException
+            ErrDisp(ex, "SendGMail: Argument out of range (port?). " &
+                      "Inner=" & If(ex.InnerException Is Nothing, "", ex.InnerException.Message) & " " & cErrMsg)
+
+        Catch ex As InvalidOperationException
+            ErrDisp(ex, "SendGMail: Invalid operation. " &
+                      "Inner=" & If(ex.InnerException Is Nothing, "", ex.InnerException.Message) & " " & cErrMsg)
+
+        Catch ex As Exception
+            ' En sona genel yakalama
+            ErrDisp(ex, "SendGMail: Unexpected error. " &
+                      "Inner=" & If(ex.InnerException Is Nothing, "", ex.InnerException.Message) & " " & cErrMsg)
+
+        Finally
+            ' Her koşulda düzgün kapat
+            Try
+                If SMTPServer IsNot Nothing Then SMTPServer.Dispose()
+            Catch
+            End Try
+
+            Try
+                If oEmail IsNot Nothing Then oEmail.Dispose()
+            Catch
+            End Try
+
         End Try
     End Function
 

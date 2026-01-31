@@ -59,6 +59,8 @@ Module UtilRoot
         Dim cYKKPortalTestUrl As String
         Dim cYKKTestUserName As String
         Dim cYKKTestPassword As String
+        Dim cPersonel As String
+        Dim cModelNo As String
     End Structure
 
     Public oConnection As oSQLConn

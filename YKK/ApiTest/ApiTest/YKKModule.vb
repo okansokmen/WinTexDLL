@@ -23,12 +23,14 @@ Module YKKModule
             Dim args As String() = Environment.GetCommandLineArgs()
 
             If args.Length = 1 Then
-                oConnection.cServer = "monster"
-                oConnection.cDatabase = "tes"
+                oConnection.cServer = "MONSTER\MSSQLSERVER2"
+                oConnection.cDatabase = "TES"
                 oConnection.cUser = "sa"
                 oConnection.cPassword = "Hayabusa1024"
-                cGetSet = "G"
-                cIsemriNo = "0000310256"
+                cGetSet = "N1"
+                cIsemriNo = "0000310154"
+                oConnection.cPersonel = "VOLKAN POLATMAN"
+                oConnection.cModelNo = "1031097%041%DANNY%BLACK%WIND25"
             Else
                 oConnection.cServer = args(1).ToString.Trim
                 oConnection.cDatabase = args(2).ToString.Trim
@@ -36,7 +38,12 @@ Module YKKModule
                 oConnection.cPassword = args(4).ToString.Trim
                 cGetSet = args(5).ToString.Trim
                 cIsemriNo = args(6).ToString.Trim
+                oConnection.cPersonel = args(7).ToString.Trim
+                oConnection.cModelNo = args(8).ToString.Trim
             End If
+
+            oConnection.cPersonel = Replace(oConnection.cPersonel, "%", " ")
+            oConnection.cModelNo = Replace(oConnection.cModelNo, "%", " ")
 
             oConnection.cConnStr = "Data Source=" + oConnection.cServer + ";" +
                                    "Initial Catalog=" + oConnection.cDatabase + ";" +
@@ -44,14 +51,61 @@ Module YKKModule
                                    "pwd=" + oConnection.cPassword + ""
             GetYKKParameters()
 
-            If cGetSet = "G" Then
-                GetIsemriDurum2(cIsemriNo)
-            Else
-                SendIsemri2(cIsemriNo)
-            End If
+            Select Case cGetSet
+                Case "G"
+                    GetIsemriDurum2(cIsemriNo)
+                Case "S"
+                    SendIsemri2(cIsemriNo)
+                Case "N1"
+                    Dim result = utilNext.CreateRiskAnalysisAsync().GetAwaiter().GetResult()
+                    NumuneGonderildi(result.Id, result.Message)
+            End Select
+
 
         Catch ex As Exception
             ErrDisp("Main: " & ex.Message, "YKKModule",,, ex)
+        End Try
+    End Sub
+
+    Private Sub NumuneGonderildi(cId As String, cMessage As String)
+
+        Try
+            Dim oSQL As New SQLServerClass
+            Dim cOnModelNo As String = ""
+
+            oSQL.OpenConn()
+
+            oSQL.cSQLQuery = "select top 1 onmodelno " +
+                        " from onmodel with (NOLOCK) " +
+                        " where modelno = '" + oConnection.cModelNo + "' "
+
+            oSQL.GetSQLReader()
+
+            If oSQL.oReader.Read Then
+                cOnModelNo = oSQL.SQLReadString("onmodelno")
+            End If
+            oSQL.oReader.Close()
+
+            If cOnModelNo = "" Then
+                MsgBox("Numune model no onmodel tablosunda bulunamadi : " + oConnection.cModelNo)
+                oSQL.CloseConn()
+                Exit Sub
+            End If
+
+            oSQL.cSQLQuery = "update onmodel3 set " +
+                        " risktarih = getdate(), " +
+                        " riskpersonel = '" + SQLWriteString(oConnection.cPersonel, 50) + "', " +
+                        " riskcevapid = '" + SQLWriteString(cId, 50) + "', " +
+                        " riskcevap = '" + SQLWriteString(cMessage, 50) + "' " +
+                        " where onmodelno = '" + cOnModelNo + "' "
+            oSQL.SQLExecute()
+
+            Console.WriteLine("Numune risk analizi guncellendi : " + oConnection.cModelNo + " Id : " + cId + " Message : " + cMessage)
+
+            oSQL.CloseConn()
+
+        Catch ex As Exception
+            ErrDisp("NumuneGonderildi: " & ex.Message, "YKKModule",,, ex)
         End Try
     End Sub
 
@@ -517,7 +571,8 @@ Module YKKModule
                     Return False
                 End If
 
-                Dim expectedThumbprint As String = "684CD5721BD21B73D5FE722F870C605B3662583A"
+                'Dim expectedThumbprint As String = "684CD5721BD21B73D5FE722F870C605B3662583A"
+                Dim expectedThumbprint As String = "2F471D3DC8ED45CC2F399316FD945138C3E4C784"
 
                 Try
                     Console.WriteLine("Sertifika doğrulama başladı")

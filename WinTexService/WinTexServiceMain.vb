@@ -94,6 +94,7 @@ Public Class WinTexServiceMain
         lOUS2PopulateQueue = False
         lOUS2Execute = False
         oWinTexServiceMain = Me
+
     End Sub
 
     Protected Overrides Sub OnStart(ByVal args() As String)
@@ -120,6 +121,13 @@ Public Class WinTexServiceMain
             oTimer2.AutoReset = True
             oTimer2.Enabled = True
             oTimer2.Start()
+
+            If (My.Computer.FileSystem.DirectoryExists("C:\wintex\Temp") = False) Then
+                My.Computer.FileSystem.CreateDirectory("C:\wintex\Temp")
+            End If
+
+            Environment.SetEnvironmentVariable("TEMP", "C:\wintex\Temp", EnvironmentVariableTarget.Process)
+            Environment.SetEnvironmentVariable("TMP", "C:\wintex\Temp", EnvironmentVariableTarget.Process)
 
             CreateLog("Service Start")
 
@@ -531,7 +539,8 @@ Public Class WinTexServiceMain
             CreateLog("Görev Başlatıldı : " + cOUS + " / " + cAciklama)
 
             oSQL.cSQLQuery = "update ous2queue " +
-                             " set baslangic = getdate() " +
+                             " set baslangic = getdate() , " +
+                             " MachineName = 'TBA' " +
                              " where sirano = " + CStr(nSiraNo)
 
             oSQL.SQLExecute()
@@ -541,18 +550,24 @@ Public Class WinTexServiceMain
                 CreateLog("Görev başarıldı : " + cOUS + " / " + cAciklama)
 
                 oSQL.cSQLQuery = "update ous2queue " +
-                                 " set sonuc = 'success', bitis = getdate() " +
+                                 " set sonuc = 'success' , " +
+                                 " bitis = getdate() , " +
+                                 " MachineName = 'TBA' " +
                                  " where sirano = " + CStr(nSiraNo)
 
                 oSQL.SQLExecute()
+
             Else
                 CreateLog("Görev BAŞARISIZ : " + cOUS + " / " + cAciklama)
 
                 oSQL.cSQLQuery = "update ous2queue " +
-                                 " set sonuc = 'fail', bitis = getdate() " +
+                                 " set sonuc = 'fail', " +
+                                 " bitis = getdate() , " +
+                                 " MachineName = 'TBA' " +
                                  " where sirano = " + CStr(nSiraNo)
 
                 oSQL.SQLExecute()
+
             End If
 
             oSQL.CloseConn()

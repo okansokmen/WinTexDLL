@@ -185,7 +185,7 @@ Module utilOtomatikRezerveSatinalma
                 oSQL2.oReader.Close()
 
                 If nRow > 0 Then
-                    cBody = GetHTMLTable(nRow, nMaxCols, "Otomatik Rezervasyon Onay Talebi / v:" + cVersion)
+                    cBody = GetHTMLTable(nRow, nMaxCols, "Otomatik Rezervasyon Onay Talebi")
                     If cControlMail.Trim <> "" Then
                         cMailTo = cMailTo + "," + cControlMail
                     End If
@@ -212,11 +212,6 @@ Module utilOtomatikRezerveSatinalma
 #Region "işemri eMail"
 
             ' işemirleri için  eMail gönder
-
-            If (My.Computer.FileSystem.DirectoryExists("C:\wintex\Temp") = False) Then
-                My.Computer.FileSystem.CreateDirectory("C:\wintex\Temp")
-            End If
-
             oSQL2.cSQLQuery = "SELECT DISTINCT a.isemrino , a.emailsatinalmaci , a.emailsatici , c.reportid " +
                             " FROM isemri a WITH (NOLOCK) , departman b WITH (NOLOCK) , stireports c WITH (NOLOCK) " +
                             " WHERE a.departman = b.departman  " +
@@ -227,6 +222,9 @@ Module utilOtomatikRezerveSatinalma
                             " and a.emailsatinalmaci <> '' " +
                             " and a.emailsatici is not null " +
                             " and a.emailsatici <> '' " +
+                            " and exists (SELECT isemrino " +
+                                        " FROM isemrilines WITH (NOLOCK)  " +
+                                        " WHERE isemrino = a.isemrino) " +
                             " ORDER BY a.isemrino "
 
             oSQL2.GetSQLReader()
@@ -496,6 +494,16 @@ Module utilOtomatikRezerveSatinalma
 
             oSQL.SQLExecute()
 
+            ' kapanmış rezervasyon isteklerinin gönderilmemiş eMaillerini sil
+
+            'oSQL.cSQLQuery = "delete a " +
+            '                " FROM mtkrezervasyononayemail a WITH (NOLOCK) , mtkrezervasyononayistek b WITH (NOLOCK) " +
+            '                " WHERE a.requestid = b.requestid " +
+            '                " AND b.kapandi = 'E' " +
+            '                " AND a.senddate IS NULL"
+
+            'oSQL.SQLExecute()
+
             ' eMailler musterino ve stok tipine göre gruplanacak
 
             ReDim aMusteriStokTipi(0)
@@ -735,7 +743,7 @@ Module utilOtomatikRezerveSatinalma
 
             oSQL.cSQLQuery = oSQL.cSQLQuery +
                                 " from " + cOtoSatinalmaIsemriView +
-                                " where temindept Is Not null " +
+                                " where temindept is not null " +
                                 " And temindept <> '' " +
                                 " and firma is not null " +
                                 " and firma <> '' " +
@@ -1071,267 +1079,271 @@ Module utilOtomatikRezerveSatinalma
         End Try
     End Function
 
-    Public Function ORSHatirlatma(cDatabase As String, Optional nMode1 As Integer = 1) As Boolean
+    'Public Function ORSHatirlatma(cDatabase As String, Optional nMode1 As Integer = 1) As Boolean
 
-        ' nMode1 = 1 kit içi
-        ' nMode1 = 2 kit dışı
+    '    ' nMode1 = 1 kit içi
+    '    ' nMode1 = 2 kit dışı
 
-        nMode = nMode1
+    '    nMode = nMode1
 
-        ORSHatirlatma = False
+    '    ORSHatirlatma = False
 
-        Try
-            Dim oSQL As New SQLServerClass(True,, cDatabase)
-            Dim oSQL2 As New SQLServerClass(True,, cDatabase)
-            Dim cMailTo As String = ""
-            Dim nRow As Integer = 0
-            Dim nMaxCols As Integer = 0
-            Dim cSubject As String = ""
-            Dim cBody As String = ""
-            Dim cControlMail As String = ""
-            Dim cIsemriNo As String = ""
-            Dim nReportID As Double = 0
-            Dim cFileName As String = ""
-            Dim lReportOK As Boolean = False
-            Dim cOtoSatinalmaIsemriView As String = "otosatinalmaisemri"
+    '    Try
+    '        Dim oSQL As New SQLServerClass(True,, cDatabase)
+    '        Dim oSQL2 As New SQLServerClass(True,, cDatabase)
+    '        Dim cMailTo As String = ""
+    '        Dim nRow As Integer = 0
+    '        Dim nMaxCols As Integer = 0
+    '        Dim cSubject As String = ""
+    '        Dim cBody As String = ""
+    '        Dim cControlMail As String = ""
+    '        Dim cIsemriNo As String = ""
+    '        Dim nReportID As Double = 0
+    '        Dim cFileName As String = ""
+    '        Dim lReportOK As Boolean = False
+    '        Dim cOtoSatinalmaIsemriView As String = "otosatinalmaisemri"
 
-            If nMode = 1 Then
-                cOtoSatinalmaIsemriView = "otosatinalmaisemri"
-            Else
-                cOtoSatinalmaIsemriView = "otosatinalmaisemrikitdisi"
-            End If
+    '        If nMode = 1 Then
+    '            cOtoSatinalmaIsemriView = "otosatinalmaisemri"
+    '        Else
+    '            cOtoSatinalmaIsemriView = "otosatinalmaisemrikitdisi"
+    '        End If
 
-            oSQL.OpenConn()
-            oSQL2.OpenConn()
+    '        oSQL.OpenConn()
+    '        oSQL2.OpenConn()
 
-            cControlMail = oSQL.GetSysPar("emailcontrol")
+    '        cControlMail = oSQL.GetSysPar("emailcontrol")
 
-            ' rezervasyon onay talebi uyarı mailleri gönder
+    '        ' rezervasyon onay talebi uyarı mailleri gönder
 
-            oSQL.cSQLQuery = "select distinct satinalmamudurumail " +
-                            " from otorezervasyontalebiuyari " +
-                            " where satinalmamudurumail is not null " +
-                            " and satinalmamudurumail <> '' "
+    '        oSQL.cSQLQuery = "select distinct satinalmamudurumail " +
+    '                        " from otorezervasyontalebiuyari " +
+    '                        " where satinalmamudurumail is not null " +
+    '                        " and satinalmamudurumail <> '' "
 
-            oSQL.GetSQLReader()
+    '        oSQL.GetSQLReader()
 
-            Do While oSQL.oReader.Read
+    '        Do While oSQL.oReader.Read
 
-                cMailTo = oSQL.SQLReadString("satinalmamudurumail")
+    '            cMailTo = oSQL.SQLReadString("satinalmamudurumail")
 
-                nRow = 0
-                nMaxCols = 7
-                ReDim aHTMLRow(nMaxCols, 0)
-                aHTMLRow(0, 0).cValue = "Musteri"
-                aHTMLRow(1, 0).cValue = "MTF"
-                aHTMLRow(2, 0).cValue = "Stok Tipi"
-                aHTMLRow(3, 0).cValue = "Stok No"
-                aHTMLRow(4, 0).cValue = "Cins Açıklaması"
-                aHTMLRow(5, 0).cValue = "Renk"
-                aHTMLRow(6, 0).cValue = "Beden"
-                aHTMLRow(7, 0).cValue = "eMail"
+    '            nRow = 0
+    '            nMaxCols = 7
+    '            ReDim aHTMLRow(nMaxCols, 0)
+    '            aHTMLRow(0, 0).cValue = "Musteri"
+    '            aHTMLRow(1, 0).cValue = "MTF"
+    '            aHTMLRow(2, 0).cValue = "Stok Tipi"
+    '            aHTMLRow(3, 0).cValue = "Stok No"
+    '            aHTMLRow(4, 0).cValue = "Cins Açıklaması"
+    '            aHTMLRow(5, 0).cValue = "Renk"
+    '            aHTMLRow(6, 0).cValue = "Beden"
+    '            aHTMLRow(7, 0).cValue = "eMail"
 
-                oSQL2.cSQLQuery = "select musterino, malzemetakipno, stokno, renk, beden, stoktipi, cinsaciklamasi, cnt, mailto " +
-                                " from otorezervasyontalebiuyari  " +
-                                " where satinalmamudurumail = '" + cMailTo + "' " +
-                                " and cnt >= 2 " +
-                                " order by musterino, malzemetakipno, stokno, renk, beden "
+    '            oSQL2.cSQLQuery = "select musterino, malzemetakipno, stokno, renk, beden, stoktipi, cinsaciklamasi, cnt, mailto " +
+    '                            " from otorezervasyontalebiuyari  " +
+    '                            " where satinalmamudurumail = '" + cMailTo + "' " +
+    '                            " and cnt >= 2 " +
+    '                            " order by musterino, malzemetakipno, stokno, renk, beden "
 
-                oSQL2.GetSQLReader()
+    '            oSQL2.GetSQLReader()
 
-                Do While oSQL2.oReader.Read
+    '            Do While oSQL2.oReader.Read
 
-                    nRow = nRow + 1
-                    ReDim Preserve aHTMLRow(nMaxCols, nRow)
-                    aHTMLRow(0, nRow).cValue = oSQL2.SQLReadString("musterino")
-                    aHTMLRow(1, nRow).cValue = oSQL2.SQLReadString("malzemetakipno")
-                    aHTMLRow(2, nRow).cValue = oSQL2.SQLReadString("stoktipi")
-                    aHTMLRow(3, nRow).cValue = oSQL2.SQLReadString("stokno")
-                    aHTMLRow(4, nRow).cValue = oSQL2.SQLReadString("cinsaciklamasi")
-                    aHTMLRow(5, nRow).cValue = oSQL2.SQLReadString("renk")
-                    aHTMLRow(6, nRow).cValue = oSQL2.SQLReadString("beden")
-                    aHTMLRow(7, nRow).cValue = oSQL2.SQLReadString("mailto")
-                Loop
-                oSQL2.oReader.Close()
+    '                nRow = nRow + 1
+    '                ReDim Preserve aHTMLRow(nMaxCols, nRow)
+    '                aHTMLRow(0, nRow).cValue = oSQL2.SQLReadString("musterino")
+    '                aHTMLRow(1, nRow).cValue = oSQL2.SQLReadString("malzemetakipno")
+    '                aHTMLRow(2, nRow).cValue = oSQL2.SQLReadString("stoktipi")
+    '                aHTMLRow(3, nRow).cValue = oSQL2.SQLReadString("stokno")
+    '                aHTMLRow(4, nRow).cValue = oSQL2.SQLReadString("cinsaciklamasi")
+    '                aHTMLRow(5, nRow).cValue = oSQL2.SQLReadString("renk")
+    '                aHTMLRow(6, nRow).cValue = oSQL2.SQLReadString("beden")
+    '                If oSQL2.SQLReadString("mailto") = "" Then
+    '                    aHTMLRow(7, nRow).cValue = "Satınalmacı eMail adresi girilmemiş"
+    '                Else
+    '                    aHTMLRow(7, nRow).cValue = oSQL2.SQLReadString("mailto")
+    '                End If
+    '            Loop
+    '            oSQL2.oReader.Close()
 
-                If nRow > 0 Then
-                    cBody = GetHTMLTable(nRow, nMaxCols, "Otomatik Rezervasyon Gecikme Uyarısı / v:" + cVersion)
-                    cSubject = "Otomatik rezervasyon aksaması uyarı mesajıdır"
-                    If cControlMail.Trim <> "" Then
-                        cMailTo = cMailTo + "," + cControlMail
-                    End If
+    '            If nRow > 0 Then
+    '                cBody = GetHTMLTable(nRow, nMaxCols, "Otomatik Rezervasyon Gecikme Uyarısı")
+    '                cSubject = "Otomatik rezervasyon aksaması uyarı mesajıdır"
+    '                If cControlMail.Trim <> "" Then
+    '                    cMailTo = cMailTo + "," + cControlMail
+    '                End If
 
-                    If SendGoogleMail(cMailTo, cSubject, cBody, , cDatabase) Then
-                        ActivityLog(cDatabase, "Mesaj", "OMRSU eMail Gonderildi", cSubject, cMailTo + " " + cBody.Trim)
-                    Else
-                        ActivityLog(cDatabase, "Mesaj", "OMRSU eMail Gonderilemedi", cSubject, cMailTo + " " + cBody.Trim)
-                    End If
-                End If
-            Loop
-            oSQL.oReader.Close()
+    '                If SendGoogleMail(cMailTo, cSubject, cBody, , cDatabase) Then
+    '                    ActivityLog(cDatabase, "Mesaj", "OMRSU eMail Gonderildi", cSubject, cMailTo + " " + cBody.Trim)
+    '                Else
+    '                    ActivityLog(cDatabase, "Mesaj", "OMRSU eMail Gonderilemedi", cSubject, cMailTo + " " + cBody.Trim)
+    '                End If
+    '            End If
+    '        Loop
+    '        oSQL.oReader.Close()
 
-            ' işemri uyarı mailleri gönder
+    '        ' işemri uyarı mailleri gönder
 
-            cMailTo = cControlMail ' "erkan.cetin@eroglugiyim.com,adnan.demir@eroglugiyim.com,volkan.polatman@eroglugiyim.com"
+    '        cMailTo = cControlMail ' "erkan.cetin@eroglugiyim.com,adnan.demir@eroglugiyim.com,volkan.polatman@eroglugiyim.com"
 
-            nRow = 0
-            nMaxCols = 7
-            ReDim aHTMLRow(nMaxCols, 0)
-            aHTMLRow(0, 0).cValue = "Musteri"
-            aHTMLRow(1, 0).cValue = "Stok Tipi"
-            aHTMLRow(2, 0).cValue = "Tedarikci"
-            aHTMLRow(3, 0).cValue = "Stok No"
-            aHTMLRow(4, 0).cValue = "Aciklama"
-            aHTMLRow(5, 0).cValue = "Fiyat"
-            aHTMLRow(6, 0).cValue = "Doviz"
-            aHTMLRow(7, 0).cValue = "Aksiyon"
+    '        nRow = 0
+    '        nMaxCols = 7
+    '        ReDim aHTMLRow(nMaxCols, 0)
+    '        aHTMLRow(0, 0).cValue = "Musteri"
+    '        aHTMLRow(1, 0).cValue = "Stok Tipi"
+    '        aHTMLRow(2, 0).cValue = "Tedarikci"
+    '        aHTMLRow(3, 0).cValue = "Stok No"
+    '        aHTMLRow(4, 0).cValue = "Aciklama"
+    '        aHTMLRow(5, 0).cValue = "Fiyat"
+    '        aHTMLRow(6, 0).cValue = "Doviz"
+    '        aHTMLRow(7, 0).cValue = "Aksiyon"
 
-            ' satınalmacı eMail tanımlanmamış
+    '        ' satınalmacı eMail tanımlanmamış
 
-            oSQL2.cSQLQuery = "select distinct musterino, stoktipi, firma, stokno, cinsaciklamasi, fiyat1, doviz1 " +
-                            " from " + cOtoSatinalmaIsemriView +
-                            " where temindept is not null " +
-                            " and temindept <> '' " +
-                            " and firma is not null " +
-                            " and firma <> '' " +
-                            " and malzemetakipno is not null " +
-                            " and malzemetakipno <> '' " +
-                            " and ihtiyac is not null " +
-                            " and ihtiyac > 0 " +
-                            " and coalesce(ihtiyac,0) > coalesce(isemribeklenen,0) + coalesce(isemriharicigelen,0) " +
-                            " and (satinalmaciemail is null or satinalmaciemail = '') " +
-                            " order by musterino, stoktipi, firma "
+    '        oSQL2.cSQLQuery = "select distinct musterino, stoktipi, firma, stokno, cinsaciklamasi, fiyat1, doviz1 " +
+    '                        " from " + cOtoSatinalmaIsemriView +
+    '                        " where temindept is not null " +
+    '                        " and temindept <> '' " +
+    '                        " and firma is not null " +
+    '                        " and firma <> '' " +
+    '                        " and malzemetakipno is not null " +
+    '                        " and malzemetakipno <> '' " +
+    '                        " and ihtiyac is not null " +
+    '                        " and ihtiyac > 0 " +
+    '                        " and coalesce(ihtiyac,0) > coalesce(isemribeklenen,0) + coalesce(isemriharicigelen,0) " +
+    '                        " and (satinalmaciemail is null or satinalmaciemail = '') " +
+    '                        " order by musterino, stoktipi, firma "
 
-            oSQL2.GetSQLReader()
+    '        oSQL2.GetSQLReader()
 
-            Do While oSQL2.oReader.Read
+    '        Do While oSQL2.oReader.Read
 
-                nRow = nRow + 1
-                ReDim Preserve aHTMLRow(nMaxCols, nRow)
-                aHTMLRow(0, nRow).cValue = oSQL2.SQLReadString("musterino")
-                aHTMLRow(1, nRow).cValue = oSQL2.SQLReadString("stoktipi")
-                aHTMLRow(2, nRow).cValue = oSQL2.SQLReadString("firma")
-                aHTMLRow(3, nRow).cValue = oSQL2.SQLReadString("stokno")
-                aHTMLRow(4, nRow).cValue = oSQL2.SQLReadString("cinsaciklamasi")
-                aHTMLRow(5, nRow).cValue = oSQL2.SQLReadDouble("fiyat1").ToString(G_Number2Format)
-                aHTMLRow(6, nRow).cValue = oSQL2.SQLReadString("doviz1")
-                aHTMLRow(7, nRow).cValue = "Onay sürecine satınalmacı eMail tanımlaması yapılmalıdır"
-            Loop
-            oSQL2.oReader.Close()
+    '            nRow = nRow + 1
+    '            ReDim Preserve aHTMLRow(nMaxCols, nRow)
+    '            aHTMLRow(0, nRow).cValue = oSQL2.SQLReadString("musterino")
+    '            aHTMLRow(1, nRow).cValue = oSQL2.SQLReadString("stoktipi")
+    '            aHTMLRow(2, nRow).cValue = oSQL2.SQLReadString("firma")
+    '            aHTMLRow(3, nRow).cValue = oSQL2.SQLReadString("stokno")
+    '            aHTMLRow(4, nRow).cValue = oSQL2.SQLReadString("cinsaciklamasi")
+    '            aHTMLRow(5, nRow).cValue = oSQL2.SQLReadDouble("fiyat1").ToString(G_Number2Format)
+    '            aHTMLRow(6, nRow).cValue = oSQL2.SQLReadString("doviz1")
+    '            aHTMLRow(7, nRow).cValue = "Onay sürecine satınalmacı eMail tanımlaması yapılmalıdır"
+    '        Loop
+    '        oSQL2.oReader.Close()
 
-            ' satıcı eMail tanımlanmamış
+    '        ' satıcı eMail tanımlanmamış
 
-            oSQL2.cSQLQuery = "Select distinct musterino, stoktipi, firma, stokno, cinsaciklamasi, fiyat1, doviz1 " +
-                            " from " + cOtoSatinalmaIsemriView +
-                            " where temindept Is Not null " +
-                            " And temindept <> '' " +
-                            " and firma is not null " +
-                            " and firma <> '' " +
-                            " and malzemetakipno is not null " +
-                            " and malzemetakipno <> '' " +
-                            " and ihtiyac is not null " +
-                            " and ihtiyac > 0 " +
-                            " and coalesce(ihtiyac,0) > coalesce(isemribeklenen,0) + coalesce(isemriharicigelen,0) " +
-                            " and (saticiemail is null or saticiemail = '') " +
-                            " order by musterino, stoktipi, firma "
+    '        oSQL2.cSQLQuery = "Select distinct musterino, stoktipi, firma, stokno, cinsaciklamasi, fiyat1, doviz1 " +
+    '                        " from " + cOtoSatinalmaIsemriView +
+    '                        " where temindept Is Not null " +
+    '                        " And temindept <> '' " +
+    '                        " and firma is not null " +
+    '                        " and firma <> '' " +
+    '                        " and malzemetakipno is not null " +
+    '                        " and malzemetakipno <> '' " +
+    '                        " and ihtiyac is not null " +
+    '                        " and ihtiyac > 0 " +
+    '                        " and coalesce(ihtiyac,0) > coalesce(isemribeklenen,0) + coalesce(isemriharicigelen,0) " +
+    '                        " and (saticiemail is null or saticiemail = '') " +
+    '                        " order by musterino, stoktipi, firma "
 
-            oSQL2.GetSQLReader()
+    '        oSQL2.GetSQLReader()
 
-            Do While oSQL2.oReader.Read
+    '        Do While oSQL2.oReader.Read
 
-                nRow = nRow + 1
-                ReDim Preserve aHTMLRow(nMaxCols, nRow)
-                aHTMLRow(0, nRow).cValue = oSQL2.SQLReadString("musterino")
-                aHTMLRow(1, nRow).cValue = oSQL2.SQLReadString("stoktipi")
-                aHTMLRow(2, nRow).cValue = oSQL2.SQLReadString("firma")
-                aHTMLRow(3, nRow).cValue = oSQL2.SQLReadString("stokno")
-                aHTMLRow(4, nRow).cValue = oSQL2.SQLReadString("cinsaciklamasi")
-                aHTMLRow(5, nRow).cValue = oSQL2.SQLReadDouble("fiyat1").ToString(G_Number2Format)
-                aHTMLRow(6, nRow).cValue = oSQL2.SQLReadString("doviz1")
-                aHTMLRow(7, nRow).cValue = "Tedarikçi kartındaki satici eMaillerine tanımlama yapılmalıdır"
-            Loop
-            oSQL2.oReader.Close()
+    '            nRow = nRow + 1
+    '            ReDim Preserve aHTMLRow(nMaxCols, nRow)
+    '            aHTMLRow(0, nRow).cValue = oSQL2.SQLReadString("musterino")
+    '            aHTMLRow(1, nRow).cValue = oSQL2.SQLReadString("stoktipi")
+    '            aHTMLRow(2, nRow).cValue = oSQL2.SQLReadString("firma")
+    '            aHTMLRow(3, nRow).cValue = oSQL2.SQLReadString("stokno")
+    '            aHTMLRow(4, nRow).cValue = oSQL2.SQLReadString("cinsaciklamasi")
+    '            aHTMLRow(5, nRow).cValue = oSQL2.SQLReadDouble("fiyat1").ToString(G_Number2Format)
+    '            aHTMLRow(6, nRow).cValue = oSQL2.SQLReadString("doviz1")
+    '            aHTMLRow(7, nRow).cValue = "Tedarikçi kartındaki satici eMaillerine tanımlama yapılmalıdır"
+    '        Loop
+    '        oSQL2.oReader.Close()
 
-            If nRow > 0 Then
-                cBody = GetHTMLTable(nRow, nMaxCols, "Satınalma İşemri Oluşturmada Eksik Tanımlamalar / v:" + cVersion)
-                cSubject = "Otomatik işemri oluşturma uyarı mesajıdır, müşteri / satınalmacı / tedarkçi eksik tanımlanmalar tamamlanmalıdır"
+    '        If nRow > 0 Then
+    '            cBody = GetHTMLTable(nRow, nMaxCols, "Satınalma İşemri Oluşturmada Eksik Tanımlamalar")
+    '            cSubject = "Otomatik işemri oluşturma uyarı mesajıdır, müşteri / satınalmacı / tedarkçi eksik tanımlanmalar tamamlanmalıdır"
 
-                If SendGoogleMail(cMailTo, cSubject, cBody, , cDatabase) Then
-                    ActivityLog(cDatabase, "Mesaj", "OMRSU eMail Gonderildi", cSubject, cMailTo + " " + cBody.Trim)
-                Else
-                    ActivityLog(cDatabase, "Mesaj", "OMRSU eMail Gonderilemedi", cSubject, cMailTo + " " + cBody.Trim)
-                End If
-            End If
+    '            If SendGoogleMail(cMailTo, cSubject, cBody, , cDatabase) Then
+    '                ActivityLog(cDatabase, "Mesaj", "OMRSU eMail Gonderildi", cSubject, cMailTo + " " + cBody.Trim)
+    '            Else
+    '                ActivityLog(cDatabase, "Mesaj", "OMRSU eMail Gonderilemedi", cSubject, cMailTo + " " + cBody.Trim)
+    '            End If
+    '        End If
 
-            ' gönderilememiş işemirlerini gönder 
+    '        ' gönderilememiş işemirlerini gönder 
 
-            oSQL.cSQLQuery = "select distinct a.isemrino , a.emailsatici , a.emailsatinalmaci , c.reportid " +
-                                " FROM isemri a WITH (NOLOCK) , departman b WITH (NOLOCK) , stireports c WITH (NOLOCK) " +
-                                " WHERE a.departman = b.departman  " +
-                                " AND b.reportname = c.reportname " +
-                                " AND a.createuser = 'CLR' " +
-                                " AND (a.emailgonderildi IS NULL or a.emailgonderildi = 'H' OR a.emailgonderildi = '') " +
-                                " ORDER BY a.isemrino "
-            oSQL.GetSQLReader()
+    '        oSQL.cSQLQuery = "select distinct a.isemrino , a.emailsatici , a.emailsatinalmaci , c.reportid " +
+    '                            " FROM isemri a WITH (NOLOCK) , departman b WITH (NOLOCK) , stireports c WITH (NOLOCK) " +
+    '                            " WHERE a.departman = b.departman  " +
+    '                            " AND b.reportname = c.reportname " +
+    '                            " AND a.createuser = 'CLR' " +
+    '                            " AND (a.emailgonderildi IS NULL or a.emailgonderildi = 'H' OR a.emailgonderildi = '') " +
+    '                            " ORDER BY a.isemrino "
+    '        oSQL.GetSQLReader()
 
-            Do While oSQL.oReader.Read
+    '        Do While oSQL.oReader.Read
 
-                cMailTo = oSQL.SQLReadString("emailsatici") + "," + oSQL.SQLReadString("emailsatinalmaci")
-                cIsemriNo = oSQL.SQLReadString("isemrino")
-                nReportID = CDbl(oSQL.SQLReadInteger("reportid"))
-                cFileName = "C:\wintex\Temp\" + "ErogluSatinalma-" + cIsemriNo + ".xls"
-                cSubject = "Eroğlu satınalma siparişi : " + cIsemriNo
-                cBody = "Eroğlu satınalma siparişi : " + cIsemriNo
+    '            cMailTo = oSQL.SQLReadString("emailsatici") + "," + oSQL.SQLReadString("emailsatinalmaci")
+    '            cIsemriNo = oSQL.SQLReadString("isemrino")
+    '            nReportID = CDbl(oSQL.SQLReadInteger("reportid"))
+    '            cFileName = "C:\wintex\Temp\" + "ErogluSatinalma-" + cIsemriNo + ".xls"
+    '            cSubject = "Eroğlu satınalma siparişi : " + cIsemriNo
+    '            cBody = "Eroğlu satınalma siparişi : " + cIsemriNo
 
-                If My.Computer.FileSystem.FileExists(cFileName) Then
-                    My.Computer.FileSystem.DeleteFile(cFileName)
-                End If
+    '            If My.Computer.FileSystem.FileExists(cFileName) Then
+    '                My.Computer.FileSystem.DeleteFile(cFileName)
+    '            End If
 
-                lReportOK = False
+    '            lReportOK = False
 
-                If StiReportToExcel(nReportID.ToString, cFileName, cIsemriNo,,,,,,,,,, cDatabase) Then
-                    If My.Computer.FileSystem.FileExists(cFileName) Then
-                        lReportOK = True
-                    End If
-                End If
+    '            If StiReportToExcel(nReportID.ToString, cFileName, cIsemriNo,,,,,,,,,, cDatabase) Then
+    '                If My.Computer.FileSystem.FileExists(cFileName) Then
+    '                    lReportOK = True
+    '                End If
+    '            End If
 
-                If lReportOK Then
+    '            If lReportOK Then
 
-                    If cControlMail.Trim <> "" Then
-                        cMailTo = cMailTo + "," + cControlMail
-                    End If
+    '                If cControlMail.Trim <> "" Then
+    '                    cMailTo = cMailTo + "," + cControlMail
+    '                End If
 
-                    If SendGoogleMail(cMailTo, cSubject, cBody, cFileName, cDatabase) Then
+    '                If SendGoogleMail(cMailTo, cSubject, cBody, cFileName, cDatabase) Then
 
-                        oSQL2.cSQLQuery = "update isemri " +
-                                          " SET emailgonderildi = 'E' " +
-                                          " WHERE isemrino = '" + cIsemriNo + "' "
-                        oSQL2.SQLExecute()
+    '                    oSQL2.cSQLQuery = "update isemri " +
+    '                                      " SET emailgonderildi = 'E' " +
+    '                                      " WHERE isemrino = '" + cIsemriNo + "' "
+    '                    oSQL2.SQLExecute()
 
-                        ActivityLog(cDatabase, "Mesaj", "OMSS2 eMail Gonderildi", cSubject, cMailTo + " " + cBody.Trim)
-                    Else
+    '                    ActivityLog(cDatabase, "Mesaj", "OMSS2 eMail Gonderildi", cSubject, cMailTo + " " + cBody.Trim)
+    '                Else
 
-                        oSQL2.cSQLQuery = "update isemri " +
-                                          " SET emailgonderildi = 'H' " +
-                                          " WHERE isemrino = '" + cIsemriNo + "' "
-                        oSQL2.SQLExecute()
+    '                    oSQL2.cSQLQuery = "update isemri " +
+    '                                      " SET emailgonderildi = 'H' " +
+    '                                      " WHERE isemrino = '" + cIsemriNo + "' "
+    '                    oSQL2.SQLExecute()
 
-                        ActivityLog(cDatabase, "Mesaj", "OMSS2 eMail Gonderilemedi", cSubject, cMailTo + " " + cBody.Trim)
-                    End If
+    '                    ActivityLog(cDatabase, "Mesaj", "OMSS2 eMail Gonderilemedi", cSubject, cMailTo + " " + cBody.Trim)
+    '                End If
 
-                End If
-            Loop
-            oSQL.oReader.Close()
+    '            End If
+    '        Loop
+    '        oSQL.oReader.Close()
 
-            oSQL.CloseConn()
-            oSQL2.CloseConn()
+    '        oSQL.CloseConn()
+    '        oSQL2.CloseConn()
 
-            ORSHatirlatma = True
+    '        ORSHatirlatma = True
 
-        Catch ex As Exception
-            ErrDisp(ex, "ORSHatirlatma")
-        End Try
-    End Function
+    '    Catch ex As Exception
+    '        ErrDisp(ex, "ORSHatirlatma")
+    '    End Try
+    'End Function
 
     ' Helper subroutine to call doaftersave_isemri stored procedure for all created isemri records
     Private Sub CallDoAfterSaveIsemri(cIsemirleri As String, cDatabase As String)
@@ -1363,5 +1375,466 @@ Module utilOtomatikRezerveSatinalma
             ErrDisp(ex, "CallDoAfterSaveIsemri")
         End Try
     End Sub
+
+    Public Function ORSHatirlatma(cDatabase As String, Optional nMode1 As Integer = 1) As Boolean
+
+        ' nMode1 = 1 kit içi
+        ' nMode1 = 2 kit dışı
+
+        nMode = nMode1
+        ORSHatirlatma = False
+
+        Dim oSQL As SQLServerClass = Nothing
+        Dim oSQL2 As SQLServerClass = Nothing
+
+        Dim stage As String = ""
+        Dim cMailTo As String = ""
+        Dim cSubject As String = ""
+        Dim cBody As String = ""
+        Dim cControlMail As String = ""
+        Dim cIsemriNo As String = ""
+        Dim nReportID As Double = 0
+        Dim cFileName As String = ""
+        Dim lReportOK As Boolean = False
+        Dim cOtoSatinalmaIsemriView As String = ""
+
+        Dim nRow As Integer = 0
+        Dim nMaxCols As Integer = 0
+        Dim nCnt As Integer = 0
+
+        Try
+            '========================
+            ' 0) Param / mode
+            '========================
+            stage = "0) Mode/View seçimi"
+            Try
+                If nMode = 1 Then
+                    cOtoSatinalmaIsemriView = "otosatinalmaisemri"
+                Else
+                    cOtoSatinalmaIsemriView = "otosatinalmaisemrikitdisi"
+                End If
+            Catch ex As Exception
+                ErrDisp(ex, "ORSHatirlatma " & stage & " cDatabase=" & cDatabase & " nMode=" & nMode.ToString())
+                Exit Function
+            End Try
+
+            '========================
+            ' 1) SQL obj + bağlantılar
+            '========================
+            stage = "1) SQLServerClass yarat / OpenConn"
+            Try
+                oSQL = New SQLServerClass(True, , cDatabase)
+                oSQL2 = New SQLServerClass(True, , cDatabase)
+
+                oSQL.OpenConn()
+                oSQL2.OpenConn()
+            Catch ex As Exception
+                ErrDisp(ex, "ORSHatirlatma " & stage & " cDatabase=" & cDatabase)
+                Exit Function
+            End Try
+
+            '========================
+            ' 2) SysPar oku (emailcontrol)
+            '========================
+            stage = "2) GetSysPar(emailcontrol)"
+            Try
+                cControlMail = oSQL.GetSysPar("emailcontrol")
+            Catch ex As Exception
+                ErrDisp(ex, "ORSHatirlatma " & stage & " cDatabase=" & cDatabase)
+                Exit Function
+            End Try
+
+            '=========================================================
+            ' 3) Rezervasyon onay talebi uyarı mailleri (mail grupları)
+            '=========================================================
+            stage = "3) Rezervasyon uyarıları - mail listesi oku"
+            Try
+                oSQL.cSQLQuery =
+                "select distinct satinalmamudurumail " &
+                " from otorezervasyontalebiuyari " &
+                " where satinalmamudurumail is not null " &
+                " and satinalmamudurumail <> '' "
+
+                oSQL.GetSQLReader()
+
+                Do While oSQL.oReader.Read
+
+                    '--- her mail grubu için ayrı try: hatayı mail bazında yakala
+                    Try
+                        cMailTo = oSQL.SQLReadString("satinalmamudurumail")
+
+                        nRow = 0
+                        nMaxCols = 7
+                        ReDim aHTMLRow(nMaxCols, 0)
+                        aHTMLRow(0, 0).cValue = "Musteri"
+                        aHTMLRow(1, 0).cValue = "MTF"
+                        aHTMLRow(2, 0).cValue = "Stok Tipi"
+                        aHTMLRow(3, 0).cValue = "Stok No"
+                        aHTMLRow(4, 0).cValue = "Cins Açıklaması"
+                        aHTMLRow(5, 0).cValue = "Renk"
+                        aHTMLRow(6, 0).cValue = "Beden"
+                        aHTMLRow(7, 0).cValue = "eMail"
+
+                    Catch ex As Exception
+                        ErrDisp(ex, "ORSHatirlatma 3a) Header/Array init. satinalmamudurumail=" & cMailTo)
+                        ' bir sonraki mail grubuna geç
+                        Continue Do
+                    End Try
+
+                    '--- detay satırlarını oku
+                    stage = "3b) Rezervasyon uyarıları - detay oku"
+                    Try
+                        oSQL2.cSQLQuery =
+                        "select musterino, malzemetakipno, stokno, renk, beden, stoktipi, cinsaciklamasi, cnt, mailto " &
+                        " from otorezervasyontalebiuyari  " &
+                        " where satinalmamudurumail = '" & cMailTo & "' " &
+                        " and cnt >= 2 " &
+                        " order by musterino, malzemetakipno, stokno, renk, beden "
+
+                        oSQL2.GetSQLReader()
+
+                        Do While oSQL2.oReader.Read
+                            Try
+                                nRow += 1
+                                ReDim Preserve aHTMLRow(nMaxCols, nRow)
+
+                                aHTMLRow(0, nRow).cValue = oSQL2.SQLReadString("musterino")
+                                aHTMLRow(1, nRow).cValue = oSQL2.SQLReadString("malzemetakipno")
+                                aHTMLRow(2, nRow).cValue = oSQL2.SQLReadString("stoktipi")
+                                aHTMLRow(3, nRow).cValue = oSQL2.SQLReadString("stokno")
+                                aHTMLRow(4, nRow).cValue = oSQL2.SQLReadString("cinsaciklamasi")
+                                aHTMLRow(5, nRow).cValue = oSQL2.SQLReadString("renk")
+                                aHTMLRow(6, nRow).cValue = oSQL2.SQLReadString("beden")
+
+                                If oSQL2.SQLReadString("mailto") = "" Then
+                                    aHTMLRow(7, nRow).cValue = "Satınalmacı eMail adresi girilmemiş"
+                                Else
+                                    aHTMLRow(7, nRow).cValue = oSQL2.SQLReadString("mailto")
+                                End If
+                            Catch ex As Exception
+                                ErrDisp(ex, "ORSHatirlatma 3b-row) satinalmamudurumail=" & cMailTo & " nRow=" & nRow.ToString())
+                                ' bu satırı atla, devam et
+                            End Try
+                        Loop
+
+                    Catch ex As Exception
+                        ErrDisp(ex, "ORSHatirlatma " & stage & " satinalmamudurumail=" & cMailTo)
+                    Finally
+                        Try
+                            If oSQL2 IsNot Nothing AndAlso oSQL2.oReader IsNot Nothing Then oSQL2.oReader.Close()
+                        Catch
+                        End Try
+                    End Try
+
+                    '--- mail gönder
+                    stage = "3c) Rezervasyon uyarıları - mail gönder"
+                    Try
+                        If nRow > 0 Then
+                            cBody = GetHTMLTable(nRow, nMaxCols, "Otomatik Rezervasyon Gecikme Uyarısı")
+                            cSubject = "Otomatik rezervasyon aksaması uyarı mesajıdır"
+
+                            Dim toList As String = cMailTo
+                            If cControlMail.Trim <> "" Then toList = toList & "," & cControlMail
+
+                            If SendGoogleMail(toList, cSubject, cBody, , cDatabase) Then
+                                ActivityLog(cDatabase, "Mesaj", "OMRSU eMail Gonderildi", cSubject, toList & " " & cBody.Trim)
+                            Else
+                                ActivityLog(cDatabase, "Mesaj", "OMRSU eMail Gonderilemedi", cSubject, toList & " " & cBody.Trim)
+                            End If
+                        End If
+                    Catch ex As Exception
+                        ErrDisp(ex, "ORSHatirlatma " & stage & " satinalmamudurumail=" & cMailTo)
+                    End Try
+
+                Loop
+
+            Catch ex As Exception
+                ErrDisp(ex, "ORSHatirlatma " & stage & " (outer) cDatabase=" & cDatabase)
+                Exit Function
+            Finally
+                Try
+                    If oSQL IsNot Nothing AndAlso oSQL.oReader IsNot Nothing Then oSQL.oReader.Close()
+                Catch
+                End Try
+            End Try
+
+            '===========================================
+            ' 4) İşemri uyarı mailleri (eksik tanımlar)
+            '===========================================
+            stage = "4) İşemri uyarıları - eksik tanımlar"
+            Try
+                cMailTo = cControlMail
+
+                nRow = 0
+                nMaxCols = 7
+                ReDim aHTMLRow(nMaxCols, 0)
+                aHTMLRow(0, 0).cValue = "Musteri"
+                aHTMLRow(1, 0).cValue = "Stok Tipi"
+                aHTMLRow(2, 0).cValue = "Tedarikci"
+                aHTMLRow(3, 0).cValue = "Stok No"
+                aHTMLRow(4, 0).cValue = "Aciklama"
+                aHTMLRow(5, 0).cValue = "Fiyat"
+                aHTMLRow(6, 0).cValue = "Doviz"
+                aHTMLRow(7, 0).cValue = "Aksiyon"
+            Catch ex As Exception
+                ErrDisp(ex, "ORSHatirlatma 4a) Header/Array init")
+                Exit Function
+            End Try
+
+            '--- satınalmacı email yok
+            stage = "4b) satinalmaciemail yok - query/reader"
+            Try
+                oSQL2.cSQLQuery =
+                "select distinct musterino, stoktipi, firma, stokno, cinsaciklamasi, fiyat1, doviz1 " &
+                " from " & cOtoSatinalmaIsemriView &
+                " where temindept is not null and temindept <> '' " &
+                " and firma is not null and firma <> '' " &
+                " and malzemetakipno is not null and malzemetakipno <> '' " &
+                " and ihtiyac is not null and ihtiyac > 0 " &
+                " and coalesce(ihtiyac,0) > coalesce(isemribeklenen,0) + coalesce(isemriharicigelen,0) " &
+                " and (satinalmaciemail is null or satinalmaciemail = '') " &
+                " order by musterino, stoktipi, firma "
+
+                oSQL2.GetSQLReader()
+
+                Do While oSQL2.oReader.Read
+                    Try
+                        nRow += 1
+                        ReDim Preserve aHTMLRow(nMaxCols, nRow)
+                        aHTMLRow(0, nRow).cValue = oSQL2.SQLReadString("musterino")
+                        aHTMLRow(1, nRow).cValue = oSQL2.SQLReadString("stoktipi")
+                        aHTMLRow(2, nRow).cValue = oSQL2.SQLReadString("firma")
+                        aHTMLRow(3, nRow).cValue = oSQL2.SQLReadString("stokno")
+                        aHTMLRow(4, nRow).cValue = oSQL2.SQLReadString("cinsaciklamasi")
+                        aHTMLRow(5, nRow).cValue = oSQL2.SQLReadDouble("fiyat1").ToString(G_Number2Format)
+                        aHTMLRow(6, nRow).cValue = oSQL2.SQLReadString("doviz1")
+                        aHTMLRow(7, nRow).cValue = "Onay sürecine satınalmacı eMail tanımlaması yapılmalıdır"
+                    Catch ex As Exception
+                        ErrDisp(ex, "ORSHatirlatma 4b-row) nRow=" & nRow.ToString())
+                    End Try
+                Loop
+
+            Catch ex As Exception
+                ErrDisp(ex, "ORSHatirlatma " & stage)
+            Finally
+                Try
+                    If oSQL2 IsNot Nothing AndAlso oSQL2.oReader IsNot Nothing Then oSQL2.oReader.Close()
+                Catch
+                End Try
+            End Try
+
+            '--- satici email yok
+            stage = "4c) saticiemail yok - query/reader"
+            Try
+                oSQL2.cSQLQuery =
+                "Select distinct musterino, stoktipi, firma, stokno, cinsaciklamasi, fiyat1, doviz1 " &
+                " from " & cOtoSatinalmaIsemriView &
+                " where temindept is not null and temindept <> '' " &
+                " and firma is not null and firma <> '' " &
+                " and malzemetakipno is not null and malzemetakipno <> '' " &
+                " and ihtiyac is not null and ihtiyac > 0 " &
+                " and coalesce(ihtiyac,0) > coalesce(isemribeklenen,0) + coalesce(isemriharicigelen,0) " &
+                " and (saticiemail is null or saticiemail = '') " &
+                " order by musterino, stoktipi, firma "
+
+                oSQL2.GetSQLReader()
+
+                Do While oSQL2.oReader.Read
+                    Try
+                        nRow += 1
+                        ReDim Preserve aHTMLRow(nMaxCols, nRow)
+                        aHTMLRow(0, nRow).cValue = oSQL2.SQLReadString("musterino")
+                        aHTMLRow(1, nRow).cValue = oSQL2.SQLReadString("stoktipi")
+                        aHTMLRow(2, nRow).cValue = oSQL2.SQLReadString("firma")
+                        aHTMLRow(3, nRow).cValue = oSQL2.SQLReadString("stokno")
+                        aHTMLRow(4, nRow).cValue = oSQL2.SQLReadString("cinsaciklamasi")
+                        aHTMLRow(5, nRow).cValue = oSQL2.SQLReadDouble("fiyat1").ToString(G_Number2Format)
+                        aHTMLRow(6, nRow).cValue = oSQL2.SQLReadString("doviz1")
+                        aHTMLRow(7, nRow).cValue = "Tedarikçi kartındaki satici eMaillerine tanımlama yapılmalıdır"
+                    Catch ex As Exception
+                        ErrDisp(ex, "ORSHatirlatma 4c-row) nRow=" & nRow.ToString())
+                    End Try
+                Loop
+
+            Catch ex As Exception
+                ErrDisp(ex, "ORSHatirlatma " & stage)
+            Finally
+                Try
+                    If oSQL2 IsNot Nothing AndAlso oSQL2.oReader IsNot Nothing Then oSQL2.oReader.Close()
+                Catch
+                End Try
+            End Try
+
+            '--- eksik tanımlar maili
+            stage = "4d) Eksik tanımlar - mail gönder"
+            Try
+                If nRow > 0 Then
+                    cBody = GetHTMLTable(nRow, nMaxCols, "Satınalma İşemri Oluşturmada Eksik Tanımlamalar")
+                    cSubject = "Otomatik işemri oluşturma uyarı mesajıdır, müşteri / satınalmacı / tedarkçi eksik tanımlanmalar tamamlanmalıdır"
+
+                    If SendGoogleMail(cMailTo, cSubject, cBody, , cDatabase) Then
+                        ActivityLog(cDatabase, "Mesaj", "OMRSU eMail Gonderildi", cSubject, cMailTo & " " & cBody.Trim)
+                    Else
+                        ActivityLog(cDatabase, "Mesaj", "OMRSU eMail Gonderilemedi", cSubject, cMailTo & " " & cBody.Trim)
+                    End If
+                End If
+            Catch ex As Exception
+                ErrDisp(ex, "ORSHatirlatma " & stage)
+            End Try
+
+            '===========================================
+            ' 5) Gönderilememiş işemirlerini gönder
+            '===========================================
+            stage = "5) Gönderilememiş işemirlerini bul"
+            Try
+                oSQL.cSQLQuery =
+                "select distinct a.isemrino , a.emailsatici , a.emailsatinalmaci , c.reportid " &
+                " FROM isemri a WITH (NOLOCK) , departman b WITH (NOLOCK) , stireports c WITH (NOLOCK) " &
+                " WHERE a.departman = b.departman  " &
+                " AND b.reportname = c.reportname " &
+                " AND a.createuser = 'CLR' " &
+                " AND (a.emailgonderildi IS NULL or a.emailgonderildi = 'H' OR a.emailgonderildi = '') " &
+                " ORDER BY a.isemrino "
+
+                oSQL.GetSQLReader()
+
+                Do While oSQL.oReader.Read
+
+                    ' her isemri için ayrı try
+                    Try
+                        cIsemriNo = oSQL.SQLReadString("isemrino")
+
+                        Dim mailSatici As String = oSQL.SQLReadString("emailsatici")
+                        Dim mailSatinalmaci As String = oSQL.SQLReadString("emailsatinalmaci")
+                        cMailTo = mailSatici & "," & mailSatinalmaci
+
+                        ' reportid NULL olabilir: güvenli oku
+                        Dim rid As Integer = 0
+                        Try
+                            rid = oSQL.SQLReadInteger("reportid")
+                        Catch
+                            rid = 0
+                        End Try
+                        nReportID = CDbl(rid)
+
+                        cFileName = "C:\wintex\Temp\" & "ErogluSatinalma-" & cIsemriNo & ".xls"
+                        cSubject = "Eroğlu satınalma siparişi : " & cIsemriNo
+                        cBody = "Eroğlu satınalma siparişi : " & cIsemriNo
+
+                    Catch ex As Exception
+                        ErrDisp(ex, "ORSHatirlatma 5a) İşemri satırı okuma. isemrino=" & cIsemriNo)
+                        Continue Do
+                    End Try
+
+                    ' dosya silme
+                    stage = "5b) Dosya silme (varsa) isemrino=" & cIsemriNo
+                    Try
+                        If My.Computer.FileSystem.FileExists(cFileName) Then
+                            My.Computer.FileSystem.DeleteFile(cFileName)
+                        End If
+                    Catch ex As Exception
+                        ErrDisp(ex, "ORSHatirlatma " & stage & " file=" & cFileName)
+                        ' devam edebiliriz (export overwrite edebilir) ama genelde durmak daha iyi:
+                        ' Continue Do
+                    End Try
+
+                    ' rapor üret
+                    stage = "5c) StiReportToExcel isemrino=" & cIsemriNo
+                    lReportOK = False
+                    Try
+                        If nReportID <= 0 Then
+                            ErrDisp(New Exception("reportid invalid/empty"), "ORSHatirlatma " & stage)
+                        Else
+                            If StiReportToExcel(nReportID.ToString, cFileName, cIsemriNo,,,,,,,,,, cDatabase) Then
+                                If My.Computer.FileSystem.FileExists(cFileName) Then
+                                    lReportOK = True
+                                End If
+                            End If
+                        End If
+                    Catch ex As Exception
+                        ErrDisp(ex, "ORSHatirlatma " & stage & " reportid=" & nReportID.ToString() & " file=" & cFileName)
+                    End Try
+
+                    ' mail gönder + update
+                    stage = "5d) Mail gönder / update isemri isemrino=" & cIsemriNo
+                    Try
+                        If lReportOK Then
+
+                            Dim toList As String = cMailTo
+                            If cControlMail.Trim <> "" Then toList &= "," & cControlMail
+
+                            Dim sentOK As Boolean = False
+                            Try
+                                sentOK = SendGoogleMail(toList, cSubject, cBody, cFileName, cDatabase)
+                            Catch ex As Exception
+                                ErrDisp(ex, "ORSHatirlatma 5d-mail) to=" & toList & " file=" & cFileName)
+                                sentOK = False
+                            End Try
+
+                            Try
+                                If sentOK Then
+                                    oSQL2.cSQLQuery =
+                                    "update isemri SET emailgonderildi = 'E' WHERE isemrino = '" & cIsemriNo & "' "
+                                    oSQL2.SQLExecute()
+                                    ActivityLog(cDatabase, "Mesaj", "OMSS2 eMail Gonderildi", cSubject, toList & " " & cBody.Trim)
+                                Else
+                                    oSQL2.cSQLQuery =
+                                    "update isemri SET emailgonderildi = 'H' WHERE isemrino = '" & cIsemriNo & "' "
+                                    oSQL2.SQLExecute()
+                                    ActivityLog(cDatabase, "Mesaj", "OMSS2 eMail Gonderilemedi", cSubject, toList & " " & cBody.Trim)
+                                End If
+                            Catch ex As Exception
+                                ErrDisp(ex, "ORSHatirlatma 5d-update) isemrino=" & cIsemriNo)
+                            End Try
+
+                        End If
+                    Catch ex As Exception
+                        ErrDisp(ex, "ORSHatirlatma " & stage)
+                    End Try
+
+                Loop
+
+            Catch ex As Exception
+                ErrDisp(ex, "ORSHatirlatma " & stage & " (outer)")
+                Exit Function
+            Finally
+                Try
+                    If oSQL IsNot Nothing AndAlso oSQL.oReader IsNot Nothing Then oSQL.oReader.Close()
+                Catch
+                End Try
+            End Try
+
+            '========================
+            ' 6) CloseConn
+            '========================
+            stage = "6) CloseConn"
+            Try
+                If oSQL IsNot Nothing Then oSQL.CloseConn()
+                If oSQL2 IsNot Nothing Then oSQL2.CloseConn()
+            Catch ex As Exception
+                ErrDisp(ex, "ORSHatirlatma " & stage)
+                ' CloseConn hatası kritik değil ama loglansın
+            End Try
+
+            ORSHatirlatma = True
+            Return True
+
+        Catch ex As Exception
+            ErrDisp(ex, "ORSHatirlatma (outer-most) stage=" & stage & " cDatabase=" & cDatabase)
+            Return False
+
+        Finally
+            ' Ek güvenlik: reader açık kalmasın
+            Try
+                If oSQL2 IsNot Nothing AndAlso oSQL2.oReader IsNot Nothing Then oSQL2.oReader.Close()
+            Catch
+            End Try
+            Try
+                If oSQL IsNot Nothing AndAlso oSQL.oReader IsNot Nothing Then oSQL.oReader.Close()
+            Catch
+            End Try
+        End Try
+
+    End Function
 
 End Module

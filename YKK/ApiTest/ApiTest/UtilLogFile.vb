@@ -37,7 +37,7 @@ Module UtilLogFile
         End Try
     End Sub
 
-    Public Sub ErrDisp(Optional ByVal cErrorMessage As String = "", Optional ByVal cFormName As String = "", Optional ByVal cSQL As String = "", Optional ByVal lShowMessage As Boolean = False, Optional oEx As Exception = Nothing)
+    Public Sub ErrDisp(Optional ByVal cErrorMessage As String = "", Optional ByVal cFormName As String = "", Optional ByVal cSQL As String = "", Optional ByVal lShowMessage As Boolean = True, Optional oEx As Exception = Nothing)
         Try
             Dim cMessage As String = ""
             Dim cTodaysDate As String = String.Format("{0:dd_MM_yyyy}", DateTime.Now)
@@ -45,7 +45,11 @@ Module UtilLogFile
             cMessage = "WinTexYKK versiyon : " + Assembly.GetExecutingAssembly().GetName().Version.ToString + vbCrLf +
                         "Tarih / Saat : " + Now.ToString + " " + vbCrLf +
                         IIf(cFormName.Trim = "", "", "Module : " + cFormName.Trim + vbCrLf).ToString +
-                        IIf(cSQL.Trim = "", "", "SQL : " + cSQL + vbCrLf).ToString
+                        IIf(cSQL.Trim = "", "", "SQL : " + cSQL + vbCrLf).ToString +
+                        "Server : " + oConnection.cServer + vbCrLf +
+                        "Database : " + oConnection.cDatabase + vbCrLf +
+                        "Personel : " + oConnection.cPersonel + vbCrLf +
+                        "Model : " + oConnection.cModelNo + vbCrLf
 
             If oEx Is Nothing Then
                 If Err.Description IsNot Nothing Then

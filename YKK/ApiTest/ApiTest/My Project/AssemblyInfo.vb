@@ -9,11 +9,11 @@ Imports System.Runtime.InteropServices
 ' Review the values of the assembly attributes
 
 <Assembly: AssemblyTitle("ApiTest")>
-<Assembly: AssemblyDescription("")>
-<Assembly: AssemblyCompany("")>
+<Assembly: AssemblyDescription("WinTex YKK ve Next Entegrasyonu")>
+<Assembly: AssemblyCompany("Okan Sokmen Yazilim Gelistirme")>
 <Assembly: AssemblyProduct("ApiTest")>
-<Assembly: AssemblyCopyright("Copyright ©  2025")>
-<Assembly: AssemblyTrademark("")>
+<Assembly: AssemblyCopyright("Copyright ©  2026")>
+<Assembly: AssemblyTrademark("Okan Sokmen Yazilim")>
 
 <Assembly: ComVisible(False)>
 
@@ -28,5 +28,5 @@ Imports System.Runtime.InteropServices
 '      Revision
 '
 
-<Assembly: AssemblyVersion("1.1.0.0")>
-<Assembly: AssemblyFileVersion("1.1.0.0")>
+<Assembly: AssemblyVersion("1.4.0.0")>
+<Assembly: AssemblyFileVersion("1.4.0.0")>
