@@ -22,3 +22,5 @@ packages/
 *.nupkg
 *.exe
 *.obj
+*.rar
+*.zip

@@ -73,7 +73,8 @@ Module UtilStimulus
     Public Function StiReportToExcel(cReportID As String, cFileName As String, cReportVariable1 As String, Optional cReportVariable2 As String = "",
                                      Optional cReportVariable3 As String = "", Optional cReportVariable4 As String = "", Optional cReportVariable5 As String = "",
                                      Optional cReportVariable6 As String = "", Optional cReportVariable7 As String = "", Optional cReportVariable8 As String = "",
-                                     Optional cReportVariable9 As String = "", Optional cReportVariable10 As String = "", Optional cDatabase As String = "") As Boolean
+                                     Optional cReportVariable9 As String = "", Optional cReportVariable10 As String = "", Optional cDatabase As String = "",
+                                     Optional cOutput As String = "Excel2007") As Boolean
         StiReportToExcel = False
 
         Try
@@ -91,7 +92,7 @@ Module UtilStimulus
             oReport.cReportVariable9 = cReportVariable9.Trim
             oReport.cReportVariable10 = cReportVariable10.Trim
 
-            If Not STSaveToFile(cFileName, "Excel2007", cDatabase) Then Exit Function
+            If Not STSaveToFile(cFileName, cOutput, cDatabase) Then Exit Function
 
             StiReportToExcel = True
 

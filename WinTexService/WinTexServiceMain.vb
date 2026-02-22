@@ -57,13 +57,21 @@ Public Class WinTexServiceMain
                              "'Perakende Siparis Son Durum Iptaller'," +
                              "'Perakende Siparis Musteri SMS'," +
                              "'Stok Bakim Stored Procedure'," +
-                             "'Oto Rezervasyon Satinalma Isemri'," +
-                             "'Oto Rezervasyon Satinalma Isemri kit disi'," +
-                             "'Oto Rezervasyon Satinalma uyari'," +
-                             "'Oto Rezervasyon Satinalma uyari kit disi'," +
                              "'TiciMax Urun Upload'," +
                              "'TiciMax Siparis Upload'," +
-                             "'TiciMax Siparis Download'"
+                             "'TiciMax Siparis Download'," +
+                             "'Oto Kit Ici Rezervasyon'," +
+                             "'Oto Kit Disi Rezervasyon'," +
+                             "'Oto Ana Kumas Rezervasyon'," +
+                             "'Oto Kit Ici Satinalma'," +
+                             "'Oto Kit Disi Satinalma'," +
+                             "'Oto Ana Kumas Satinalma'," +
+                             "'Oto Kit Ici Rezervasyon Uyari'," +
+                             "'Oto Kit Disi Rezervasyon Uyari'," +
+                             "'Oto Ana Kumas Rezervasyon Uyari'," +
+                             "'Oto Kit Ici Satinalma Uyari'," +
+                             "'Oto Kit Disi Satinalma Uyari'," +
+                             "'Oto Ana Kumas Satinalma Uyari'"
 
     Dim cServer As String = ""
     Dim cDatabase As String = ""
@@ -245,6 +253,15 @@ Public Class WinTexServiceMain
             Dim cUsername As String
             Dim cPassword As String
 
+#If DEBUG Then
+
+            cServer = "192.168.1.8"
+            cDatabase = "MISIRYEDEK"
+            cUsername = "sa"
+            cPassword = "er1303*?"
+                
+            OUS2PopQue(cDatabase)
+#Else
             For nCnt = 1 To 10
                 cServerName = "SERVER" + nCnt.ToString
                 cDatabaseName = "DATABASE" + nCnt.ToString
@@ -260,6 +277,8 @@ Public Class WinTexServiceMain
                     OUS2PopQue(cDatabase)
                 End If
             Next
+#End If
+
 
         Catch ex As Exception
             ErrDisp(ex)
@@ -472,6 +491,15 @@ Public Class WinTexServiceMain
             Dim cUsername As String
             Dim cPassword As String
 
+#If DEBUG Then
+
+            cServer = "192.168.1.8"
+            cDatabase = "MISIR"
+            cUsername = "sa"
+            cPassword = "er1303*?"
+
+            OUS2MultiDBExecute(cServer, cDatabase, cUsername, cPassword)
+#Else
             For nCnt = 1 To 10
                 cServerName = "SERVER" + nCnt.ToString
                 cDatabaseName = "DATABASE" + nCnt.ToString
@@ -489,6 +517,7 @@ Public Class WinTexServiceMain
                     End If
                 End If
             Next
+#End If
 
         Catch ex As Exception
             ErrDisp(ex)
@@ -531,6 +560,13 @@ Public Class WinTexServiceMain
                 'CreateLog("Başlatılacak görev bulunamadı")
             End If
             oSQL.oReader.Close()
+
+#If DEBUG Then
+            nSiraNo = 38
+            cOUSNo = "0000000052"
+            cOUS = "Oto Rezervasyon Satinalma Isemri"
+            cAciklama = "otomatik satinalama ve rezervasyon"
+#End If
 
             If nSiraNo = 0 Then Exit Sub
 
@@ -697,20 +733,52 @@ Public Class WinTexServiceMain
 
                 Select Case cOUS
 
-                    Case "Oto Rezervasyon Satinalma uyari"
-                        OUS2CoreExecute = ORSHatirlatma(cDatabase, 1)
+                    Case "Oto Kit Ici Rezervasyon"
+                        OUS2CoreExecute = OtomatikRezerveSatinalma(cDatabase, 1, 1)
                         Exit Function
 
-                    Case "Oto Rezervasyon Satinalma uyari kit disi"
-                        OUS2CoreExecute = ORSHatirlatma(cDatabase, 2)
+                    Case "Oto Kit Disi Rezervasyon"
+                        OUS2CoreExecute = OtomatikRezerveSatinalma(cDatabase, 2, 1)
                         Exit Function
 
-                    Case "Oto Rezervasyon Satinalma Isemri"
-                        OUS2CoreExecute = OtomatikRezerveSatinalma(cDatabase, 1)
+                    Case "Oto Ana Kumas Rezervasyon"
+                        OUS2CoreExecute = OtomatikRezerveSatinalma(cDatabase, 3, 1)
                         Exit Function
 
-                    Case "Oto Rezervasyon Satinalma Isemri kit disi"
-                        OUS2CoreExecute = OtomatikRezerveSatinalma(cDatabase, 2)
+                    Case "Oto Kit Ici Satinalma"
+                        OUS2CoreExecute = OtomatikRezerveSatinalma(cDatabase, 1, 2)
+                        Exit Function
+
+                    Case "Oto Kit Disi Satinalma"
+                        OUS2CoreExecute = OtomatikRezerveSatinalma(cDatabase, 2, 2)
+                        Exit Function
+
+                    Case "Oto Ana Kumas Satinalma"
+                        OUS2CoreExecute = OtomatikRezerveSatinalma(cDatabase, 3, 2)
+                        Exit Function
+
+                    Case "Oto Kit Ici Rezervasyon Uyari"
+                        OUS2CoreExecute = ORSHatirlatma(cDatabase, 1, 1)
+                        Exit Function
+
+                    Case "Oto Kit Disi Rezervasyon Uyari"
+                        OUS2CoreExecute = ORSHatirlatma(cDatabase, 2, 1)
+                        Exit Function
+
+                    Case "Oto Ana Kumas Rezervasyon Uyari"
+                        OUS2CoreExecute = ORSHatirlatma(cDatabase, 3, 1)
+                        Exit Function
+
+                    Case "Oto Kit Ici Satinalma Uyari"
+                        OUS2CoreExecute = ORSHatirlatma(cDatabase, 1, 2)
+                        Exit Function
+
+                    Case "Oto Kit Disi Satinalma Uyari"
+                        OUS2CoreExecute = ORSHatirlatma(cDatabase, 2, 2)
+                        Exit Function
+
+                    Case "Oto Ana Kumas Satinalma Uyari"
+                        OUS2CoreExecute = ORSHatirlatma(cDatabase, 3, 2)
                         Exit Function
 
                     Case "Styleshoots Transfer"

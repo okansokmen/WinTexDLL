@@ -10,6 +10,9 @@ Imports System.Diagnostics
 Imports Microsoft.SqlServer.Server
 Imports System.Deployment
 
+' Visual Studio 2026 Enterprise License Key   : BW43B-4PNFP-V7GB7-36MBD-3PJTH
+' Visual Studio 2026 Professional License Key : DDBD6-NPCDC-2FH2P-PDP9M-G3F6W
+
 Module UtilLogFile
     Public cVersion As String = My.Application.Info.Version.ToString.Trim
 
